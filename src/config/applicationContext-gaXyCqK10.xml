@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="cqK10DAO" class="com.xy.k10.cqk10.dao.hibernate.CqK10DAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="cqK10Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.k10.cqk10.service.impl.CqK10ServiceImpl">
+	            <property name="cqK10DAO"><ref local="cqK10DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	             <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化期号-->
+	<bean name="initCqK10SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.k10.cqk10.service.impl.InitCqK10Session</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="cqK10Service"><ref bean="cqK10Service" /></entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="initCqK10Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initCqK10SessionJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 20 03 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchCqK10ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.k10.cqk10.service.impl.FetchCqK10Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="cqK10Service"><ref bean="cqK10Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+	<bean id="fetchCqK10Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchCqK10ResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 3/10 0-2,9-23 * * ?</value>
+		</property>
+	</bean>	
+
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initCqK10Session" />
+				<ref local="fetchCqK10Result"/>
+			</list>
+		</property>
+	</bean>
+</beans>

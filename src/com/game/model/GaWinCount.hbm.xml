@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaWinCount" table="ga_win_count">
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="11" />
+       <property name="gameType" type="java.lang.String" column="game_type" length="8" />
+       <property name="totalMoney" type="java.math.BigDecimal" column="total_money" length="14" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="gfSfPk102DAO" class="com.gf.sfpk102.dao.hibernate.SfPk102DAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	<bean id="gfSfPk102Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.gf.sfpk102.service.impl.SfPk102ServiceImpl">
+	            <property name="gfSfPk102DAO"><ref local="gfSfPk102DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+	
+	<!-- 初始化期号-->
+	<bean name="initGfSfPk102SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.sfpk102.service.impl.InitSfPk102Session</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfSfPk102Service"><ref bean="gfSfPk102Service" /></entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="initGfSfPk102Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initGfSfPk102SessionJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+    <!-- 更新冷热排行榜 -->
+    <bean name="updateGfSfPk102GaTrendJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+        <property name="jobClass">
+            <value>com.gf.sfpk102.service.impl.UpdateSfPk102GaTrend</value>
+        </property>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="gfSfPk102Service"><ref bean="gfSfPk102Service"/></entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="updateGfSfPk102GaTrend" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail">
+            <ref bean="updateGfSfPk102GaTrendJob"/>
+        </property>
+        <property name="cronExpression">
+            <value>25 3/5 9-23 * * ?</value>
+        </property>
+    </bean>
+	
+    <!-- 更新每期遗漏数据 -->
+	<bean name="fetchGfSfPk102OmitJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.sfpk102.service.impl.UpdateSfPk102GaOmit</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfSfPk102Service"><ref bean="gfSfPk102Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+	<bean id="fetchGfSfPk102Omit" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfSfPk102OmitJob" />
+		</property>
+		<property name="cronExpression">
+			<value>30 2/10 8-22 * * ?</value>
+		</property>
+	</bean>
+		
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchGfSfPk102ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.sfpk102.service.impl.FetchSfPk102Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfSfPk102Service"><ref bean="gfSfPk102Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+	<bean id="fetchGfSfPk102Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfSfPk102ResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initGfSfPk102Session" />
+				<ref local="fetchGfSfPk102Result"/>
+				<ref local="fetchGfSfPk102Omit"/>
+				<ref local="updateGfSfPk102GaTrend" />
+			</list>
+		</property>
+	</bean>
+</beans>

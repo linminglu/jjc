@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="jsK3DAO" class="com.xy.k3.jsk3.dao.hibernate.JsK3DAOHiberate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="jsK3Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.k3.jsk3.service.impl.JsK3ServiceImpl">
+	            <property name="jsK3DAO"><ref local="jsK3DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	             <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化期号-->
+	<bean name="initJsK3SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.k3.jsk3.service.impl.InitJsK3Session</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="jsK3Service"><ref bean="jsK3Service" /></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchJsK3ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.k3.jsk3.service.impl.FetchJsK3Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="jsK3Service"><ref bean="jsK3Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+		
+	<!-- 配置触发器定时周期 对应上面的 bean  --> 
+	
+	<!-- 初始化时间 -->
+    <bean id="initJsK3Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initJsK3SessionJob" />
+		</property>
+		<!-- 每天的x点开始初始化 ,这里是8点--> 
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 定时抓去数据 -->
+	<bean id="fetchJsK3Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchJsK3ResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>30 0/10 8-22 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initJsK3Session" />
+				<ref local="fetchJsK3Result"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+</beans>

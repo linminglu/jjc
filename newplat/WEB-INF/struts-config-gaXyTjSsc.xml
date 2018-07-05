@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- ==================================== Data Sources      -->
+  	<data-sources>
+  	</data-sources>
+  	<!-- ==================================== Form Beans        -->
+  	<form-beans>
+		<form-bean name="tjSscForm" type="com.xy.ssc.tjssc.web.form.TjSscForm"/>
+  	</form-beans>
+  	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+	 	<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+  	<!-- ==================================== Action Mappings    -->
+  	<action-mappings>
+  		<action 
+			path="/tjSscAction" 
+    		type="com.xy.ssc.tjssc.web.action.TjSscAction" 
+    		name="tjSscForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+	   	<forward name="init" path="/tjSscOpenSessionList.jsp"/>    
+	   	<forward name="betList" path="/tjSscBetList.jsp"/> 
+	   	<forward name="betManager" path="/tjSscBetManager.jsp"/>
+	   	<forward name="betDetailManager" path="/tjSscBetDetailManager.jsp"/>  
+	   	</action>
+    </action-mappings>
+</struts-config>

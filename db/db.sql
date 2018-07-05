@@ -1,0 +1,27 @@
+### @zzw 2018-06-21
+ALTER TABLE `jc_match`
+	ADD COLUMN `is_recommend` CHAR(1) NULL DEFAULT NULL COMMENT '是否推荐：1=是，0=否';
+
+--### @zzw 2018-06-08
+ALTER TABLE `jc_play_type`
+	ADD COLUMN `open_result` VARCHAR(50) NULL DEFAULT NULL COMMENT '开奖结果',
+	ADD COLUMN `open_status` CHAR(1) NULL DEFAULT NULL COMMENT '开奖状态0=未开将 1=已开奖';
+
+ALTER TABLE `ga_bet_detail`
+	CHANGE COLUMN `room` `room` VARCHAR(100) NOT NULL;
+
+--### @zzw 2018-06-07
+ALTER TABLE `type`
+	ADD COLUMN `parent_id` INT(8) NULL DEFAULT NULL;
+	
+ALTER TABLE `jc_option`
+	ADD COLUMN `f_id` INT(11) NULL DEFAULT NULL;
+
+ALTER TABLE `jc_match`
+	ADD COLUMN `t_id1` INT(11) NULL DEFAULT NULL COMMENT '一级',
+	ADD COLUMN `t_id2` INT(11) NULL DEFAULT NULL COMMENT '二级';
+
+--### @zzw 2018-06-01
+ALTER TABLE `jc_team`
+	CHANGE COLUMN `t_id` `t_id1` INT(11) NULL DEFAULT NULL COMMENT '一级',
+	ADD COLUMN `t_id2` INT(11) NULL DEFAULT NULL COMMENT '二级';

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.cash.model.UserCheckout" table="user_checkout">
+		<cache usage="read-write" />
+		<id name="checkoutId" type="java.lang.Integer" column="checkout_id">
+			<generator class="identity" />
+		</id>
+       <property name="sid" type="java.lang.Integer" column="s_id" length="11" />
+       <property name="userId" type="java.lang.Integer" column="user_id" length="11" />
+       <property name="moduleType" type="java.lang.String" column="module_type" length="1" />
+       <property name="totalMoney" type="java.math.BigDecimal" column="total_money" length="12" />
+       <property name="status" type="java.lang.String" column="status" length="1" />
+       <property name="createTime" type="java.util.Date" column="create_time" />
+	</class>
+</hibernate-mapping>

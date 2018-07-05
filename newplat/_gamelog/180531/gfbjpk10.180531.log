@@ -1,0 +1,229 @@
+[G][05-31 09:07:32][gfbjpk10] timer launch .....
+[G][05-31 09:12:32][gfbjpk10] timer launch .....
+[G][05-31 09:17:32][gfbjpk10] timer launch .....
+[G][05-31 09:22:32][gfbjpk10] timer launch .....
+[G][05-31 09:27:32][gfbjpk10] timer launch .....
+[G][05-31 09:30:51][gfbjpk10] init session[50162ms]
+[G][05-31 09:32:32][gfbjpk10] timer launch .....
+[G][05-31 09:37:32][gfbjpk10] timer launch .....
+[G][05-31 09:42:32][gfbjpk10] timer launch .....
+[G][05-31 09:47:32][gfbjpk10] timer launch .....
+[G][05-31 09:52:32][gfbjpk10] timer launch .....
+[G][05-31 09:57:32][gfbjpk10] timer launch .....
+[G][05-31 10:00:06][gfbjpk10] init session[3138ms]
+[G][05-31 10:02:32][gfbjpk10] timer launch .....
+[G][05-31 10:07:32][gfbjpk10] timer launch .....
+[G][05-31 10:12:32][gfbjpk10] timer launch .....
+[G][05-31 10:17:32][gfbjpk10] timer launch .....
+[G][05-31 10:22:32][gfbjpk10] timer launch .....
+[G][05-31 10:27:32][gfbjpk10] timer launch .....
+[G][05-31 14:00:02][gfbjpk10] init session[1268ms]
+[G][05-31 15:42:32][gfbjpk10] timer launch .....
+[G][05-31 15:42:34][gfbjpk10] fetching ..... [684900],openTime=2018-05-31 15:42:00[1/80]
+[G][05-31 15:42:37][gfbjpk10] fetching ..... [684900],openTime=2018-05-31 15:42:00[2/80]
+[G][05-31 15:42:42][gfbjpk10] fetching ..... [684900],openTime=2018-05-31 15:42:00[3/80]
+[G][05-31 15:42:49][gfbjpk10] fetching ..... [684900],openTime=2018-05-31 15:42:00[4/80]
+[G][05-31 15:42:49][gfbjpk10] RESULTS  _____ [684900]=>07,02,09,04,10,06,05,03,01,08
+[G][05-31 15:42:54][gfbjpk10] update trade detail status...684896
+[G][05-31 15:42:56][gfbjpk10] update trade detail status...684897
+[G][05-31 15:42:57][gfbjpk10] update trade detail status...684898
+[G][05-31 15:42:59][gfbjpk10] update trade detail status...684899
+[G][05-31 15:43:02][gfbjpk10] update trade detail status...684900
+[G][05-31 15:43:04][gfbjpk10] SUCCESS  _^_^_ [684900][15194ms]
+[G][05-31 15:47:32][gfbjpk10] timer launch .....
+[G][05-31 15:47:32][gfbjpk10] fetching ..... [684901],openTime=2018-05-31 15:47:00[1/80]
+[G][05-31 15:47:38][gfbjpk10] fetching ..... [684901],openTime=2018-05-31 15:47:00[2/80]
+[G][05-31 15:48:37][gfbjpk10] fetching ..... [684901],openTime=2018-05-31 15:47:00[3/80]
+[G][05-31 15:48:37][gfbjpk10] RESULTS  _____ [684901]=>09,01,07,04,02,05,08,06,03,10
+[G][05-31 15:52:32][gfbjpk10] timer launch .....
+[G][05-31 15:52:32][gfbjpk10] fetching ..... [684902],openTime=2018-05-31 15:52:00[1/80]
+[G][05-31 15:52:37][gfbjpk10] fetching ..... [684902],openTime=2018-05-31 15:52:00[2/80]
+[G][05-31 15:52:42][gfbjpk10] fetching ..... [684902],openTime=2018-05-31 15:52:00[3/80]
+[G][05-31 15:52:52][gfbjpk10] fetching ..... [684902],openTime=2018-05-31 15:52:00[4/80]
+[G][05-31 15:52:52][gfbjpk10] RESULTS  _____ [684902]=>06,08,03,01,10,02,05,07,09,04
+[G][05-31 15:52:56][gfbjpk10] update trade detail status...684901
+[G][05-31 15:52:57][gfbjpk10] update trade detail status...684902
+[G][05-31 15:53:00][gfbjpk10] SUCCESS  _^_^_ [684902][7856ms]
+[G][05-31 16:00:02][gfbjpk10] init session[740ms]
+[G][05-31 16:07:32][gfbjpk10] timer launch .....
+[G][05-31 16:07:32][gfbjpk10] fetching ..... [684905],openTime=2018-05-31 16:07:00[1/80]
+[G][05-31 16:07:38][gfbjpk10] fetching ..... [684905],openTime=2018-05-31 16:07:00[2/80]
+[G][05-31 16:07:44][gfbjpk10] fetching ..... [684905],openTime=2018-05-31 16:07:00[3/80]
+[G][05-31 16:07:47][gfbjpk10] fetching ..... [684905],openTime=2018-05-31 16:07:00[4/80]
+[G][05-31 16:07:47][gfbjpk10] RESULTS  _____ [684905]=>07,03,01,06,02,10,04,08,09,05
+[G][05-31 16:07:51][gfbjpk10] update trade detail status...684903
+[G][05-31 16:07:52][gfbjpk10] update trade detail status...684904
+[G][05-31 16:07:55][gfbjpk10] update trade detail status...684905
+[G][05-31 16:07:56][gfbjpk10] SUCCESS  _^_^_ [684905][8757ms]
+[G][05-31 16:12:32][gfbjpk10] timer launch .....
+[G][05-31 16:12:32][gfbjpk10] fetching ..... [684906],openTime=2018-05-31 16:12:00[1/80]
+[G][05-31 16:12:37][gfbjpk10] fetching ..... [684906],openTime=2018-05-31 16:12:00[2/80]
+[G][05-31 16:12:42][gfbjpk10] fetching ..... [684906],openTime=2018-05-31 16:12:00[3/80]
+[G][05-31 16:12:47][gfbjpk10] fetching ..... [684906],openTime=2018-05-31 16:12:00[4/80]
+[G][05-31 16:12:47][gfbjpk10] RESULTS  _____ [684906]=>09,06,05,10,02,04,07,08,03,01
+[G][05-31 16:12:51][gfbjpk10] update trade detail status...684906
+[G][05-31 16:12:52][gfbjpk10] SUCCESS  _^_^_ [684906][5230ms]
+[G][05-31 16:17:32][gfbjpk10] timer launch .....
+[G][05-31 16:17:32][gfbjpk10] fetching ..... [684907],openTime=2018-05-31 16:17:00[1/80]
+[G][05-31 16:17:37][gfbjpk10] fetching ..... [684907],openTime=2018-05-31 16:17:00[2/80]
+[G][05-31 16:17:42][gfbjpk10] fetching ..... [684907],openTime=2018-05-31 16:17:00[3/80]
+[G][05-31 16:17:47][gfbjpk10] fetching ..... [684907],openTime=2018-05-31 16:17:00[4/80]
+[G][05-31 16:17:47][gfbjpk10] RESULTS  _____ [684907]=>02,03,01,04,09,07,05,06,10,08
+[G][05-31 16:17:50][gfbjpk10] update trade detail status...684907
+[G][05-31 16:17:52][gfbjpk10] SUCCESS  _^_^_ [684907][4336ms]
+[G][05-31 16:22:32][gfbjpk10] timer launch .....
+[G][05-31 16:22:32][gfbjpk10] fetching ..... [684908],openTime=2018-05-31 16:22:00[1/80]
+[G][05-31 16:22:37][gfbjpk10] fetching ..... [684908],openTime=2018-05-31 16:22:00[2/80]
+[G][05-31 16:22:42][gfbjpk10] fetching ..... [684908],openTime=2018-05-31 16:22:00[3/80]
+[G][05-31 16:22:49][gfbjpk10] fetching ..... [684908],openTime=2018-05-31 16:22:00[4/80]
+[G][05-31 16:22:49][gfbjpk10] RESULTS  _____ [684908]=>03,07,04,05,02,08,09,10,01,06
+[G][05-31 16:22:52][gfbjpk10] update trade detail status...684908
+[G][05-31 16:22:54][gfbjpk10] SUCCESS  _^_^_ [684908][5390ms]
+[G][05-31 16:27:32][gfbjpk10] timer launch .....
+[G][05-31 16:27:35][gfbjpk10] fetching ..... [684909],openTime=2018-05-31 16:27:00[1/80]
+[G][05-31 16:27:38][gfbjpk10] fetching ..... [684909],openTime=2018-05-31 16:27:00[2/80]
+[G][05-31 16:27:44][gfbjpk10] fetching ..... [684909],openTime=2018-05-31 16:27:00[3/80]
+[G][05-31 16:27:49][gfbjpk10] fetching ..... [684909],openTime=2018-05-31 16:27:00[4/80]
+[G][05-31 16:27:49][gfbjpk10] RESULTS  _____ [684909]=>05,02,04,10,01,08,06,07,03,09
+[G][05-31 16:27:58][gfbjpk10] update trade detail status...684909
+[G][05-31 16:28:07][gfbjpk10] SUCCESS  _^_^_ [684909][17928ms]
+[G][05-31 16:30:12][gfbjpk10] init session[4298ms]
+[G][05-31 16:32:32][gfbjpk10] timer launch .....
+[G][05-31 16:32:34][gfbjpk10] fetching ..... [684910],openTime=2018-05-31 16:32:00[1/80]
+[G][05-31 16:32:39][gfbjpk10] fetching ..... [684910],openTime=2018-05-31 16:32:00[2/80]
+[G][05-31 16:32:43][gfbjpk10] fetching ..... [684910],openTime=2018-05-31 16:32:00[3/80]
+[G][05-31 16:32:49][gfbjpk10] fetching ..... [684910],openTime=2018-05-31 16:32:00[4/80]
+[G][05-31 16:32:49][gfbjpk10] RESULTS  _____ [684910]=>03,09,04,05,08,10,01,06,07,02
+[G][05-31 16:32:57][gfbjpk10] update trade detail status...684910
+[G][05-31 16:33:02][gfbjpk10] SUCCESS  _^_^_ [684910][12819ms]
+[G][05-31 16:37:32][gfbjpk10] timer launch .....
+[G][05-31 16:37:40][gfbjpk10] fetching ..... [684911],openTime=2018-05-31 16:37:00[1/80]
+[G][05-31 16:37:41][gfbjpk10] fetching ..... [684911],openTime=2018-05-31 16:37:00[2/80]
+[G][05-31 16:37:46][gfbjpk10] fetching ..... [684911],openTime=2018-05-31 16:37:00[3/80]
+[G][05-31 16:37:46][gfbjpk10] RESULTS  _____ [684911]=>06,07,02,05,08,09,10,03,01,04
+[G][05-31 16:37:50][gfbjpk10] update trade detail status...684911
+[G][05-31 16:37:51][gfbjpk10] SUCCESS  _^_^_ [684911][5784ms]
+[G][05-31 16:42:32][gfbjpk10] timer launch .....
+[G][05-31 16:42:32][gfbjpk10] fetching ..... [684912],openTime=2018-05-31 16:42:00[1/80]
+[G][05-31 16:42:37][gfbjpk10] fetching ..... [684912],openTime=2018-05-31 16:42:00[2/80]
+[G][05-31 16:42:48][gfbjpk10] fetching ..... [684912],openTime=2018-05-31 16:42:00[3/80]
+[G][05-31 16:42:48][gfbjpk10] RESULTS  _____ [684912]=>05,06,07,01,09,04,03,10,08,02
+[G][05-31 16:42:51][gfbjpk10] update trade detail status...684912
+[G][05-31 16:42:53][gfbjpk10] SUCCESS  _^_^_ [684912][5024ms]
+[G][05-31 16:47:32][gfbjpk10] timer launch .....
+[G][05-31 16:47:33][gfbjpk10] fetching ..... [684913],openTime=2018-05-31 16:47:00[1/80]
+[G][05-31 16:47:39][gfbjpk10] fetching ..... [684913],openTime=2018-05-31 16:47:00[2/80]
+[G][05-31 16:47:42][gfbjpk10] fetching ..... [684913],openTime=2018-05-31 16:47:00[3/80]
+[G][05-31 16:47:47][gfbjpk10] fetching ..... [684913],openTime=2018-05-31 16:47:00[4/80]
+[G][05-31 16:47:48][gfbjpk10] RESULTS  _____ [684913]=>04,10,07,03,05,09,08,06,01,02
+[G][05-31 16:47:51][gfbjpk10] update trade detail status...684913
+[G][05-31 16:47:53][gfbjpk10] SUCCESS  _^_^_ [684913][4739ms]
+[G][05-31 16:52:32][gfbjpk10] timer launch .....
+[G][05-31 16:52:49][gfbjpk10] fetching ..... [684914],openTime=2018-05-31 16:52:00[1/80]
+[G][05-31 16:52:49][gfbjpk10] RESULTS  _____ [684914]=>05,04,09,07,01,08,10,02,03,06
+[G][05-31 16:52:52][gfbjpk10] update trade detail status...684914
+[G][05-31 16:52:54][gfbjpk10] SUCCESS  _^_^_ [684914][4996ms]
+[G][05-31 16:57:32][gfbjpk10] timer launch .....
+[G][05-31 16:57:32][gfbjpk10] fetching ..... [684915],openTime=2018-05-31 16:57:00[1/80]
+[G][05-31 16:57:37][gfbjpk10] fetching ..... [684915],openTime=2018-05-31 16:57:00[2/80]
+[G][05-31 16:57:45][gfbjpk10] fetching ..... [684915],openTime=2018-05-31 16:57:00[3/80]
+[G][05-31 16:57:45][gfbjpk10] RESULTS  _____ [684915]=>10,08,02,04,03,06,05,09,01,07
+[G][05-31 16:57:49][gfbjpk10] update trade detail status...684915
+[G][05-31 16:57:51][gfbjpk10] SUCCESS  _^_^_ [684915][6134ms]
+[G][05-31 17:00:03][gfbjpk10] init session[1335ms]
+[G][05-31 17:02:32][gfbjpk10] timer launch .....
+[G][05-31 18:22:32][gfbjpk10] timer launch .....
+[G][05-31 18:22:32][gfbjpk10] fetching ..... [684932],openTime=2018-05-31 18:22:00[1/80]
+[G][05-31 18:22:37][gfbjpk10] fetching ..... [684932],openTime=2018-05-31 18:22:00[2/80]
+[G][05-31 18:22:42][gfbjpk10] fetching ..... [684932],openTime=2018-05-31 18:22:00[3/80]
+[G][05-31 18:22:47][gfbjpk10] fetching ..... [684932],openTime=2018-05-31 18:22:00[4/80]
+[G][05-31 18:22:47][gfbjpk10] RESULTS  _____ [684932]=>06,09,01,02,04,08,10,03,05,07
+[G][05-31 18:22:51][gfbjpk10] update trade detail status...684916
+[G][05-31 18:22:53][gfbjpk10] update trade detail status...684917
+[G][05-31 18:22:54][gfbjpk10] update trade detail status...684918
+[G][05-31 18:22:55][gfbjpk10] update trade detail status...684919
+[G][05-31 18:22:56][gfbjpk10] update trade detail status...684920
+[G][05-31 18:22:58][gfbjpk10] update trade detail status...684921
+[G][05-31 18:22:59][gfbjpk10] update trade detail status...684922
+[G][05-31 18:23:01][gfbjpk10] update trade detail status...684923
+[G][05-31 18:23:02][gfbjpk10] update trade detail status...684924
+[G][05-31 18:23:04][gfbjpk10] update trade detail status...684925
+[G][05-31 18:23:05][gfbjpk10] update trade detail status...684926
+[G][05-31 18:23:06][gfbjpk10] update trade detail status...684927
+[G][05-31 18:23:07][gfbjpk10] update trade detail status...684928
+[G][05-31 18:23:09][gfbjpk10] update trade detail status...684929
+[G][05-31 18:23:10][gfbjpk10] update trade detail status...684930
+[G][05-31 18:23:11][gfbjpk10] update trade detail status...684931
+[G][05-31 18:23:13][gfbjpk10] update trade detail status...684932
+[G][05-31 18:23:14][gfbjpk10] SUCCESS  _^_^_ [684932][26764ms]
+[G][05-31 18:27:32][gfbjpk10] timer launch .....
+[G][05-31 18:27:32][gfbjpk10] fetching ..... [684933],openTime=2018-05-31 18:27:00[1/80]
+[G][05-31 18:27:37][gfbjpk10] fetching ..... [684933],openTime=2018-05-31 18:27:00[2/80]
+[G][05-31 18:27:42][gfbjpk10] fetching ..... [684933],openTime=2018-05-31 18:27:00[3/80]
+[G][05-31 18:27:47][gfbjpk10] fetching ..... [684933],openTime=2018-05-31 18:27:00[4/80]
+[G][05-31 18:27:47][gfbjpk10] RESULTS  _____ [684933]=>03,10,05,09,06,07,08,01,04,02
+[G][05-31 18:27:50][gfbjpk10] update trade detail status...684933
+[G][05-31 18:27:51][gfbjpk10] SUCCESS  _^_^_ [684933][4153ms]
+[G][05-31 18:30:01][gfbjpk10] init session[777ms]
+[G][05-31 18:32:32][gfbjpk10] timer launch .....
+[G][05-31 18:32:32][gfbjpk10] fetching ..... [684934],openTime=2018-05-31 18:32:00[1/80]
+[G][05-31 18:32:37][gfbjpk10] fetching ..... [684934],openTime=2018-05-31 18:32:00[2/80]
+[G][05-31 18:32:42][gfbjpk10] fetching ..... [684934],openTime=2018-05-31 18:32:00[3/80]
+[G][05-31 18:32:47][gfbjpk10] fetching ..... [684934],openTime=2018-05-31 18:32:00[4/80]
+[G][05-31 18:32:47][gfbjpk10] RESULTS  _____ [684934]=>03,07,06,09,01,10,05,04,08,02
+[G][05-31 18:32:52][gfbjpk10] update trade detail status...684934
+[G][05-31 18:32:56][gfbjpk10] SUCCESS  _^_^_ [684934][8594ms]
+[G][05-31 18:37:32][gfbjpk10] timer launch .....
+[G][05-31 18:37:32][gfbjpk10] fetching ..... [684935],openTime=2018-05-31 18:37:00[1/80]
+[G][05-31 18:37:37][gfbjpk10] fetching ..... [684935],openTime=2018-05-31 18:37:00[2/80]
+[G][05-31 18:37:42][gfbjpk10] fetching ..... [684935],openTime=2018-05-31 18:37:00[3/80]
+[G][05-31 18:37:47][gfbjpk10] fetching ..... [684935],openTime=2018-05-31 18:37:00[4/80]
+[G][05-31 18:37:47][gfbjpk10] RESULTS  _____ [684935]=>02,10,07,01,03,05,06,08,04,09
+[G][05-31 18:37:50][gfbjpk10] update trade detail status...684935
+[G][05-31 18:37:52][gfbjpk10] SUCCESS  _^_^_ [684935][4390ms]
+[G][05-31 18:42:32][gfbjpk10] timer launch .....
+[G][05-31 18:42:37][gfbjpk10] fetching ..... [684936],openTime=2018-05-31 18:42:00[1/80]
+[G][05-31 18:42:38][gfbjpk10] fetching ..... [684936],openTime=2018-05-31 18:42:00[2/80]
+[G][05-31 18:42:43][gfbjpk10] fetching ..... [684936],openTime=2018-05-31 18:42:00[3/80]
+[G][05-31 18:42:43][gfbjpk10] RESULTS  _____ [684936]=>08,09,05,04,03,07,01,06,02,10
+[G][05-31 18:42:45][gfbjpk10] update trade detail status...684936
+[G][05-31 18:42:46][gfbjpk10] SUCCESS  _^_^_ [684936][3728ms]
+[G][05-31 18:47:32][gfbjpk10] timer launch .....
+[G][05-31 18:47:32][gfbjpk10] fetching ..... [684937],openTime=2018-05-31 18:47:00[1/80]
+[G][05-31 18:47:37][gfbjpk10] fetching ..... [684937],openTime=2018-05-31 18:47:00[2/80]
+[G][05-31 18:47:43][gfbjpk10] fetching ..... [684937],openTime=2018-05-31 18:47:00[3/80]
+[G][05-31 18:47:43][gfbjpk10] RESULTS  _____ [684937]=>03,10,05,09,02,07,04,01,06,08
+[G][05-31 18:47:46][gfbjpk10] update trade detail status...684937
+[G][05-31 18:47:47][gfbjpk10] SUCCESS  _^_^_ [684937][3923ms]
+[G][05-31 18:52:32][gfbjpk10] timer launch .....
+[G][05-31 18:52:32][gfbjpk10] fetching ..... [684938],openTime=2018-05-31 18:52:00[1/80]
+[G][05-31 18:52:37][gfbjpk10] fetching ..... [684938],openTime=2018-05-31 18:52:00[2/80]
+[G][05-31 18:52:42][gfbjpk10] fetching ..... [684938],openTime=2018-05-31 18:52:00[3/80]
+[G][05-31 18:52:47][gfbjpk10] fetching ..... [684938],openTime=2018-05-31 18:52:00[4/80]
+[G][05-31 18:52:47][gfbjpk10] RESULTS  _____ [684938]=>08,10,05,04,02,07,03,09,01,06
+[G][05-31 18:52:50][gfbjpk10] update trade detail status...684938
+[G][05-31 18:52:51][gfbjpk10] SUCCESS  _^_^_ [684938][4023ms]
+[G][05-31 18:57:32][gfbjpk10] timer launch .....
+[G][05-31 18:57:32][gfbjpk10] fetching ..... [684939],openTime=2018-05-31 18:57:00[1/80]
+[G][05-31 18:57:37][gfbjpk10] fetching ..... [684939],openTime=2018-05-31 18:57:00[2/80]
+[G][05-31 18:57:43][gfbjpk10] fetching ..... [684939],openTime=2018-05-31 18:57:00[3/80]
+[G][05-31 18:57:43][gfbjpk10] RESULTS  _____ [684939]=>06,07,05,10,04,08,02,03,09,01
+[G][05-31 18:57:46][gfbjpk10] update trade detail status...684939
+[G][05-31 18:57:47][gfbjpk10] SUCCESS  _^_^_ [684939][3995ms]
+[G][05-31 19:00:02][gfbjpk10] init session[946ms]
+[G][05-31 19:02:32][gfbjpk10] timer launch .....
+[G][05-31 19:02:32][gfbjpk10] fetching ..... [684940],openTime=2018-05-31 19:02:00[1/80]
+[G][05-31 19:02:37][gfbjpk10] fetching ..... [684940],openTime=2018-05-31 19:02:00[2/80]
+[G][05-31 19:02:42][gfbjpk10] fetching ..... [684940],openTime=2018-05-31 19:02:00[3/80]
+[G][05-31 19:02:47][gfbjpk10] fetching ..... [684940],openTime=2018-05-31 19:02:00[4/80]
+[G][05-31 19:02:47][gfbjpk10] RESULTS  _____ [684940]=>02,04,08,06,05,01,03,09,07,10
+[G][05-31 19:02:50][gfbjpk10] update trade detail status...684940
+[G][05-31 19:02:51][gfbjpk10] SUCCESS  _^_^_ [684940][4066ms]
+[G][05-31 19:07:32][gfbjpk10] timer launch .....
+[G][05-31 19:07:32][gfbjpk10] fetching ..... [684941],openTime=2018-05-31 19:07:00[1/80]
+[G][05-31 19:07:40][gfbjpk10] fetching ..... [684941],openTime=2018-05-31 19:07:00[2/80]
+[G][05-31 19:07:42][gfbjpk10] fetching ..... [684941],openTime=2018-05-31 19:07:00[3/80]
+[G][05-31 19:07:48][gfbjpk10] fetching ..... [684941],openTime=2018-05-31 19:07:00[4/80]
+[G][05-31 19:07:48][gfbjpk10] RESULTS  _____ [684941]=>08,10,05,03,09,02,07,01,04,06
+[G][05-31 19:07:51][gfbjpk10] update trade detail status...684941
+[G][05-31 19:07:52][gfbjpk10] SUCCESS  _^_^_ [684941][3491ms]

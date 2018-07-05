@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+
+	<!-- ==================================== Data Sources      -->
+  	<data-sources>
+  	</data-sources>
+
+  	<!-- ==================================== Form Beans        -->
+  	<form-beans>
+		<form-bean name="agentForm" type="com.apps.web.form.AgentForm"/>
+  	</form-beans>
+
+  	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+	 	<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+
+  	<!-- ==================================== Action Mappings    -->
+  	<action-mappings>
+  		<action 
+			path="/agentAction" 
+    		type="com.apps.web.action.AgentAction" 
+    		name="agentForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+			
+		<forward name="agentReport" path="/agentReport.jsp"/>
+		<forward name="betDetailList" path="/xyBetDetailList.jsp"/>
+		<forward name="gfBetDetailList" path="/gfBetDetailList.jsp"/>
+		<forward name="tradeDetailList" path="/tradeDetailList.jsp"/>
+		<forward name="subAgentList" path="/subAgentList.jsp"/>
+		<forward name="subMemberList" path="/subMemberList.jsp"/>
+		<forward name="gfBetDetail" path="/gfBetDetail.jsp"/>
+		<forward name="report" path="/report.jsp"/>
+    	</action>
+    </action-mappings>
+</struts-config>

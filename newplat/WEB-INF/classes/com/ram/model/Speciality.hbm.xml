@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.Speciality" 
+    table="SPECIALITY"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="specialityId"
+        type="java.lang.Integer"
+        column="SPECIALITY_ID"
+    >
+        <generator class="sequence">
+            <param name="sequence">SEQ_SPECIALITY</param>
+        </generator>
+    </id>
+
+    <property
+        name="specialityTitle"
+        type="java.lang.String"
+        column="SPECIALITY_TITLE"
+        length="20"
+    />
+
+
+  
+
+</class>
+</hibernate-mapping>

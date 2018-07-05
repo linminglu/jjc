@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>com.framework.web.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>coding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+  	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+  
+  	<!-- debugAPI start -->
+	<!-- <filter>
+		<filter-name>debugFilter</filter-name>
+		<filter-class>tools.debug.DebugFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>debugFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+	<!-- debugAPI end -->
+
+	<filter>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<filter-class>
+			org.tuckey.web.filters.urlrewrite.UrlRewriteFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>com.apps.web.listener.StatusListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.framework.web.servlet.SessionListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>upData</servlet-name>
+		<servlet-class>help.base.UpFileData</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>upData</servlet-name>
+		<url-pattern>/upData</url-pattern>
+	</servlet-mapping>
+  
+   	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/permission</param-name>
+			<param-value>/WEB-INF/struts-config-permission.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/user</param-name>
+			<param-value>/WEB-INF/struts-config-user.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/basedata</param-name>
+			<param-value>/WEB-INF/struts-config-basedata.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/api</param-name>
+			<param-value>/WEB-INF/struts-config-api.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/blackList</param-name>
+			<param-value>/WEB-INF/struts-config-blackList.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/sms</param-name>
+			<param-value>/WEB-INF/struts-config-sms.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/advert</param-name>
+			<param-value>/WEB-INF/struts-config-advert.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/activity</param-name>
+			<param-value>/WEB-INF/struts-config-activity.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/type</param-name>
+			<param-value>/WEB-INF/struts-config-type.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/card</param-name>
+			<param-value>/WEB-INF/struts-config-card.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/param</param-name>
+			<param-value>/WEB-INF/struts-config-param.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/cash</param-name>
+			<param-value>/WEB-INF/struts-config-cash.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/message</param-name>
+			<param-value>/WEB-INF/struts-config-message.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/pay</param-name>
+			<param-value>/WEB-INF/struts-config-pay.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/news</param-name>
+			<param-value>/WEB-INF/struts-config-news.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/agent</param-name>
+			<param-value>/WEB-INF/struts-config-agent.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/notice</param-name>
+			<param-value>/WEB-INF/struts-config-notice.xml</param-value>
+		</init-param>
+	
+		<init-param>
+			<param-name>config/game</param-name>
+			<param-value>/WEB-INF/struts-config-game.xml</param-value>
+		</init-param>
+	
+		<!-- cp module start -->
+	
+		<!-- cp.xy using 12 -->
+		<init-param>
+			<param-name>config/xyBjPk10</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyBjPk10.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xySfPk10</param-name>
+			<param-value>/WEB-INF/struts-config-gaXySfPk10.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyCqSsc</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyCqSsc.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyXjSsc</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyXjSsc.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyTjSsc</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyTjSsc.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyFive</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyFive.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyBj3</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyBj3.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyBjLu28</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyBjLu28.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyXjpLu28</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyXjpLu28.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyGdK10</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyGdK10.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyGxK10</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyGxK10.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyPoker</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyPoker.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyGdPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyGdPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xySdPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaXySdPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyJsK3</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyJsK3.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyBjK3</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyBjK3.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyMarkSix</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyMarkSix.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xySfPk102</param-name>
+			<param-value>/WEB-INF/struts-config-gaXySfPk102.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyJsft</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyJsft.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xySflhc</param-name>
+			<param-value>/WEB-INF/struts-config-gaXySflhc.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyJxPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyJxPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyCqK10</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyCqK10.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyBjSsc</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyBjSsc.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/xyXyft</param-name>
+			<param-value>/WEB-INF/struts-config-gaXyXyft.xml</param-value>
+		</init-param>
+	
+		<!-- cp.gf using 16 -->
+		<init-param>
+			<param-name>config/gfCqSsc</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfCqSsc.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfBjSsc</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfBjSsc.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfXjSsc</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfXjSsc.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfTjSsc</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfTjSsc.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfThree</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfThree.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfFive</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfFive.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfGdPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfGdPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfJxPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfJxPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfShPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfShPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfAhPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfAhPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfSdPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfSdPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfBjPk10</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfBjPk10.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfSfPk10</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfSfPk10.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfSfPk102</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfSfPk102.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfXyFt</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfXyFt.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfJsFt</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfJsFt.xml</param-value>
+		</init-param>
+	
+		<!-- <init-param> <param-name>config/gfjxSsc</param-name> <param-value>/WEB-INF/struts-config-gaGfJxSsc.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfGxPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfGxPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfSxPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfSxPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfBjPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfBjPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfTjPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfTjPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfHebPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfHebPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfNmgPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfNmgPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfLnPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfLnPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfJlPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfJlPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfHljPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfHljPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfJsPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfJsPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfZjPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfZjPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfFjPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfFjPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfHnPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfHnPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfHubPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfHubPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfShxPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfShxPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfGzPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfGzPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfGsPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfGsPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfXjPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfXjPick11.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfYnPick11</param-name> <param-value>/WEB-INF/struts-config-gaGfYnPick11.xml</param-value> 
+			</init-param> -->
+	
+		<init-param>
+			<param-name>config/gfJsK3</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfJsK3.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfAhK3</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfAhK3.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfBjK3</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfBjK3.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfGxK3</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfGxK3.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfHubK3</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfHubK3.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfJxK3</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfJxK3.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfJlK3</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfJlK3.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gfShK3</param-name>
+			<param-value>/WEB-INF/struts-config-gaGfShK3.xml</param-value>
+		</init-param>
+	
+		<init-param>
+			<param-name>config/jc</param-name>
+			<param-value>/WEB-INF/struts-config-jc.xml</param-value>
+		</init-param>
+		<!-- <init-param> <param-name>config/gfFjK3</param-name> <param-value>/WEB-INF/struts-config-gaGfFjK3.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfGzK3</param-name> <param-value>/WEB-INF/struts-config-gaGfGzK3.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfGsK3</param-name> <param-value>/WEB-INF/struts-config-gaGfGsK3.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfHebK3</param-name> <param-value>/WEB-INF/struts-config-gaGfHebK3.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfHnK3</param-name> <param-value>/WEB-INF/struts-config-gaGfHnK3.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfNmgK3</param-name> <param-value>/WEB-INF/struts-config-gaGfNmgK3.xml</param-value> 
+			</init-param> -->
+		<!-- <init-param> <param-name>config/gfDcb</param-name> <param-value>/WEB-INF/struts-config-gaGfDcb.xml</param-value> 
+			</init-param> -->
+		<!-- cp module end -->
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<session-timeout>90</session-timeout>
+	</session-config>
+
+	<taglib>
+		<taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+		<taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+		<taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+		<taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/struts-template.tld</taglib-uri>
+		<taglib-location>/WEB-INF/struts-template.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/struts-tiles.tld</taglib-uri>
+		<taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/struts-nested.tld</taglib-uri>
+		<taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/pager-taglib.tld</taglib-uri>
+		<taglib-location>/WEB-INF/pager-taglib.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/pow2webgui.tld</taglib-uri>
+		<taglib-location>/WEB-INF/pow2webgui.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>/WEB-INF/c.tld</taglib-uri>
+		<taglib-location>/WEB-INF/c.tld</taglib-location>
+	</taglib>
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/content</taglib-uri>
+			<taglib-location>/WEB-INF/tld/content.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	<mime-mapping>
+		<extension>mht</extension>
+		<mime-type>text/x-mht</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+	    <extension>xls</extension>
+	    <mime-type>application/vnd.ms-excel</mime-type>
+	</mime-mapping>
+	<!-- <error-page>
+		<error-code>404</error-code>
+		<location>/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/500.jsp</location>
+	</error-page> -->
+</web-app>
+

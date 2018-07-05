@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- ==================================== Data Sources      -->
+  	<data-sources>
+  	</data-sources>
+
+  	<!-- ==================================== Form Beans        -->
+  	<form-beans>
+  	</form-beans>
+
+  	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+	 	<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+
+  	<!-- ==================================== Action Mappings    -->
+  	<action-mappings>
+  		<action 
+			path="/baseDataManager" 
+    		type="help.base.BaseDataManager" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	/>
+  		<action 
+			path="/userManager" 
+    		type="help.base.UserManager" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	/>
+  		<action 
+			path="/smsManager" 
+    		type="help.sms.SmsManager" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	/>
+    	
+    	<!-- card -->
+    	<action 
+			path="/rechargeManager" 
+    		type="help.card.RechargeManager" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	/>
+    	
+		<!-- cash -->
+    	<action 
+			path="/cashManager" 
+    		type="help.cash.CashManager" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	/>
+		
+		<action 
+    	    path="/fiveManager"
+    	    type="help.fivecolor.FiveManager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 />
+    	 <action 
+    	    path="/ssqManager"
+    	    type="help.ssq.SsqManager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 />
+    	 <action 
+    	    path="/threeManager"
+    	    type="help.three.ThreeManager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 />
+    	 <action 
+    	    path="/jxSscManager"
+    	    type="help.ssc.JxSscManager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 /> 
+    	 
+    	 <action 
+    	    path="/cqSscManager"
+    	    type="help.ssc.CqSscManager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 />  
+
+    	 <action 
+    	    path="/gdPick11Manager"
+    	    type="help.pick11.GdPick11Manager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 />
+		 <action 
+			path="/gxPick11Manager"
+			type="help.pick11.GxPick11Manager"
+			scope="request"
+			parameter="method"
+			validate="false"
+		 />    	 
+    	 <action 
+    	    path="/jxPick11Manager"
+    	    type="help.pick11.JxPick11Manager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 />
+    	 <action 
+    	    path="/sdPick11Manager"
+    	    type="help.pick11.SdPick11Manager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 />
+         <action 
+            path="/sxPick11Manager"
+            type="help.pick11.sxPick11Manager"
+            scope="request"
+            parameter="method"
+            validate="false"
+         />
+    	 <action 
+			path="/bjPick11Manager"
+			type="help.pick11.BjPick11Manager"
+			scope="request"
+			parameter="method"
+			validate="false"
+		 />
+         <action 
+            path="/tjPick11Manager"
+            type="help.pick11.TjPick11Manager"
+            scope="request"
+            parameter="method"
+            validate="false"
+         />
+         <action 
+            path="/hebPick11Manager"
+            type="help.pick11.HebPick11Manager"
+            scope="request"
+            parameter="method"
+            validate="false"
+         />
+         <action 
+            path="/nmgPick11Manager"
+            type="help.pick11.NmgPick11Manager"
+            scope="request"
+            parameter="method"
+            validate="false"
+         />
+         <action 
+            path="/lnPick11Manager"
+            type="help.pick11.LnPick11Manager"
+            scope="request"
+            parameter="method"
+            validate="false"
+         />
+         <action 
+            path="/jlPick11Manager"
+            type="help.pick11.JlPick11Manager"
+            scope="request"
+            parameter="method"
+            validate="false"
+         />
+         <action 
+            path="/hljPick11Manager"
+            type="help.pick11.HljPick11Manager"
+            scope="request"
+            parameter="method"
+            validate="false"
+         />
+		 <!--###-->
+
+
+    	 
+    	 <action 
+    	    path="/jsK3Manager"
+    	    type="help.k3.JsK3Manager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 />
+    	 
+    	 
+
+    </action-mappings>
+</struts-config>

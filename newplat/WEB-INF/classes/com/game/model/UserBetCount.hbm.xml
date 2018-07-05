@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.UserBetCount" table="user_bet_count">
+		<cache usage="read-write" />
+		<id name="countId" type="java.lang.Integer" column="count_id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="11" />
+       <property name="totalMoney" type="java.math.BigDecimal" column="total_money" length="12" />
+       <property name="personStatus" type="java.lang.String" column="person_status" length="1" />
+       <property name="agentStatus" type="java.lang.String" column="agent_status" length="1" />
+       <property name="createTime" type="java.util.Date" column="create_time" />
+       <property name="dateFlag" type="java.lang.Integer" column="date_flag" length="6"/>
+       <property name="agentId" type="java.lang.Integer" column="agent_id" length="11" />
+	</class>
+</hibernate-mapping>

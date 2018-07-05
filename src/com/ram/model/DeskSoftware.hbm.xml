@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.DeskSoftware" 
+    table="desk_software"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="deskSoftwareId"
+        type="java.lang.Integer"
+        column="desk_software_Id"
+        length="8"
+    >
+        <generator class="identity"/>
+    </id>
+
+	<property
+        name="softwareId"
+        type="java.lang.Integer"
+        column="software_Id"
+        length="8"
+    />
+    <property
+        name="snHead"
+        type="java.lang.String"
+        column="sn_head"
+        length="8"
+    />
+    <property
+        name="softwareCode"
+        type="java.lang.String"
+        column="software_code"
+        length="20"
+    />
+    <property
+        name="title"
+        type="java.lang.String"
+        column="title"
+        length="200"
+    />
+   <property
+        name="latestVersion"
+        type="java.lang.String"
+        column="latest_version"
+        length="50"
+    />
+    <property
+        name="updateExec"
+        type="java.lang.String"
+        column="update_exec"
+        length="1"
+    />
+    <property
+        name="trialCount"
+        type="java.lang.Integer"
+        column="trial_count"
+        length="8"
+    />
+    <property
+        name="userDays"
+        type="java.lang.Integer"
+        column="user_days"
+        length="5"
+    />
+    <property
+        name="resourceList"
+        type="java.lang.String"
+        column="resource_list"
+        length="2147483647"
+    />
+    <property
+        name="resourceListAll"
+        type="java.lang.String"
+        column="resource_list_all"
+        length="2147483647"
+    />
+    <property
+        name="resourceList3"
+        type="java.lang.String"
+        column="resource_list3"
+        length="2147483647"
+    />
+    <property
+        name="istrial"
+        type="java.lang.String"
+        column="istrial"
+        length="1"
+    />
+    <property
+        name="isshow"
+        type="java.lang.String"
+        column="isshow"
+        length="1"
+    />
+    <property
+        name="sellprice"
+        type="java.lang.Integer"
+        column="sellprice"
+        length="5"
+    />
+</class>
+</hibernate-mapping>

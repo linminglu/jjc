@@ -1,0 +1,120 @@
+[G][05-31 09:08:25][gfsfpk102] trend count[575ms]
+[G][05-31 09:13:25][gfsfpk102] trend count[383ms]
+[G][05-31 09:18:26][gfsfpk102] trend count[1245ms]
+[G][05-31 09:23:27][gfsfpk102] trend count[2009ms]
+[G][05-31 09:28:25][gfsfpk102] trend count[849ms]
+[G][05-31 09:30:00][gfsfpk102] timer launch .....
+[G][05-31 09:32:47][gfsfpk102] init session[152664ms]
+[G][05-31 09:33:28][gfsfpk102] trend count[3593ms]
+[G][05-31 09:38:30][gfsfpk102] trend count[5356ms]
+[G][05-31 09:43:25][gfsfpk102] trend count[928ms]
+[G][05-31 09:48:26][gfsfpk102] trend count[1434ms]
+[G][05-31 09:53:25][gfsfpk102] trend count[475ms]
+[G][05-31 09:58:25][gfsfpk102] trend count[539ms]
+[G][05-31 10:00:00][gfsfpk102] timer launch .....
+[G][05-31 10:00:12][gfsfpk102] init session[2442ms]
+[G][05-31 10:03:25][gfsfpk102] trend count[501ms]
+[G][05-31 10:08:26][gfsfpk102] trend count[1396ms]
+[G][05-31 10:13:25][gfsfpk102] trend count[484ms]
+[G][05-31 10:18:25][gfsfpk102] trend count[490ms]
+[G][05-31 10:23:26][gfsfpk102] trend count[1143ms]
+[G][05-31 13:58:25][gfsfpk102] trend count[746ms]
+[G][05-31 14:00:00][gfsfpk102] timer launch .....
+[G][05-31 14:00:04][gfsfpk102] init session[1561ms]
+[G][05-31 15:43:27][gfsfpk102] trend count[2170ms]
+[G][05-31 15:48:25][gfsfpk102] trend count[703ms]
+[G][05-31 15:53:28][gfsfpk102] trend count[3282ms]
+[G][05-31 16:00:00][gfsfpk102] timer launch .....
+[G][05-31 16:08:26][gfsfpk102] trend count[1809ms]
+[G][05-31 16:13:25][gfsfpk102] trend count[683ms]
+[G][05-31 16:18:29][gfsfpk102] trend count[4189ms]
+[G][05-31 16:23:30][gfsfpk102] trend count[5049ms]
+[G][05-31 16:29:00][gfsfpk102] trend count[35426ms]
+[G][05-31 16:30:00][gfsfpk102] timer launch .....
+[G][05-31 16:30:12][gfsfpk102] fetching ..... [20180531330],openTime=2018-05-31 16:30:00[1/80]
+[G][05-31 16:30:12][gfsfpk102] RESULTS  _____ [20180531330]=>04,05,03,01,08,06,10,07,09,02
+[G][05-31 16:30:53][gfsfpk102] update trade detail status...20180531311
+[G][05-31 16:30:54][gfsfpk102] init session[35546ms]
+[G][05-31 16:31:04][gfsfpk102] update trade detail status...20180531312
+[G][05-31 16:31:08][gfsfpk102] update trade detail status...20180531313
+[G][05-31 16:31:13][gfsfpk102] update trade detail status...20180531314
+[G][05-31 16:31:18][gfsfpk102] update trade detail status...20180531315
+[G][05-31 16:31:24][gfsfpk102] update trade detail status...20180531316
+[G][05-31 16:31:29][gfsfpk102] update trade detail status...20180531317
+[G][05-31 16:31:33][gfsfpk102] update trade detail status...20180531318
+[G][05-31 16:34:16][gfsfpk102] trend count[51225ms]
+[G][05-31 16:38:25][gfsfpk102] trend count[380ms]
+[G][05-31 16:43:26][gfsfpk102] trend count[1102ms]
+[G][05-31 16:48:25][gfsfpk102] trend count[398ms]
+[G][05-31 16:53:26][gfsfpk102] trend count[1230ms]
+[G][05-31 16:58:31][gfsfpk102] trend count[6491ms]
+[G][05-31 17:00:00][gfsfpk102] timer launch .....
+[G][05-31 17:00:11][gfsfpk102] init session[993ms]
+[G][05-31 17:00:22][gfsfpk102] fetching ..... [20180531340],openTime=2018-05-31 17:00:00[1/80]
+[G][05-31 17:00:23][gfsfpk102] RESULTS  _____ [20180531340]=>07,04,02,03,08,06,05,10,01,09
+[G][05-31 17:00:29][gfsfpk102] update trade detail status...20180531331
+[G][05-31 17:00:38][gfsfpk102] update trade detail status...20180531332
+[G][05-31 17:00:41][gfsfpk102] update trade detail status...20180531333
+[G][05-31 17:00:43][gfsfpk102] update trade detail status...20180531334
+[G][05-31 17:00:44][gfsfpk102] update trade detail status...20180531335
+[G][05-31 17:00:46][gfsfpk102] update trade detail status...20180531336
+[G][05-31 17:00:47][gfsfpk102] update trade detail status...20180531337
+[G][05-31 17:00:49][gfsfpk102] update trade detail status...20180531338
+[G][05-31 17:00:54][gfsfpk102] update trade detail status...20180531339
+[G][05-31 17:00:56][gfsfpk102] update trade detail status...20180531340
+[G][05-31 17:00:58][gfsfpk102] SUCCESS  _^_^_ [20180531340][35456ms]
+[G][05-31 18:23:25][gfsfpk102] trend count[399ms]
+[G][05-31 18:28:25][gfsfpk102] trend count[339ms]
+[G][05-31 18:30:00][gfsfpk102] timer launch .....
+[G][05-31 18:30:02][gfsfpk102] fetching ..... [20180531370],openTime=2018-05-31 18:30:00[1/80]
+[G][05-31 18:30:04][gfsfpk102] init session[645ms]
+[G][05-31 18:30:06][gfsfpk102] fetching ..... [20180531370],openTime=2018-05-31 18:30:00[2/80]
+[G][05-31 18:30:23][gfsfpk102] fetching ..... [20180531370],openTime=2018-05-31 18:30:00[3/80]
+[G][05-31 18:30:23][gfsfpk102] fetching ..... [20180531370],openTime=2018-05-31 18:30:00[4/80]
+[G][05-31 18:30:23][gfsfpk102] RESULTS  _____ [20180531370]=>01,04,10,05,09,07,06,02,08,03
+[G][05-31 18:30:28][gfsfpk102] update trade detail status...20180531351
+[G][05-31 18:30:30][gfsfpk102] update trade detail status...20180531352
+[G][05-31 18:30:32][gfsfpk102] update trade detail status...20180531353
+[G][05-31 18:30:34][gfsfpk102] update trade detail status...20180531354
+[G][05-31 18:30:36][gfsfpk102] update trade detail status...20180531355
+[G][05-31 18:30:37][gfsfpk102] update trade detail status...20180531356
+[G][05-31 18:30:39][gfsfpk102] update trade detail status...20180531357
+[G][05-31 18:30:40][gfsfpk102] update trade detail status...20180531358
+[G][05-31 18:30:42][gfsfpk102] update trade detail status...20180531359
+[G][05-31 18:30:43][gfsfpk102] update trade detail status...20180531360
+[G][05-31 18:30:44][gfsfpk102] update trade detail status...20180531361
+[G][05-31 18:30:46][gfsfpk102] update trade detail status...20180531362
+[G][05-31 18:30:47][gfsfpk102] update trade detail status...20180531363
+[G][05-31 18:30:48][gfsfpk102] update trade detail status...20180531364
+[G][05-31 18:30:49][gfsfpk102] update trade detail status...20180531365
+[G][05-31 18:30:51][gfsfpk102] update trade detail status...20180531366
+[G][05-31 18:30:52][gfsfpk102] update trade detail status...20180531367
+[G][05-31 18:30:54][gfsfpk102] update trade detail status...20180531368
+[G][05-31 18:30:55][gfsfpk102] update trade detail status...20180531369
+[G][05-31 18:30:56][gfsfpk102] update trade detail status...20180531370
+[G][05-31 18:30:57][gfsfpk102] SUCCESS  _^_^_ [20180531370][34027ms]
+[G][05-31 18:33:26][gfsfpk102] trend count[1450ms]
+[G][05-31 18:38:27][gfsfpk102] trend count[2433ms]
+[G][05-31 18:43:25][gfsfpk102] trend count[317ms]
+[G][05-31 18:48:30][gfsfpk102] trend count[5444ms]
+[G][05-31 18:53:26][gfsfpk102] trend count[1040ms]
+[G][05-31 18:58:25][gfsfpk102] trend count[314ms]
+[G][05-31 19:00:00][gfsfpk102] timer launch .....
+[G][05-31 19:00:04][gfsfpk102] init session[588ms]
+[G][05-31 19:00:11][gfsfpk102] fetching ..... [20180531380],openTime=2018-05-31 19:00:00[1/80]
+[G][05-31 19:00:12][gfsfpk102] fetching ..... [20180531380],openTime=2018-05-31 19:00:00[2/80]
+[G][05-31 19:00:17][gfsfpk102] fetching ..... [20180531380],openTime=2018-05-31 19:00:00[3/80]
+[G][05-31 19:00:17][gfsfpk102] RESULTS  _____ [20180531380]=>01,04,09,10,05,06,03,02,07,08
+[G][05-31 19:00:24][gfsfpk102] update trade detail status...20180531371
+[G][05-31 19:00:25][gfsfpk102] update trade detail status...20180531372
+[G][05-31 19:00:27][gfsfpk102] update trade detail status...20180531373
+[G][05-31 19:00:28][gfsfpk102] update trade detail status...20180531374
+[G][05-31 19:00:30][gfsfpk102] update trade detail status...20180531375
+[G][05-31 19:00:31][gfsfpk102] update trade detail status...20180531376
+[G][05-31 19:00:33][gfsfpk102] update trade detail status...20180531377
+[G][05-31 19:00:34][gfsfpk102] update trade detail status...20180531378
+[G][05-31 19:00:36][gfsfpk102] update trade detail status...20180531379
+[G][05-31 19:00:37][gfsfpk102] update trade detail status...20180531380
+[G][05-31 19:00:38][gfsfpk102] SUCCESS  _^_^_ [20180531380][21843ms]
+[G][05-31 19:03:25][gfsfpk102] trend count[368ms]
+[G][05-31 19:08:26][gfsfpk102] trend count[1068ms]

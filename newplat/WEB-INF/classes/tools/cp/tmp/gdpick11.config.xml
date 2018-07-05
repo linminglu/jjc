@@ -1,0 +1,4 @@
+<!-- gdPick11 -->
+					<value>com/pick11/gdpick11/model/GdPick11GaSession.hbm.xml</value>
+					<value>com/pick11/gdpick11/model/GdPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/gdpick11/model/GdPick11GaOmit.hbm.xml</value>

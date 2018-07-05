@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.apps.model.Coupons" 
+    table="coupons"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="id"
+        type="java.lang.Integer"
+        column="id"
+    >
+        <generator class="identity"/>
+    </id>
+     <property
+        name="sum"
+        type="java.math.BigDecimal"
+        column="sum"
+    />
+     <property
+        name="type"
+        type="java.lang.String"
+        column="type"
+        length="1"
+    />
+     <property
+        name="tp"
+        type="java.lang.String"
+        column="tp"
+        length="1"
+    />
+     <property
+        name="sid"
+        type="java.lang.Integer"
+        column="s_id"
+        length="8"
+    />
+     <property
+        name="points"
+        type="java.lang.Integer"
+        column="points"
+        length="8"
+    />
+    <property
+        name="lastSum"
+        type="java.math.BigDecimal"
+        column="last_sum"
+    />
+    <property
+        name="validDate"
+        type="java.util.Date"
+        column="valid_date"
+    />
+    <property
+        name="createDate"
+        type="java.util.Date"
+        column="create_date"
+    />
+    <property
+        name="template"
+        type="java.lang.String"
+        column="template"
+        length="1"
+    />
+    <property
+        name="total"
+        type="java.lang.Integer"
+        column="total"
+        length="8"
+    />
+    <property
+        name="num"
+        type="java.lang.Integer"
+        column="num"
+        length="8"
+    />
+    <property
+        name="remarks"
+        type="java.lang.String"
+        column="remarks"
+        length="500"
+    />
+    <property
+        name="status"
+        type="java.lang.String"
+        column="status"
+        length="1"
+    />
+    <property
+        name="goods"
+        type="java.lang.String"
+        column="goods"
+        length="500"
+    />
+    <property
+        name="joinAward"
+        type="java.lang.String"
+        column="join_award"
+        length="1"
+    />
+    
+</class>
+</hibernate-mapping>

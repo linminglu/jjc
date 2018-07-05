@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="cashDAO" class="com.cash.dao.hibernate.CashDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="cashService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.cash.service.impl.CashServiceImpl">
+	            <property name="cashDAO"><ref local="cashDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+	
+	<bean id="checkoutDAO" class="com.cash.dao.hibernate.CheckoutDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	<bean id="checkoutService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.cash.service.impl.CheckoutServiceImpl">
+	            <property name="checkoutDAO"><ref local="checkoutDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+</beans>

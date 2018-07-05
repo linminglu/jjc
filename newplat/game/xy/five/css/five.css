@@ -1,0 +1,56 @@
+@CHARSET "UTF-8";
+
+#zx0,#zx1,#zx2{display: none;}
+#liangmianpan{}
+
+
+#ming{display: none;}
+#qianerzhixuan{display: none;}
+#houerzhixuan{display: none;}
+#qiansanzhixuan{display: none;}
+#zhongsanzhixuan{display: none;}
+#housanzhixuan{display: none;}
+#qianerzuxuan{display: none;}
+#houerzuxuan{display: none;}
+#qiansanzusan{display: none;}
+#zhongsanzusan{display: none;}
+#housanzusan{display: none;}
+#qiansanzuliu{display: none;}
+#zhongsanzuliu{display: none;}
+#housanzuliu{display: none;}
+#qiansan{display: none;}
+#zhongsan{display: none;}
+#housan{display: none;}
+
+.zoushi-table-box li{padding: 0 1%;}
+#haoma .lattice{width: 16.66666%;}
+#daxiao .lattice{width: 16.66666%;}
+
+#danshuang .lattice{width: 16.66666%;}
+#longhu .lattice{width: 16.66666%;}
+#guanyajun .lattice{width: 20%;}
+
+#topPopover__{width:90px;height:150px;}
+
+.paiming-table .lattice{width: 50%;text-align: left;padding-left: 10px;}
+.zoushi-box .zoushitab-box .zoushi-cell{width:25%;}
+
+.form-box .betting-confirm .con {width: 280px;}
+
+.ga-main .ga-play-tab{height: 46px;}
+.ga-play-tab .ga-plays .ga-play-item {display: inline-block;padding: 11px 20px;width: auto;color: #444;}
+
+.not-data{}
+
+.open-list-box .data-box .he{width: 50%;float: left;border-right: 1px solid #fff;}
+.open-list-box .data-box .data-details .he span{text-align: center;width: 33.33333%;display: block;float: left;}
+.open-list-box .data-box .longhu{width: 50%;float: left;text-align: center;}
+/*<320*/
+@media screen and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 640px) {
+}
+/*>640*/
+@media screen and (min-width: 641px) {
+	.main-content{max-width: 540px;margin: 0 auto;}
+}

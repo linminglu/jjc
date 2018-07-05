@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+<!--
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class
+    name="com.ram.model.UserGroupRl"
+    table="USER_GROUP_RL"
+>
+
+    <id
+        name="userGroupRlId"
+        type="java.lang.Integer"
+        column="USER_GROUP_RL_ID"
+    >
+
+        <generator class="identity"/>
+    </id>
+
+
+    <!-- Associations -->
+
+    <!-- bi-directional many-to-one association to User -->
+    <many-to-one
+        name="user"
+        class="com.ram.model.User"
+        not-null="true"
+    >
+        <column name="USER_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to UserGroup -->
+    <many-to-one
+        name="userGroup"
+        class="com.ram.model.UserGroup"
+        not-null="true"
+		outer-join="true"
+    >
+        <column name="USER_GROUP_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

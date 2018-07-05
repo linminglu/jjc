@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+<!--
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class
+    name="com.ram.model.RoleFunctionRl"
+    table="ROLE_FUNCTION_RL"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="roleFunctionRlId"
+        type="java.lang.Integer"
+        column="ROLE_FUNCTION_RL_ID"
+    >
+
+        <generator class="sequence">
+            <param name="sequence">SEQ_ROLE_FUNCTION_RL</param>
+        </generator>
+    </id>
+
+
+    <!-- Associations -->
+
+    <!-- bi-directional many-to-one association to Function -->
+    <many-to-one
+        name="function"
+        class="com.ram.model.Function"
+        not-null="true"
+    >
+        <column name="FUNCTION_ID" />
+    </many-to-one>
+    <!-- bi-directional one-to-many association to RoleFunctionPermissionRl -->
+    <set
+        name="roleFunctionPermissionRls"
+        lazy="true"
+        inverse="true"
+		cascade="save-update,delete"
+    >
+        <key>
+            <column name="ROLE_FUNCTION_RL_ID" />
+        </key>
+        <one-to-many
+            class="com.ram.model.RoleFunctionPermissionRl"
+        />
+    </set>
+    <!-- bi-directional many-to-one association to Role -->
+    <many-to-one
+        name="role"
+        class="com.ram.model.Role"
+        not-null="true"
+    >
+        <column name="ROLE_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

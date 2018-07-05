@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.StudentFamilyInfo" 
+    table="STUDENT_FAMILY_INFO"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="studentFamilyInfoId"
+        type="java.lang.Integer"
+        column="STUDENT_FAMILY_INFO_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_STUDENT_FAMILY_INFO</param>
+        </generator>
+    </id>
+
+    <property
+        name="learnerId"
+        type="java.lang.Integer"
+        column="LEARNER_ID"
+        length="8"
+    />
+    <property
+        name="name"
+        type="java.lang.String"
+        column="NAME"
+        length="30"
+    />
+    <property
+        name="relation"
+        type="java.lang.String"
+        column="RELATION"
+        length="20"
+    />
+    <property
+        name="workUnit"
+        type="java.lang.String"
+        column="WORK_UNIT"
+        length="200"
+    />
+    <property
+        name="position"
+        type="java.lang.String"
+        column="POSITION"
+        length="50"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

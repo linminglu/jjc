@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.apps.model.Type" 
+    table="type"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="tid"
+        type="java.lang.Integer"
+        column="t_id"
+    >
+        <generator class="identity"/>
+    </id>
+
+    <property
+        name="title"
+        type="java.lang.String"
+        column="title"
+        length="200"
+    />
+     <property
+        name="status"
+        type="java.lang.String"
+        column="status"
+        length="1"
+    />
+    <property
+        name="img"
+        type="java.lang.String"
+        column="img"
+        length="200"
+    />
+    <property
+        name="sort"
+        type="java.lang.String"
+        column="sort"
+        length="2"
+    />
+    <property
+        name="isMore"
+        type="java.lang.String" 
+        column="is_more"
+        length="1"
+    />
+    <property
+        name="parentId"
+        type="java.lang.Integer" 
+        column="parent_id"
+        length="1"
+    />
+    <property
+        name="type"
+        type="java.lang.String" 
+        column="type"
+        length="1"
+    />
+    <property
+        name="position"
+        type="java.lang.String" 
+        column="position"
+        length="1"
+    />
+     <property
+        name="score"
+        type="java.math.BigDecimal"
+        column="score"
+    />
+    <property
+        name="isShow"
+        type="java.lang.String" 
+        column="is_show"
+        length="1"
+    />
+    <property
+        name="template"
+        type="java.lang.String" 
+        column="template"
+        length="1"
+    />
+ 	
+</class>
+</hibernate-mapping>

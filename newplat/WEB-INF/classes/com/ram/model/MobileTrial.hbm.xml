@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.MobileTrial" 
+    table="mobile_trial"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="mobileTrialId"
+        type="java.lang.Integer"
+        column="mobile_trial_id"
+        length="8"
+    >
+        <generator class="identity"/>
+    </id>
+
+	<property
+        name="softwareId"
+        type="java.lang.Integer"
+        column="software_id"
+        length="8"
+    />
+    <property
+        name="softwareCode"
+        type="java.lang.String"
+        column="software_code"
+        length="20"
+    />
+   <property
+        name="userMac"
+        type="java.lang.String"
+        column="user_mac"
+        length="2000"
+    />
+    <property
+        name="userIp"
+        type="java.lang.String"
+        column="user_ip"
+        length="50"
+    />
+    <property
+        name="launchCount"
+        type="java.lang.Integer"
+        column="launch_count"
+        length="8"
+    />
+    <property
+        name="lastTime"
+        type="java.util.Date"
+        column="last_time"
+        length="7"
+    />
+    <property
+        name="firstTime"
+        type="java.util.Date"
+        column="first_time"
+        length="7"
+    />
+    <property
+        name="usestatus"
+        type="java.lang.String"
+        column="usestatus"
+        length="5"
+    />
+    <property
+        name="vers"
+        type="java.lang.String"
+        column="vers"
+        length="16"
+    />
+</class>
+</hibernate-mapping>

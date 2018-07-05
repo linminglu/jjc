@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.apps.model.SysOption" table="sys_option">
+		<cache usage="read-write" />
+		<id name="optionId" type="java.lang.Integer" column="option_id">
+			<generator class="identity" />
+		</id>
+       <property name="optionType" type="java.lang.String" column="option_type" length="2" />
+       <property name="optionTitle" type="java.lang.String" column="option_title" length="50" />
+       <property name="points" type="java.math.BigDecimal" column="points" length="12" />
+       <property name="unitType" type="java.lang.String" column="unit_type" length="1" />
+       <property name="content" type="java.lang.String" column="content" length="500" />
+	</class>
+</hibernate-mapping>

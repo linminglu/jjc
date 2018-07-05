@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="jcDAO" class="com.jc.dao.hibernate.JcDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="jcService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.jc.service.impl.JcServiceImpl">
+	            <property name="jcDAO"><ref local="jcDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>	            
+	        </bean>
+	    </property>
+	</bean>
+	
+	<!-- 初始化 -->
+	<bean name="updateJingcaiOddsJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.jc.service.impl.UpdateJingcaiOdds</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="jcService"><ref bean="jcService" /></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 初始化时间 -->
+    <bean id="updateJingcaiOdds" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="updateJingcaiOddsJob" />
+		</property>
+		<!-- 每隔一小时执行一次-->
+		<property name="cronExpression">
+			<value>0 0 */1 * * ?</value>  
+<!-- 			 <value>0 0/5 * * * ?</value>   -->
+		</property>
+	</bean>
+	
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="updateJingcaiOdds"/>
+			</list>
+		</property>
+	</bean>
+</beans>

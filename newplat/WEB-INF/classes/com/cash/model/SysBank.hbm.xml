@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.cash.model.SysBank" table="sys_bank">
+		<cache usage="read-write" />
+		<id name="bankId" type="java.lang.Integer" column="bank_id">
+			<generator class="identity" />
+		</id>
+       <property name="bankName" type="java.lang.String" column="bank_name" length="50" />
+       <property name="status" type="java.lang.String" column="status" length="1" />
+       <property name="bankAccount" type="java.lang.String" column="bank_account" length="20"/>
+       <property name="userName" type="java.lang.String" column="user_name" length="50"/>
+       <property name="country" type="java.lang.String" column="country" length="50"/>
+       <property name="bankBranch" type="java.lang.String" column="bank_branch" length="50"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="bjSscDAO" class="com.xy.ssc.bjssc.dao.hibernate.BjSscDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="bjSscService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.ssc.bjssc.service.impl.BjSscServiceImpl">
+	            <property name="bjSscDAO"><ref local="bjSscDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化 -->
+	<bean name="initBjSscSessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.ssc.bjssc.service.impl.InitBjSscSession</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bjSscService"><ref bean="bjSscService" /></entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="initBjSscSession" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initBjSscSessionJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 20 3 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchBjSscResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.ssc.bjssc.service.impl.FetchBjSscResult</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bjSscService"><ref bean="bjSscService" /></entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="fetchBjSscResult1" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchBjSscResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/5 0-1 * * ?</value>
+		</property>
+	</bean>
+	<!-- 定时抓去数据 -->
+    <bean id="fetchBjSscResult" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchBjSscResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/5 09-23 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initBjSscSession" />
+				<ref local="fetchBjSscResult"/>
+				<ref local="fetchBjSscResult1"/>
+			</list>
+		</property>
+	</bean>
+</beans>

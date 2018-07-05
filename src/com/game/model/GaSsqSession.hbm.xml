@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaSsqSession" table="ga_ssq_session">
+		<cache usage="read-write" />
+		<id name="sessionId" type="java.lang.Integer" column="session_id">
+			<generator class="identity" />
+		</id>
+       <property name="sessionNo" type="java.lang.String" column="session_no" length="10" />
+       <property name="sessionYear" type="java.lang.Integer" column="session_year" length="4" />
+       <property name="startTime" type="java.util.Date" column="start_time" />
+       <property name="endTime" type="java.util.Date" column="end_time" />
+       <property name="openStatus" type="java.lang.String" column="open_status" length="1" />
+       <property name="openResult" type="java.lang.String" column="open_result" length="25" />
+       <property name="redBall" type="java.lang.String" column="red_ball" length="20" />
+       <property name="blueBall" type="java.lang.String" column="blue_ball" length="5" />
+       <property name="firstLever" type="java.math.BigDecimal" column="first_lever" length="17" />
+       <property name="secondLever" type="java.math.BigDecimal" column="second_lever" length="17" />
+       <property name="openTime" type="java.util.Date" column="open_time" />
+       <property name="userCount" type="java.lang.Integer" column="user_count" length="8" />
+       <property name="pointCount" type="java.lang.Integer" column="point_count" length="8" />
+       <property name="sessionCash" type="java.lang.Integer" column="session_cash" length="8" />
+	</class>
+</hibernate-mapping>

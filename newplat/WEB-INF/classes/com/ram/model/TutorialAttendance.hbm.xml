@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.TutorialAttendance" 
+    table="TUTORIAL_ATTENDANCE"
+>
+
+    <id
+        name="tutorialAttendanceId"
+        type="java.lang.Integer"
+        column="TUTORIAL_ATTENDANCE_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_TUTORIAL_ATTENDAN</param>
+        </generator>
+    </id>
+
+    <property
+        name="learnerId"
+        type="java.lang.Integer"
+        column="LEARNER_ID"
+        length="8"
+    />
+    <property
+        name="learnerName"
+        type="java.lang.String"
+        column="LEARNER_NAME"
+        length="20"
+    />
+    <property
+        name="isAttended"
+        type="java.lang.String"
+        column="IS_ATTENDED"
+        length="1"
+    />
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="updateDateTime"
+        type="java.sql.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to TcPresentTech -->
+    <many-to-one
+        name="tutorialTcSchedule"
+        class="com.ram.model.TutorialTcSchedule"
+        not-null="true"
+    >
+        <column name="TUTORIAL_TC_SCHEDULE_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

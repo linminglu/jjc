@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="gfJxPick11DAO" class="com.gf.pick11.jxpick11.dao.hibernate.JxPick11DAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="gfJxPick11Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.gf.pick11.jxpick11.service.impl.JxPick11ServiceImpl">
+	            <property name="gfJxPick11DAO"><ref local="gfJxPick11DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	             <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+
+	<!-- 初始化期号-->
+	<bean name="initGfJxPick11SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.pick11.jxpick11.service.impl.InitJxPick11Session</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfJxPick11Service"><ref bean="gfJxPick11Service" /></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="initGfJxPick11Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initGfJxPick11SessionJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchGfJxPick11ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.pick11.jxpick11.service.impl.FetchJxPick11Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfJxPick11Service"><ref bean="gfJxPick11Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+	<bean id="fetchGfJxPick11Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfJxPick11ResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>32 0/10 9-23 * * ?</value>
+		</property>
+	</bean>
+	
+    <!-- 更新冷热排行榜 -->
+    <bean name="updateGfJxPick11GaTrendJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+        <property name="jobClass">
+            <value>com.gf.pick11.jxpick11.service.impl.UpdateJxPick11GaTrend</value>
+        </property>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="gfJxPick11Service"><ref bean="gfJxPick11Service"/></entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="updateGfJxPick11GaTrend" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail">
+            <ref bean="updateGfJxPick11GaTrendJob"/>
+        </property>
+        <property name="cronExpression">
+            <value>32 9/10 9-23 * * ?</value>
+        </property>
+    </bean>
+		
+   <!-- 更新每期遗漏数据 -->
+	<bean name="fetchGfJxPick11OmitJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.pick11.jxpick11.service.impl.UpdateJxPick11GaOmit</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfJxPick11Service"><ref bean="gfJxPick11Service" /></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="fetchGfJxPick11Omit" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfJxPick11OmitJob" />
+		</property>
+		<!--  每天的x点到x点间隔多少分钟抓取数据 这里是9点到23点，每隔10分钟抓取数据 -->
+		<property name="cronExpression">
+			<value>32 2/10 9-23 * * ?</value>
+		</property>
+	</bean>
+		
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initGfJxPick11Session" />
+				<ref local="fetchGfJxPick11Result"/>
+				<ref local="updateGfJxPick11GaTrend" />
+				<ref local="fetchGfJxPick11Omit"/>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{#site.title#}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no" >
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/b.min.js?v=hp2018052805"></script>
+<script type="text/javascript" src="js/h.min.js?v=hp2018052805"></script>
+<link type="text/css" rel="stylesheet" href="css/h.min.css?v=hp2018052805"/>
+<script type="text/javascript">
+$(function(){
+	indexObj.init();
+	if($(".notice-box span")[2].innerText.length>8){
+		$($(".notice-box span")[2]).css("fontSize","15px");
+	}
+	
+	//$("img.lazy").lazyload({effect:"fadeIn"});
+	$(".g-slide-home").css("height",$(".g-slide-home").width()*0.31);
+
+	$(".g-reg-abtn").bind("tap",function(){indexObj.regcc();});
+	//$(".g-reg-abtn").attr("href","javascript:void(0)");
+	$(".g-login-abtn").bind("tap",function(){indexObj.login();});
+	$(".g-sign-abtn").bind("tap",function(){indexObj.signame();});
+	$(".g-recharge-abtn").bind("tap",function(){indexObj.recharge();});
+	move.updateHelper();
+	//tab and group init
+	$("#gfxyTaber ul li").bind("click",function(){
+		var curObj = $(this);
+		curObj.addClass("mui-active");
+		$("#gfxyTaber ul li").each(function(){
+			if($(this).attr("data")!=curObj.attr("data")) $(this).removeClass("mui-active");
+		});
+		if(curObj.attr("data")=="xy"){
+			$($(".tab-group-item")[1]).fadeOut(0);
+			$($(".tab-group-item")[0]).fadeIn(200);
+		}else{
+			$($(".tab-group-item")[0]).fadeOut(0);
+			$($(".tab-group-item")[1]).fadeIn(200);
+		}
+	});
+
+});
+</script>
+</head>       
+<body>
+<div class="ga-view ga-view-home">
+	<div class="noticer">
+		<div class="notice-box">
+			<span class="money-symbol">&yen;</span>
+			<span class="money" id="userMoney">0.00</span>
+			<p>{#site.name#}</p>
+			<span>{#site.domain#}</span>
+		</div>
+	</div>
+	<div class="main-content main-home">
+
+		<div id="slider" class="mui-slider g-slide-home"></div>
+		
+		<div class="login-quick-box">
+			<span class="linkcolumn">
+				<a class="g-login-abtn">登录</a>
+			</span>
+			<span class="linkcolumn">
+				<a class="g-reg-abtn" href="register.html">注册</a>
+			</span>
+			<span class="linkcolumn">
+				<a class="g-sign-abtn">签到</a>
+			</span>
+			<span class="linkcolumn">
+				<a class="g-kefu-abtn">客服</a>
+			</span>
+		</div>
+
+		<div class="mui-content menu-box" id="column">
+		  	<ul class="mui-table-view mui-grid-view mui-grid-9">
+		  		<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+		  			<a class="g-recharge-abtn">
+			        	<span class="mui-icon">
+			        		<img src="images/icon-column-1.png">
+			        	</span>
+			            <div class="mui-media-body">存取款</div>
+			       	</a>
+			    </li>
+		  		<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+		  			<a href="promotionList.html">
+			        	<span class="mui-icon">
+			        		<img src="images/icon-column-2.png">
+			        	</span>
+			            <div class="mui-media-body">优惠活动</div>
+			       	</a>
+			    </li>
+		  		<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+		  			<a href="zoushi.html">
+			        	<span class="mui-icon">
+			        		<img src="images/icon-column-3.png">
+			        	</span>
+			            <div class="mui-media-body">走势</div>
+			       	</a>
+			    </li>
+		  		<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+		  			<a class="g-appdown-abtn">
+			        	<span class="mui-icon">
+			        		<img src="images/icon-column-5.png">
+			        	</span>
+			            <div class="mui-media-body">APP下载</div>
+			       	</a>
+			    </li>
+		  	</ul> 
+		</div>
+		
+		<div class="topline-box " id="topline">
+			<div class="smarticker1 smarticktemp">
+				<ul></ul>
+			</div>
+		</div>
+			
+		<div class="mui-slider caizhong-box">
+			<div class="title-index"><span class="ico"></span>彩种
+				<div class="btnlablebox">
+				<span class="btnlable" id="redpack" style="display: inline;">红包</span>
+				<span class="btnlable" id="turntable" style="display: inline;">转盘</span>
+				</div>
+			</div>
+			<div class="tab-switch-box tab-home" id="gfxyTaber">
+				<ul>
+					<li class="tab-switch-cell mui-col-2 mui-active" data="xy">信用彩票</li>
+					<li class="tab-switch-cell mui-col-2" data="gf">官方彩票</li>
+				</ul>
+			</div>
+			<div class="tab-group" id="gfxyTabGroup">
+				<div class="tab-group-item" data="xy">
+					<ul class="mui-table-view" id="xy-bet-list">{#xyList#}</ul>
+				</div>
+				<div class="tab-group-item" data="gf" style="display:none;">
+					<ul class="mui-table-view" id="gf-bet-list">{#gfList#}</ul>
+				</div>
+			</div>
+		</div>
+				
+		<div class="winlist-box">
+			<div class="title-index"><span class="ico"></span>最新中奖</div>
+			<ul class="winlist-data-box smarticker1" id="winlistdatabox">
+			</ul>
+		</div>
+		<div class="greyline"></div>
+		<div class="short-bottom">
+			<span><a>如何充值</a></span>
+			<span><a>如何提款</a></span>
+			<span><a>安全保障</a></span>
+			<span><a>代理赚钱</a></span>
+		</div>
+		
+		<div class="logo-bottom">
+			<a href="#"><img src="../images/pg/pg_gray.png"></a>
+		</div>
+	</div>
+	<div class="nav-box">
+		<nav class="mui-bar mui-bar-tab" id="mui-bar">
+			<a class="mui-bar-item mui-active" href="javascript:baseObj.openIndex();">
+				<span class="mui-icon mui-img-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-bar-item" href="javascript:baseObj.xiazhu();" >
+				<span class="mui-icon mui-img-xiazhu"></span>
+				<span class="mui-tab-label">下注</span>
+			</a>
+			<a class="mui-bar-item" href="javascript:baseObj.open();">
+				<span class="mui-icon mui-img-open">
+				</span>
+				<span class="mui-tab-label">开奖</span>
+			</a>
+			<a class="mui-bar-item" href="javascript:baseObj.openMe();">
+				<span class="mui-icon mui-img-me"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</div>
+</div>
+</body>
+</html>

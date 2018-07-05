@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaSsqBet" table="ga_ssq_bet">
+		<cache usage="read-write" />
+		<id name="betId" type="java.lang.Integer" column="bet_id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="8" />
+       <property name="sessionId" type="java.lang.Integer" column="session_id" length="11" />
+       <property name="totalNum" type="java.lang.Integer" column="total_num" length="3" />
+       <property name="totalPoint" type="java.math.BigDecimal" column="total_point" length="10" />
+       <property name="winCash" type="java.math.BigDecimal" column="win_cash" length="10" />
+       <property name="betTime" type="java.util.Date" column="bet_time" />
+       <property name="redBall" type="java.lang.String" column="red_ball" length="100" />
+       <property name="blueBall" type="java.lang.String" column="blue_ball" length="60" />
+       <property name="redBile" type="java.lang.String" column="red_bile" length="50" />
+       <property name="openStatus" type="java.lang.String" column="open_status" length="1" />
+       <property name="betType" type="java.lang.String" column="bet_type" length="1" />
+       <property name="multiple" type="java.lang.Integer" column="multiple" length="8" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaBetSponsor" table="ga_bet_sponsor">
+		<cache usage="read-write" />
+		<id name="jointId" type="java.lang.Integer" column="joint_id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="8" />
+       <property name="orderNum" type="java.lang.String" column="order_num" length="50" />
+       <property name="sessionId" type="java.lang.Integer" column="session_id" length="11" />
+       <property name="betTime" type="java.util.Date" column="bet_time" />
+       <property name="money" type="java.math.BigDecimal" column="money" length="50" />
+       <property name="schedule" type="java.math.BigDecimal" column="schedule" length="10" />
+       <property name="num" type="java.lang.Integer" column="num" length="8" />
+       <property name="betNum" type="java.lang.Integer" column="bet_num" length="8" />
+       <property name="restNum" type="java.lang.Integer" column="rest_num" length="8" />
+       <property name="guaranteedNum" type="java.lang.Integer" column="guaranteed_num" length="8" />
+       <property name="winResult" type="java.lang.String" column="win_result" length="1" />
+       <property name="isGuarantee" type="java.lang.String" column="is_guarantee" length="1" />
+       <property name="winCash" type="java.math.BigDecimal" column="win_cash" length="10" />
+       <property name="betFlag" type="java.lang.String" column="bet_flag" length="1" />
+       <property name="gameName" type="java.lang.String" column="game_name" length="20" />
+       <property name="gameType" type="java.lang.String" column="game_type" length="20" />
+       <property name="sessionNo" type="java.lang.String" column="session_no" length="20" />
+       <property name="multiple" type="java.lang.Integer" column="multiple" length="8" />
+       <property name="betType" type="java.lang.String" column="bet_type" length="2" />
+       <property name="isAddNo" type="java.lang.String" column="is_add_no" length="2" />
+       <property name="isWinStop" type="java.lang.String" column="is_win_stop" length="2" />
+       <property name="batchNum" type="java.lang.String" column="batch_num" length="10" />
+       <property name="isPrivacy" type="java.lang.String" column="is_privacy" length="2" />
+       <property name="openResult" type="java.lang.String" column="open_result" length="11" />
+       <property name="openTime" type="java.util.Date" column="open_time" />
+       <property name="winPoint" type="java.math.BigDecimal" column="win_Point" length="10" />
+       <property name="guaranteedMoney" type="java.math.BigDecimal" column="guaranteed_money" length="10" />
+       <property name="preMoney" type="java.math.BigDecimal" column="pre_money" length="10" />
+	</class>
+</hibernate-mapping>

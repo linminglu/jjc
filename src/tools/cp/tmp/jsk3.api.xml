@@ -1,0 +1,7 @@
+<action 
+    	    path="/jsK3Manager"
+    	    type="help.k3.JsK3Manager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 />

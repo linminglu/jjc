@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+<!--
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class
+    name="com.ram.model.Permission"
+    table="PERMISSION"
+	lazy="false"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="permissionId"
+        type="java.lang.Integer"
+        column="PERMISSION_ID"
+    >
+
+        <generator class="sequence">
+            <param name="sequence">SEQ_PERMISSION</param>
+        </generator>
+    </id>
+
+    <property
+        name="permissionTitle"
+        type="java.lang.String"
+        column="PERMISSION_TITLE"
+        length="2"
+    />
+    <property
+        name="permissionValue"
+        type="java.lang.String"
+        column="PERMISSION_VALUE"
+        length="2"
+    />
+
+    <!-- bi-directional one-to-many association to RoleFunctionPermissionRl -->
+    <set
+        name="roleFunctionPermissionRls"
+        lazy="true"
+        inverse="true"
+		cascade="save-update,delete"
+		order-by="PERMISSION_ID asc"
+    >
+        <key>
+            <column name="PERMISSION_ID" />
+        </key>
+		
+        <one-to-many
+            class="com.ram.model.RoleFunctionPermissionRl"
+        />
+    </set>
+	
+    <!-- bi-directional one-to-many association to RoleFunctionPermissionRl -->
+    <set
+        name="rolePermissionRls"
+        lazy="true"
+        inverse="true"
+		cascade="save-update,delete"
+		order-by="PERMISSION_ID asc"
+    >
+        <key>
+            <column name="PERMISSION_ID" />
+        </key>
+		
+
+        <one-to-many
+            class="com.ram.model.RolePermissionRl"
+        />
+    </set>	
+</class>
+</hibernate-mapping>

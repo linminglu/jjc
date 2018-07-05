@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.card.model.CardRechargeItem" 
+    table="card_recharge_item"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="itemId"
+        type="java.lang.Integer"
+        column="item_id"
+    >
+        <generator class="identity"/>
+    </id>
+    
+        <property
+        name="title"
+        type="java.lang.String"
+        column="title"
+    />
+   <property
+        name="parValue"
+        type="java.math.BigDecimal"
+        column="par_value"
+        length="8"
+    />
+    <property
+        name="price"
+        type="java.math.BigDecimal"
+        column="price"
+        length="8"
+    />
+	        <property
+        name="status"
+        type="java.lang.String"
+        column="status"
+    />
+	
+</class>
+</hibernate-mapping>

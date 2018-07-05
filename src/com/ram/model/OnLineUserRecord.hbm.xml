@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.OnLineUserRecord" 
+    table="ONLINE_USER_RECORD"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="onlineUserRecordID"
+        type="java.lang.Integer"
+        column="ONLINE_USER_RECORD_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_ONLINE_USER_RECORD</param>
+        </generator>
+    </id>
+
+    <property
+        name="serverName"
+        type="java.lang.String"
+        column="SERVER_NAME"
+        length="30"
+    />
+    <property
+        name="userRecordNumber"
+        type="java.lang.Integer"
+        column="USER_RECORD_NUMBER"
+        length="8"
+    />
+    <property
+        name="recordTime"
+        type="java.util.Date"
+        column="RECORD_TIME"
+        length="8"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

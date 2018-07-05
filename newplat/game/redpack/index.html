@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content=""> 
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/mui/mui.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/loaders.css" />
+<script type="text/javascript" src="../js/move.js"></script>
+<script type="text/javascript" src="../js/rotaryDraw.js"></script>
+<script type="text/javascript" src="../js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="../js/components/mode-ecb.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/mui/mui.min.css">
+<link type="text/css" rel="stylesheet" href="../css/base.css" />
+<title>红包抽奖</title>
+<script type="text/javascript">
+move.hideHeader();
+
+$(document).ready(function(){
+	$('.main-content').height($(window).height());
+});
+</script>
+<style>
+body{
+	background: url("images/bg_body_red_packet.png") no-repeat #b70a01;
+	background-size:100% ;  
+}
+
+/*<320*/
+@media screen and (max-width: 320px) {
+
+}
+@media screen and (min-width: 321px) and (max-width: 380px) {
+}
+@media screen and (min-width: 381px) and (max-width: 420px) {
+}
+/*>640*/
+@media screen and (min-width: 641px) {
+	.main-content{max-width: 540px;margin: 0 auto;}
+}
+
+.btn-receive{position: absolute;bottom: 50px;width: 80%;background-color: #7C4CFA;height: 48px;line-height: 48px;text-align: center;border-radius:24px;left: 10%;color: #fff;font-size: 16px;}
+.mask2{position: fixed;z-index: 98;background-color: #666;opacity: 0.8;width: 100%;height: 100%;display: none;}
+#succ{background: url("images/red_img_01.png") no-repeat;background-size:100% ;z-index: 99;width: 80%;position: absolute;left: 10%;top: 25%;height: 40%;display: none;}
+#succ .explain{position: absolute;top: 55%;color: #fff;z-index: 100;text-align: center;display: block;width: 90%;}
+#succ .explain #money{color: #FADA2D;}
+#succ .btn-re{width: 40%;position: absolute;left: 28%;background-color: #FDD92B;color: #fff;border-radius:24px;height: 30px;line-height: 30px;text-align: center;top: 70%;}
+
+#fail{background: url("images/red_img_02.png") no-repeat;background-size:100% ;z-index: 99;width: 80%;position: absolute;left: 10%;top: 25%;height: 40%;display: none;}
+#fail .explain{position: absolute;top: 80%;color: #fff;z-index: 100;text-align: center;display: block;width: 90%;}
+#fail .btn-re{width: 40%;position: absolute;left: 25%;background-color: #FDD92B;color: #fff;border-radius:24px;height: 30px;line-height: 30px;text-align: center;top: 110%;}
+</style>
+</head>
+<body>
+<div class="main-content" style="background:none;">
+	<header class="mui-bar mui-bar-nav">
+		<a class=" mui-icon mui-icon-left-nav mui-pull-left" href="../"></a>
+		<h1 class="mui-title">红包抽奖</h1>
+	</header>
+	<div class="margin-top-header"></div>
+	
+	<div class="btn-receive">
+		立即领取
+	</div>
+	<div class="mask2"></div>
+	<div id="succ">
+		<span class="explain">恭喜您获得<span id="money"></span>元红包</span>
+		<span class="btn-re">立即领取</span>
+	</div>
+	<div id="fail">
+		<span class="explain"></span>
+		<span class="btn-re">关闭</span>
+	</div>
+</div>
+<script type="text/javascript">
+$(".btn-receive").bind("click", function(){
+	indexObj.receiveRed();
+});
+$("#succ .btn-re").bind("click", function(){
+	$('.mask2').hide();
+	$('#succ').hide();
+});
+$("#fail .btn-re").bind("click", function(){
+	$('.mask2').hide();
+	$('#fail').hide();
+});
+</script>
+</body>
+</html>

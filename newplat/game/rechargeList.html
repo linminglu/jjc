@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/b.min.js?v=hp2018052805"></script>
+<script type="text/javascript" src="js/h.min.js?v=hp2018052805"></script>
+<link type="text/css" rel="stylesheet" href="css/h.min.css?v=hp2018052805"/>
+<title>充值记录</title>
+<script type="text/javascript">
+move.width=$(window).width();
+$(document).ready(function(){
+	move.hideHeader();
+});
+</script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav ">
+		<a class="mui-icon mui-icon-left-nav mui-pull-left" href="me.html"></a>
+		<h1 class="mui-title">充值记录</h1>
+	</header>
+<div class="main-content main-content-view">
+	<div id="content" class="list-box mui-scroll-wrapper bxs-pages">
+		<div class="mui-scroll">
+			<ul class="recharge-list-box" id="dataList">
+			</ul>
+		</div>
+	</div>
+	<div class="not-data">
+		<img src="images/empty.png">
+		<p class="not-data-lable">没有找到数据</p>
+	</div>
+</div>
+<script type="text/javascript">
+mui.init({
+	  pullRefresh : {
+	    container:'#content',
+	    up : {
+	      height:100,
+	      auto:true,
+	      callback: meObj.rechargeDetail
+	    }
+	  }
+});
+mui.ready(function() {
+	if (mui.os.plus) {
+		mui.plusReady(function() {
+			setTimeout(function() {
+				mui('#content').pullRefresh().pullupLoading();
+			}, 1000);
+		});
+	} else {
+		mui.ready(function() {
+			mui('#content').pullRefresh().pullupLoading();
+		});
+	}
+});
+</script>
+</body>
+</html>

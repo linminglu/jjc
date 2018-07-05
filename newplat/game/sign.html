@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content=""> 
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/mui/mui.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css/loaders.css" />
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="js/rotaryDraw.js"></script>
+<script type="text/javascript" src="js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="js/components/mode-ecb.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<link type="text/css" rel="stylesheet" href="css/mui/mui.min.css">
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<title>签到</title>
+<script type="text/javascript">
+move.hideHeader();
+$(document).ready(function(){
+	$('.main-content').height($(window).height());
+	indexObj.chkSign();
+});
+</script>
+<style>
+body{
+	background: url("images/sgininimg_bg.jpg") no-repeat #ee3717;
+	background-size:100% ;  
+}
+
+.signimg{display: none;} 
+.signbox{width: 80px;margin: 90px auto; }
+.signbox img{width: 100%;}
+
+/*<320*/
+@media screen and (max-width: 320px) {
+
+}
+@media screen and (min-width: 321px) and (max-width: 380px) {
+}
+@media screen and (min-width: 381px) and (max-width: 420px) {
+}
+/*>640*/
+@media screen and (min-width: 641px) {
+	.main-content{max-width: 540px;margin: 0 auto;}
+}
+
+</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">签到</h1>
+	</header>
+<div class="main-content" style="background:none;">
+	
+	<div class="signbox">
+		<div class="notsign signimg">
+			<img alt="" src="images/sginin_not.png">
+		</div>
+		<div class="succsign signimg" >
+			<img alt="" src="images/sginin_succ.png">
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+</script>
+</body>
+</html>

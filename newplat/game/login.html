@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/mui/mui.min.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="js/store.min.js"></script>
+<script type="text/javascript" src="js/md5.js"></script>
+<script type="text/javascript" src="js/me.js"></script>
+<script type="text/javascript" src="js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="js/components/mode-ecb.js"></script>
+<link type="text/css" rel="stylesheet" href="css/mui/mui.min.css" />
+<link type="text/css" rel="stylesheet" href="css/login.css" />
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<title>登录</title>
+<script type="text/javascript">
+var timer=null;
+function login(){
+	var phone=$('#phone').val().trim();
+	var pwd=$('#pwd').val().trim();
+	var myreg = /^((1[0-9]{2})+\d{8})$/; 
+	/* if(!myreg.test(phone)) { 
+	    mui.alert('请输入有效的手机号码！',document.title, function() {});
+	    return false; 
+	} */
+	if(phone=='') {
+	    mui.alert('请输入手机号码！',document.title, function() {});
+	    return false; 
+	}
+	if(pwd=='') {
+	    mui.alert('请输入密码！',document.title, function() {});
+	    return false; 
+	}
+	console.log("pwd::"+hex_md5(pwd).toUpperCase());
+	var map = {};
+	map['loginName'] = phone;
+	map['password'] = hex_md5(pwd).toUpperCase();
+	map['machineType'] = '3';
+	var mw=baseObj.mw(map);
+	$.ajax({
+		type: "POST",
+		url:move.login,
+		dataType:'json',
+		data:{
+			mw:mw
+		},  
+		success: function(ret){
+			var code=ret.code;
+			console.log("code::"+code);
+			if(code=='200'){
+				mui.toast('登录成功',{
+					duration:'long',
+					type:'div' 
+				});
+				var result=ret.data;
+				var obj=result.obj;
+				var memberId=result.memberId;
+				var logo=obj.logo;
+				var uid=obj.uid;
+				var u=obj.u;
+				var loginName=obj.loginName;
+				var cellPhone=obj.cellPhone;
+				var username=obj.userName;
+				var money=obj.money;
+				var point=obj.point;
+				var userType=obj.userType;
+				user.init(uid,u,'',logo,cellPhone,loginName,username,money,point,userType);
+				user.set(move.user);
+				baseObj.openIndex();
+			}else{
+				mui.toast('登录失败',{
+					duration:'long',
+					type:'div' 
+				});
+			}
+		},
+		error: function (jqXHR, textStatus, errorThrown) {
+		}
+	});
+}
+$(document).ready(function(){
+	$("#loginbtn").bind("click",function(){login();});
+	$("#guestReg").bind("click", function(){
+		meObj.guestReg();
+	});
+	move.hideHeader();
+});
+</script>
+</head>
+<body>
+<div class="ga-view">
+	<header class="mui-bar mui-bar-nav">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">登录</h1>
+	</header>
+	<div class="main-content main-content-view">
+	<div id="regnewbox">
+	</div>
+	<div class="login-head-box">
+		<img alt="" src="/file_upload/static/login_bg.png">
+	</div>
+	<div class="login-form">
+		<input type="tel" placeholder="请输入手机号/ID号" id="phone" class="login-input" maxlength="11"/> 
+		<p class="line-grey"></p>
+		<input type="password" placeholder="请输入密码" id="pwd" class="login-input" maxlength="12"/> 
+		<p class="line-grey"></p>
+		<div class="btn-box">
+			<input type="button" value="确定" id="loginbtn" class="btn btn-orange">
+			<a href="register.html"><input type="button" value="注册" id="regbtn" class="btn btn-blue"></a>
+			<span class="btn-demoReg">
+				<a id="guestReg">免费试玩</a>
+			</span>
+			<span class="btn-forgetPass">
+				<a href="retrievePwd.html">忘记密码?</a>
+			</span>
+		</div>
+	</div>
+	
+	<div class="mui-backdrop">
+	</div>
+	</div>
+</div>
+</body>
+</html>

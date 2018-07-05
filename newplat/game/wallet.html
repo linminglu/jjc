@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/mui/mui.min.js"></script>
+<script type="text/javascript" src="js/store.min.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="js/store.min.js"></script>
+<script type="text/javascript" src="js/me.js"></script>
+<script type="text/javascript" src="js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="js/components/mode-ecb.js"></script>
+<link type="text/css" rel="stylesheet" href="css/mui/mui.min.css" />
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="css/me.css" />
+<title>存取款</title>
+<script type="text/javascript">
+move.width=$(window).width();
+$(document).ready(function(){
+	if(move.user.u==null){
+		var directUrl=location.href;
+		directUrl=directUrl.split('#')[0];
+		baseObj.openView('login.html?redirect='+directUrl)
+		return;
+	}
+	meObj.walletNotice();// 弹出的通知
+	//move.hideHeader();
+	$("#btncz").bind("click", function(){
+		baseObj.openView('recharge.html');
+	});
+	$("#btntx").bind("click", function(){
+		baseObj.openView('cash.html');
+	});
+	
+});
+</script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav ">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">存取款</h1>
+	</header>
+<div class="ga-view">
+	<div class="main-content main-content-view">
+		<div class="money-wallet-box">
+			<p class="money-lable">当前余额</p>
+			<p class="money-val" id="yue">￥0</p>
+		</div>
+		<div class="btn-box">
+			<div class="btn-cz" id="btncz">充值</div>
+			<div class="btn-cz" id="btntx">提现</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

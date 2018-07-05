@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="gfFiveDAO" class="com.gf.fivecolor.dao.hibernate.FiveDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="gfFiveService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.gf.fivecolor.service.impl.FiveServiceImpl">
+	            <property name="gfFiveDAO"><ref local="gfFiveDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化 -->
+	<bean name="initGfFiveSessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.fivecolor.service.impl.InitFiveSession</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfFiveService"><ref bean="gfFiveService" /></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchGfFiveResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.fivecolor.service.impl.FetchFiveResult</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfFiveService"><ref bean="gfFiveService" /></entry>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 更新冷热排行-->
+	<bean name="fetchGfFiveTrendJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.fivecolor.service.impl.UpdateFiveGaTrend</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfFiveService"><ref bean="gfFiveService" /></entry>
+			</map>
+		</property>
+	</bean>
+		<!-- 更新合买-->
+	<bean name="fetchCountGfFiveJointBetJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.fivecolor.service.impl.CountFiveJoinBet</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfFiveService"><ref bean="gfFiveService" /></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 开奖仅更新场次状态为开奖中
+	<bean name="openK10Job" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.k10.gxk10.service.impl.OpenK10Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="cqSscService"><ref bean="cqSscService" /></entry>
+			</map>
+		</property>
+	</bean>-->
+	
+	<!-- 自动投注(不处理) -->
+	<!-- <bean name="autoBetK10Job" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.pce.service.impl.AutoBetK10</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="k10Service"><ref bean="k10Service" /></entry>
+			</map>
+		</property>
+	</bean> -->
+	
+	
+	<!-- 配置触发器定时周期 对应上面的 bean  --> 
+	
+<!-- 初始化时间 -->
+<bean id="initGfFiveSession" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initGfFiveSessionJob" />
+		</property>
+		<!--  每天的11点开始初始化-->
+		<property name="cronExpression">
+			<value>0 25 14 * * ?</value>
+		</property>
+	</bean> 
+
+	<!-- 监控场次时间 -->
+<!--	<bean id="monitorGdK10" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="monitorGdK10Job" />
+		</property>
+		每天的x点到x点每小时监控一次是否已经初始化 
+		<property name="cronExpression">
+			<value>0 0 3-23 * * ?</value>
+		</property>
+	</bean>-->
+	
+	<!-- 定时抓去数据 -->
+	<bean id="fetchGfFiveResult" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfFiveResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>12 0/5 * * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 定时抓去数据 -->
+    <bean id="fetchGfFiveTrend" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfFiveTrendJob" />
+		</property>
+		<property name="cronExpression">
+			<value>32 1/5 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 定时更新合买 -->
+    <bean id="fetchCountGfFiveJointBet" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchCountGfFiveJointBetJob" />
+		</property>
+	<!--	每天5分钟 -->
+		<property name="cronExpression">
+			<value>30 4/5 * * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initGfFiveSession" />
+				<ref local="fetchGfFiveResult"/>	
+				<ref local="fetchCountGfFiveJointBet"/>	
+				<ref local="fetchGfFiveTrend"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+</beans>

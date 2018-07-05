@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.apps.model.LotterySettingRl" table="lottery_setting_rl">
+		<cache usage="read-write" />
+		<id name="rid" type="java.lang.Integer" column="r_id">
+			<generator class="identity" />
+		</id>
+       <property name="lsId" type="java.lang.Integer" column="ls_id" length="11" />
+       <property name="type" type="java.lang.String" column="type" />
+       <property name="title" type="java.lang.String" column="title" length="200" />
+       <property name="fixedMoney" type="java.math.BigDecimal" column="fixed_money" length="12" />
+       <property name="minMoney" type="java.math.BigDecimal" column="min_money" length="12" />
+       <property name="maxMoney" type="java.math.BigDecimal" column="max_money" length="12" />
+       <property name="num" type="java.lang.Integer" column="num" length="11" />
+       <property name="rechargeMinMoney" type="java.math.BigDecimal" column="recharge_min_money" length="12" />
+        <property name="rechargeMaxMoney" type="java.math.BigDecimal" column="recharge_max_money" length="12" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.BusinessGroup" 
+    table="BUSINESS_GROUP"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="bizGroupId"
+        type="java.lang.Integer"
+        column="BIZ_GROUP_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_BUSINESS_GROUP</param>
+        </generator>
+    </id>
+
+    <property
+        name="groupName"
+        type="java.lang.String"
+        column="GROUP_NAME"
+        length="200"
+    />
+    
+    <property
+        name="createUserId"
+        type="java.lang.Integer"
+        column="CREATE_USER_ID"
+        length="8"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to LearnerGroup -->
+    <many-to-one
+        name="learnerGroup"
+        class="com.ram.model.LearnerGroup"
+        not-null="true"
+    >
+        <column name="LEARNER_GROUP_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to TutorCenter -->
+    <many-to-one
+        name="tutorCenter"
+        class="com.ram.model.TutorCenter"
+        not-null="true"
+    >
+        <column name="TC_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to Program -->
+    <many-to-one
+        name="program"
+        class="com.ram.model.Program"
+        not-null="true"
+    >
+        <column name="PROGRAM_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to UserGroup -->
+    <many-to-one
+        name="userGroup"
+        class="com.ram.model.UserGroup"
+        not-null="true"
+    >
+        <column name="USER_GROUP_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to Semester -->
+    <many-to-one
+        name="semester"
+        class="com.ram.model.Semester"
+        not-null="true"
+    >
+        <column name="SEMESTER_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

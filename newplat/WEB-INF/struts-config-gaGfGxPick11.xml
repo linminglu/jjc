@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- ==================================== Data Sources      -->
+  	<data-sources>
+  	</data-sources>
+  	<!-- ==================================== Form Beans        -->
+  	<form-beans>
+		<form-bean name="gxPick11Form" type="com.gf.pick11.gxpick11.web.form.GxPick11Form"/>
+  	</form-beans>
+  	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+	 	<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+  	<!-- ==================================== Action Mappings    -->
+  	<action-mappings>
+  		<action 
+			path="/gxPick11Action" 
+    		type="com.gf.pick11.gxpick11.web.action.GxPick11Action" 
+    		name="gxPick11Form" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+	   	<forward name="init" path="/gxPick11SessionList.jsp"/> 
+	   	<forward name="betList" path="/gxPick11Betlist.jsp"/>
+	   	<forward name="betManager" path="/gxPick11BetManager.jsp"/>
+	   	<forward name="betDetailManager" path="/gxPick11BetDetailManager.jsp"/>
+	   	</action>
+    </action-mappings>
+</struts-config>

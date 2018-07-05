@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaBetPart" table="ga_bet_part">
+		<cache usage="read-write" />
+		<id name="rid" type="java.lang.Integer" column="r_id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="8" />
+       <property name="buyNum" type="java.lang.Integer" column="buy_num" length="11" />
+       <property name="betMoney" type="java.math.BigDecimal" column="bet_money" length="8" />
+       <property name="winCash" type="java.math.BigDecimal" column="win_cash" length="8" />
+       <property name="jointId" type="java.lang.Integer" column="joint_id" length="11" />
+       <property name="buyTime" type="java.util.Date" column="buy_time" />
+       <property name="winPoint" type="java.math.BigDecimal" column="win_point" length="8" />
+       <property name="behavior" type="java.lang.String" column="behavior" length="1" />
+	</class>
+</hibernate-mapping>

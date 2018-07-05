@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.ram.model.IpRecord" 
+    table="IP_RECORD"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="ipRecordId"
+        type="java.lang.Integer"
+        column="IP_RECORD_ID"
+    >
+    
+        <generator class="identity"/>
+    </id>
+    <property
+        name="count"
+        type="java.lang.Integer"
+        column="count"
+        length="3"
+    />
+    <property
+        name="ip"
+        type="java.lang.String"
+        column="IP"
+        length="100"
+    />
+  
+
+</class>
+</hibernate-mapping>

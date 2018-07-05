@@ -1,0 +1,4 @@
+<init-param>
+			<param-name>config/gdPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaGdPick11.xml</param-value>
+		</init-param>

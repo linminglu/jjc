@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.RecommendedUserInfo" 
+    table="RECOMMENDED_USER_INFO"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="recommendedUserInfoId"
+        type="java.lang.Integer"
+        column="RECOMMENDED_USER_INFO_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_RECOMMENDED_USER_INFO</param>
+        </generator>
+    </id>
+
+    <property
+        name="userName"
+        type="java.lang.String"
+        column="USER_NAME"
+        length="50"
+    /> 
+    <property
+        name="userEmail"
+        type="java.lang.String"
+        column="USER_EMAIL"
+        length="200"
+    /> 
+    <property
+        name="recommendedUserId"
+        type="java.lang.Integer"
+        column="RECOMMEND_USER_ID"
+        length="8"
+    />
+    <property
+        name="recommendedUserName"
+        type="java.lang.String"
+        column="RECOMMEND_USER_NAME"
+        length="50"
+    />
+    <property
+        name="recommendedDateTime"
+        type="java.util.Date"
+        column="RECOMMEND_DATE_TIME"
+        length="7"
+    />
+
+    <!-- Associations -->
+
+</class>
+</hibernate-mapping>

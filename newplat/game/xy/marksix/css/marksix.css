@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+#kj0,#kj1,#kj2,#kj3,#kj4,#kj5,#kj6,#kj7,#kj8,#kj9,#kj10,#kj11,#kj12,#kj13,#kj14,#kj15,#kj16,#kj17,#kj18,#kj19,#kj20
+,#kj21,#kj22,#kj23,#kj24,#kj25,#kj26,#kj27,#kj28,#kj29,#kj30,#kj31,#kj32,#kj33,#kj34,#kj35,#kj36,#kj37,#kj38,#kj39,#kj40
+,#kj41,#kj42,#kj43,#kj44,#kj45,#kj46,#kj47,#kj48,#kj49,#kj50,#kj51{display: none;}
+#liangmianpan{}
+
+#liangmianpan{display: block;}
+
+.playmethod{display: none;}
+.zoushi-table-box li{padding: 0 1%;}
+#haoma .lattice{width: 12.5%;}
+#daxiao .lattice{width: 16.66666%;}
+#danshuang .lattice{width: 20%;}
+#guanyajunzoushi .lattice{width: 20%;}
+
+#topPopover__{width:90px;height:150px;}
+
+.paiming-table .lattice{width: 50%;text-align: left;padding-left: 10px;}
+
+.zoushi-box .zoushitab-box .zoushi-cell {width: 33.333333%;}
+.not-data{}
+
+.open-list-box .data-box .he{width: 75%;float: left;border-right: 1px solid #fff;}
+.open-list-box .data-box .data-details .he span{text-align: center;width: 16.6666666%;display: block;float: left;}
+.open-list-box .data-box .longhu{width: 25%;float: left;text-align: center;}
+
+/*<320*/
+@media screen and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 640px) {
+}
+/*>640*/
+@media screen and (min-width: 641px) {
+	.main-content{max-width: 540px;margin: 0 auto;}
+}

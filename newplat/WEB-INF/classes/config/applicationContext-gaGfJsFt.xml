@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="gfJsFtDAO" class="com.gf.jsft.dao.hibernate.JsFtDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	<bean id="gfJsFtService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.gf.jsft.service.impl.JsFtServiceImpl">
+	            <property name="gfJsFtDAO"><ref local="gfJsFtDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	             <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+	
+	<!-- 初始化期号-->
+	<bean name="initGfJsFtSessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.jsft.service.impl.InitJsFtSession</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfJsFtService"><ref bean="gfJsFtService" /></entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="initGfJsFtSession" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initGfJsFtSessionJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+    <!-- 更新冷热排行榜 -->
+    <bean name="updateGfJsFtGaTrendJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+        <property name="jobClass">
+            <value>com.gf.jsft.service.impl.UpdateJsFtGaTrend</value>
+        </property>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="gfJsFtService"><ref bean="gfJsFtService"/></entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="updateGfJsFtGaTrend" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail">
+            <ref bean="updateGfJsFtGaTrendJob"/>
+        </property>
+        <property name="cronExpression">
+            <value>25 3/5 9-23 * * ?</value>
+        </property>
+    </bean>
+	
+    <!-- 更新每期遗漏数据 -->
+	<bean name="fetchGfJsFtOmitJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.jsft.service.impl.UpdateJsFtGaOmit</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfJsFtService"><ref bean="gfJsFtService" /></entry>
+			</map>
+		</property>
+	</bean> 
+	<bean id="fetchGfJsFtOmit" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfJsFtOmitJob" />
+		</property>
+		<property name="cronExpression">
+			<value>30 2/10 8-22 * * ?</value>
+		</property>
+	</bean>
+		
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchGfJsFtResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.jsft.service.impl.FetchJsFtResult</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfJsFtService"><ref bean="gfJsFtService" /></entry>
+			</map>
+		</property>
+	</bean> 
+	<bean id="fetchGfJsFtResult" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfJsFtResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0/30 * * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initGfJsFtSession" />
+				<ref local="fetchGfJsFtResult"/>
+				<ref local="fetchGfJsFtOmit"/>
+				<ref local="updateGfJsFtGaTrend" />
+			</list>
+		</property>
+	</bean>
+</beans>

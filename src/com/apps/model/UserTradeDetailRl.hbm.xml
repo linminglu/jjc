@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class 
+    name="com.apps.model.UserTradeDetailRl" 
+    table="user_trade_detail_rl"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="rid"
+        type="java.lang.Integer"
+        column="r_id"
+    >
+        <generator class="identity"/>
+    </id>
+    <property
+        name="tradeDetailId"
+        type="java.lang.Integer"
+        column="trade_detail_id"
+        length="8"
+    />
+  
+      <property
+        name="betDetailId"
+        type="java.lang.Integer"
+        column="bet_detail_id"
+        length="8"
+    />
+    
+    <property
+        name="gfxy"
+        type="java.lang.String"
+        column="gfxy"
+        length="1"
+    />
+   
+</class>
+</hibernate-mapping>

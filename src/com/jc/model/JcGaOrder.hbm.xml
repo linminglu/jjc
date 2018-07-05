@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.jc.model.JcGaOrder" table="jc_ga_order">
+		<cache usage="read-write" />
+		<id name="orderId" type="java.lang.Integer" column="order_id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="11" />
+       <property name="betId" type="java.lang.Integer" column="bet_id" length="11" />
+       <property name="money" type="java.math.BigDecimal" column="money" length="10" />
+       <property name="type" type="java.lang.String" column="type" length="1" />
+       <property name="orderNum" type="java.lang.String" column="order_num" length="50" />
+       <property name="payType" type="java.lang.String" column="pay_type" length="1"/>
+       <property name="payStatus" type="java.lang.String" column="pay_status" length="1" />
+       <property name="payTime" type="java.util.Date" column="pay_time"/>
+       <property name="createTime" type="java.util.Date" column="create_time"/>
+       <property name="tradeNo" type="java.lang.String" column="trade_no" length="50" />
+	</class>
+</hibernate-mapping>

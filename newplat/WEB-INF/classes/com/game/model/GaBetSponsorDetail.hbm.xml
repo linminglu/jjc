@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaBetSponsorDetail" table="ga_bet_sponsor_detail">
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="identity" />
+		</id>
+       <property name="jointId" type="java.lang.Integer" column="joint_id" length="8" />
+          <property name="playType" type="java.lang.Integer" column="play_type" length="10" />
+          <property name="optionTitle" type="java.lang.String" column="option_title" length="10" />
+           <property name="betRate" type="java.math.BigDecimal" column="bet_rate" length="10" />
+           <property name="betMoney" type="java.math.BigDecimal" column="bet_money" length="10" />
+           <property name="winResult" type="java.lang.String" column="win_result" length="60" />
+           <property name="winMoney" type="java.math.BigDecimal" column="win_money" length="50" />
+           <property name="orderNum" type="java.lang.String" column="order_num" length="10" />
+           <property name="title" type="java.lang.String" column="title" length="10" />
+           <property name="pointMultiple" type="java.math.BigDecimal" column="point_multiple" length="50" />
+	</class>
+</hibernate-mapping>

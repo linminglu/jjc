@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.UserGroup" 
+    table="USER_GROUP"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="userGroupId"
+        type="java.lang.Integer"
+        column="USER_GROUP_ID"
+    >
+    
+        <generator class="identity"/>
+    </id>
+
+    <property
+        name="userGroupName"
+        type="java.lang.String"
+        column="USER_GROUP_NAME"
+        length="100"
+    />
+    <property
+        name="userGroupDesc"
+        type="java.lang.String"
+        column="USER_GROUP_DESC"
+        length="500"
+    />
+    <!-- 
+    <property
+        name="userGroupType"
+        type="java.lang.String"
+        column="USER_GROUP_TYPE"
+        length="1"
+    />
+    <property
+        name="platType"
+        type="java.lang.String"
+        column="PLAT_TYPE"
+        length="20"
+    />
+     -->
+     <!-- bi-directional one-to-many association to GroupFunctionRl -->
+     <!-- 
+   <set
+        name="groupFunctionRls"
+        lazy="true"
+        inverse="true"
+		cascade="save-update"
+    >
+        <key>
+            <column name="GROUP_ID" />
+        </key>
+        <one-to-many
+            class="com.bxsnet.model.GroupFunctionRl"
+        />
+    </set>
+   -->
+    <set
+        name="userGroupRls"
+        lazy="true"
+        inverse="true"
+		cascade="save-update"
+      >
+        <key>
+            <column name="GROUP_ID" />
+        </key>
+        <one-to-many
+            class="com.ram.model.UserGroupRl"
+        />
+    </set>	
+</class>
+</hibernate-mapping>

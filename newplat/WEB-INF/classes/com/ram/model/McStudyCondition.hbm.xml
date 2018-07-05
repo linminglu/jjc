@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.McStudyCondition" 
+    table="MC_STUDY_CONDITION"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="mcStudyCondId"
+        type="java.lang.Integer"
+        column="MC_STUDY_COND_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">seq_mc_study_condition</param>
+        </generator>
+    </id>
+
+    <property
+        name="scheduleId"
+        type="java.lang.Integer"
+        column="SCHEDULE_ID"
+        length="8"
+    />
+    <property
+        name="moduleId"
+        type="java.lang.Integer"
+        column="MODULE_ID"
+        length="8"
+    />
+    <property
+        name="courseId"
+        type="java.lang.Integer"
+        column="COURSE_ID"
+        length="8"
+    />
+    <property
+        name="dependCourseCredit"
+        type="float"
+        column="DEPEND_COURSE_CREDIT"
+        length="6"
+    />
+    <property
+        name="dependCourseScore"
+        type="float"
+        column="DEPEND_COURSE_SCORE"
+        length="6"
+    />
+
+    <!-- Associations -->
+  
+    <property 
+        name="mcStudyConditionId" 
+        column="MC_STUDY_CONDITION_ID" 
+        type="java.lang.Integer"
+        length="8"
+    />
+
+</class>
+</hibernate-mapping>

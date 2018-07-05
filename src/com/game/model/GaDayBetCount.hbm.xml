@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaDayBetCount" table="ga_day_bet_count">
+		<cache usage="read-write" />
+		<id name="countId" type="java.lang.Integer" column="count_id">
+			<generator class="identity" />
+		</id>
+       <property name="betMoney" type="java.math.BigDecimal" column="bet_money" length="12" />
+       <property name="createTime" type="java.util.Date" column="create_time" />
+       <property name="dateFlag" type="java.lang.Integer" column="date_flag" length="6"/>
+       <property name="winMoney" type="java.math.BigDecimal" column="win_money" length="12" />
+       <property name="payoff" type="java.math.BigDecimal" column="payoff" length="12" />
+	</class>
+</hibernate-mapping>

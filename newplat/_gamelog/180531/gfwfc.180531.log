@@ -1,0 +1,188 @@
+[G][05-31 09:05:12][gfwfc] timer launch .....
+[G][05-31 09:10:12][gfwfc] timer launch .....
+[G][05-31 09:15:12][gfwfc] timer launch .....
+[G][05-31 09:20:12][gfwfc] timer launch .....
+[G][05-31 09:25:12][gfwfc] timer launch .....
+[G][05-31 09:31:35][gfwfc] timer launch .....
+[G][05-31 09:35:12][gfwfc] timer launch .....
+[G][05-31 09:40:12][gfwfc] timer launch .....
+[G][05-31 09:45:12][gfwfc] timer launch .....
+[G][05-31 09:50:12][gfwfc] timer launch .....
+[G][05-31 09:55:12][gfwfc] timer launch .....
+[G][05-31 10:00:21][gfwfc] timer launch .....
+[G][05-31 10:05:12][gfwfc] timer launch .....
+[G][05-31 10:10:12][gfwfc] timer launch .....
+[G][05-31 10:15:12][gfwfc] timer launch .....
+[G][05-31 10:20:12][gfwfc] timer launch .....
+[G][05-31 10:25:12][gfwfc] timer launch .....
+[G][05-31 14:00:12][gfwfc] timer launch .....
+[G][05-31 15:45:12][gfwfc] timer launch .....
+[G][05-31 15:45:12][gfwfc] fetching ..... [180531189],openTime=2018-05-31 15:45:00[1/80]
+[G][05-31 15:45:17][gfwfc] fetching ..... [180531189],openTime=2018-05-31 15:45:00[2/80]
+[G][05-31 15:45:25][gfwfc] fetching ..... [180531189],openTime=2018-05-31 15:45:00[3/80]
+[G][05-31 15:45:28][gfwfc] RESULTS  _____ [180531189]=>3,0,3,3,8
+[G][05-31 15:45:38][gfwfc] update trade detail status...180531184
+[G][05-31 15:45:43][gfwfc] update trade detail status...180531185
+[G][05-31 15:45:49][gfwfc] update trade detail status...180531186
+[G][05-31 15:45:53][gfwfc] update trade detail status...180531187
+[G][05-31 15:45:57][gfwfc] update trade detail status...180531188
+[G][05-31 15:46:05][gfwfc] update trade detail status...180531189
+[G][05-31 15:46:07][gfwfc] SUCCESS  _^_^_ [180531189][38584ms]
+[G][05-31 16:05:12][gfwfc] timer launch .....
+[G][05-31 16:05:14][gfwfc] fetching ..... [180531193],openTime=2018-05-31 16:05:00[1/80]
+[G][05-31 16:05:17][gfwfc] fetching ..... [180531193],openTime=2018-05-31 16:05:00[2/80]
+[G][05-31 16:05:22][gfwfc] fetching ..... [180531193],openTime=2018-05-31 16:05:00[3/80]
+[G][05-31 16:05:27][gfwfc] fetching ..... [180531193],openTime=2018-05-31 16:05:00[4/80]
+[G][05-31 16:11:15][gfwfc] timer launch .....
+[G][05-31 16:11:39][gfwfc] fetching ..... [180531194],openTime=2018-05-31 16:10:00[1/80]
+[G][05-31 16:11:40][gfwfc] RESULTS  _____ [180531194]=>1,9,7,1,0
+[G][05-31 16:11:50][gfwfc] update trade detail status...180531190
+[G][05-31 16:11:58][gfwfc] update trade detail status...180531191
+[G][05-31 16:12:03][gfwfc] update trade detail status...180531192
+[G][05-31 16:12:15][gfwfc] update trade detail status...180531193
+[G][05-31 16:12:22][gfwfc] update trade detail status...180531194
+[G][05-31 16:12:25][gfwfc] SUCCESS  _^_^_ [180531194][45326ms]
+[G][05-31 16:15:12][gfwfc] timer launch .....
+[G][05-31 16:15:16][gfwfc] fetching ..... [180531195],openTime=2018-05-31 16:15:00[1/80]
+[G][05-31 16:15:17][gfwfc] fetching ..... [180531195],openTime=2018-05-31 16:15:00[2/80]
+[G][05-31 16:15:23][gfwfc] fetching ..... [180531195],openTime=2018-05-31 16:15:00[3/80]
+[G][05-31 16:15:23][gfwfc] RESULTS  _____ [180531195]=>9,6,8,7,8
+[G][05-31 16:15:28][gfwfc] update trade detail status...180531195
+[G][05-31 16:15:31][gfwfc] SUCCESS  _^_^_ [180531195][8166ms]
+[G][05-31 16:20:12][gfwfc] timer launch .....
+[G][05-31 16:20:12][gfwfc] fetching ..... [180531196],openTime=2018-05-31 16:20:00[1/80]
+[G][05-31 16:20:17][gfwfc] fetching ..... [180531196],openTime=2018-05-31 16:20:00[2/80]
+[G][05-31 16:20:22][gfwfc] fetching ..... [180531196],openTime=2018-05-31 16:20:00[3/80]
+[G][05-31 16:20:22][gfwfc] RESULTS  _____ [180531196]=>9,1,9,3,3
+[G][05-31 16:20:29][gfwfc] update trade detail status...180531196
+[G][05-31 16:20:34][gfwfc] SUCCESS  _^_^_ [180531196][12058ms]
+[G][05-31 16:25:12][gfwfc] timer launch .....
+[G][05-31 16:25:12][gfwfc] fetching ..... [180531197],openTime=2018-05-31 16:25:00[1/80]
+[G][05-31 16:25:20][gfwfc] fetching ..... [180531197],openTime=2018-05-31 16:25:00[2/80]
+[G][05-31 16:25:20][gfwfc] RESULTS  _____ [180531197]=>0,4,7,6,0
+[G][05-31 16:25:25][gfwfc] update trade detail status...180531197
+[G][05-31 16:25:27][gfwfc] SUCCESS  _^_^_ [180531197][6721ms]
+[G][05-31 16:30:31][gfwfc] timer launch .....
+[G][05-31 16:30:36][gfwfc] fetching ..... [180531198],openTime=2018-05-31 16:30:00[1/80]
+[G][05-31 16:30:36][gfwfc] RESULTS  _____ [180531198]=>3,7,4,9,8
+[G][05-31 16:31:03][gfwfc] update trade detail status...180531198
+[G][05-31 16:31:09][gfwfc] SUCCESS  _^_^_ [180531198][33395ms]
+[G][05-31 16:35:12][gfwfc] timer launch .....
+[G][05-31 16:35:25][gfwfc] fetching ..... [180531199],openTime=2018-05-31 16:35:00[1/80]
+[G][05-31 16:35:27][gfwfc] fetching ..... [180531199],openTime=2018-05-31 16:35:00[2/80]
+[G][05-31 16:35:27][gfwfc] RESULTS  _____ [180531199]=>9,3,5,8,8
+[G][05-31 16:35:43][gfwfc] update trade detail status...180531199
+[G][05-31 16:35:50][gfwfc] SUCCESS  _^_^_ [180531199][22622ms]
+[G][05-31 16:40:12][gfwfc] timer launch .....
+[G][05-31 16:40:37][gfwfc] fetching ..... [180531200],openTime=2018-05-31 16:40:00[1/80]
+[G][05-31 16:40:37][gfwfc] RESULTS  _____ [180531200]=>4,0,9,3,2
+[G][05-31 16:40:43][gfwfc] update trade detail status...180531200
+[G][05-31 16:40:46][gfwfc] SUCCESS  _^_^_ [180531200][8676ms]
+[G][05-31 16:45:12][gfwfc] timer launch .....
+[G][05-31 16:45:23][gfwfc] fetching ..... [180531201],openTime=2018-05-31 16:45:00[1/80]
+[G][05-31 16:45:23][gfwfc] fetching ..... [180531201],openTime=2018-05-31 16:45:00[2/80]
+[G][05-31 16:45:40][gfwfc] fetching ..... [180531201],openTime=2018-05-31 16:45:00[3/80]
+[G][05-31 16:45:40][gfwfc] RESULTS  _____ [180531201]=>8,0,4,3,7
+[G][05-31 16:45:48][gfwfc] update trade detail status...180531201
+[G][05-31 16:45:50][gfwfc] SUCCESS  _^_^_ [180531201][10079ms]
+[G][05-31 16:50:12][gfwfc] timer launch .....
+[G][05-31 16:50:13][gfwfc] fetching ..... [180531202],openTime=2018-05-31 16:50:00[1/80]
+[G][05-31 16:50:17][gfwfc] fetching ..... [180531202],openTime=2018-05-31 16:50:00[2/80]
+[G][05-31 16:50:22][gfwfc] fetching ..... [180531202],openTime=2018-05-31 16:50:00[3/80]
+[G][05-31 16:50:22][gfwfc] RESULTS  _____ [180531202]=>9,2,8,7,1
+[G][05-31 16:50:32][gfwfc] update trade detail status...180531202
+[G][05-31 16:50:34][gfwfc] SUCCESS  _^_^_ [180531202][11925ms]
+[G][05-31 16:55:12][gfwfc] timer launch .....
+[G][05-31 16:55:16][gfwfc] fetching ..... [180531203],openTime=2018-05-31 16:55:00[1/80]
+[G][05-31 16:55:34][gfwfc] fetching ..... [180531203],openTime=2018-05-31 16:55:00[2/80]
+[G][05-31 16:55:37][gfwfc] RESULTS  _____ [180531203]=>1,6,4,7,6
+[G][05-31 16:56:07][gfwfc] update trade detail status...180531203
+[G][05-31 16:56:10][gfwfc] SUCCESS  _^_^_ [180531203][32787ms]
+[G][05-31 17:00:14][gfwfc] timer launch .....
+[G][05-31 17:00:15][gfwfc] fetching ..... [180531204],openTime=2018-05-31 17:00:00[1/80]
+[G][05-31 17:00:20][gfwfc] fetching ..... [180531204],openTime=2018-05-31 17:00:00[2/80]
+[G][05-31 17:00:27][gfwfc] fetching ..... [180531204],openTime=2018-05-31 17:00:00[3/80]
+[G][05-31 17:00:27][gfwfc] RESULTS  _____ [180531204]=>3,2,6,5,8
+[G][05-31 17:00:38][gfwfc] update trade detail status...180531204
+[G][05-31 17:00:42][gfwfc] SUCCESS  _^_^_ [180531204][14466ms]
+[G][05-31 18:25:12][gfwfc] timer launch .....
+[G][05-31 18:25:12][gfwfc] fetching ..... [180531221],openTime=2018-05-31 18:25:00[1/80]
+[G][05-31 18:25:17][gfwfc] fetching ..... [180531221],openTime=2018-05-31 18:25:00[2/80]
+[G][05-31 18:25:22][gfwfc] fetching ..... [180531221],openTime=2018-05-31 18:25:00[3/80]
+[G][05-31 18:25:29][gfwfc] fetching ..... [180531221],openTime=2018-05-31 18:25:00[4/80]
+[G][05-31 18:25:30][gfwfc] RESULTS  _____ [180531221]=>0,0,3,3,6
+[G][05-31 18:25:39][gfwfc] update trade detail status...180531205
+[G][05-31 18:25:42][gfwfc] update trade detail status...180531206
+[G][05-31 18:25:46][gfwfc] update trade detail status...180531207
+[G][05-31 18:25:50][gfwfc] update trade detail status...180531208
+[G][05-31 18:25:53][gfwfc] update trade detail status...180531209
+[G][05-31 18:25:56][gfwfc] update trade detail status...180531210
+[G][05-31 18:26:00][gfwfc] update trade detail status...180531211
+[G][05-31 18:26:03][gfwfc] update trade detail status...180531212
+[G][05-31 18:26:07][gfwfc] update trade detail status...180531213
+[G][05-31 18:26:11][gfwfc] update trade detail status...180531214
+[G][05-31 18:26:15][gfwfc] update trade detail status...180531215
+[G][05-31 18:26:18][gfwfc] update trade detail status...180531216
+[G][05-31 18:26:22][gfwfc] update trade detail status...180531217
+[G][05-31 18:26:26][gfwfc] update trade detail status...180531218
+[G][05-31 18:26:31][gfwfc] update trade detail status...180531219
+[G][05-31 18:26:35][gfwfc] update trade detail status...180531220
+[G][05-31 18:26:38][gfwfc] update trade detail status...180531221
+[G][05-31 18:26:39][gfwfc] SUCCESS  _^_^_ [180531221][69286ms]
+[G][05-31 18:30:12][gfwfc] timer launch .....
+[G][05-31 18:30:19][gfwfc] fetching ..... [180531222],openTime=2018-05-31 18:30:00[1/80]
+[G][05-31 18:30:19][gfwfc] RESULTS  _____ [180531222]=>9,9,1,4,3
+[G][05-31 18:30:23][gfwfc] update trade detail status...180531222
+[G][05-31 18:30:24][gfwfc] SUCCESS  _^_^_ [180531222][5571ms]
+[G][05-31 18:35:12][gfwfc] timer launch .....
+[G][05-31 18:35:13][gfwfc] fetching ..... [180531223],openTime=2018-05-31 18:35:00[1/80]
+[G][05-31 18:35:17][gfwfc] fetching ..... [180531223],openTime=2018-05-31 18:35:00[2/80]
+[G][05-31 18:35:22][gfwfc] fetching ..... [180531223],openTime=2018-05-31 18:35:00[3/80]
+[G][05-31 18:35:27][gfwfc] fetching ..... [180531223],openTime=2018-05-31 18:35:00[4/80]
+[G][05-31 18:35:27][gfwfc] RESULTS  _____ [180531223]=>4,8,1,0,4
+[G][05-31 18:35:32][gfwfc] update trade detail status...180531223
+[G][05-31 18:35:33][gfwfc] SUCCESS  _^_^_ [180531223][5988ms]
+[G][05-31 18:40:12][gfwfc] timer launch .....
+[G][05-31 18:40:12][gfwfc] fetching ..... [180531224],openTime=2018-05-31 18:40:00[1/80]
+[G][05-31 18:40:17][gfwfc] fetching ..... [180531224],openTime=2018-05-31 18:40:00[2/80]
+[G][05-31 18:40:22][gfwfc] fetching ..... [180531224],openTime=2018-05-31 18:40:00[3/80]
+[G][05-31 18:40:27][gfwfc] fetching ..... [180531224],openTime=2018-05-31 18:40:00[4/80]
+[G][05-31 18:40:34][gfwfc] fetching ..... [180531224],openTime=2018-05-31 18:40:00[5/80]
+[G][05-31 18:40:34][gfwfc] RESULTS  _____ [180531224]=>6,3,2,6,4
+[G][05-31 18:40:39][gfwfc] update trade detail status...180531224
+[G][05-31 18:40:40][gfwfc] SUCCESS  _^_^_ [180531224][6445ms]
+[G][05-31 18:45:12][gfwfc] timer launch .....
+[G][05-31 18:45:20][gfwfc] fetching ..... [180531225],openTime=2018-05-31 18:45:00[1/80]
+[G][05-31 18:45:21][gfwfc] fetching ..... [180531225],openTime=2018-05-31 18:45:00[2/80]
+[G][05-31 18:45:26][gfwfc] fetching ..... [180531225],openTime=2018-05-31 18:45:00[3/80]
+[G][05-31 18:45:26][gfwfc] RESULTS  _____ [180531225]=>2,9,6,7,8
+[G][05-31 18:45:31][gfwfc] update trade detail status...180531225
+[G][05-31 18:45:32][gfwfc] SUCCESS  _^_^_ [180531225][6194ms]
+[G][05-31 18:50:12][gfwfc] timer launch .....
+[G][05-31 18:50:12][gfwfc] fetching ..... [180531226],openTime=2018-05-31 18:50:00[1/80]
+[G][05-31 18:50:17][gfwfc] fetching ..... [180531226],openTime=2018-05-31 18:50:00[2/80]
+[G][05-31 18:50:22][gfwfc] fetching ..... [180531226],openTime=2018-05-31 18:50:00[3/80]
+[G][05-31 18:50:22][gfwfc] RESULTS  _____ [180531226]=>4,1,7,7,5
+[G][05-31 18:50:26][gfwfc] update trade detail status...180531226
+[G][05-31 18:50:29][gfwfc] SUCCESS  _^_^_ [180531226][6412ms]
+[G][05-31 18:55:12][gfwfc] timer launch .....
+[G][05-31 18:55:14][gfwfc] fetching ..... [180531227],openTime=2018-05-31 18:55:00[1/80]
+[G][05-31 18:55:17][gfwfc] fetching ..... [180531227],openTime=2018-05-31 18:55:00[2/80]
+[G][05-31 18:55:22][gfwfc] fetching ..... [180531227],openTime=2018-05-31 18:55:00[3/80]
+[G][05-31 18:55:27][gfwfc] fetching ..... [180531227],openTime=2018-05-31 18:55:00[4/80]
+[G][05-31 18:55:32][gfwfc] fetching ..... [180531227],openTime=2018-05-31 18:55:00[5/80]
+[G][05-31 18:55:32][gfwfc] RESULTS  _____ [180531227]=>5,1,0,3,2
+[G][05-31 18:55:36][gfwfc] update trade detail status...180531227
+[G][05-31 18:55:37][gfwfc] SUCCESS  _^_^_ [180531227][4744ms]
+[G][05-31 19:00:12][gfwfc] timer launch .....
+[G][05-31 19:00:12][gfwfc] fetching ..... [180531228],openTime=2018-05-31 19:00:00[1/80]
+[G][05-31 19:00:17][gfwfc] fetching ..... [180531228],openTime=2018-05-31 19:00:00[2/80]
+[G][05-31 19:00:17][gfwfc] RESULTS  _____ [180531228]=>3,7,0,9,3
+[G][05-31 19:00:22][gfwfc] update trade detail status...180531228
+[G][05-31 19:00:23][gfwfc] SUCCESS  _^_^_ [180531228][5918ms]
+[G][05-31 19:05:12][gfwfc] timer launch .....
+[G][05-31 19:05:13][gfwfc] fetching ..... [180531229],openTime=2018-05-31 19:05:00[1/80]
+[G][05-31 19:05:18][gfwfc] fetching ..... [180531229],openTime=2018-05-31 19:05:00[2/80]
+[G][05-31 19:05:18][gfwfc] RESULTS  _____ [180531229]=>7,0,2,6,5
+[G][05-31 19:05:22][gfwfc] update trade detail status...180531229
+[G][05-31 19:05:23][gfwfc] SUCCESS  _^_^_ [180531229][5627ms]

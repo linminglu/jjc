@@ -1,0 +1,693 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content=""> 
+<!-- <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"> -->
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/js/mui/mui.min.js"></script>
+<script type="text/javascript" src="/js/move.js"></script>
+<script type="text/javascript" src="/js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="/js/components/mode-ecb.js"></script>
+<script type="text/javascript" src="/js/zoushitu.js"></script>
+<script type="text/javascript" src="/js/trade.js"></script>
+<link type="text/css" rel="stylesheet" href="/css/mui/mui.min.css">
+<link type="text/css" rel="stylesheet" href="/css/base.css" />
+<link type="text/css" rel="stylesheet" href="/css/zoushitu.css" />
+<title>数据图标-彩票走势图-可乐彩</title>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	tradeObj.showSession();
+});
+</script>
+</head>
+<body>
+	<div class="topline">
+		<div class="maincontent">
+			<div class="loginline">
+				<div class="welcome">您好，欢迎来到可乐彩</div>
+				<div class="login-line">
+					<a id="login" href="#">登录</a>
+					<a id="reg" href="/register.html">免费注册</a>	
+				</div>
+			</div>
+			<div class="logined">
+				<span class="welcome">欢迎您，<a href="/user/" class="user"></a>&nbsp;余额：￥<span class="money"></span>元&nbsp;积分： <span class="point"></span>分</span>
+				<span class="fr">
+					<a rel="nofollow" href="/user/">我的账户</a>
+					|
+					<a href="/user/deposit">充值</a>
+					|
+					<a href="/user/withdraw">提款</a>
+					|
+					[<a class="logout" id="logout" href="#">退出</a>]
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="flex-line maincontent">
+		<a href="/index.html" class="logo"><img alt="" src="/images/static/logo.jpg"></a>		
+		
+		<!--<a class="kf"><img alt="" src="/images/static/cs.gif"></a>-->
+	</div>
+	<div class="nav-line">
+		<div class="" style="margin: 0 auto; width: 1000px;">
+			<div class="selebox">
+				<span>选择彩种</span>
+				<ul class="kinds" id="kinds">
+					<li class="kinds-cell">
+						<a href="/trade/ssq/">
+							<span class="czlogo ssq"><img src="/images/column/ssq.png"></span>
+							<span class="kind">双色球</span>
+							<span class="note">2元赢取1000万</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/sanfencai/">
+							<span class="czlogo sanfencai"><img src="/images/column/sanfencai.png"></span>
+							<span class="kind">三分彩</span>
+							<span class="note">三分钟1期</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/wufencai/">
+							<span class="czlogo wufencai"><img src="/images/column/wufencai.png"></span>
+							<span class="kind">五分彩</span>
+							<span class="note">五分钟1期</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<span class="session-type">
+							时时彩
+						</span>
+						<div class="session-box">
+							<a href="/trade/cqssc/">
+								<p class="session-title">重庆时时彩</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a onclick="mui.alert('对不起彩种暂停销售',document.title, function() {});">
+								<p class="session-title">天津时时彩</p>
+							</a>
+						</div>
+					</li>
+					<li class="kinds-cell">
+						<span class="session-type yi-xuan-wu">
+							11选5
+						</span>
+						<div class="session-box">
+							<a href="/trade/gdpick11/">
+								<p class="session-title">广东11选5</p>
+							</a>
+							<a href="/trade/jxpick11/">
+								<p class="session-title">江西11选5</p>
+							</a>
+							<a href="/trade/sdpick11/">
+								<p class="session-title">山东11选5</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/bjpick11/">
+								<p class="session-title">北京11选5</p>
+							</a>
+							<a href="/trade/tjpick11/">
+								<p class="session-title">天津11选5</p>
+							</a>
+							<a href="/trade/hebpick11/">
+								<p class="session-title">河北11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/lnpick11/">
+								<p class="session-title">辽宁11选5</p>
+							</a>
+							<a href="/trade/jlpick11/">
+								<p class="session-title">吉林11选5</p>
+							</a>
+							<a href="/trade/hljpick11/">
+								<p class="session-title">黑龙江11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/jspick11/">
+								<p class="session-title">江苏11选5</p>
+							</a>
+							<a href="/trade/zjpick11/">
+								<p class="session-title">浙江11选5</p>
+							</a>
+							<a href="/trade/ahpick11/">
+								<p class="session-title">安徽11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/hnpick11/">
+								<p class="session-title">河南11选5</p>
+							</a>
+							<a href="/trade/hubpick11/">
+								<p class="session-title">湖北11选5</p>
+							</a>
+							<a href="/trade/gxpick11/">
+								<p class="session-title">广西11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/gzpick11/">
+								<p class="session-title">贵州11选5</p>
+							</a>
+							<a href="/trade/gspick11/">
+								<p class="session-title">甘肃11选5</p>
+							</a>
+							<a href="/trade/xjpick11/">
+								<p class="session-title">新疆11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/sxpick11/">
+								<p class="session-title">山西11选5</p>
+							</a>
+							<a href="/trade/nmgpick11/">
+								<p class="session-title">内蒙古11选5</p>
+							</a>
+							<a href="/trade/shpick11/">
+								<p class="session-title">上海11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/fjpick11/">
+								<p class="session-title">福建11选5</p>
+							</a>
+							<a href="/trade/shxpick11/">
+								<p class="session-title">陕西11选5</p>
+							</a>
+							<a href="/trade/ynpick11/">
+								<p class="session-title">云南11选5</p>
+							</a>
+						</div>
+					</li>
+					<li class="kinds-cell">
+						<span class="session-type k-three">
+							快3
+						</span>
+						<div class="session-box">
+							<a href="/trade/jsk3/">
+								<p class="session-title">江苏快3</p>
+							</a>
+							<a href="/trade/ahk3/">
+								<p class="session-title">安徽快3</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/bjk3/">
+								<p class="session-title">北京快3</p>
+							</a>
+							<a href="/trade/fjk3/">
+								<p class="session-title">福建快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/gxk3/">
+								<p class="session-title">广西快3</p>
+							</a>
+							<a href="/trade/gsk3/">
+								<p class="session-title">甘肃快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/hubk3/">
+								<p class="session-title">湖北快3</p>
+							</a>
+							<a href="/trade/hebk3/">
+								<p class="session-title">河北快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/hnk3/">
+								<p class="session-title">河南快3</p>
+							</a>
+							<a href="/trade/jxk3/">
+								<p class="session-title">江西快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/jlk3/">
+								<p class="session-title">吉林快3</p>
+							</a>
+							<a href="/trade/nmgk3/">
+								<p class="session-title">内蒙古快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/shk3/">
+								<p class="session-title">上海快3</p>
+							</a>
+							<a href="/trade/gzk3/">
+								<p class="session-title">贵州快3</p>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<ul class="menu-box">
+				<li class="menu-cell"><a class="" href="/">网站首页</a></li>
+				<li class="menu-cell"><a class="" href="/trade">购彩大厅</a></li>
+				<li class="menu-cell"><a href="/trade/hemai.html">合买大厅</a></li>
+				<li class="menu-cell"><a href="/kaijiang/">彩票开奖</a></li>
+				<li class="menu-cell mui-active"><a href="/zoushitu/">走势图表</a></li>
+				<li class="menu-cell"><a href="/news/">彩票资讯</a></li>
+				<li class="menu-cell"><a href="/youhui.html">优惠活动</a></li><li class="menu-cell"><a href="/m.html">手机购彩</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="maincontent ">
+		<div class="guide">
+			<span>您当前位置：</span>
+			<a href="/index.html">可乐彩</a>
+			<span>&gt;</span>
+			<a href="">数据图表</a>
+			<span>&gt;</span>
+			<span>频道首页</span>
+		</div>
+		<div class="zoushitu">
+			<table>
+				<thead>
+					<tr><th colspan="2" class="caption">数字彩票</th></tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<a href="ssq/index.html"><img src="/images/column/ssq.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="ssq/index.html" target="_blank">双色球走势图</a></div>
+						</td>
+					</tr>
+				</tbody>
+				<thead>
+					<tr><th colspan="2" class="caption">高频彩票</th></tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<a href="cqssc/index.html"><img src="/images/column/cqssc.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="cqssc/index.html" target="_blank">重庆时时彩走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="sanfencai/index.html"><img src="/images/column/sanfencai.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="sanfencai/index.html" target="_blank">三分彩走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="wufencai/index.html"><img src="/images/column/wufencai.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="wufencai/index.html" target="_blank">五分彩走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="gdpick11/index.html"><img src="/images/column/gd11x5.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="gdpick11/index.html" target="_blank">广东11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="bjpick11/index.html"><img src="/images/column/bjpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="bjpick11/index.html" target="_blank">北京11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="tjpick11/index.html"><img src="/images/column/tjpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="tjpick11/index.html" target="_blank">天津11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="hebpick11/index.html"><img src="/images/column/hebpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="hebpick11/index.html" target="_blank">河北11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="nmgpick11/index.html"><img src="/images/column/nmgpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="nmgpick11/index.html" target="_blank">内蒙古11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="lnpick11/index.html"><img src="/images/column/lnpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="lnpick11/index.html" target="_blank">辽宁11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="jlpick11/index.html"><img src="/images/column/jlpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="jlpick11/index.html" target="_blank">吉林11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="hljpick11/index.html"><img src="/images/column/hljpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="hljpick11/index.html" target="_blank">黑龙江11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="shpick11/index.html"><img src="/images/column/shpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="shpick11/index.html" target="_blank">上海11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="jspick11/index.html"><img src="/images/column/jspick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="jspick11/index.html" target="_blank">江苏11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="zjpick11/index.html"><img src="/images/column/zjpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="zjpick11/index.html" target="_blank">浙江11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="ahpick11/index.html"><img src="/images/column/ahpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="ahpick11/index.html" target="_blank">安徽11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="fjpick11/index.html"><img src="/images/column/fjpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="fjpick11/index.html" target="_blank">福建11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="jxpick11/index.html"><img src="/images/column/jxpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="jxpick11/index.html" target="_blank">江西11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="hnpick11/index.html"><img src="/images/column/hnpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="hnpick11/index.html" target="_blank">河南11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="hubpick11/index.html"><img src="/images/column/hubpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="hubpick11/index.html" target="_blank">湖北11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="gxpick11/index.html"><img src="/images/column/gxpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="gxpick11/index.html" target="_blank">广西11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="gzpick11/index.html"><img src="/images/column/gzpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="gzpick11/index.html" target="_blank">贵州11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="shxpick11/index.html"><img src="/images/column/shxpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="shxpick11/index.html" target="_blank">陕西11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="gspick11/index.html"><img src="/images/column/gspick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="gspick11/index.html" target="_blank">甘肃11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="xjpick11/index.html"><img src="/images/column/xjpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="xjpick11/index.html" target="_blank">新疆11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="sdpick11/index.html"><img src="/images/column/sdpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="sdpick11/index.html" target="_blank">山东11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="sxpick11/index.html"><img src="/images/column/sxpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="sxpick11/index.html" target="_blank">山西11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="ynpick11/index.html"><img src="/images/column/ynpick11.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="ynpick11/index.html" target="_blank">云南11选5走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="jsk3/index.html"><img src="/images/column/jsk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="jsk3/index.html" target="_blank">江苏快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="ahk3/index.html"><img src="/images/column/ahk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="ahk3/index.html" target="_blank">安徽快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="bjk3/index.html"><img src="/images/column/bjk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="bjk3/index.html" target="_blank">北京快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="fjk3/index.html"><img src="/images/column/fjk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="fjk3/index.html" target="_blank">福建快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="gzk3/index.html"><img src="/images/column/gzk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="gzk3/index.html" target="_blank">贵州快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="gxk3/index.html"><img src="/images/column/gxk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="gxk3/index.html" target="_blank">广西快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="gsk3/index.html"><img src="/images/column/gsk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="gsk3/index.html" target="_blank">甘肃快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="hubk3/index.html"><img src="/images/column/hubk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="hubk3/index.html" target="_blank">湖北快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="hebk3/index.html"><img src="/images/column/hebk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="hebk3/index.html" target="_blank">河北快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="hnk3/index.html"><img src="/images/column/hnk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="hnk3/index.html" target="_blank">河南快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="jxk3/index.html"><img src="/images/column/jxk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="jxk3/index.html" target="_blank">江西快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="jlk3/index.html"><img src="/images/column/jlk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="jlk3/index.html" target="_blank">吉林快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="nmgk3/index.html"><img src="/images/column/nmgk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="nmgk3/index.html" target="_blank">内蒙古快3走势图</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="shk3/index.html"><img src="/images/column/shk3.png"></a>
+						</td>
+						<td>
+							<div class="title"><a href="shk3/index.html" target="_blank">上海快3走势图</a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- 脚 -->
+	<footer>
+		<div class="maincontent">
+			<section class="help">
+				<div class="security">
+					<div><img src="/images/static/security.png"><span>安全购彩</span></div>
+					<ul>
+						<li>交易安全</li>
+						<li>购买便捷</li>
+						<li>派奖快速</li>
+					</ul>
+				</div>
+				<div class="deposit">
+					<div><img src="/images/static/deposit.png"><span>充值指南</span></div>
+					<ul>
+						<li><a href="/help/63.html">充值方式</a></li>
+						<li><a href="/help/74.html">在线充值</a></li>
+						<li><a href="/help/66.html">修改真实姓名</a></li>
+						<li><a href="/help/65.html">修改银行卡</a></li>
+					</ul>
+				</div>
+				<div class="withdraw">
+					<div><img src="/images/static/withdraw.png"><span>提款帮助</span></div>
+					<ul>
+						<li><a href="/help/71.html">如何提款</a></li>
+						<li><a href="/help/69.html">到账时间</a></li>
+						<li><a href="/help/68.html">银行提款费率</a></li>
+						<li><a href="/help/70.html">提款注意</a></li>
+					</ul>
+				</div>
+				<div class="question">
+					<div><img src="/images/static/question.png"><span>常见问题</span></div>
+					<ul>
+						<li><a href="/help/48.html">如何注册网站会员</a></li>
+						<li><a href="/help/49.html">注册时需注意什么</a></li>
+						<li><a href="/help/57.html">如何注销会员帐户</a></li>
+						<li><a href="/help/54.html">密码忘记了怎么办</a></li>
+					</ul>
+				</div>
+				<div class="contact">
+					<div><img src="/images/static/contact.png"><span>联系我们</span></div>
+					<ul>
+						<li>电话：</li>
+						<li>QQ：</li>
+						<li>版权所有:</li>
+						<li>可乐彩</li>
+					</ul>
+				</div>
+			</section>
+			<div class="logos">
+				<img src="/images/static/wljc.gif">
+				<img src="/images/static/wangan.gif">
+				<img src="/images/static/wsjy.gif">
+				<img src="/images/static/xylh.gif">
+				<img src="/images/static/kxwz.gif">
+			</div>
+			<div class="copyright">
+				<p>ICP备案号：<a class="icp" href="http://www.miibeian.gov.cn/" rel="nofollow"></a> | 版权所有：可乐彩 | 开发公司：可乐彩</p>
+				<p>客服邮箱：service@haitun.com | 客服QQ：</p>
+				<p><span class="warn">可乐彩郑重提示：彩票有风险，投注需谨慎</span> 不向未满18周岁的青少年出售彩票</p>
+			</div>
+		</div>
+	</footer>
+	<div id="kefubox"></div>
+</body>
+</html>

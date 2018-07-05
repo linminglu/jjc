@@ -1,0 +1,19 @@
+*{margin:0;padding:0;font-size:12px;}
+html,body{background:#fff;}
+a{color:#000;text-decoration:none;border:1px solid #fff;padding:1px;}
+a:hover{color:#000;text-decoration:none;border:1px solid #217FC7;padding:1px;}
+
+ul{list-style:none;}
+.treediv{width:145px;margin: 0 auto;padding:0 0 0 0;}
+
+.treehd{width:165px;height:28px;line-height:29px;margin:0 auto;background: #1887D2 url(../images/smenu_hd.gif) no-repeat;color:#fff;text-align:center;}
+.treehead{margin:5px 0 2px 0;padding:0 5px;color:#666;display:none;}
+.treebox{margin: 0 0 5px 0;}
+.treebox h2{cursor:pointer;font-weight:normal;height:22px;line-height:24px;color:#fff;padding: 0 0 0 30px;background:#36AFD5 url(../images/smenu_bg.gif) no-repeat;}
+.treebox ul{padding: 0 0 0 25px;margin:0;border:1px solid #95D6E4;}
+.treebox ul li{margin:8px 0;padding: 0 0 0 15px;background:#fff url(../images/smenu_left.gif) no-repeat;}
+
+.liselected{
+	background:#228BBB;
+	color:#fff;
+}

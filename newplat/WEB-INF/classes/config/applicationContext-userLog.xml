@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+	<beans>
+	
+	<!-- 日志基本信息 -->
+	<bean id="userLogDAO" class="com.ram.dao.userLog.hibernate.UserLogDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="userLogService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.ram.service.userLog.impl.UserLogServiceImpl">
+	            <property name="userLogDAO"><ref local="userLogDAO"/></property>	            
+	        </bean>
+	    </property>
+		<!-- Override default transaction attributes b/c of LoginCookie methods -->
+	</bean>
+	
+	</beans>

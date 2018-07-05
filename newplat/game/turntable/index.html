@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content=""> 
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/mui/mui.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/loaders.css" />
+<script type="text/javascript" src="../js/move.js"></script>
+<script type="text/javascript" src="../js/rotaryDraw.js"></script>
+<script type="text/javascript" src="../js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="../js/components/mode-ecb.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/mui/mui.min.css">
+<link type="text/css" rel="stylesheet" href="../css/base.css" />
+<title>幸运转盘</title>
+<script type="text/javascript">
+move.hideHeader();
+</script>
+<style>
+html{height: 100%;}
+body{
+	background: url("images/home_luck_bg.png") no-repeat #FFCA4B;
+	background-size:100% 100%;  
+}
+.turntablehead img{width: 100%;margin-top: 20px;}
+.box{
+	position:relative;
+	margin:0 auto;
+	padding: 10px;
+}
+.box .img01{
+	width:100%;
+}
+.box .drawBtn{
+	position:absolute;
+	width:10rem;
+	height:auto;
+	left:50%;
+	margin-left:-4.9rem;
+}
+.lablesbox span{position: absolute;color: #fff;font-size: 16px;}
+
+.main-content{}
+
+/*<320*/
+@media screen and (max-width: 320px) {
+#lable1{top: 55px;left: 40%;transform: rotate(-3deg);-ms-transform: rotate(-3deg);-moz-transform: rotate(-3deg);-webkit-transform: rotate(-3deg);-o-transform: rotate(-3deg);}
+#lable2{top: 102px;left: 68%;transform: rotate(59deg);-ms-transform: rotate(59deg);-moz-transform: rotate(59deg);-webkit-transform: rotate(59deg);-o-transform: rotate(59deg);}
+#lable3{top: 195px;left: 69%;transform: rotate(120deg);-ms-transform: rotate(120deg);-moz-transform: rotate(120deg);-webkit-transform: rotate(120deg);-o-transform: rotate(120deg);}
+#lable4{top: 245px;left: 42%;transform: rotate(180deg);-ms-transform: rotate(180deg);-moz-transform: rotate(180deg);-webkit-transform: rotate(180deg);-o-transform: rotate(180deg);}
+#lable5{top: 200px;left: 16%;transform: rotate(-120deg);-ms-transform: rotate(-120deg);-moz-transform: rotate(-120deg);-webkit-transform: rotate(-120deg);-o-transform: rotate(-120deg);}
+#lable6{top: 112px;left: 14%;transform: rotate(-65deg);-ms-transform: rotate(-65deg);-moz-transform: rotate(-65deg);-webkit-transform: rotate(-65deg);-o-transform: rotate(-65deg);}
+
+}
+@media screen and (min-width: 321px) and (max-width: 380px) {
+#lable1{top: 70px;left: 40%;transform: rotate(-3deg);-ms-transform: rotate(-3deg);-moz-transform: rotate(-3deg);-webkit-transform: rotate(-3deg);-o-transform: rotate(-3deg);}
+#lable2{top: 122px;left: 69%;transform: rotate(59deg);-ms-transform: rotate(59deg);-moz-transform: rotate(59deg);-webkit-transform: rotate(59deg);-o-transform: rotate(59deg);}
+#lable3{top: 225px;left: 69%;transform: rotate(120deg);-ms-transform: rotate(120deg);-moz-transform: rotate(120deg);-webkit-transform: rotate(120deg);-o-transform: rotate(120deg);}
+#lable4{top: 290px;left: 42%;transform: rotate(180deg);-ms-transform: rotate(180deg);-moz-transform: rotate(180deg);-webkit-transform: rotate(180deg);-o-transform: rotate(180deg);}
+#lable5{top: 235px;left: 17%;transform: rotate(-120deg);-ms-transform: rotate(-120deg);-moz-transform: rotate(-120deg);-webkit-transform: rotate(-120deg);-o-transform: rotate(-120deg);}
+#lable6{top: 132px;left: 16%;transform: rotate(-65deg);-ms-transform: rotate(-65deg);-moz-transform: rotate(-65deg);-webkit-transform: rotate(-65deg);-o-transform: rotate(-65deg);}
+}
+@media screen and (min-width: 381px) and (max-width: 420px) {
+#lable1{top: 75px;left: 40%;transform: rotate(-3deg);-ms-transform: rotate(-3deg);-moz-transform: rotate(-3deg);-webkit-transform: rotate(-3deg);-o-transform: rotate(-3deg);}
+#lable2{top: 132px;left: 70%;transform: rotate(59deg);-ms-transform: rotate(59deg);-moz-transform: rotate(59deg);-webkit-transform: rotate(59deg);-o-transform: rotate(59deg);}
+#lable3{top: 245px;left: 71%;transform: rotate(120deg);-ms-transform: rotate(120deg);-moz-transform: rotate(120deg);-webkit-transform: rotate(120deg);-o-transform: rotate(120deg);}
+#lable4{top: 310px;left: 43%;transform: rotate(180deg);-ms-transform: rotate(180deg);-moz-transform: rotate(180deg);-webkit-transform: rotate(180deg);-o-transform: rotate(180deg);}
+#lable5{top: 260px;left: 17%;transform: rotate(-120deg);-ms-transform: rotate(-120deg);-moz-transform: rotate(-120deg);-webkit-transform: rotate(-120deg);-o-transform: rotate(-120deg);}
+#lable6{top: 142px;left: 16%;transform: rotate(-65deg);-ms-transform: rotate(-65deg);-moz-transform: rotate(-65deg);-webkit-transform: rotate(-65deg);-o-transform: rotate(-65deg);}
+}
+/*>640*/
+@media screen and (min-width: 641px) {
+	.main-content{max-width: 540px;margin: 0 auto;}
+}
+
+
+</style>
+</head>
+<body>
+<div class="">
+	<header class="mui-bar mui-bar-nav">
+		<a class=" mui-icon mui-icon-left-nav mui-pull-left" href="../"></a>
+		<h1 class="mui-title">幸运转盘</h1>
+	</header>
+	<div class="margin-top-header"></div>
+	
+	<div class="turntablehead">
+		<img alt="" src="images/luck_titleimage.png">
+	</div>
+	<div class="box">
+		<img src="images/bg_zhuanpan.png" class="img01" alt="">
+		<img src="images/pointer.png" class="drawBtn">
+		
+		<!-- <div class="lablesbox">
+			<span id="lable1">六六大顺</span>
+			<span id="lable2" class="">发发发</span>
+			<span id="lable3">永久发</span>
+			<span id="lable4">一路发发</span>
+			<span id="lable5">一生发发</span>
+			<span id="lable6">谢谢惠顾</span>
+		</div> -->
+	</div>
+	
+	
+</div>
+<script>
+$(".box .img01").load(function() {
+	var obj = $(".drawBtn");
+	var hei = $(this).height();
+	var hei2 = obj.height();
+	obj.css("top",(hei - hei2)/2+8.5);
+});
+//share份额[数字没有默认],
+//speed速度[单位s,最小0.1s],
+//velocityCurve速度曲线[linear匀速，ease慢快慢，ease-in慢慢开始，ease-out慢慢结束，ease-in-out慢快慢等，用的是css3的速度曲线],可以不写，ease默认值；
+//callback回调函数
+//weeks几周[默认2周，可以不写]
+
+//几份和回调函数这两个参数是必填
+
+
+function callbackA(ind){
+	alert("第一个回调"+ind);
+};
+var newdraw = new turntableDraw('.drawBtn',{
+	share:6,
+	speed:"3s",
+	velocityCurve:"ease",
+	weeks:6,
+	callback:function(num)
+	{
+ 		//callbackA(num);
+ 		indexObj.turnShow();
+	},
+});
+$(".drawBtn").click(function(event) {
+	indexObj.turn();
+});
+$(document).ready(function(){
+	indexObj.turntableInit();
+})
+</script>
+</body>
+</html>

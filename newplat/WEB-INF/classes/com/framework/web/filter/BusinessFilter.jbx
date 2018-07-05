@@ -1,0 +1,10 @@
+[PropertyInfo]
+config,FilterConfig,false,false, , ,false,<default>
+encoding,String,false,false, , ,false,<default>
+expiresMap,HashMap,false,false, , ,false,<default>
+isProxy,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

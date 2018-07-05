@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.GeneralScore" 
+    table="GENERAL_SCORE"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="generalScoreId"
+        type="java.lang.Integer"
+        column="GENERAL_SCORE_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_GENERAL_SCORE</param>
+        </generator>
+    </id>
+
+    <property
+        name="userId"
+        type="java.lang.Integer"
+        column="USER_ID"
+        length="8"
+    />
+      <property
+        name="semesterId"
+        type="java.lang.Integer"
+        column="SEMESTER_ID"
+        length="4"
+    />
+      <property
+        name="programId"
+        type="java.lang.Integer"
+        column="PROGRAM_ID"
+        length="4"
+    />
+      <property
+        name="tcId"
+        type="java.lang.Integer"
+        column="TC_ID"
+        length="8"
+    />
+    <property
+        name="courseId"
+        type="java.lang.Integer"
+        column="COURSE_ID"
+        length="8"
+    />
+    <property
+        name="scheduleCourseId"
+        type="java.lang.Integer"
+        column="SCHEDULE_COURSE_ID"
+        length="8"
+    />
+    <property
+        name="assignmentEndScore"
+        type="java.math.BigDecimal"
+        column="ASSIGNMENT_END_SCORE"
+        length="7"
+    />
+  <property
+        name="examEndScore"
+        type="java.math.BigDecimal"
+        column="EXAM_END_SCORE"
+        length="7"
+    />
+     <property
+        name="oralEndScore"
+        type="java.math.BigDecimal"
+        column="ORAL_EXAM_SCORE"
+        length="7"
+    />
+     <property
+        name="listenEndScore"
+        type="java.math.BigDecimal"
+        column="LISTEN_END_SCORE"
+        length="7"
+    />
+    <property
+        name="selfTestEndScore"
+        type="java.math.BigDecimal"
+        column="SELF_TEST_END_SCORE"
+        length="7"
+    /> 
+    <property
+        name="onlineEndScore"
+        type="java.math.BigDecimal"
+        column="ONLINE_END_SCORE"
+        length="7"
+    />
+    <property
+        name="offlineEndScore"
+        type="java.math.BigDecimal"
+        column="OFFLINE_END_SCORE"
+        length="7"
+    />
+    <property
+        name="coursewareEndScore"
+        type="java.math.BigDecimal"
+        column="COURSEWARE_END_SCORE"
+        length="7"
+    />
+    <property
+        name="assitCoursewareEndScore"
+        type="java.math.BigDecimal"
+        column="ASSIT_COURSEWARE_END_SCORE"
+        length="7"
+    />
+     <property
+        name="faceTechEndScore"
+        type="java.math.BigDecimal"
+        column="FACE_TECH_END_SCORE"
+        length="7"
+    />      
+    <property
+        name="otherEndScore"
+        type="java.math.BigDecimal"
+        column="OTHER_END_SCORE"
+        length="7"
+    />
+    <property
+        name="courseEndScore"
+        type="java.math.BigDecimal"
+        column="COURSE_END_SCORE"
+        length="7"
+    />
+     <property
+        name="sedAddScore"
+        type="java.math.BigDecimal"
+        column="SED_ADD_SCORE"
+        length="7"
+    />
+    <property
+        name="isRelease"
+        type="java.lang.String"
+        column="IS_RELEASE"
+        length="1"
+    />
+     <property
+        name="courseStatus"
+        type="java.lang.String"
+        column="COURSE_STATUS"
+        length="2"
+    />
+    <property
+        name="isCheat"
+        type="java.lang.String"
+        column="IS_CHEAT"
+        length="1"
+    />
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

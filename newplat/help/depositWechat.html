@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/js/mui/mui.min.js"></script>
+<script type="text/javascript" src="/js/move.js"></script>
+<script type="text/javascript" src="/js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="/js/components/mode-ecb.js"></script>
+<link type="text/css" rel="stylesheet" href="/css/base.css" />
+<title>微信转账</title>
+<style type="text/css">
+body{margin: 0;padding: 0;font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;color: #333;font-size: 100%;}
+.main-content{border: none;width: 100%;}
+.main-content .bank_more{margin: 20px;}
+#alipaybox img{display: block;margin: 0 auto;}
+#wechatbox img{display: block;margin: 0 auto;}
+/*<320*/
+@media screen and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 640px) {
+}
+/*>640*/
+@media screen and (min-width: 641px) {
+.main-content{max-width: 540px;margin: 0 auto;}
+.copyright-box{width: 540px;}
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	payQRCode();
+});
+function payQRCode(){
+	$.ajax({
+		type: "POST",
+		url:move.payQRCode,
+		dataType:'json',
+		data:{},
+		success: function(ret){
+			var code=ret.code;
+			var data=ret.data;
+			var msg=ret.msg;
+			if(code=='200'){
+				var alipayObj=data.alipayObj;
+				var val=alipayObj.val;
+				$('#alipaybox img').attr('src',val);
+				var wechatObj=data.wechatObj;
+				var val2=wechatObj.val;
+				$('#wechatbox img').attr('src',val2);
+			}else{
+			}
+		},
+		error: function (jqXHR, textStatus, errorThrown) {
+		}
+	});
+}
+</script>
+</head>
+<body>
+<div class="main-content">
+	<div id="wechatbox">
+		<img alt="" src="">
+	</div>
+</div>
+</body>
+</html>

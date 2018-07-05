@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+<!--
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class
+    name="com.ram.model.Role"
+    table="ROLE"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="roleId"
+        type="java.lang.Integer"
+        column="ROLE_ID"
+    >
+
+        <generator class="sequence">
+            <param name="sequence">SEQ_ROLE</param>
+        </generator>
+    </id>
+
+    <property
+        name="roleName"
+        type="java.lang.String"
+        column="ROLE_NAME"
+        length="100"
+    />
+    <property
+        name="status"
+        type="java.lang.String"
+        column="STATUS"
+        length="1"
+    />
+
+    <!-- Associations -->
+    
+    <!-- bi-directional one-to-many association to RoleFunctionRl -->
+    <set
+        name="userRoleRls"
+        lazy="true"
+        inverse="true"
+		cascade="save-update,delete"
+		order-by="USER_ID"
+    >
+        <key>
+            <column name="ROLE_ID" />
+        </key>
+        <one-to-many
+            class="com.ram.model.UserRoleRl"
+        />
+    </set>    
+    <!-- bi-directional one-to-many association to RoleFunctionRl -->
+    <set
+        name="roleFunctionRls"
+        lazy="true"
+        inverse="true"
+		cascade="save-update,delete"
+		order-by="FUNCTION_ID"
+    >
+        <key>
+            <column name="ROLE_ID" />
+        </key>
+        <one-to-many
+            class="com.ram.model.RoleFunctionRl"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to RolePermissionRl -->
+    <set
+        name="rolePermissionRls"
+        inverse="true"
+		cascade="save-update,delete"
+		lazy="false"
+		order-by="PERMISSION_ID"
+    >
+        <key>
+            <column name="ROLE_ID" />
+        </key>
+        <one-to-many
+            class="com.ram.model.RolePermissionRl"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

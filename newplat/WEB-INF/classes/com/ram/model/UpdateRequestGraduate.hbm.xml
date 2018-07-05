@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.UpdateRequestGraduate" 
+    table="UPDATE_REQUEST_GRADUATE"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="id"
+        type="java.lang.Integer"
+        column="ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_UPDATE_REQUEST_GRADUATE</param>
+        </generator>
+    </id>
+
+     <property
+        name="studyNumber"
+        type="java.lang.String"
+        column="STUDY_NUMBER"
+        length="20"
+    />
+
+    <property
+        name="userNameZh"
+        type="java.lang.String"
+        column="USER_NAME_ZH"
+        length="50"
+    />
+
+    <property
+        name="zsbh"
+        type="java.lang.String"
+        column="ZSBH"
+        length="20"
+    />
+
+    <property
+        name="graduateSchool"
+        type="java.lang.String"
+        column="GRADUATE_SCHOOL"
+        length="100"
+    />
+
+    <property
+        name="gender"
+        type="java.lang.String"
+        column="GENDER"
+        length="2"
+    />
+
+    <property
+        name="tcName"
+        type="java.lang.String"
+        column="TC_NAME"
+        length="100"
+    />
+
+    <property
+        name="specialty"
+        type="java.lang.String"
+        column="SPECIALTY"
+        length="50"
+    />
+
+    <property
+        name="regDate"
+        type="java.lang.String"
+        column="REG_DATE"
+        length="10"
+    />
+
+    <property
+        name="cardType"
+        type="java.lang.String"
+        column="CARD_TYPE"
+        length="10"
+    />
+
+    <property
+        name="idcard"
+        type="java.lang.String"
+        column="IDCARD"
+        length="30"
+    />
+
+    <property
+        name="birthday"
+        type="java.lang.String"
+        column="BIRTHDAY"
+        length="10"
+    />
+
+    <property
+        name="nativeplace"
+        type="java.lang.String"
+        column="NATIVEPLACE"
+        length="100"
+    />
+
+    <property
+        name="nation"
+        type="java.lang.String"
+        column="NATION"
+        length="50"
+    />
+
+    <property
+        name="politystation"
+        type="java.lang.String"
+        column="POLITYSTATION"
+        length="100"
+    />
+
+    <property
+        name="homePhone"
+        type="java.lang.String"
+        column="HOME_PHONE"
+        length="40"
+    />
+
+    <property
+        name="workPhone"
+        type="java.lang.String"
+        column="WORK_PHONE"
+        length="40"
+    />
+
+    <property
+        name="workplace"
+        type="java.lang.String"
+        column="WORKPLACE"
+        length="100"
+    />
+
+    <property
+        name="userEmail"
+        type="java.lang.String"
+        column="USER_EMAIL"
+        length="100"
+    />
+
+    <property
+        name="mobile"
+        type="java.lang.String"
+        column="MOBILE"
+        length="40"
+    />
+
+    <property
+        name="postCode"
+        type="java.lang.String"
+        column="POST_CODE"
+        length="6"
+    />
+
+    <property
+        name="address"
+        type="java.lang.String"
+        column="ADDRESS"
+        length="400"
+    />
+
+    <property
+        name="resume"
+        type="java.lang.String"
+        column="RESUME"
+        length="3000"
+    />
+
+    <property
+        name="submitTime"
+        type="java.lang.String"
+        column="SUBMITTIME"
+        length="10"
+    />
+
+    <property
+        name="everusingname"
+        type="java.lang.String"
+        column="EVERUSINGNAME"
+        length="50"
+    />
+    
+   
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

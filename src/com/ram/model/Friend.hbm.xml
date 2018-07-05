@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.Friend" 
+    table="FRIEND"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="friendId"
+        type="java.lang.Integer"
+        column="FRIEND_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_FRIEND</param>
+        </generator>
+    </id>
+
+    <property
+        name="ownerUserId"
+        type="java.lang.Integer"
+        column="OWNER_USER_ID"
+        length="8"
+    />
+    <property
+        name="addDateTime"
+        type="java.sql.Date"
+        column="ADD_DATE_TIME"
+        length="7"
+    />
+    
+    <many-to-one
+        name="friendUser"
+        class="com.ram.model.User"
+        lazy="false"
+    >
+        <column name="FRIEND_USER_ID" />
+    </many-to-one>
+    
+    
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

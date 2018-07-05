@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.card.model.CardRechargeOrder" 
+    table="card_recharge_order"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="orderId"
+        type="java.lang.Integer"
+        column="order_id"
+    >
+        <generator class="identity"/>
+    </id>
+     <property
+        name="itemId"
+        type="java.lang.Integer"
+        column="item_id"
+        length="8"
+    />
+     <property
+        name="userId"
+        type="java.lang.Integer"
+        column="user_id"
+        length="8"
+    />
+    <property
+        name="orderNum"
+        type="java.lang.String"
+        column="order_num"
+        length="50"
+    />
+    <property
+        name="operator"
+        type="java.lang.String"
+        column="operator"
+        length="50"
+    />
+    <property
+        name="totalMoney"
+        type="java.math.BigDecimal"
+        column="total_money"
+    />
+    <property
+        name="payType"
+        type="java.lang.String"
+        column="pay_type"
+    />
+    <property
+        name="payStatus"
+        type="java.lang.String"
+        column="pay_status"
+    />
+	<property
+        name="payTime"
+        type="java.util.Date"
+        column="pay_time"
+    />
+    <property
+        name="createTime"
+        type="java.util.Date"
+        column="create_time"
+    />
+	 <property
+        name="tradeNo"
+        type="java.lang.String"
+        column="trade_no"
+        length="50"
+    />
+
+	 <property
+        name="receiveBankName"
+        type="java.lang.String"
+        column="receive_bank_name"
+        length="50"
+    />
+	 <property
+        name="receiveBankAccount"
+        type="java.lang.String"
+        column="receive_bank_account"
+        length="50"
+    />
+  	 <property
+        name="receiveUserName"
+        type="java.lang.String"
+        column="receive_user_name"
+        length="50"
+    />
+   	 <property
+        name="receiveCountry"
+        type="java.lang.String"
+        column="receive_country"
+        length="50"
+    /> 
+    	 <property
+        name="depositorBankName"
+        type="java.lang.String"
+        column="depositor_bank_name"
+        length="50"
+    />
+    
+ 	 <property
+        name="depositorUserName"
+        type="java.lang.String"
+        column="depositor_user_name"
+        length="50"
+    />   
+  	 <property
+        name="depositorBankAccount"
+        type="java.lang.String"
+        column="depositor_bank_account"
+        length="50"
+    />      
+    
+   	 <property
+        name="depositType"
+        type="java.lang.String"
+        column="deposit_type"
+        length="2"
+    />     
+   <property
+        name="payPrice"
+        type="java.math.BigDecimal"
+        column="pay_price"
+    />
+   <property
+        name="reason"
+        type="java.lang.String"
+        column="reason"
+        length="300"
+    />
+   <property
+        name="QRcodeURL"
+        type="java.lang.String"
+        column="qrcode_url"
+        length="300"
+    />
+   <property
+        name="bankId"
+        type="java.lang.Integer"
+        column="bank_id"
+        length="11"
+    />
+        <property
+        name="userMoney"
+        type="java.math.BigDecimal"
+        column="user_money"
+    />
+    
+</class>
+</hibernate-mapping>

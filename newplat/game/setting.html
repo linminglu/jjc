@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/b.min.js?v=hp2018052805"></script>
+<script type="text/javascript" src="js/h.min.js?v=hp2018052805"></script>
+<link type="text/css" rel="stylesheet" href="css/h.min.css?v=hp2018052805"/>
+<title>设置</title>
+<script type="text/javascript">
+if(move.width>640){
+	move.width=540;
+}
+$(document).ready(function(){
+	move.hideHeader();
+	$('.btn').width(move.width);
+	if(move.user.u!=null){
+		$('.bottom-box').show();
+	}
+});
+</script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav ">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">设置</h1>
+	</header>
+<div class="main-content main-content-view">
+	<div class="greyline"></div>
+	<div class="me-cell-box">
+		<ul class="mui-table-view">
+			 <li class="mui-table-view-cell">
+                <a class="mui-navigate-right" href="javascript:move.openViewGuest('changePwd.html');">
+					修改登录密码<span class="nav-cell-explain"></span>
+                </a>
+            </li>
+			 <li class="mui-table-view-cell">
+                <a class="mui-navigate-right" href="javascript:move.openViewGuest('changeTiXianPwd.html');">
+					修改提现密码<span class="nav-cell-explain"></span>
+                </a>
+            </li>
+		</ul>
+	</div>
+	<div class="bottom-box">
+		<div class="btn btn-orange logout-btn" onclick="meObj.logout();" style="height: 50px;line-height: 50px;">退出当前帐号</div>
+	</div>
+</div>
+</body>
+</html>

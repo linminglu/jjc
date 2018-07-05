@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.UserLog" 
+    table="USER_LOG"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="userLogId"
+        type="java.lang.Integer"
+        column="USER_LOG_ID"
+    >
+    
+        <generator class="identity"/>
+    </id>
+
+    <property
+        name="userId"
+        type="java.lang.Integer"
+        column="USER_ID"
+        length="8"
+    />
+    <property
+        name="dateTime"
+        type="java.util.Date"
+        column="DATE_TIME"
+        length="16"
+    />
+    <property
+        name="actionText"
+        type="java.lang.String"
+        column="ACTION_TEXT"
+        length="2000"
+    />
+    <property
+        name="loginName"
+        type="java.lang.String"
+        column="LOGIN_NAME"
+        length="60"
+    />
+
+    <property
+        name="managerId"
+        type="java.lang.Integer"
+        column="MANAGER_ID"
+        length="8"
+    />
+    <property
+        name="ipAddress"
+        type="java.lang.String"
+        column="IP_ADDRESS"
+        length="100"
+    />
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

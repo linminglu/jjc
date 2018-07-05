@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+
+    <class
+        name="com.apps.model.OrderProduct"
+        table="order_product" >
+        <cache usage="read-write" />
+        <id
+            name="opId"
+            column="op_id"
+            type="java.lang.Integer" >
+
+            <generator class="identity" />
+        </id>
+         <property
+            name="oid"
+            column="o_id"
+            length="8"
+            type="java.lang.Integer" />
+         <property
+            name="pid"
+            column="p_id"
+            type="java.lang.Integer" />
+ 		<property
+            name="num"
+            column="num"
+            length="2"
+            type="java.lang.Integer" />
+        <property
+            name="price"
+            column="price"
+            type="java.math.BigDecimal" />
+    </class>
+
+</hibernate-mapping>

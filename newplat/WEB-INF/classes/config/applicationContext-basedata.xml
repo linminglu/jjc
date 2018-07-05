@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+	<beans>
+	
+	<bean id="baseDataDAO" class="com.apps.dao.hibernate.BaseDataDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="baseDataService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.apps.service.impl.BaseDataServiceImpl">
+	            <property name="baseDataDAO"><ref local="baseDataDAO"/></property>	            
+	        </bean>
+	    </property>
+	</bean>
+	</beans>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- ==================================== Data Sources      -->
+  	<data-sources>
+  	</data-sources>
+  	<!-- ==================================== Form Beans        -->
+  	<form-beans>
+		<form-bean name="bjPk10Form" type="com.xy.pk10.bjpk10.web.form.BjPk10Form"/>
+  	</form-beans>
+  	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+	 	<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+  	<!-- ==================================== Action Mappings    -->
+  	<action-mappings>
+  		<action 
+			path="/bjPk10Action" 
+    		type="com.xy.pk10.bjpk10.web.action.BjPk10Action" 
+    		name="bjPk10Form" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+	   		<forward name="init" path="/notOpenSessionList.jsp"/>
+	   		<forward name="betList" path="/bjpk10BetList.jsp"/>
+	   		<forward name="betManager" path="/bjPk10BetManager.jsp"/>
+	   		<forward name="betDetailManager" path="/bjPk10BetDetailManager.jsp"/>
+	   			
+	   			
+	   		<forward name="initTodaySession" path="/initTodaySession.jsp"/>
+	   		<forward name="firstBallBetRate" path="/firstBallBetRate.jsp"/>
+	   		<forward name="initBetRate"  path="/k10Action.do?method=firstBallBetRate" redirect="true"/>
+	   		<forward name="preAdd" path="/preModify.jsp"/>
+	   		<forward name="save" path="/k10Action.do?method=init"/>
+	   		<forward name="initLotteryResults" path="/lotteryResultsList.jsp"/>
+	   		<forward name="initBetList" path="/betList.jsp"/>
+	   		<forward name="initAgentBetList" path="/agentBetList.jsp"/>
+	   		<forward name="initAccountList" path="/accountList.jsp"/>
+	   		<forward name="initAgentAccountList" path="/agentAccountList.jsp"/>
+	   		<forward name="initCancelBetList" path="/cancelBetList.jsp"/>
+	   		<forward name="betDetail" path="/betDetailList.jsp"/>
+	   		<forward name="betUserList" path="/betUserList.jsp"/>
+	   		<forward name="accountDetail" path="/accountDetailList.jsp"/>
+	   		<forward name="accountUser" path="/accountUserList.jsp"/>
+	   		<forward name="betSave" path="/k10Action.do?method=firstBallBetRate" redirect="true"/>
+
+    	</action>
+    </action-mappings>
+</struts-config>

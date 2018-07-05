@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.apps.model.Param" 
+    table="param"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="paramId"
+        type="java.lang.Integer"
+        column="param_id"
+    >
+        <generator class="identity"/>
+    </id>
+
+    <property
+        name="title"
+        type="java.lang.String"
+        column="title"
+        length="200"
+    />
+     <property
+        name="status"
+        type="java.lang.String"
+        column="status"
+        length="1"
+    />
+    <property
+        name="sort"
+        type="java.lang.String"
+        column="sort"
+        length="2"
+    />
+     
+      <property
+            name="type"
+            column="type"
+            length="40"
+            type="java.lang.String" />
+      <property
+            name="code"
+            column="code"
+            length="40"
+            type="java.lang.String" />
+      <property
+            name="value"
+            column="value"
+            length="40"
+            type="java.lang.String" />
+      <property
+            name="readonly"
+            column="readonly"
+            length="40"
+            type="java.lang.String" />
+ 	  <property
+        name="minRecharge"
+        column="min_recharge"
+        type="java.math.BigDecimal"
+    />
+ 	  <property
+        name="maxRecharge"
+        column="max_recharge"
+        type="java.math.BigDecimal"
+    />
+ 	  <property
+        name="maxPresent"
+        column="max_present"
+        type="java.math.BigDecimal"
+    />
+     <property
+            name="beizhu"
+          	column="beizhu"
+            type="java.lang.String" />
+</class>
+</hibernate-mapping>

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<title>优惠活动</title>
+<script type="text/javascript" src="js/b.min.js?v=hp2018052805"></script>
+<script type="text/javascript" src="js/h.min.js?v=hp2018052805"></script>
+<link type="text/css" rel="stylesheet" href="css/h.min.css?v=hp2018052805"/>
+<script type="text/javascript">
+move.width=$(window).width();
+$(document).ready(function(){
+	move.hideHeader();
+});
+</script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav ">
+	<a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">优惠活动</h1>
+</header>
+<div class="main-content main-content-view">
+	<div id="content" class="mui-scroll-wrapper bxs-pages">
+		<div class="mui-scroll main-content-top">
+			<ul class="" id="dataList">
+				<!-- <li class="content-line">
+					<div class="title">
+						优惠活动2
+					</div>
+					<div class="content-img">
+						<img src="http://gfxy.bigkele.com/file_upload/promotion/201803/20180328/20180328190007812.jpg"/>
+					</div>
+					<div class="content-date">
+						<span class="data">起始时间：2018-03-30</span>
+						<span class="details">详情</span>
+						<span class="icon mui-icon mui-icon-arrowright"></span>
+						<span class="icon2 mui-icon mui-icon-arrowright"></span>
+					</div>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+	<div class="details-content">
+		<ul id="detailsList">
+		</ul>
+	</div>
+	<div class="not-data">
+		<img src="/game/images/empty.png">
+		<p class="not-data-lable">没有找到数据</p>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+mui.init({
+	  pullRefresh : {
+	    container:'#content',
+	    up : {
+	      height:100,
+	      auto:true,
+	      callback: meObj.promotionList
+	    }
+	  }
+});
+mui.ready(function() {
+	if (mui.os.plus) {
+		mui.plusReady(function() {
+			setTimeout(function() {
+				mui('#content').pullRefresh().pullupLoading();
+			}, 1000);
+		});
+	} else {
+		mui.ready(function() {
+			mui('#content').pullRefresh().pullupLoading();
+		});
+	}
+});
+
+</script>
+</html>

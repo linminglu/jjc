@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="jsftDAO" class="com.xy.pk10.jsft.dao.hibernate.JsftDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="jsftService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.pk10.jsft.service.impl.JsftServiceImpl">
+	            <property name="jsftDAO"><ref local="jsftDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化 -->
+	<bean name="initJsftSessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.xy.pk10.jsft.service.impl.InitJsftSession</value></property>
+		<property name="jobDataAsMap"><map><entry key="jsftService"><ref bean="jsftService" /></entry></map></property>
+	</bean>
+	<bean id="initJsftSession" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="initJsftSessionJob"/></property>
+		<property name="cronExpression"><value>0 0/30 * * * ?</value></property>
+	</bean> 
+	
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchJsftResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.xy.pk10.jsft.service.impl.FetchJsftResult</value></property>
+		<property name="jobDataAsMap"><map><entry key="jsftService"><ref bean="jsftService" /></entry></map></property>
+	</bean>
+	<bean id="fetchJsftResult" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="fetchJsftResultJob"/></property>
+		<property name="cronExpression"><value>0/30 * * * * ?</value></property>
+	</bean>
+	
+	<!-- 加载计划任务 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initJsftSession" />
+				<ref local="fetchJsftResult"/>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

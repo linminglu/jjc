@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+<form-validation>
+  <global>
+    <constant>
+      <constant-name>phone</constant-name>
+      <constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value>
+    </constant>
+    <constant>
+      <constant-name>zip</constant-name>
+      <constant-value>^\d{5}\d*$</constant-value>
+    </constant>
+  </global>
+  <formset>
+    <constant>
+      <constant-name>zip</constant-name>
+      <constant-value>^\d{5}(-\d{4})?$</constant-value>
+    </constant>
+    
+    <form name="FunctionValidForm">
+      <field property="funcName" depends="required">
+      <arg key="Function.funcName"/>
+      </field>
+	  <field property="funcProCode" depends="required">
+      <arg key="Function.funcProCode"/>
+      </field>
+	  <field property="fucDesc" depends="maxlength">
+      <arg key="Function.fucDesc"/>
+		<arg name="maxlength" key="${var:maxlength}" resource="false" position="1"/>
+		<var>
+          <var-name>maxlength</var-name>
+          <var-value>800</var-value>
+        </var>
+      </field>
+    </form>
+	
+	<form name="RoleValidForm">
+      <field property="roleName" depends="required">
+      <arg key="Role.roleName"/>
+      </field>
+	  <field property="roleDesc" depends="maxlength">
+      <arg key="Role.roleDesc"/>
+		<arg name="maxlength" key="${var:maxlength}" resource="false" position="1"/>
+		<var>
+          <var-name>maxlength</var-name>
+          <var-value>80</var-value>
+        </var>
+      </field>
+    </form>
+
+	<form name="GroupValidForm">
+      <field property="groupName" depends="required">
+      <arg key="Group.groupName"/>
+      </field>
+	  <field property="groupDesc" depends="maxlength">
+      <arg key="Group.groupDesc"/>
+		<arg name="maxlength" key="${var:maxlength}" resource="false" position="1"/>
+		<var>
+          <var-name>maxlength</var-name>
+          <var-value>80</var-value>
+        </var>
+      </field>
+    </form>
+
+	<form name="UserValidForm">
+      <field property="userName" depends="required,mask">
+      <arg key="User.userName"/>
+	  <var>
+          <var-name>mask</var-name>
+          <var-value>^\w+$</var-value>
+        </var>
+	  </field>
+	  <field property="password" depends="required">
+      <arg key="User.password"/>
+	  </field>
+	  <field property="email" depends="required,email">
+      <arg key="User.email"/>
+      </field>
+    </form>
+  </formset>
+</form-validation>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.ResourceType" 
+    table="RESOURCE_TYPE"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="resourceTypeId"
+        type="java.lang.Integer"
+        column="RESOURCE_TYPE_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_RESOURCE_TYPE</param>
+        </generator>
+    </id>
+
+    <property
+        name="resourceTypeName"
+        type="java.lang.String"
+        column="RESOURCE_TYPE_NAME"
+        length="50"
+    />
+    <property
+        name="resourceTypeNameEN"
+        type="java.lang.String"
+        column="RESOURCE_TYPE_NAME_EN"
+        length="50"
+    />
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="updateDateTime"
+        type="java.sql.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+    <property
+        name="isCourseWare"
+        type="java.lang.Integer"
+        column="IS_COURSE_WARE"
+        length="1"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to BwResource -->
+   
+</class>
+</hibernate-mapping>

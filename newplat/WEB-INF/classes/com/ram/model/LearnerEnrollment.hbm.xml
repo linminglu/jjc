@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.LearnerEnrollment" 
+    table="LEARNER_ENROLLMENT"
+    lazy="true"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="learnerEnrollmentId"
+        type="java.lang.Integer"
+        column="LEARNER_ENROLLMENT_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_LEARNER_ENROLLMENT</param>
+        </generator>
+    </id>
+
+    <property
+        name="userId"
+        type="java.lang.Integer"
+        column="USER_ID"
+        length="8"
+    />
+    <property
+        name="scheduleId"
+        type="java.lang.Integer"
+        column="SCHEDULE_ID"
+        length="8"
+    />
+    <property
+        name="scheduleModuleId"
+        type="java.lang.Integer"
+        column="SCHEDULE_MODULE_ID"
+        length="8"
+    />
+    <property
+        name="courseId"
+        type="java.lang.Integer"
+        column="COURSE_ID"
+        length="4"
+    />
+    <property
+        name="scheduleCourseId"
+        type="java.lang.Integer"
+        column="SCHEDULE_COURSE_ID"
+        length="8"
+    />
+    <property
+        name="courseStatus"
+        type="java.lang.String"
+        column="COURSE_STATUS"
+        length="2"
+    />
+    <property
+        name="selSemesterId"
+        type="java.lang.Integer"
+        column="SEL_SEMESTER_ID"
+        length="2"
+    />
+    <property
+        name="curSemesterId"
+        type="java.lang.Integer"
+        column="CUR_SEMESTER_ID"
+        length="2"
+    />
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="updateDateTime"
+        type="java.util.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+    <property
+        name="isCourseExamine"
+        type="java.lang.String"
+        column="IS_COURSE_EXAMINE"
+        length="1"
+    />
+    <property
+        name="courseScore"
+        type="java.math.BigDecimal"
+        column="COURSE_SCORE"
+        length="5"
+    />
+	<property
+        name="bookStatus"
+        type="java.lang.String"
+        column="BOOK_STATUS"
+        length="1"
+    />
+    
+    <property
+        name="mailStatus"
+        type="java.lang.String"
+        column="MAIL_STATUS"
+        length="1"
+    />
+    
+	<property
+        name="bookDate"
+        type="java.util.Date"
+        column="BOOK_DATE"
+    />
+	<property
+        name="oldStatusEnrolltype"
+        type="java.lang.String"
+        column="OLD_STATUS_ENROLLTYPE"
+        length="8"		
+    />
+     <property
+        name="tutorId"
+        type="java.lang.Integer"
+        column="TUTOR_ID"
+        length="8"
+    />
+    
+     <property
+        name="agoTutorId"
+        type="java.lang.Integer"
+        column="AGO_TUTOR_ID"
+        length="8"
+    />
+    
+     <property
+        name="reEnrollFlag"
+        type="java.lang.String"
+        column="RE_ENROLL_FLAG"
+        length="1"
+    />
+    
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/b.min.js?v=hp2018052805"></script>
+<script type="text/javascript" src="js/h.min.js?v=hp2018052805"></script>
+<link type="text/css" rel="stylesheet" href="css/h.min.css?v=hp2018052805"/>
+<title>我的</title>
+<script type="text/javascript">
+$(document).ready(function(){
+	meObj.me();
+	move.updateHelper();
+});
+</script>
+</head>
+<body>
+<div class="ga-view">
+	<div class="main-content main-content-top">
+		<div class="me-box">
+			<div class="head-setting">
+				<div class="head">
+					<div class="head-img fl">
+						<img id="head-img" src="images/head.png">
+					</div>
+					<div class="level-img">
+						<img id="level-img" src="" />
+					</div>
+					<div class="head-info fl">
+						<p id="userId"></p>
+						<p id="u"></p>
+						<span id="loginbtn" onclick="baseObj.openLogin();">点击登录</span>
+					</div>
+				</div>
+				<div  class="message" onclick="baseObj.openView('message.html');">
+					<span  class="announcement"></span>
+					<span class="setting-lable">消息</span>
+				</div>
+				<div class="setting" onclick="baseObj.openView('setting.html');">
+					<span class="setting-ico mui-icon icon-shezhi">
+					</span>
+					<span class="setting-lable">设置</span>
+				</div>
+				<div class="level-icon">
+					<img id="level-icon" src="" />
+				</div>
+			</div>
+			<div class="coupons-points transparentlow">
+				<div class="money-box">
+					<span id="yue" class="money-val">0</span>
+					<span class="money-lable">余额</span>
+				</div>
+				<div class="money-box">
+					<span id="tikuan" class="money-val">0</span>
+					<span class="money-lable">提款金额</span>
+				</div>
+				<div class="money-box">
+					<span id="shuying" class="money-val">0</span>
+					<span class="money-lable">今日输赢</span>
+				</div>
+			</div>
+		</div>
+		<div class="greyline"></div>
+		<div class="me-cell-box">
+			<div class="level-cell">
+				<div class="now-level fl">
+					<span class="level-icon">
+						<img id="now-level-icon" src=""/>
+					</span>
+					<span class="level-point" id="nowLevelPoint">0</span>
+				</div>
+				<div class="level-info fl">
+					<div class="point-line">
+						<span class="my-point">
+							当前：<span class="point" id="myPoint">0</span>
+						</span>
+						<span class="my-point">
+							离升级差：<span class="point" id="lackPoint">0</span>
+						</span>
+					</div>
+					<div class="scale-line">
+						
+					</div>
+					<div class="scale-line2">
+						
+					</div>
+				</div>
+				<div class="now-level fl">
+					<span class="level-icon">
+						<img id="next-level-icon" src=""/>
+					</span>
+					<span class="level-point" id="nextLevelPoint">
+						0
+					</span>
+				</div>
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" href="javascript:meObj.openViewWithCheckGuest('wallet.html');">
+	                	<span class="me-ico"><img src="images/ico_cunqukuan.png"></span>
+	                	<span class="fl">存取款</span>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" href="javascript:meObj.openViewWithCheckGuest('changeTiXianPwd.html');">
+	                	<span class="me-ico"><img src="images/ico_qkpwd.png"></span>
+	                	<span class="fl">设置提款密码</span>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" href="javascript:meObj.openViewWithCheckGuest('rechargeList.html');">
+	                	<span class="me-ico"><img src="images/ico_chongzhi.png"></span>
+	                	<span class="fl">充值记录</span>
+	                </a>
+	            </li>
+				<li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" href="javascript:baseObj.openView('touzhuList.html');">
+	                	<span class="me-ico"><img src="images/ico_touzhu.png"></span>
+	                	<span class="fl">投注记录</span>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" href="javascript:baseObj.openView('tradeList.html');">
+	                	<span class="me-ico"><img src="images/ico_zjmx.png"></span>
+	                	<span class="fl">资金明细</span>
+	                </a>
+	            </li>
+				<!-- <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" href="javascript:baseObj.openView('zhongjiangList.html');">
+	                	<span class="me-ico"><img src="images/ico_zhongjiang.png"></span>
+	                	<span class="fl">中奖记录</span>
+	                </a>
+	            </li> -->
+	            <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" href="javascript:meObj.openViewWithCheckGuest('tikuanList.html');">
+	                	<span class="me-ico"><img src="images/ico_tikuan.png"></span>
+	                	<span class="fl">提款记录</span>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right g-kefu-abtn">
+	                	<span class="me-ico"><img src="images/ico_kf.png"></span>
+	                	<span class="fl">客&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服</span>
+	                </a>
+	            </li>
+	            <!-- <li class="mui-table-view-cell">
+	                <a id="chatRoom" class="mui-navigate-right" href="javascript:baseObj.openView('http://tt1122vip.com/room/m/index.php');">
+	                	<span class="me-ico"><img src="images/ico_chatroom.png"></span>
+	                	<span class="fl">聊天室</span>
+	                </a>
+	            </li> -->
+	            <li class="mui-table-view-cell g-qqkefu-abtn">
+	                <a id="qqCustomer" class="mui-navigate-right">
+	                	<span class="me-ico"><img src="images/ico_qq_customer.png"></span>
+	                	<span class="fl">QQ客服</span>
+	                </a>
+	            </li>
+	            <!-- <li class="mui-table-view-cell">
+	                <a id="chatRoom" class="mui-navigate-right" href="javascript:meObj.openViewWithCheckGuest('heroicList.html');">
+	                	<span class="me-ico"><img src="images/ico_heroes.png"></span>
+	                	<span class="fl">英雄榜</span>
+	                </a>
+	            </li> -->
+				<!-- <li class="mui-table-view-cell">
+	                <a id="task" class="mui-navigate-right" href="javascript:baseObj.openView('#');">
+	                	<span class="me-ico"><img src="images/icon_task_for_money.png"></span>
+	                	<span class="fl">任务赚钱</span>
+	                </a>
+	            </li> -->
+				<li class="mui-table-view-cell">
+	                <a id="agentsys" class="mui-navigate-right" href_="javascript:meObj.openViewWithCheckGuest('');">
+	                	<span class="me-ico"><img src="images/ico_agency-system.png"></span>
+	                	<span class="fl">代理制度</span>
+	                </a>
+	            </li>
+				<li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" href="javascript:meObj.openViewWithCheckGuest('myMember.html');">
+	                	<span class="me-ico"><img src="images/ico_member.png"></span>
+	                	<span class="fl">下线会员</span>
+	                </a>
+	            </li>
+				<li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" href="javascript:meObj.openViewWithCheckGuest('spreadIncome.html');">
+	                	<span class="me-ico"><img src="images/ico_spreadIncome.png"></span>
+	                	<span class="fl">我的推赚收益</span>
+	                </a>
+	            </li>
+				<li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" href="javascript:baseObj.openView('more.html');">
+	                	<span class="me-ico"><img src="images/ico_more.png"></span>
+	                	<span class="fl">更多</span>
+	                </a>
+	            </li>
+			</ul>
+		</div>
+		<div class="height50"></div>
+	</div>
+	<div class="nav-box">
+		<nav class="mui-bar mui-bar-tab" id="mui-bar">
+			<a class="mui-bar-item" href="javascript:baseObj.openIndex();">
+				<span class="mui-icon mui-img-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-bar-item" href="javascript:baseObj.xiazhu();" >
+				<span class="mui-icon mui-img-xiazhu"></span>
+				<span class="mui-tab-label">下注</span>
+			</a>
+			<a class="mui-bar-item" href="javascript:baseObj.open();">
+				<span class="mui-icon mui-img-open">
+				</span>
+				<span class="mui-tab-label">开奖</span>
+			</a>
+			<a class="mui-bar-item mui-active" href="javascript:baseObj.openMe();">
+				<span class="mui-icon mui-img-me"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</div>
+</div>
+</body>
+</html>

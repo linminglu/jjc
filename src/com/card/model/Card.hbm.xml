@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.card.model.Card" 
+    table="CARD"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="cardId"
+        type="java.lang.Integer"
+        column="CARD_ID"
+    >
+    
+        <generator class="identity"/>
+    </id>
+
+    <property
+        name="protocolCode"
+        type="java.lang.String"
+        column="PROTOCOL_CODE"
+    />
+    <property
+        name="batchCode"
+        type="java.lang.String"
+        column="BATCH_CODE"
+    />
+    <property
+        name="cardCode"
+        type="java.lang.String"
+        column="CARD_CODE"
+    />
+    <property
+        name="cardPwd"
+        type="java.lang.String"
+        column="CARD_PWD"
+    />
+	
+    <property
+        name="cardType"
+        type="java.lang.String"
+        column="CARD_TYPE"
+    />
+    <property
+        name="cardStatus"
+        type="java.lang.String"
+        column="CARD_STATUS"
+    />
+    <property
+        name="cardAmount"
+        type="java.lang.Integer"
+        column="CARD_AMOUNT"
+    />
+    <property
+        name="startDate"
+        type="java.util.Date"
+        column="START_DATE"
+    />
+    <property
+        name="endDate"
+        type="java.util.Date"
+        column="END_DATE"
+    />
+    <property
+        name="validDay"
+        type="java.lang.Integer"
+        column="VALID_DAY"
+    />
+    <property
+        name="createUser"
+        type="java.lang.Integer"
+        column="CREATE_USER"
+    />
+    <property
+        name="createDate"
+        type="java.util.Date"
+        column="CREATE_DATE"
+    />
+    <property
+        name="userId"
+        type="java.lang.Integer"
+        column="USER_ID"
+    />
+    <property
+        name="chargeDate"
+        type="java.util.Date"
+        column="CHARGE_DATE"
+    />
+    <property
+        name="remainAmount"
+        type="java.lang.Integer"
+        column="REMAIN_AMOUNT"
+    />
+    <property
+        name="productStr"
+        type="java.lang.String"
+        column="PRODUCT_STR"
+    />
+    <property
+        name="productName"
+        type="java.lang.String"
+        column="PRODUCT_NAME"
+    />
+        <property
+        name="itemId"
+        type="java.lang.Integer"
+        column="item_id"
+    />
+</class>
+</hibernate-mapping>

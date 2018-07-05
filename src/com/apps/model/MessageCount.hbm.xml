@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+
+<class 
+    name="com.apps.model.MessageCount" 
+    table="tb_message_count"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="msgId"
+        type="java.lang.Integer"
+        column="msg_id"
+    >
+        <generator class="identity"/>
+    </id>
+    <property
+        name="receivePhone"
+        type="java.lang.String"
+        column="receive_phone"
+        length="20"
+    />
+    <property
+        name="sendTime"
+        type="java.util.Date"
+        column="send_time"
+    />
+    <property
+        name="sendIp"
+        type="java.lang.String"
+        column="send_ip"
+        length="50"
+    />
+</class>
+</hibernate-mapping>

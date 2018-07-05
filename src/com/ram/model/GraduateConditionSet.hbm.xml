@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.GraduateConditionSet" 
+    table="GRADUATE_CONDITION_SET"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="graduateConditionSetId"
+        type="java.lang.Integer"
+        column="GRADUATE_CONDITION_SET_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_GRADUATE_CONDITION_SET</param>
+        </generator>
+    </id>
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="updateDateTime"
+        type="java.sql.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+
+    <!-- Associations -->
+	<many-to-one
+        name="semester"
+        class="com.ram.model.Semester"
+    >
+        <column name="SEMESTER_ID" />
+    </many-to-one>
+	<many-to-one
+        name="program"
+        class="com.ram.model.Program"
+    >
+        <column name="PROGRAM_ID" />
+    </many-to-one>
+	<many-to-one
+        name="needStudySchmod"
+        class="com.ram.model.ScheduleModule"
+    >
+        <column name="NEED_STUDY_SCHMODID" />
+    </many-to-one>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.BetOrderRl" table="bet_order_rl">
+		<cache usage="read-write" />
+		<id name="rid" type="java.lang.Integer" column="r_id">
+			<generator class="identity" />
+		</id>
+       <property name="betId" type="java.lang.Integer" column="bet_id" length="8" />
+       <property name="orderId" type="java.lang.Integer" column="order_id" length="8" />
+	</class>
+</hibernate-mapping>

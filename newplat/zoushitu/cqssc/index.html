@@ -1,0 +1,608 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content=""> 
+<!-- <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"> -->
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/js/mui/mui.min.js"></script>
+<script type="text/javascript" src="/js/move.js"></script>
+<script type="text/javascript" src="/js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="/js/components/mode-ecb.js"></script>
+<script type="text/javascript" src="/js/zoushitu.js?t=1"></script>
+<script type="text/javascript" src="/js/trade.js"></script>
+<link type="text/css" rel="stylesheet" href="/css/mui/mui.min.css">
+<link type="text/css" rel="stylesheet" href="/css/base.css" />
+<link type="text/css" rel="stylesheet" href="/css/zoushitu.css" />
+<title>数据图标-彩票走势图-苹果彩票</title>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	zoushituObj.cqssc();
+	zoushituObj.showSession();
+	tradeObj.showSession();
+});
+</script>
+</head>
+<body>
+	<div class="topline">
+		<div class="maincontent">
+			<div class="loginline">
+				<div class="welcome">您好，欢迎来到苹果彩票</div>
+				<div class="login-line">
+					<a id="login" href="#">登录</a>
+					<a id="reg" href="/register.html">免费注册</a>	
+				</div>
+			</div>
+			<div class="logined">
+				<span class="welcome">苹果彩票【pg55.cc】</span>
+				<span class="fr"><a rel="nofollow" href="#">加入收藏</a>|<a href="#">帮助中心</a>|<a href="#">玩法</a>|<a href="#">资讯</a></span>
+			</div>
+		</div>
+	</div>
+	<div class="flex-line maincontent">
+		<a href="/index.html" class="logo"><img alt="" src="/images/static/logo.jpg"></a>		
+		<!--<a class="kf"><img alt="" src="/images/static/cs.gif"></a>-->
+	</div>
+	<div class="nav-line">
+		<div class="" style="margin: 0 auto; width: 1000px;">
+			<div class="selebox">
+				<span class="selhand">选择彩种 <i class="mui-icon mui-icon-bars"></i></span>
+				<ul class="kinds" id="kinds">
+					<li class="kinds-cell">
+						<a href="/trade/ssq/">
+							<span class="czlogo ssq"><img src="/images/column/ssq.png"></span>
+							<span class="kind">双色球</span>
+							<span class="note">2元赢取1000万</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/sanfencai/">
+							<span class="czlogo sanfencai"><img src="/images/column/three.png"></span>
+							<span class="kind">三分彩</span>
+							<span class="note">三分钟1期</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/wufencai/">
+							<span class="czlogo wufencai"><img src="/images/column/five.png"></span>
+							<span class="kind">五分彩</span>
+							<span class="note">五分钟1期</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<span class="session-type">
+							时时彩
+						</span>
+						<div class="session-box">
+							<a href="/trade/cqssc/">
+								<p class="session-title">重庆时时彩</p>
+							</a>
+						</div>
+						<!-- <div class="session-box">
+							<a onclick="mui.alert('对不起彩种暂停销售',document.title, function() {});">
+								<p class="session-title">天津时时彩</p>
+							</a>
+						</div> -->
+					</li>
+					<li class="kinds-cell">
+						<span class="session-type yi-xuan-wu">
+							11选5
+						</span>
+						<div class="session-box">
+							<a href="/trade/nmgpick11/">
+								<p class="session-title">广东11选5</p>
+							</a>
+							<a href="/trade/jxpick11/">
+								<p class="session-title">江西11选5</p>
+							</a>
+							<a href="/trade/sdpick11/">
+								<p class="session-title">山东11选5</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/bjpick11/">
+								<p class="session-title">北京11选5</p>
+							</a>
+							<a href="/trade/tjpick11/">
+								<p class="session-title">天津11选5</p>
+							</a>
+							<a href="/trade/hebpick11/">
+								<p class="session-title">河北11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/lnpick11/">
+								<p class="session-title">辽宁11选5</p>
+							</a>
+							<a href="/trade/jlpick11/">
+								<p class="session-title">吉林11选5</p>
+							</a>
+							<a href="/trade/hljpick11/">
+								<p class="session-title">黑龙江11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/jspick11/">
+								<p class="session-title">江苏11选5</p>
+							</a>
+							<a href="/trade/zjpick11/">
+								<p class="session-title">浙江11选5</p>
+							</a>
+							<a href="/trade/ahpick11/">
+								<p class="session-title">安徽11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/hnpick11/">
+								<p class="session-title">河南11选5</p>
+							</a>
+							<a href="/trade/hubpick11/">
+								<p class="session-title">湖北11选5</p>
+							</a>
+							<a href="/trade/gxpick11/">
+								<p class="session-title">广西11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/gzpick11/">
+								<p class="session-title">贵州11选5</p>
+							</a>
+							<a href="/trade/gspick11/">
+								<p class="session-title">甘肃11选5</p>
+							</a>
+							<a href="/trade/xjpick11/">
+								<p class="session-title">新疆11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/sxpick11/">
+								<p class="session-title">山西11选5</p>
+							</a>
+							<a href="/trade/nmgpick11/">
+								<p class="session-title">内蒙古11选5</p>
+							</a>
+							<a href="/trade/shpick11/">
+								<p class="session-title">上海11选5</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/fjpick11/">
+								<p class="session-title">福建11选5</p>
+							</a>
+							<a href="/trade/shxpick11/">
+								<p class="session-title">陕西11选5</p>
+							</a>
+							<a href="/trade/ynpick11/">
+								<p class="session-title">云南11选5</p>
+							</a>
+						</div>
+					</li>
+					<li class="kinds-cell">
+						<span class="session-type k-three">
+							快3
+						</span>
+						<div class="session-box">
+							<a href="/trade/jsk3/">
+								<p class="session-title">江苏快3</p>
+							</a>
+							<a href="/trade/ahk3/">
+								<p class="session-title">安徽快3</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/bjk3/">
+								<p class="session-title">北京快3</p>
+							</a>
+							<a href="/trade/fjk3/">
+								<p class="session-title">福建快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/gxk3/">
+								<p class="session-title">广西快3</p>
+							</a>
+							<a href="/trade/gsk3/">
+								<p class="session-title">甘肃快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/hubk3/">
+								<p class="session-title">湖北快3</p>
+							</a>
+							<a href="/trade/hebk3/">
+								<p class="session-title">河北快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/hnk3/">
+								<p class="session-title">河南快3</p>
+							</a>
+							<a href="/trade/jxk3/">
+								<p class="session-title">江西快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/jlk3/">
+								<p class="session-title">吉林快3</p>
+							</a>
+							<a href="/trade/nmgk3/">
+								<p class="session-title">内蒙古快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/shk3/">
+								<p class="session-title">上海快3</p>
+							</a>
+							<a href="/trade/gzk3/">
+								<p class="session-title">贵州快3</p>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<ul class="menu-box">
+				<li class="menu-cell"><a class="" href="/">网站首页</a></li>
+				<li class="menu-cell"><a class="" href="/trade">购彩大厅</a></li>
+				<!-- <li class="menu-cell"><a href="/trade/hemai.html">合买大厅</a></li> -->
+				<li class="menu-cell"><a href="/kaijiang/">彩票开奖</a></li>
+				<li class="menu-cell mui-active"><a href="/zoushitu/">走势图表</a></li>
+				<li class="menu-cell"><a href="/news/">彩票资讯</a></li>
+				<li class="menu-cell"><a href="/youhui.html">优惠活动</a></li>
+				<li class="menu-cell"><a href="/game" target="view_window">手机购彩</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="maincontent ">
+		<div class="kj_sort">
+			<div class="menu">
+				<ul id="kjmenu">
+					<li class="nav1"><a href="/zoushitu" target="_parent">走势图表</a></li>
+				</ul>
+           	</div>
+			<div class="clear"></div>
+                <!--地方开奖begin-->
+			<div class="list">
+                <div class="left">
+					<ul>
+						<li><b>彩种：</b>
+					        <a href="/zoushitu/ssq">双色球</a>&nbsp;
+					        <a href="/zoushitu/cqssc">重庆时时彩</a>&nbsp;
+					        <a href="/zoushitu/sanfencai">三分彩</a>&nbsp;
+					        <a href="/zoushitu/wufencai">五分彩</a>&nbsp;
+					        <span class="session-name">
+					        	11选5
+					        	<div class="session-hide-box">
+						        	<div class="session-box">
+										<a href="/zoushitu/nmgpick11">
+											<p class="session-title">广东11选5</p>
+										</a>
+										<a href="/zoushitu/jxpick11">
+											<p class="session-title">江西11选5</p>
+										</a>
+										<a href="/zoushitu/sdpick11">
+											<p class="session-title">山东11选5</p>
+										</a>
+									</div>
+									<div class="session-box">
+										<a href="/zoushitu/sdpick11">
+											<p class="session-title">北京11选5</p>
+										</a>
+										<a href="/zoushitu/tjpick11/">
+											<p class="session-title">天津11选5</p>
+										</a>
+										<a href="/zoushitu/hebpick11/">
+											<p class="session-title">河北11选5</p>
+										</a>
+									</div>
+									<div class="session-box">
+										<a href="/zoushitu/lnpick11/">
+											<p class="session-title">辽宁11选5</p>
+										</a>
+										<a href="/zoushitu/jlpick11/">
+											<p class="session-title">吉林11选5</p>
+										</a>
+										<a href="/zoushitu/hljpick11/">
+											<p class="session-title">黑龙江11选5</p>
+										</a>
+									</div>
+									<div class="session-box">
+										<a href="/zoushitu/jspick11/">
+											<p class="session-title">江苏11选5</p>
+										</a>
+										<a href="/zoushitu/zjpick11/">
+											<p class="session-title">浙江11选5</p>
+										</a>
+										<a href="/zoushitu/ahpick11/">
+											<p class="session-title">安徽11选5</p>
+										</a>
+									</div>
+									<div class="session-box">
+										<a href="/zoushitu/hnpick11/">
+											<p class="session-title">河南11选5</p>
+										</a>
+										<a href="/zoushitu/hubpick11/">
+											<p class="session-title">湖北11选5</p>
+										</a>
+										<a href="/zoushitu/gxpick11/">
+											<p class="session-title">广西11选5</p>
+										</a>
+									</div>
+									<div class="session-box">
+										<a href="/zoushitu/gzpick11/">
+											<p class="session-title">贵州11选5</p>
+										</a>
+										<a href="/zoushitu/gspick11/">
+											<p class="session-title">甘肃11选5</p>
+										</a>
+										<a href="/zoushitu/xjpick11/">
+											<p class="session-title">新疆11选5</p>
+										</a>
+									</div>
+									<div class="session-box">
+										<a href="/zoushitu/sxpick11/">
+											<p class="session-title">山西11选5</p>
+										</a>
+										<a href="/zoushitu/nmgpick11/">
+											<p class="session-title">内蒙古11选5</p>
+										</a>
+										<a href="/zoushitu/shpick11/">
+											<p class="session-title">上海11选5</p>
+										</a>
+									</div>
+									<div class="session-box">
+										<a href="/zoushitu/fjpick11/">
+											<p class="session-title">福建11选5</p>
+										</a>
+										<a href="/zoushitu/shxpick11/">
+											<p class="session-title">陕西11选5</p>
+										</a>
+										<a href="/zoushitu/ynpick11/">
+											<p class="session-title">云南11选5</p>
+										</a>
+									</div>
+						        </div>
+					        </span>&nbsp;
+					        <span class="session-name">
+					      	 	快3
+					       		<div class="session-hide-box">
+							        <div class="session-box">
+										<a href="/zoushitu/jsk3/">
+											<p class="session-title">江苏快3</p>
+										</a>
+										<a href="/zoushitu/ahk3/">
+											<p class="session-title">安徽快3</p>
+										</a>
+									</div>
+									<div class="session-box">
+										<a href="/zoushitu/bjk3/">
+											<p class="session-title">北京快3</p>
+										</a>
+										<a href="/zoushitu/fjk3/">
+											<p class="session-title">福建快3</p>
+										</a>
+									</div>
+									<div class="session-box other-box">
+										<a href="/zoushitu/gxk3/">
+											<p class="session-title">广西快3</p>
+										</a>
+										<a href="/zoushitu/gsk3/">
+											<p class="session-title">甘肃快3</p>
+										</a>
+									</div>
+									<div class="session-box other-box">
+										<a href="/zoushitu/hubk3/">
+											<p class="session-title">湖北快3</p>
+										</a>
+										<a href="/zoushitu/hebk3/">
+											<p class="session-title">河北快3</p>
+										</a>
+									</div>
+									<div class="session-box other-box">
+										<a href="/zoushitu/hnk3/">
+											<p class="session-title">河南快3</p>
+										</a>
+										<a href="/zoushitu/jxk3/">
+											<p class="session-title">江西快3</p>
+										</a>
+									</div>
+									<div class="session-box other-box">
+										<a href="/zoushitu/jlk3/">
+											<p class="session-title">吉林快3</p>
+										</a>
+										<a href="/zoushitu/nmgk3/">
+											<p class="session-title">内蒙古快3</p>
+										</a>
+									</div>
+									<div class="session-box other-box">
+										<a href="/zoushitu/shk3/">
+											<p class="session-title">上海快3</p>
+										</a>
+										<a href="/zoushitu/gzk3/">
+											<p class="session-title">贵州快3</p>
+										</a>
+									</div>
+						        </div>
+					       	</span>&nbsp;
+						</li>
+                	</ul>
+                </div>
+                <div class="clear"></div>
+        	</div>
+        </div>
+		<div class="guide">
+			<span>您当前位置：</span>
+			<a href="/index.html">苹果彩票</a>
+			<span>&gt;</span>
+			<a href="">数据图表</a>
+			<span>&gt;</span>
+			<span>频道首页</span>
+		</div>
+		<div class="datachart">
+			<div class="selectbox">
+				<div class="lable">重庆时时彩基本走势</div>
+				<div class="select">
+					<span class="option curosr" data="0">30期</span>
+					<span class="option curosr" data="1">50期</span>
+					<span class="option curosr" data="2">100期</span>
+				</div>
+			</div>
+			<div class="datalistbox">
+				<table class="dataTable cqssc">
+					<thead>
+					<tr id="menuitem"> 
+			            <th rowspan="2"><strong>期号</strong></th> 
+			            <th rowspan="2" class="bd"></th> 
+			            <th width="35" rowspan="2">开奖<br>号码</th> 
+			            <th rowspan="2" class="bd"></th> 
+			            <th colspan="10">万位走势</th> 
+			            <th rowspan="2" class="bd"></th> 
+			            <th colspan="10">千位走势</th> 
+			            <th rowspan="2" class="bd"></th> 
+			            <th colspan="10">百位走势</th> 
+			            <th rowspan="2" class="bd"></th> 
+			            <th colspan="10">十位走势</th> 
+			            <th rowspan="2" class="bd"></th> 
+			            <th colspan="10">个位走势</th> 
+			            <th rowspan="2" class="bd"></th> 
+			            <th colspan="10">组选分布</th> 
+		           </tr>
+					<tr> 
+			            <th>0</th>
+			            <th>1</th>
+			            <th>2</th>
+			            <th>3</th>
+			            <th>4</th>
+			            <th>5</th>
+			            <th>6</th>
+			            <th>7</th>
+			            <th>8</th>
+			            <th>9</th> 
+			            <th>0</th>
+			            <th>1</th>
+			            <th>2</th>
+			            <th>3</th>
+			            <th>4</th>
+			            <th>5</th>
+			            <th>6</th>
+			            <th>7</th>
+			            <th>8</th>
+			            <th>9</th> 
+			            <th>0</th>
+			            <th>1</th>
+			            <th>2</th>
+			            <th>3</th>
+			            <th>4</th>
+			            <th>5</th>
+			            <th>6</th>
+			            <th>7</th>
+			            <th>8</th>
+			            <th>9</th> 
+			            <th>0</th>
+			            <th>1</th>
+			            <th>2</th>
+			            <th>3</th>
+			            <th>4</th>
+			            <th>5</th>
+			            <th>6</th>
+			            <th>7</th>
+			            <th>8</th>
+			            <th>9</th> 
+				    	<th>0</th>
+			            <th>1</th>
+			            <th>2</th>
+			            <th>3</th>
+			            <th>4</th>
+			            <th>5</th>
+			            <th>6</th>
+			            <th>7</th>
+			            <th>8</th>
+			            <th>9</th>
+			            <th>0</th>
+			            <th>1</th>
+			            <th>2</th>
+			            <th>3</th>
+			            <th>4</th>
+			            <th>5</th>
+			            <th>6</th>
+			            <th>7</th>
+			            <th>8</th>
+			            <th>9</th>
+			           </tr>
+			        </thead>
+					<tbody id="datalist">
+					</tbody>
+				</table>
+			</div>
+			<div class="chartIntro"> 
+			</div>
+		</div>
+	</div>
+	<!-- 脚 -->
+	<footer>
+		<div class="maincontent">
+			<section class="help">
+				<div class="security">
+					<div><img src="/images/static/security.png"><span>安全购彩</span></div>
+					<ul>
+						<li>交易安全</li>
+						<li>购买便捷</li>
+						<li>派奖快速</li>
+					</ul>
+				</div>
+				<div class="deposit">
+					<div><img src="/images/static/deposit.png"><span>充值指南</span></div>
+					<ul>
+						<li><a href="/help/63.html">充值方式</a></li>
+						<li><a href="/help/74.html">在线充值</a></li>
+						<li><a href="/help/66.html">修改真实姓名</a></li>
+						<li><a href="/help/65.html">修改银行卡</a></li>
+					</ul>
+				</div>
+				<div class="withdraw">
+					<div><img src="/images/static/withdraw.png"><span>提款帮助</span></div>
+					<ul>
+						<li><a href="/help/71.html">如何提款</a></li>
+						<li><a href="/help/69.html">到账时间</a></li>
+						<li><a href="/help/68.html">银行提款费率</a></li>
+						<li><a href="/help/70.html">提款注意</a></li>
+					</ul>
+				</div>
+				<div class="question">
+					<div><img src="/images/static/question.png"><span>常见问题</span></div>
+					<ul>
+						<li><a href="/help/48.html">如何注册网站会员</a></li>
+						<li><a href="/help/49.html">注册时需注意什么</a></li>
+						<li><a href="/help/57.html">如何注销会员帐户</a></li>
+						<li><a href="/help/54.html">密码忘记了怎么办</a></li>
+					</ul>
+				</div>
+				<div class="contact">
+					<div><img src="/images/static/contact.png"><span>联系我们</span></div>
+					<ul>
+						<li>电话：</li>
+						<li>QQ：</li>
+						<li>版权所有:</li>
+						<li>苹果彩票</li>
+					</ul>
+				</div>
+			</section>
+			<div class="logos">
+				<img src="/images/static/wljc.gif">
+				<img src="/images/static/wangan.gif">
+				<img src="/images/static/wsjy.gif">
+				<img src="/images/static/xylh.gif">
+				<img src="/images/static/kxwz.gif">
+			</div>
+			<div class="copyright"></div>
+		</div>
+	</footer>
+	<div id="kefubox"></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.apps.model.PayConfig" 
+    table="pay_config"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="payId"
+        type="java.lang.Integer"
+        column="pay_id"
+    >
+        <generator class="identity"/>
+    </id>
+    
+    <property
+        name="par"
+        type="java.lang.String"
+        column="par"
+        length="50"
+    />
+    <property
+        name="code"
+        type="java.lang.String"
+        column="code"
+        length="50"
+    />
+    <property
+        name="payKey"
+        type="java.lang.String"
+        column="pay_key"
+        length="50"
+    />
+    <property
+        name="type"
+        type="java.lang.String"
+        column="type"
+        length="2"
+    />
+
+</class>
+</hibernate-mapping>

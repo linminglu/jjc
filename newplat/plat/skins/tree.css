@@ -1,0 +1,101 @@
+* {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    background: none repeat scroll 0 0 #fff;
+    font-family: Arial,'Century Gothic', "Microsoft YaHei", Trebuchet MS,
+		Verdana, Tahoma, "DejaVu Sans", "Liberation sans",
+		"Bitstream Vera Sans", sans-serif;
+}
+ul {
+    list-style: outside none none;
+}
+.treediv {
+    margin: 0 auto;
+    padding: 0;
+/*     width: 145px; */
+/*     width: 170px; */
+    margin-top: 8px;
+}
+.treehd {
+    background: url("../images/smenu_hd.gif") no-repeat scroll 0 0 #1887d2;
+    color: #fff;
+    height: 28px;
+    line-height: 29px;
+    margin: 0 auto;
+    text-align: center;
+    width: 165px;
+}
+.treehead {
+    color: #666;
+    display: none;
+    margin: 5px 0 2px;
+    padding: 0 5px;
+}
+.treebox {
+}
+.treebox h2 {
+/* 	background-color:#547FA7; */
+/*     color: #fff; */
+    cursor: pointer;
+/*     font-weight: normal; */
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    color: #5C5C5C;
+	border-bottom: 1px solid #ccc ;
+	font-size: 15px;
+	background-color: #4E5465;
+	color:#fff;
+	border-radius:21px;
+	margin: 7px 5px;
+	box-shadow: 0px 1px 6px #aaa;
+	font-weight: 200;
+}
+.treebox ul {
+/*     border: 1px solid #699FD1; */
+    margin: 0;
+    overflow: hidden;
+}
+.treebox ul li{
+/* border-bottom: 1px solid #E2E2E2; */
+line-height: 40px;
+overflow: hidden;
+}
+.treebox ul li:last-child{border-bottom: none;}
+.treebox ul li a:hover {
+/*     border-bottom: 1px solid #009688; */
+    text-decoration: none;
+/*     background: none repeat scroll 0 0 #f5f5f5; */
+    color: #009688;
+    background-color: #f5f5f5;
+}
+
+.treebox ul li a {
+    border: 1px solid #fff;
+    color: #444;
+/*     padding: 1px; */
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    text-align:center;
+    background-color: #fff;
+/*     background:#fff url(../images/smenu_left.gif) 5px 16px no-repeat; */
+/*     padding-left: 20px; */
+    border-radius:21px;
+    margin: 2px 5px;
+}
+
+
+.treebox ul li a.liselected {
+/*     background: none repeat scroll 0 0 #f5f5f5; */
+    color: #009688;
+/*     border-bottom: 1px solid #009688; */
+    background-color: #f5f5f5;
+}
+::-webkit-scrollbar { width: 11px;height: 11px;}
+::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); -webkit-border-radius: 10px;border-radius: 10px;}
+::-webkit-scrollbar-thumb { -webkit-border-radius: 10px;border-radius: 10px;background: #d6d6d6; -webkit-box-shadow: inset 0 0 6px #999; }
+::-webkit-scrollbar-thumb:window-inactive {background: #b2b2b2; }

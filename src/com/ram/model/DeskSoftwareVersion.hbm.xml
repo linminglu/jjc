@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.DeskSoftwareVersion" 
+    table="desk_software_version"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="deskSoftwareVersionId"
+        type="java.lang.Integer"
+        column="desk_software_version_Id"
+        length="8"
+    >
+        <generator class="identity"/>
+    </id>
+
+	<property
+        name="softwareId"
+        type="java.lang.Integer"
+        column="software_Id"
+        length="8"
+    />
+    <property
+        name="softwareCode"
+        type="java.lang.String"
+        column="software_code"
+        length="20"
+    />
+   <property
+        name="softwareVersion"
+        type="java.lang.String"
+        column="software_version"
+        length="20"
+    />
+    <property
+        name="resourceList"
+        type="java.lang.String"
+        column="resource_list"
+        length="2147483647"
+    />
+</class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.GroupFunctionRl" 
+    table="GROUP_FUNCTION_RL"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="groupFunctionId"
+        type="java.lang.Integer"
+        column="GROUP_FUNCTION_ID"
+    >
+        <generator class="sequence">
+            <param name="sequence">SEQ_GROUP_FUNCTION_RL</param>
+        </generator>
+    </id>
+
+   <property
+        name="functionId"
+        type="java.lang.Integer"
+        column="FUNCTION_ID"
+
+    />
+   <property
+        name="groupId"
+        type="java.lang.Integer"
+        column="GROUP_ID"
+   
+    />	
+   <property
+        name="orderSn"
+        type="java.lang.Integer"
+        column="ORDER_SN"
+   
+    />		
+    <!-- Associations -->
+  
+
+
+</class>
+</hibernate-mapping>

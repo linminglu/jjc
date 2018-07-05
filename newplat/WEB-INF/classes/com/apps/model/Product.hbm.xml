@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<class 
+    name="com.apps.model.Product" 
+    table="product"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="pid"
+        type="java.lang.Integer"
+        column="p_id"
+    >
+        <generator class="identity"/>
+    </id>
+    
+  	<property
+        name="status"
+        type="java.lang.String"
+        column="status"
+        length="1"
+    />
+    <property
+        name="imgUrl"
+        type="java.lang.String"
+        column="img_url"
+        length="200"
+    />
+    <property
+        name="imgMini"
+        type="java.lang.String"
+        column="img_mini"
+        length="200"
+    />
+    <property
+        name="title"
+        type="java.lang.String"
+        column="title"
+        length="200"
+    />
+    <property
+        name="salesNum"
+        column="sales_num"
+        length="8"
+        type="java.lang.Integer"
+    />
+    <property
+        name="createTime"
+        type="java.util.Date"
+        column="create_time"
+    />
+    <property
+        name="content"
+        type="java.lang.String"
+        column="content"
+        length="500"
+    />
+    <property
+        name="sid"
+        type="java.lang.Integer"
+        column="s_id"
+        length="8"
+    />
+    <property
+        name="price"
+        type="java.math.BigDecimal"
+        column="price"
+    />
+    
+    <property
+        name="isHot"
+        type="java.lang.String"
+        column="is_hot"
+        length="1"
+    />
+     <property
+        name="sort"
+        type="java.lang.String"
+        column="sort"
+        length="2"
+    />
+	
+</class>
+</hibernate-mapping>

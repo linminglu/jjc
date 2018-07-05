@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/b.min.js?v=hp2018052805"></script>
+<script type="text/javascript" src="js/h.min.js?v=hp2018052805"></script>
+<link type="text/css" rel="stylesheet" href="css/h.min.css?v=hp2018052805"/>
+<title>设置提现密码</title>
+<script type="text/javascript">
+if(move.width>640){
+	move.width=540;
+}
+$(document).ready(function(){
+	if(move.user.u==null){
+		var directUrl=location.href;
+		directUrl=directUrl.split('#')[0];
+		baseObj.openView('login.html?redirect='+directUrl)
+		return;
+	}
+	move.hideHeader();
+});
+</script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav ">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">设置提现密码</h1>
+</header>
+<div class="main-content main-content-view">
+	<div class="greyline"></div>
+	<div class="password-box">
+		<div class="mui-input-row mui-password">
+			<input type="password" id="oldpwd" class="mui-input-password" maxlength="12" placeholder="请输入登录密码">
+		</div>
+		<div class="mui-input-row mui-password">
+			<input type="password" id="newpwd" class="mui-input-password" maxlength="12" placeholder="请输入提现密码">
+		</div>
+		<div class="mui-input-row mui-password">
+			<input type="password" id="newpwd2" class="mui-input-password" maxlength="12" placeholder="请确认提现密码">
+		</div>
+	</div>
+	<div class="btn-box">
+		<input type="button" onclick="meObj.cashPassword();" id="savebtn" class="btn" value="设置"/>
+	</div>
+</div>
+</body>
+</html>

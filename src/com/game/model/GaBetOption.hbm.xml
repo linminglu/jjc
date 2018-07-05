@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaBetOption" table="ga_bet_option">
+		<cache usage="read-write" />
+		<id name="betOptionId" type="java.lang.Integer" column="bet_option_id">
+			<generator class="identity" />
+		</id>
+       <property name="optionTitle" type="java.lang.String" column="option_title" length="50" />
+       <property name="optionType" type="java.lang.Integer" column="option_type" length="2" />
+       <property name="betRate" type="java.math.BigDecimal" column="bet_rate" length="7" />
+       <property name="gameType" type="java.lang.String" column="game_type" length="2" />
+       <property name="playType" type="java.lang.String" column="play_type" length="2" />
+       <property name="playAlias" type="java.lang.String" column="play_alias"/>
+       <property name="title" type="java.lang.String" column="title" length="20" />
+       <property name="betRate2" type="java.lang.String" column="bet_rate2" length="50" />
+       <property name="pointMultiple" type="java.math.BigDecimal" column="point_multiple" length="7" />
+       <property name="hint" type="java.lang.String" column="hint" length="255" />
+	</class>
+</hibernate-mapping>

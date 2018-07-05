@@ -1,0 +1,122 @@
+@CHARSET "UTF-8";
+.pager{display: none;}
+.guide { margin: 10px 0;}
+input[disabled]{background-color: #EBEBE4;}
+.leftbox{width: 230px;float: left;border: 1px solid #ddd;background: #f5f5f5;min-height: 445px;margin-bottom: 10px;}
+.rightbox{width: 750px;float: right;}
+
+.conditions select {appearance: menulist;-webkit-appearance: menulist; padding: 5px;width: 160px;border: 1px solid #ddd; margin-bottom: 0;font-family: Tahoma, "Microsoft YaHei";}
+
+.leftbox .info {padding-left: 34px; border-bottom: 1px solid #ddd;}
+.leftbox .info h3 {line-height: 36px; margin: 0;font-size: 12px;}
+.leftbox .info p {margin: 0;}
+.leftbox .info .money {color: #ba2636;}
+.leftbox .info .buttons {margin: 15px 0;}
+.leftbox .info .buttons .deposit {background: url(../images/btn_repeat.png) 0 -23px repeat-x; color: white;margin-right: 10px;}
+.leftbox .info .buttons a {line-height: 25px;width: 75px;text-align: center;border-radius: 2px;display: inline-block;}
+.leftbox .info .buttons .withdraw {border: 1px solid #c3c3c3;color: #333;}
+.leftbox ul {border-top: 1px solid #fff;border-bottom: 1px solid #ddd;padding: 20px 0;margin: 0;font-size: 14px;}
+.leftbox ul li {line-height: 34px;margin: 0; padding: 0 0 0 34px;list-style: none;}
+.leftbox ul:last-child {border-bottom: none;}
+
+.rightbox .userinfo-ad{width: 271px;float: right;}
+.rightbox .userinfo {border: 6px solid #ededed;margin-bottom: 10px;padding: 10px 15px;overflow: hidden;}
+.rightbox .userinfo .left {flex-grow: 1;width: 437px;float: left;}
+.rightbox .userinfo .level {border: 1px solid #ddd;padding: 1px;margin-right: 10px;width: 74px;height: 74px;float: left;}
+.rightbox .userinfo .level img {display: block;width: 100%;}
+.rightbox .userinfo .right {line-height: 26px;width: 349px;float: right;}
+.rightbox .userinfo h3 {line-height: 26px;margin: 0;font-size: 12px;}
+.rightbox .userinfo .flexbox .flexbox > div {flex: 0 0 50%;width: 50%;float: left;}
+.rightbox .userinfo .verify {line-height: 23px;padding-top: 10px;}
+.rightbox .userinfo .verify a {margin-right: 10px;}
+.rightbox .userinfo .verify .icon16 {position: relative;width: 16px;height: 16px;display: inline-block;background: url("../images/icon16px.png") 0 0 no-repeat;top: 3px;}
+.rightbox .userinfo .verify .icon16.icon-mobile {background-position: -105px -61px;}
+.rightbox .userinfo .verify .icon16.icon-idcard {background-position: -135px -61px;}
+.rightbox .userinfo .verify .icon16.icon-idcard-verified {background-position: -150px -61px;}
+.rightbox .userinfo .verify .icon16.icon-email {background-position: -166px -61px;top: 5px;}
+.rightbox .userinfo .infobox{overflow: hidden;}
+
+.rightbox .recently {border: 1px solid #ddd;/*margin-bottom: 10px;*/height: 800px;}
+.rightbox .recently h3 {font-size: 14px;margin: 0;line-height: 37px; border-bottom: 1px solid #ddd; padding-left: 15px;}
+.rightbox .recently table {width: 100%;border-spacing: 0;text-align: center;}
+.rightbox .recently table thead tr th { border-bottom: 1px solid #ebedec;background: #f3f2f2;color: #717171;line-height: 34px;font-size: 12px;}
+.rightbox .recently table tbody tr td {border-bottom: 1px solid #ddd;line-height: 36px;font-size: 12px;}
+/* .rightbox .recently table tbody tr td:nth-child(5){width: 370px;}; */
+.rightbox .tabs {border-bottom: 3px solid #d21e1e;}
+.rightbox .tabs .tab.current {color: white;background: #d21e1e;}
+.rightbox .tabs .tab {width: 100px;text-align: center;font-size: 14px;color: #666666;border-right: 1px solid #d3d3d3;line-height: 35px;font-weight: bold;display: inline-block;}
+.rightbox .recently .conditions{padding: 10px;}
+.conditions .gameType .gf{}
+.conditions .gameType .xy{display: none;}
+.rightbox .recently .warn {background: #FFF5E6;line-height: 24px;padding: 5px 5px 5px 15px;}
+.rightbox .recently .exchange {font-size: 14px; padding: 20px 0;}
+.rightbox .recently .exchange .inputline .tip{color: #ba2636;}
+.rightbox .recently .exchange {height: 120px;margin: 5px 0;line-height: 40px;padding: 8px 0; align-items: center;}
+.inputline{height: 45px;}
+.rightbox .recently .exchange .inputline span.username{padding-left: 10px;}
+.inputline span.username{padding-left: 10px;}
+.rightbox .recently .exchange .inputline>label{text-align: right;width: 160px;float: left;height: 40px;line-height: 40px;}
+.rightbox .recently .exchange {margin-left:40px;line-height: 40px;}
+.rechargelistbox label{text-align: right;float: left;height: 40px;line-height: 40px;}
+.rechargelistbox span.btn{text-align: left;float: left;height: 40px;line-height: 40px;background-color: #ff7e26;color: #ffffff;padding: 0 10px 0 10px;border: 1px solid #ff7e26;border-radius: 5px;}
+.rechargelistbox  span{text-align: left;float: left;height: 40px;line-height: 40px;font-size: 15px;}
+.line .receiveCountry{white-space: pre;}
+
+.cash{    margin-left: 90px;}
+.cash label{display: inline-block;text-align: right;width:150px}
+.cash .line{height: 40px;line-height: 40px;display: block;}
+.cash .subline{height: 40px;line-height: 40px;display: inline-block;}
+
+.rechargelistbox label{display: inline-block;text-align: right; width: 150px;}
+.rechargelistbox .subline{    height: 40px;line-height: 40px;display: inline-block;}
+.rechargelistbox input{float: right;margin-right: 267px;}
+.rechargelistbox select{float: right;margin-left: 19px;margin-right: 267px;}
+.rechargelistbox .line{height: 40px;line-height: 40px;display: block;}
+.rechargelistbox .line-highly{height: 200px;line-height: 140px;display: block;}
+.rechargelistbox .line-highly img{margin-left:80px}
+.rechargelistbox .line-longly label{width:100%;}
+.rightbox .recently .exchange input[type=text],.rightbox .recently .exchange input[type=password], select{margin-bottom: 0;border: 1px solid #eee;line-height: 35px;height: 35px;padding: 0 0 0 10px;width: 200px;}
+.miniSelect {width:80px;}
+.rightbox .recently .exchange .inputline .genderbox {height: 40px;line-height: 40px;}
+.rightbox .recently .exchange .inputline .genderbox label{width: 20px;display: inline-block;text-align: center;}
+.rightbox .recently .exchange .inputline .btnsave{display: inline-block;height: 35px;line-height: 35px;width: 100px;background-color: #e60000;color: white;text-align: center;border-radius: 5px;cursor:pointer;}
+.rightbox .recently .exchange .inputline .btnrecharge{display: inline-block;height: 35px;line-height: 35px;width: 100px;background-color: #e60000;color: white;text-align: center;border-radius: 5px;cursor:pointer;}
+.rightbox .recently .exchange .inputline .btnsavebank{display: none;height: 35px;line-height: 35px;width: 100px;background-color: #e60000;color: white;text-align: center;border-radius: 5px;cursor:pointer;}
+.rightbox .recently .exchange input[type=text]:FOCUS,.rightbox .recently .exchange input[type=password]:FOCUS{border: 1px solid #f33;}
+.rightbox .recently ul li.selected {border-color: #f60;}
+.rightbox .recently ul li {display: inline-block;border: 1px solid #ccc;cursor: pointer;position: relative;    margin-right: 5px; margin-top:5px;    height: 28px;line-height: 26px;padding: 0 15px 0 15px;}
+.rightbox .recently ul li.selected::after { bottom: 1px;content: url(/images/pay/selectYes.png);height: 16px;position: absolute;right: 0;width: 16px;}
+.rightbox .recently ul li img {width: 115px;height: 38px;display: block;}
+.inputline .paytypebox{display: block;margin-left: 160px;}
+
+.rightbox .banks .exchange input[type=text]{border: none;}
+#alipaybox,#wechatbox,#huibox{display: none;}
+#huibox .bank_more{margin:0 20px;}
+#alipaybox img,#wechatbox img{margin: 0 20px;}
+
+.rightbox .recently .exchange .rechargeline{line-height: normal;height: 260px;}
+#huibox .rechargeline{line-height: normal;height: 500px;    margin-top: 46px;margin-left: 160px;}
+.rechargelistbox{float: left;    margin-left: 90px;}
+.rechargelistbox .pricebox{width: 80px;display: inline-block;text-align: center;border: 1px solid #ccc;height: 38px;color: #666;line-height: 38px;position: relative;margin-right: 10px;margin-bottom: 5px;}
+.rechargelistbox .pricebox.selected{border-color: #f60;}
+.rechargelistbox .pricebox.selected::after {bottom: 8px;content: url(/images/pay/selectYes.png);height: 16px;position: absolute;right: 0;width: 16px;}
+.rebox{display: none;}
+
+
+#message tr th:first-child{width: 50px;text-align: center;}
+#message tr td:first-child{text-align: center;}
+#message tr th:last-child{width: 120px;text-align: center;}
+#message tr td:last-child{text-align: center;}
+/* #message tr td:nth-child(2){text-align: left;} */
+
+.messagebox{}
+.messagebox .title{text-align: center;font-size: 16px;color: #333;height: 28px;line-height: 28px;padding: 0 5px;border-bottom: 1px solid #eee;margin: 5px 10px;}
+.messagebox #content{color: #666;padding: 10px;}
+
+#withdraw tr th:first-child{width: 50px;text-align: center;}
+#withdraw tr td:first-child{text-align: center;}
+#withdraw tr th:nth-child(2){width: 80px;}
+#withdraw tr th:nth-child(3){width: 100px;}
+#withdraw tr th:nth-child(4){width: 80px;}
+
+#ptwx{display: none;}

@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/b.min.js?v=hp2018052805"></script>
+<script type="text/javascript" src="js/h.min.js?v=hp2018052805"></script>
+<link type="text/css" rel="stylesheet" href="css/h.min.css?v=hp2018052805"/>
+<title>注册</title>
+<script type="text/javascript">
+function reg(){
+	var phone=$('#phone').val().trim();
+	var pwd=$('#pwd').val().trim();
+	var pwd2=$('#pwd2').val().trim();
+	var code=$('#code').val().trim();
+	var recommendId=$('#recommendId').val().trim();
+	
+	if(!move.widget.isPhone(phone)) { 
+	    mui.alert('请输入有效的手机号码',document.title, function() {});
+	    return false; 
+	}
+	if(pwd=='') {
+	    mui.alert('请输入6-16密码(字母、数字、下划线)',document.title, function() {});
+	    return false; 
+	}
+	if(pwd!=pwd2){
+		mui.alert('两次密码不一致',document.title, function() {});
+		return false; 
+	}
+	
+	if(code=='') {
+	    mui.alert('请输入验证码',document.title, function() {});
+	    return false; 
+	}
+	var map = {};
+	map['loginName'] = phone;
+	map['password'] = hex_md5(pwd).toUpperCase();
+	map['repassword'] = hex_md5(pwd2).toUpperCase();
+	map['inpcode'] = code;
+	map['inviteCode'] = recommendId;
+	var mw=baseObj.mw(map);
+	var mask=move.createLoading();
+	mask.show();
+	$.ajax({
+		type: "POST",
+		url:move.reg,
+		dataType:'json',
+		data:{
+			mw:mw
+		},  
+		success: function(ret){
+			mask.close();
+			var code=ret.code;
+			var msg=ret.msg;
+			if(code=='200'){
+				mui.toast('注册成功',{
+					duration:'long',
+					type:'div' 
+				});
+				var result=ret.data;
+				var obj=result.obj;
+				var logo=obj.logo;
+				var uid=obj.uid;
+				var u=obj.u;
+				var loginName=obj.loginName;
+				var money=obj.money;
+				var point=obj.point;
+				var userType=obj.userType;
+				user.init(uid,u,'',logo,obj.cellPhone,loginName,obj.userName,money,point,userType);
+				user.set(move.user);
+				baseObj.openIndex();
+			}else{
+				chkCode();
+				mui.alert(msg,document.title, function() {});
+			}
+		},
+		error: function (jqXHR, textStatus, errorThrown) {
+		}
+	});
+}
+$(document).ready(function(){
+	$("#sendCode").bind("click",function(){
+		chkCode(this);
+	});
+	$("#regbtn").bind("click",function(){reg();});
+	move.hideHeader();
+	$("#guestReg").bind("click", function(){
+		meObj.guestReg();
+	});
+	if(move.user&&move.user.u){
+		$("#logbtn").hide();
+	}
+	$("#logbtn").on("tap",function(){
+		location = "login.html";
+	});
+	
+	var key=move.getParameter('key');
+	if(key){
+		$('#recommendId').val(key);
+		$('#recommendId').attr('disabled',true).css('background-color','#eee');
+	}
+});
+function chkCode(){
+	$("#sendCode").get(0).src='/api/baseData_checkCode?t='+Math.random();  
+}
+</script>
+</head>
+<body>
+<div class="ga-view">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">注册</h1>
+	</header>
+	<div class="main-content main-content-view">
+		<div id="regnewbox">
+		</div>
+		<div class="login-head-box">
+			<img alt="" src="/file_upload/static/login_bg.png">
+		</div>
+		<div class="reg-form">
+			<div class="mui-input-row">
+				<input type="tel" placeholder="请输入手机号" id="phone" class="reg-input" maxlength="11"/>
+			</div>
+			<div class="mui-input-row">
+				<input type="password" placeholder="请输入密码" id="pwd" class="mui-input-password reg-input" maxlength="12"/>
+			</div>
+			<div class="mui-input-row">
+				<input type="password" placeholder="请确认密码" id="pwd2" class="mui-input-password reg-input" maxlength="12"/>
+			</div>
+			<div class="verification-code" >
+				<img id="sendCode" src="/api/baseData_checkCode" style="border: none;background: none;">
+			</div>
+			<div class="mui-input-row" style="padding-right: 110px;">
+				<input type="text" placeholder="验证码" id="code" class="reg-input" maxlength="6" style="float: left;"/>
+			</div>
+			<div class="mui-input-row">
+				<input type="text" placeholder="推荐人ID(选填)" id="recommendId" class="reg-input" maxlength="6"/>
+			</div>
+			<div class="btn-box btn-box-reg">
+				<input type="button" value="注册" id="regbtn" class="btn btn-orange">
+				<input type="button" value="已有帐号，去登录" id="logbtn" class="btn btn-blue">
+				<span class="btn-demoReg">
+					<a id="guestReg">免费试玩</a>
+				</span>
+				<span class="btn-forgetPass">
+					<a href="retrievePwd.html">忘记密码?</a>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

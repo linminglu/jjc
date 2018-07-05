@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<title></title>
+<link href="../../css/test.css?v=${t}" rel="stylesheet" />
+</head>
+<body>
+<div class="sendInfoeBox">
+	#if($mytInfo)
+		<h1>${mytInfo.title}</h1>
+		
+		<h3>发布时间：${createTime}</h3>
+		
+		
+		#if($mytInfo.imgUrl)
+		<div class="notice-img"><img src="../..${mytInfo.imgUrl}"></div>
+		<div class="notice-content">
+			${mytInfo.content}
+			#if($attList)
+				#foreach($bl in $attList)
+					<div class="notice-img"><img src="../..${bl.attachUrl}"></div>
+				#end
+			  #end
+		</div>
+		#end
+	#end
+		<div class="notice-copy">注：解释权归管理员所有。</div>
+</div>
+</body>
+</html>

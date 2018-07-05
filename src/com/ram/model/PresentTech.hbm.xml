@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.PresentTech" 
+    table="PRESENT_TECH"
+>
+
+    <id
+        name="presentTechId"
+        type="java.lang.Integer"
+        column="PRESENT_TECH_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_PRESENT_TECH</param>
+        </generator>
+    </id>
+
+    <property
+        name="courseId"
+        type="java.lang.Integer"
+        column="COURSE_ID"
+        length="8"
+    />
+    <property
+        name="presentTechTitle"
+        type="java.lang.String"
+        column="PRESENT_TECH_TITLE"
+        length="1000"
+    />
+    <property
+        name="presentTechDesc"
+        type="java.lang.String"
+        column="PRESENT_TECH_DESC"
+        length="4000"
+    />
+	<property
+        name="semesterId"
+        type="java.lang.Integer"
+        column="SEMESTER_ID"
+        length="8"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to TutorialSchedule -->
+    <set
+        name="tutorialSchedules"
+        lazy="true"
+        inverse="true"
+		cascade="all"
+    >
+        <key>
+            <column name="PRESENT_TECH_ID" />
+        </key>
+        <one-to-many 
+            class="com.ram.model.TutorialSchedule"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

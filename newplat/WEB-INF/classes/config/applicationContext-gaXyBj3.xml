@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="bj3DAO" class="com.xy.bj3.dao.hibernate.Bj3DAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	<bean id="bj3Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.bj3.service.impl.Bj3ServiceImpl">
+	            <property name="bj3DAO"><ref local="bj3DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化 -->
+	<bean name="initBj3SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.bj3.service.impl.InitBj3Session</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bj3Service"><ref bean="bj3Service" /></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchBj3ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.bj3.service.impl.FetchBj3Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bj3Service"><ref bean="bj3Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+
+	<!-- 定时器触发器，配置触发器及定时周期，对应上面的 bean  --> 
+	
+	<!-- 初始化时间 -->
+    <bean id="initBj3Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initBj3SessionJob" />
+		</property>
+		<!-- 每天的x点开始初始化 ,这里为每天0点-->
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 定时抓去数据 -->
+	<bean id="fetchBj3Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchBj3ResultJob" />
+		</property>
+		<!-- 每天的x点到x点间隔多少分钟抓取数据  -->
+		<property name="cronExpression">
+			<value>10 0/3 0-6,9-23 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 定时器工厂，可以配置多个触发器。（加载） -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initBj3Session" />
+				<ref local="fetchBj3Result"/>
+			</list>
+		</property>
+	</bean>
+</beans>
+
+

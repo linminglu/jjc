@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="fiveDAO" class="com.xy.ssc.five.dao.hibernate.FiveDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="fiveService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.ssc.five.service.impl.FiveServiceImpl">
+	            <property name="fiveDAO"><ref local="fiveDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化 -->
+	<bean name="initFiveSessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.ssc.five.service.impl.InitFiveSession</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="fiveService"><ref bean="fiveService" /></entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="initFiveSession" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initFiveSessionJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/2 14 * * ?</value>
+		</property>
+	</bean> 
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchFiveResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.ssc.five.service.impl.FetchFiveResult</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="fiveService"><ref bean="fiveService" /></entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="fetchFiveResult" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchFiveResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>10 0/5 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initFiveSession" />
+				<ref local="fetchFiveResult"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+</beans>

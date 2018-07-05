@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+	<beans>
+		<!-- ========================= Start of PERSISTENCE DEFINITIONS ========================= -->
+		<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="location">
+				<value>classpath:init.properties</value>
+			</property>
+		</bean>
+		
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="driverClassName">
+				<value>${datasource.driverClassName}</value>
+			</property>
+			<property name="url">
+				<value>${datasource.url}</value>
+			</property>
+			<property name="username">
+				<value>${datasource.username}</value>
+			</property>
+			<property name="password">
+				<value>${datasource.password}</value>
+			</property>
+			<property name="maxActive">
+				<value>${datasource.maxActive}</value>
+			</property>
+			<property name="maxIdle">
+				<value>${datasource.maxIdle}</value>
+			</property>
+			<property name="maxWait">
+				<value>${datasource.maxWait}</value>
+			</property>
+			<property name="defaultAutoCommit">
+				<value>${datasource.defaultAutoCommit}</value>
+			</property>
+		</bean>
+			<!-- NativeJdbcExtractor for the Commons DBCP connection pool above -->
+	<!--jdbc session start-->
+		<bean id="jdbcTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	  		<property name="dataSource"><ref local="dataSource"/></property>
+		</bean>
+		<bean id="jdbcTransactionProxy"  abstract="true" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	  		<property name="transactionManager">
+	   			<ref bean="jdbcTransactionManager"/>
+	  		</property>
+	  		<property name="transactionAttributes">
+	   			<props>
+	    			<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="modify*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="update*">PROPAGATION_REQUIRED</prop>	    			
+	    			<prop key="set*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="add*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="save*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="remove*">PROPAGATION_REQUIRED</prop>
+					<prop key="delete*">PROPAGATION_REQUIRED</prop>
+					<prop key="recover*">PROPAGATION_REQUIRED</prop>
+	   			</props>
+	  		</property>
+		</bean>
+	<!--jdbc session end-->
+
+		<!-- (just needed for oracleLobHandler) -->
+		<bean id="nativeJdbcExtractor" class="org.springframework.jdbc.support.nativejdbc.CommonsDbcpNativeJdbcExtractor" lazy-init="true"/>
+		<!-- LobHandler for Oracle JDBC drivers -->
+		<!-- (refers to the NativeJdbcExtractor above to get access to native OracleConnections) -->
+		<!--
+		<bean id="oracleLobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler" lazy-init="true">
+			<property name="nativeJdbcExtractor">
+				<ref local="nativeJdbcExtractor"/>
+			</property>
+		</bean>
+		-->
+
+		<!--hibernate session start-->
+		<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+			<!--
+			<property name="lobHandler">
+				<ref local="oracleLobHandler"/>
+			</property>
+			-->
+			<property name="mappingResources">
+				<list>
+					<!-- user -->
+					<value>com/ram/model/User.hbm.xml</value>
+					<value>com/ram/model/UserLog.hbm.xml</value>
+  					<value>com/apps/model/City.hbm.xml</value>
+  					<value>com/apps/model/Advertising.hbm.xml</value>
+  					<value>com/apps/model/FeedBack.hbm.xml</value>
+  					<value>com/apps/model/Version.hbm.xml</value>
+  					<value>com/apps/model/Param.hbm.xml</value>
+  					<value>com/apps/model/MessageCount.hbm.xml</value>
+  					<value>com/apps/model/UserTradeDetail.hbm.xml</value>
+  					<value>com/apps/model/UserPointDetail.hbm.xml</value>
+  					<value>com/apps/model/SysOption.hbm.xml</value>
+  					<value>com/apps/model/PayConfig.hbm.xml</value>
+  				    <value>com/apps/model/Activity.hbm.xml</value>
+  				    <value>com/apps/model/Message.hbm.xml</value>
+  					
+					<!-- card -->
+  					<value>com/card/model/CardRechargeItem.hbm.xml</value>
+  					<value>com/card/model/CardRechargeOrder.hbm.xml</value>
+					<value>com/card/model/Card.hbm.xml</value>
+			
+					<!-- cash -->
+					<value>com/cash/model/UserApplyCash.hbm.xml</value>
+					<value>com/cash/model/UserBankBind.hbm.xml</value>
+					<value>com/cash/model/UserCheckout.hbm.xml</value>
+					<value>com/cash/model/UserCheckoutOrderRl.hbm.xml</value>
+					<value>com/cash/model/SysBank.hbm.xml</value>
+					
+					<!-- news -->
+					<value>com/ram/model/NewsInformation.hbm.xml</value>
+					<value>com/ram/model/NewsCategory.hbm.xml</value>
+					<value>com/ram/model/NewsCategoryRl.hbm.xml</value>	
+			        <value>com/ram/model/NewsType.hbm.xml</value>
+					
+					<!-- game -->
+					<value>com/game/model/GaBetOption.hbm.xml</value>
+					<value>com/game/model/GaBetDetail.hbm.xml</value>
+					<value>com/game/model/GaSessionInfo.hbm.xml</value>
+					<value>com/game/model/GaDayBetCount.hbm.xml</value>				
+					<value>com/game/model/GaBetPart.hbm.xml</value>				
+					<value>com/game/model/GaBetSponsor.hbm.xml</value>				
+					<value>com/game/model/GaBetSponsorDetail.hbm.xml</value>
+					<value>com/game/model/GaWinCount.hbm.xml</value>
+					
+					<!-- dcb -->
+ 					<value>com/dcb/model/DcbGaBet.hbm.xml</value>
+					<value>com/dcb/model/DcbGaSession.hbm.xml</value>
+					<value>com/dcb/model/DcbGaTrend.hbm.xml</value>
+					<value>com/dcb/model/DcbGaOmit.hbm.xml</value>
+					<!-- fc -->
+ 					<value>com/fivecolor/model/FiveGaBet.hbm.xml</value>
+					<value>com/fivecolor/model/FiveGaSession.hbm.xml</value>
+					<value>com/fivecolor/model/FiveGaTrend.hbm.xml</value>
+					<value>com/fivecolor/model/FiveGaOmit.hbm.xml</value>
+
+					<!-- three -->
+ 					<value>com/three/model/ThreeGaBet.hbm.xml</value>
+					<value>com/three/model/ThreeGaSession.hbm.xml</value>
+					<value>com/three/model/ThreeGaTrend.hbm.xml</value>
+					<value>com/three/model/ThreeGaOmit.hbm.xml</value>
+					
+					<!-- cqssc -->
+					<value>com/ssc/cqssc/model/CqSscGaBet.hbm.xml</value>
+					<value>com/ssc/cqssc/model/CqSscGaSession.hbm.xml</value>
+					<value>com/ssc/cqssc/model/CqSscGaTrend.hbm.xml</value>
+					<value>com/ssc/cqssc/model/CqSscGaOmit.hbm.xml</value>
+			       	<!-- jxssc -->
+					<value>com/ssc/jxssc/model/JxSscGaBet.hbm.xml</value>
+					<value>com/ssc/jxssc/model/JxSscGaSession.hbm.xml</value>
+					<value>com/ssc/jxssc/model/JxSscGaTrend.hbm.xml</value>
+					<value>com/ssc/jxssc/model/JxSscGaOmit.hbm.xml</value>
+					
+					<!-- gdPick11 -->
+					<value>com/pick11/gdpick11/model/GdPick11GaSession.hbm.xml</value>
+					<value>com/pick11/gdpick11/model/GdPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/gdpick11/model/GdPick11GaOmit.hbm.xml</value>
+				    <!-- gxPick11 -->
+					<value>com/pick11/gxpick11/model/GxPick11GaSession.hbm.xml</value>
+					<value>com/pick11/gxpick11/model/GxPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/gxpick11/model/GxPick11GaOmit.hbm.xml</value>	
+			       	<!-- jxPick11 -->
+					<value>com/pick11/jxpick11/model/JxPick11GaSession.hbm.xml</value>
+					<value>com/pick11/jxpick11/model/JxPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/jxpick11/model/JxPick11GaOmit.hbm.xml</value>			
+			       	<!-- sdPick11 -->
+					<value>com/pick11/sdpick11/model/SdPick11GaSession.hbm.xml</value>
+					<value>com/pick11/sdpick11/model/SdPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/sdpick11/model/SdPick11GaOmit.hbm.xml</value>
+				    <!-- sxPick11 -->
+					<value>com/pick11/sxpick11/model/SxPick11GaSession.hbm.xml</value>
+					<value>com/pick11/sxpick11/model/SxPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/sxpick11/model/SxPick11GaOmit.hbm.xml</value>
+				    <!-- bjPick11 -->
+					<value>com/pick11/bjpick11/model/BjPick11GaSession.hbm.xml</value>
+					<value>com/pick11/bjpick11/model/BjPick11GaTrend.hbm.xml</value>		
+					<value>com/pick11/bjpick11/model/BjPick11GaOmit.hbm.xml</value>
+					<!-- tjPick11 -->
+					<value>com/pick11/tjpick11/model/TjPick11GaSession.hbm.xml</value>
+					<value>com/pick11/tjpick11/model/TjPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/tjpick11/model/TjPick11GaOmit.hbm.xml</value>
+				    <!-- hebPick11 -->
+					<value>com/pick11/hebpick11/model/HebPick11GaSession.hbm.xml</value>
+					<value>com/pick11/hebpick11/model/HebPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/hebpick11/model/HebPick11GaOmit.hbm.xml</value>
+				    <!-- nmgPick11 -->
+					<value>com/pick11/nmgpick11/model/NmgPick11GaSession.hbm.xml</value>
+					<value>com/pick11/nmgpick11/model/NmgPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/nmgpick11/model/NmgPick11GaOmit.hbm.xml</value>
+				    <!-- lnPick11 -->
+					<value>com/pick11/lnpick11/model/LnPick11GaSession.hbm.xml</value>
+					<value>com/pick11/lnpick11/model/LnPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/lnpick11/model/LnPick11GaOmit.hbm.xml</value>
+				    <!-- jlPick11 -->
+					<value>com/pick11/jlpick11/model/JlPick11GaSession.hbm.xml</value>
+					<value>com/pick11/jlpick11/model/JlPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/jlpick11/model/JlPick11GaOmit.hbm.xml</value>
+				    <!-- hljPick11 -->
+					<value>com/pick11/hljpick11/model/HljPick11GaSession.hbm.xml</value>
+					<value>com/pick11/hljpick11/model/HljPick11GaTrend.hbm.xml</value>		
+				    <value>com/pick11/hljpick11/model/HljPick11GaOmit.hbm.xml</value>
+					<!--###-->
+
+
+				    
+				    <!-- jsk3 -->
+					<value>com/k3/jsk3/model/JsK3GaOmit.hbm.xml</value>
+					<value>com/k3/jsk3/model/JsK3GaSession.hbm.xml</value>
+					<value>com/k3/jsk3/model/JsK3GaTrend.hbm.xml</value>
+			       	
+				</list>
+			</property>
+			<property name="hibernateProperties">
+				<props>
+					<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+					<!--
+					<prop key="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</prop>
+					-->
+					
+					<prop key="hibernate.show_sql">false</prop>
+					<prop key="hibernate.max_fetch_depth">1</prop>
+					<prop key="hibernate.cglib.use_reflection_optimizer">false</prop>
+					<prop key="hibernate.query.substitutions">true 1, false 0, yes 'Y', no 'N'</prop>
+					<prop key="hibernate.jdbc.fetch_size">50</prop>
+					<prop key="hibernate.jdbc.batch_size">25</prop>
+					<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+					<prop key="hibernate.cache.use_query_cache">true</prop>
+					<prop key="hibernate.use_sql_comments">true</prop>
+					<prop key="hibernate.generate_statistics">true</prop>
+				</props>
+			</property>
+			<property name="dataSource">
+				<ref bean="dataSource"/>
+			</property>
+		</bean>
+		<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+		<bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+			<property name="sessionFactory">
+				<ref local="sessionFactory"/>
+			</property>
+		</bean>
+		<bean id="hibernateTransactionProxy"
+	 	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+	  		<property name="transactionManager">
+	   			<ref bean="hibernateTransactionManager"/>
+	  		</property>
+	  		<property name="transactionAttributes">
+	   			<props>
+	    			<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>
+   	    			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="add*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="create*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="modify*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="update*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="save*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="delete*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="del*">PROPAGATION_REQUIRED</prop>
+   	    			<prop key="remove*">PROPAGATION_REQUIRED</prop>
+					<prop key="recover*">PROPAGATION_REQUIRED</prop>
+	   			</props>
+	  		</property>
+		</bean>
+		<!--hibernate session start-->
+	</beans>

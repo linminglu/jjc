@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.ManagerPositionRl" 
+    table="MANAGER_POSITION_RL"
+>
+
+    <id
+        name="managerPositionId"
+        type="java.lang.Integer"
+        column="MANAGER_POSITION_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_MANAGER_POSITION_RL</param>
+        </generator>
+    </id>
+
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to Position -->
+    <many-to-one
+        name="position"
+        class="com.ram.model.Position"
+        not-null="true"
+    >
+        <column name="POSITION_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to Manager -->
+    <many-to-one
+        name="manager"
+        class="com.ram.model.Manager"
+        not-null="true"
+    >
+        <column name="MANAGER_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

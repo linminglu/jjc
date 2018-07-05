@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="gfBjK3DAO" class="com.gf.k3.bjk3.dao.hibernate.BjK3DAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	<bean id="gfBjK3Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.gf.k3.bjk3.service.impl.BjK3ServiceImpl">
+	            <property name="gfBjK3DAO"><ref local="gfBjK3DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	             <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+	
+	<!-- 初始化期号-->
+	<bean name="initGfBjK3SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.k3.bjk3.service.impl.InitBjK3Session</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfBjK3Service"><ref bean="gfBjK3Service" /></entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="initGfBjK3Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initGfBjK3SessionJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+    <!-- 更新冷热排行榜 -->
+    <bean name="updateGfBjK3GaTrendJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+        <property name="jobClass">
+            <value>com.gf.k3.bjk3.service.impl.UpdateBjK3GaTrend</value>
+        </property>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="gfBjK3Service"><ref bean="gfBjK3Service"/></entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="updateGfBjK3GaTrend" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail">
+            <ref bean="updateGfBjK3GaTrendJob"/>
+        </property>
+        <property name="cronExpression">
+            <value>32 9/10 8-22 * * ?</value>
+        </property>
+    </bean>
+	
+    <!-- 更新每期遗漏数据 -->
+	<bean name="fetchGfBjK3OmitJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.k3.bjk3.service.impl.UpdateBjK3GaOmit</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfBjK3Service"><ref bean="gfBjK3Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+	<bean id="fetchGfBjK3Omit" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfBjK3OmitJob" />
+		</property>
+		<property name="cronExpression">
+			<value>32 2/10 8-22 * * ?</value>
+		</property>
+	</bean>
+		
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchGfBjK3ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.k3.bjk3.service.impl.FetchBjK3Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfBjK3Service"><ref bean="gfBjK3Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+	<bean id="fetchGfBjK3Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfBjK3ResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>32 0/10 9-23 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 开奖监控时间 -->
+	<!--<bean id="openGdPick11" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="openGdPick11Job" />
+		</property>
+		 每天的x点到x点 每x秒钟触发开奖计算，因为要等官方开奖时间，故这里只是更新状态为开奖中
+		<property name="cronExpression">
+			<value>0/5 * 8-22 * * ?</value>
+		</property>
+	</bean>-->
+
+	<!-- 自动投注触发器(不用管) -->
+	<!-- <bean id="autoBetPick11" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="autoBetPick11Job" />
+		</property>
+		每天的9点到23点 每5分钟触发，具体说明见附录
+		<property name="cronExpression">
+			<value>0 2/5 8-23 * * ?</value>
+		</property>
+	</bean> -->
+	
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initGfBjK3Session" />
+				<ref local="fetchGfBjK3Result"/>
+				<ref local="fetchGfBjK3Omit"/>
+				<ref local="updateGfBjK3GaTrend" />
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,61 @@
+CREATE TABLE `js_k3_ga_session` (
+	`session_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`session_no` VARCHAR(10) NULL DEFAULT NULL,
+	`start_time` DATETIME NULL DEFAULT NULL,
+	`end_time` DATETIME NULL DEFAULT NULL,
+	`open_status` CHAR(1) NULL DEFAULT NULL COMMENT '0=未开奖 1=开奖中  2=已开奖',
+	`open_result` VARCHAR(15) NULL DEFAULT NULL COMMENT '多个数字用英文逗号隔开',
+	`open_time` DATETIME NULL DEFAULT NULL,
+	`user_count` INT(8) NULL DEFAULT NULL,
+	`point_count` INT(8) NULL DEFAULT NULL,
+	`session_cash` INT(8) NULL DEFAULT NULL COMMENT '用正负表示本场次盈亏',
+	`open_success` VARCHAR(1) NULL DEFAULT '0',
+	`save_time` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`session_id`)
+)
+COMMENT=''
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `js_k3_ga_trend` (
+	`trend_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`trend_title` VARCHAR(20) NULL DEFAULT NULL,
+	`trend_count` INT(5) NULL DEFAULT NULL,
+	PRIMARY KEY (`trend_id`)
+)
+COMMENT=''
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `js_k3_ga_omit` (
+	`o_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`session_no` VARCHAR(15) NULL DEFAULT NULL,
+	`open_result` VARCHAR(50) NULL DEFAULT NULL,
+	`fenbu1` INT(8) NULL DEFAULT NULL,
+	`fenbu2` INT(8) NULL DEFAULT NULL,
+	`fenbu3` INT(8) NULL DEFAULT NULL,
+	`fenbu4` INT(8) NULL DEFAULT NULL,
+	`fenbu5` INT(8) NULL DEFAULT NULL,
+	`fenbu6` INT(8) NULL DEFAULT NULL,
+	`fenbu7` INT(8) NULL DEFAULT NULL,
+	`fenbu8` INT(8) NULL DEFAULT NULL,
+	`fenbu9` INT(8) NULL DEFAULT NULL,
+	`fenbu10` INT(8) NULL DEFAULT NULL,
+	`fenbu11` INT(8) NULL DEFAULT NULL,
+	`he` INT(8) NULL DEFAULT NULL,
+	`kuadu` INT(8) NULL DEFAULT NULL,
+	`daxiao` VARCHAR(10) NULL DEFAULT NULL,
+	`jiou` VARCHAR(10) NULL DEFAULT NULL,
+	`zhihe` VARCHAR(10) NULL DEFAULT NULL,
+	PRIMARY KEY (`o_id`)
+)
+COMMENT=''
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;
+

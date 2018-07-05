@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="paramDAO" class="com.apps.dao.hibernate.ParamDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	<bean id="paramService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.apps.service.impl.ParamServiceImpl">
+	            <property name="paramDAO"><ref local="paramDAO"/></property>	            
+	        </bean>
+	    </property>
+	</bean>
+</beans>

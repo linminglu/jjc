@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="gdK10DAO" class="com.xy.k10.gdk10.dao.hibernate.GdK10DAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="gdK10Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.k10.gdk10.service.impl.GdK10ServiceImpl">
+	            <property name="gdK10DAO"><ref local="gdK10DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	             <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化期号-->
+	<bean name="initGdK10SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.k10.gdk10.service.impl.InitGdK10Session</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gdK10Service"><ref bean="gdK10Service" /></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchGdK10ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.k10.gdk10.service.impl.FetchGdK10Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gdK10Service"><ref bean="gdK10Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+		
+	<!-- 配置触发器定时周期 对应上面的 bean  --> 
+	
+	<!-- 初始化时间 -->
+    <bean id="initGdK10Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initGdK10SessionJob" />
+		</property>
+		<!-- 每天的x点开始初始化 ,这里是8点--> 
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 定时抓去数据 -->
+	<bean id="fetchGdK10Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGdK10ResultJob" />
+		</property>
+		<!--  每天的x点到x点间隔多少分钟抓取数据 这里是9点到23点，每隔10分钟抓取数据 -->
+		<property name="cronExpression">
+			<value>0 0/10 9-23 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 开奖监控时间 -->
+	<!--<bean id="openGdK10" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="openGdK10Job" />
+		</property>
+		 每天的x点到x点 每x秒钟触发开奖计算，因为要等官方开奖时间，故这里只是更新状态为开奖中
+		<property name="cronExpression">
+			<value>0/5 * 8-22 * * ?</value>
+		</property>
+	</bean>-->
+
+	<!-- 自动投注触发器(不用管) -->
+	<!-- <bean id="autoBetK10" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="autoBetK10Job" />
+		</property>
+		每天的9点到23点 每5分钟触发，具体说明见附录
+		<property name="cronExpression">
+			<value>0 2/5 8-23 * * ?</value>
+		</property>
+	</bean> -->
+	
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initGdK10Session" />
+				<ref local="fetchGdK10Result"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+</beans>

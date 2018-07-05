@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+	<beans>
+		<!-- ========================= Start of PERSISTENCE DEFINITIONS ========================= -->
+		<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="location">
+				<value>classpath:init.properties</value>
+			</property>
+		</bean>
+		
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="driverClassName">
+				<value>${datasource.driverClassName}</value>
+			</property>
+			<property name="url">
+				<value>${datasource.url}</value>
+			</property>
+			<property name="username">
+				<value>${datasource.username}</value>
+			</property>
+			<property name="password">
+				<value>${datasource.password}</value>
+			</property>
+			<property name="maxActive">
+				<value>${datasource.maxActive}</value>
+			</property>
+			<property name="maxIdle">
+				<value>${datasource.maxIdle}</value>
+			</property>
+			<property name="maxWait">
+				<value>${datasource.maxWait}</value>
+			</property>
+			<property name="defaultAutoCommit">
+				<value>${datasource.defaultAutoCommit}</value>
+			</property>
+		</bean>
+			<!-- NativeJdbcExtractor for the Commons DBCP connection pool above -->
+	<!--jdbc session start-->
+		<bean id="jdbcTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	  		<property name="dataSource"><ref local="dataSource"/></property>
+		</bean>
+		<bean id="jdbcTransactionProxy"  abstract="true" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	  		<property name="transactionManager">
+	   			<ref bean="jdbcTransactionManager"/>
+	  		</property>
+	  		<property name="transactionAttributes">
+	   			<props>
+	    			<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="modify*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="update*">PROPAGATION_REQUIRED</prop>	    			
+	    			<prop key="set*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="add*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="save*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="remove*">PROPAGATION_REQUIRED</prop>
+					<prop key="delete*">PROPAGATION_REQUIRED</prop>
+					<prop key="recover*">PROPAGATION_REQUIRED</prop>
+	   			</props>
+	  		</property>
+		</bean>
+	<!--jdbc session end-->
+
+		<!-- (just needed for oracleLobHandler) -->
+		<bean id="nativeJdbcExtractor" class="org.springframework.jdbc.support.nativejdbc.CommonsDbcpNativeJdbcExtractor" lazy-init="true"/>
+		<!-- LobHandler for Oracle JDBC drivers -->
+		<!-- (refers to the NativeJdbcExtractor above to get access to native OracleConnections) -->
+		<!--
+		<bean id="oracleLobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler" lazy-init="true">
+			<property name="nativeJdbcExtractor">
+				<ref local="nativeJdbcExtractor"/>
+			</property>
+		</bean>
+		-->
+
+		<!--hibernate session start-->
+		<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+			<!--
+			<property name="lobHandler">
+				<ref local="oracleLobHandler"/>
+			</property>
+			-->
+			<property name="mappingResources">
+				<list>
+					<!-- user -->
+					<value>com/ram/model/User.hbm.xml</value>
+					<value>com/ram/model/UserLimit.hbm.xml</value>
+					<value>com/ram/model/UserLog.hbm.xml</value>
+					<value>com/ram/model/IpRecord.hbm.xml</value>
+  					<value>com/apps/model/City.hbm.xml</value>
+  					<value>com/apps/model/Advertising.hbm.xml</value>
+  					<value>com/apps/model/FeedBack.hbm.xml</value>
+  					<value>com/apps/model/Version.hbm.xml</value>
+  					<value>com/apps/model/Param.hbm.xml</value>
+  					<value>com/apps/model/MessageCount.hbm.xml</value>
+  					<value>com/apps/model/UserTradeDetail.hbm.xml</value>
+  					<value>com/apps/model/UserPointDetail.hbm.xml</value>
+  					<value>com/apps/model/SysOption.hbm.xml</value>
+  					<value>com/apps/model/PayConfig.hbm.xml</value>
+ 				    <value>com/apps/model/Activity.hbm.xml</value>
+ 				    <value>com/apps/model/Message.hbm.xml</value>
+			    	<value>com/apps/model/Notice.hbm.xml</value>
+			    	<value>com/apps/model/UserTradeDetailRl.hbm.xml</value>
+			    	<value>com/apps/model/Promotion.hbm.xml</value>
+			    	<value>com/apps/model/BlackList.hbm.xml</value>
+			    	
+			    	<!-- lottery -->
+					<value>com/apps/model/LotterySetting.hbm.xml</value>
+					<value>com/apps/model/LotterySettingRl.hbm.xml</value>
+  					
+					<!-- card -->
+  					<value>com/card/model/CardRechargeItem.hbm.xml</value>
+  					<value>com/card/model/CardRechargeOrder.hbm.xml</value>
+					<value>com/card/model/Card.hbm.xml</value>
+					<value>com/card/model/RechargeWay.hbm.xml</value>
+			
+					<!-- cash -->
+					<value>com/cash/model/UserApplyCash.hbm.xml</value>
+					<value>com/cash/model/UserBankBind.hbm.xml</value>
+					<value>com/cash/model/UserCheckout.hbm.xml</value>
+					<value>com/cash/model/UserCheckoutOrderRl.hbm.xml</value>
+					<value>com/cash/model/SysBank.hbm.xml</value>
+					
+					<!-- news -->
+					<value>com/ram/model/NewsInformation.hbm.xml</value>
+					<value>com/ram/model/NewsCategory.hbm.xml</value>
+					<value>com/ram/model/NewsCategoryRl.hbm.xml</value>	
+			        <value>com/ram/model/NewsType.hbm.xml</value>
+					
+					<!-- game -->
+					<value>com/game/model/GaBetOption.hbm.xml</value>
+					<value>com/game/model/GaBetDetail.hbm.xml</value>
+					<value>com/game/model/GaSessionInfo.hbm.xml</value>
+					<value>com/game/model/GaDayBetCount.hbm.xml</value>				
+					<value>com/game/model/GaBetPart.hbm.xml</value>				
+					<value>com/game/model/GaBetSponsor.hbm.xml</value>				
+					<value>com/game/model/GaBetSponsorDetail.hbm.xml</value>
+					<value>com/game/model/GaWinCount.hbm.xml</value>
+					<value>com/game/model/DailyStatistics.hbm.xml</value>
+					<value>com/game/model/UserBetCount.hbm.xml</value>	
+					<value>com/game/model/UserLevel.hbm.xml</value>	
+					
+			       	<!-- ****************** cp.xy ********************* -->
+			       	<value>com/xy/pk10/bjpk10/model/BjPk10GaBet.hbm.xml</value>
+					<value>com/xy/pk10/bjpk10/model/BjPk10GaSession.hbm.xml</value>
+					<value>com/xy/pk10/bjpk10/model/BjPk10GaTrend.hbm.xml</value>
+					
+					<value>com/xy/pk10/sfpk10/model/SfPk10GaBet.hbm.xml</value>
+					<value>com/xy/pk10/sfpk10/model/SfPk10GaSession.hbm.xml</value>
+					<value>com/xy/pk10/sfpk10/model/SfPk10GaTrend.hbm.xml</value>
+					
+					<value>com/xy/pk10/sfpk102/model/SfPk102GaBet.hbm.xml</value>
+					<value>com/xy/pk10/sfpk102/model/SfPk102GaSession.hbm.xml</value>
+					<value>com/xy/pk10/sfpk102/model/SfPk102GaTrend.hbm.xml</value>
+					
+			       	<value>com/xy/ssc/cqssc/model/CqSscGaBet.hbm.xml</value>
+					<value>com/xy/ssc/cqssc/model/CqSscGaSession.hbm.xml</value>
+					<value>com/xy/ssc/cqssc/model/CqSscGaTrend.hbm.xml</value>
+					
+					<value>com/xy/ssc/tjssc/model/TjSscGaBet.hbm.xml</value>
+					<value>com/xy/ssc/tjssc/model/TjSscGaSession.hbm.xml</value>
+					<value>com/xy/ssc/tjssc/model/TjSscGaTrend.hbm.xml</value>
+
+					<value>com/xy/ssc/xjssc/model/XjSscGaBet.hbm.xml</value>
+					<value>com/xy/ssc/xjssc/model/XjSscGaSession.hbm.xml</value>
+					<value>com/xy/ssc/xjssc/model/XjSscGaTrend.hbm.xml</value>
+					
+					<value>com/xy/bj3/model/Bj3GaBet.hbm.xml</value>
+					<value>com/xy/bj3/model/Bj3GaSession.hbm.xml</value>
+					<value>com/xy/bj3/model/Bj3GaTrend.hbm.xml</value>
+					
+					<value>com/xy/lucky28/xjplu28/model/XjpLu28GaBet.hbm.xml</value>
+					<value>com/xy/lucky28/xjplu28/model/XjpLu28GaSession.hbm.xml</value>
+					<value>com/xy/lucky28/xjplu28/model/XjpLu28GaTrend.hbm.xml</value>
+					
+					<value>com/xy/lucky28/bjlu28/model/BjLu28GaBet.hbm.xml</value>
+					<value>com/xy/lucky28/bjlu28/model/BjLu28GaSession.hbm.xml</value>
+					<value>com/xy/lucky28/bjlu28/model/BjLu28GaTrend.hbm.xml</value>
+					
+					<value>com/xy/k10/gdk10/model/GdK10GaBet.hbm.xml</value>
+					<value>com/xy/k10/gdk10/model/GdK10GaSession.hbm.xml</value>
+					<value>com/xy/k10/gdk10/model/GdK10GaTrend.hbm.xml</value>
+
+					<value>com/xy/k10/gxk10/model/GxK10GaBet.hbm.xml</value>
+					<value>com/xy/k10/gxk10/model/GxK10GaSession.hbm.xml</value>
+					<value>com/xy/k10/gxk10/model/GxK10GaTrend.hbm.xml</value>
+
+					<value>com/xy/poker/model/PokerGaBet.hbm.xml</value>
+					<value>com/xy/poker/model/PokerGaSession.hbm.xml</value>
+					<value>com/xy/poker/model/PokerGaTrend.hbm.xml</value>
+
+					<value>com/xy/pick11/gdpick11/model/GdPick11GaBet.hbm.xml</value>
+					<value>com/xy/pick11/gdpick11/model/GdPick11GaSession.hbm.xml</value>
+					<value>com/xy/pick11/gdpick11/model/GdPick11GaTrend.hbm.xml</value>					
+					
+					<value>com/xy/pick11/sdpick11/model/SdPick11GaBet.hbm.xml</value>
+					<value>com/xy/pick11/sdpick11/model/SdPick11GaSession.hbm.xml</value>
+					<value>com/xy/pick11/sdpick11/model/SdPick11GaTrend.hbm.xml</value>					
+
+					<value>com/xy/k3/jsk3/model/JsK3GaBet.hbm.xml</value>
+					<value>com/xy/k3/jsk3/model/JsK3GaSession.hbm.xml</value>
+					<value>com/xy/k3/jsk3/model/JsK3GaTrend.hbm.xml</value>	
+					
+					<value>com/xy/k3/bjk3/model/BjK3GaBet.hbm.xml</value>
+					<value>com/xy/k3/bjk3/model/BjK3GaSession.hbm.xml</value>
+					<value>com/xy/k3/bjk3/model/BjK3GaTrend.hbm.xml</value>					
+
+					<value>com/xy/hk/marksix/model/MarkSixGaBet.hbm.xml</value>
+					<value>com/xy/hk/marksix/model/MarkSixGaSession.hbm.xml</value>
+					<value>com/xy/hk/marksix/model/MarkSixGaTrend.hbm.xml</value>
+				
+					<value>com/xy/pk10/jsft/model/JsftGaBet.hbm.xml</value>
+					<value>com/xy/pk10/jsft/model/JsftGaSession.hbm.xml</value>
+					<value>com/xy/pk10/jsft/model/JsftGaTrend.hbm.xml</value>
+					
+					<value>com/xy/hk/sflhc/model/SflhcGaBet.hbm.xml</value>
+					<value>com/xy/hk/sflhc/model/SflhcGaSession.hbm.xml</value>
+					<value>com/xy/hk/sflhc/model/SflhcGaTrend.hbm.xml</value>
+					
+					<value>com/xy/ssc/five/model/FiveGaBet.hbm.xml</value>
+					<value>com/xy/ssc/five/model/FiveGaSession.hbm.xml</value>
+					<value>com/xy/ssc/five/model/FiveGaTrend.hbm.xml</value>
+					
+					<value>com/xy/ssc/bjssc/model/BjSscGaBet.hbm.xml</value>
+					<value>com/xy/ssc/bjssc/model/BjSscGaSession.hbm.xml</value>
+					<value>com/xy/ssc/bjssc/model/BjSscGaTrend.hbm.xml</value>
+					
+					<value>com/xy/pick11/jxpick11/model/JxPick11GaBet.hbm.xml</value>
+					<value>com/xy/pick11/jxpick11/model/JxPick11GaSession.hbm.xml</value>
+					<value>com/xy/pick11/jxpick11/model/JxPick11GaTrend.hbm.xml</value>
+					
+					<value>com/xy/k10/cqk10/model/CqK10GaBet.hbm.xml</value>
+					<value>com/xy/k10/cqk10/model/CqK10GaSession.hbm.xml</value>
+					<value>com/xy/k10/cqk10/model/CqK10GaTrend.hbm.xml</value>
+					
+					<value>com/xy/pk10/xyft/model/XyftGaBet.hbm.xml</value>
+					<value>com/xy/pk10/xyft/model/XyftGaSession.hbm.xml</value>
+					<value>com/xy/pk10/xyft/model/XyftGaTrend.hbm.xml</value>
+					
+					<!-- ***************** cp.gf ******************* -->
+					<value>com/gf/fivecolor/model/GfFiveGaSession.hbm.xml</value>
+					<value>com/gf/fivecolor/model/GfFiveGaTrend.hbm.xml</value>
+					<value>com/gf/fivecolor/model/GfFiveGaOmit.hbm.xml</value>
+
+					<value>com/gf/three/model/GfThreeGaSession.hbm.xml</value>
+					<value>com/gf/three/model/GfThreeGaTrend.hbm.xml</value>
+					<value>com/gf/three/model/GfThreeGaOmit.hbm.xml</value>
+					
+					<value>com/gf/ssc/cqssc/model/GfCqSscGaSession.hbm.xml</value>
+					<value>com/gf/ssc/cqssc/model/GfCqSscGaTrend.hbm.xml</value>
+					<value>com/gf/ssc/cqssc/model/GfCqSscGaOmit.hbm.xml</value>
+					
+					<value>com/gf/ssc/bjssc/model/GfBjSscGaSession.hbm.xml</value>
+					<value>com/gf/ssc/bjssc/model/GfBjSscGaTrend.hbm.xml</value>
+					<value>com/gf/ssc/bjssc/model/GfBjSscGaOmit.hbm.xml</value>
+					
+					<value>com/gf/ssc/xjssc/model/GfXjSscGaBet.hbm.xml</value>
+					<value>com/gf/ssc/xjssc/model/GfXjSscGaSession.hbm.xml</value>
+					<value>com/gf/ssc/xjssc/model/GfXjSscGaTrend.hbm.xml</value>
+					<value>com/gf/ssc/xjssc/model/GfXjSscGaOmit.hbm.xml</value>
+					
+					<value>com/gf/ssc/tjssc/model/GfTjSscGaBet.hbm.xml</value>
+					<value>com/gf/ssc/tjssc/model/GfTjSscGaSession.hbm.xml</value>
+					<value>com/gf/ssc/tjssc/model/GfTjSscGaTrend.hbm.xml</value>
+					<value>com/gf/ssc/tjssc/model/GfTjSscGaOmit.hbm.xml</value>
+					
+					<!-- <value>com/gf/ssc/jxssc/model/GfJxSscGaBet.hbm.xml</value>
+					<value>com/gf/ssc/jxssc/model/GfJxSscGaSession.hbm.xml</value>
+					<value>com/gf/ssc/jxssc/model/GfJxSscGaTrend.hbm.xml</value>
+					<value>com/gf/ssc/jxssc/model/GfJxSscGaOmit.hbm.xml</value> -->
+					
+					<!-- <value>com/gf/dcb/model/GfDcbGaBet.hbm.xml</value>
+					<value>com/gf/dcb/model/GfDcbGaSession.hbm.xml</value>
+					<value>com/gf/dcb/model/GfDcbGaTrend.hbm.xml</value>
+					<value>com/gf/dcb/model/GfDcbGaOmit.hbm.xml</value> -->
+			       	
+					<value>com/gf/pick11/gdpick11/model/GfGdPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/gdpick11/model/GfGdPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/gdpick11/model/GfGdPick11GaOmit.hbm.xml</value>
+				    
+				    <value>com/gf/pick11/jxpick11/model/GfJxPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/jxpick11/model/GfJxPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/jxpick11/model/GfJxPick11GaOmit.hbm.xml</value>
+				    
+				    <value>com/gf/pick11/sdpick11/model/GfSdPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/sdpick11/model/GfSdPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/sdpick11/model/GfSdPick11GaOmit.hbm.xml</value>
+				    
+					<value>com/gf/pick11/shpick11/model/GfShPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/shpick11/model/GfShPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/shpick11/model/GfShPick11GaOmit.hbm.xml</value>
+				    
+				    <value>com/gf/pick11/ahpick11/model/GfAhPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/ahpick11/model/GfAhPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/ahpick11/model/GfAhPick11GaOmit.hbm.xml</value>
+				    
+					<!-- <value>com/gf/pick11/gxpick11/model/GfGxPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/gxpick11/model/GfGxPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/gxpick11/model/GfGxPick11GaOmit.hbm.xml</value> -->	
+			     
+					<!-- <value>com/gf/pick11/sxpick11/model/GfSxPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/sxpick11/model/GfSxPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/sxpick11/model/GfSxPick11GaOmit.hbm.xml</value> -->
+				    
+					<!-- <value>com/gf/pick11/bjpick11/model/GfBjPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/bjpick11/model/GfBjPick11GaTrend.hbm.xml</value>		
+					<value>com/gf/pick11/bjpick11/model/GfBjPick11GaOmit.hbm.xml</value> -->
+					
+					<!-- <value>com/gf/pick11/tjpick11/model/GfTjPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/tjpick11/model/GfTjPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/tjpick11/model/GfTjPick11GaOmit.hbm.xml</value> -->
+
+					<!-- <value>com/gf/pick11/hebpick11/model/GfHebPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/hebpick11/model/GfHebPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/hebpick11/model/GfHebPick11GaOmit.hbm.xml</value> -->
+				    
+					<!-- <value>com/gf/pick11/nmgpick11/model/GfNmgPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/nmgpick11/model/GfNmgPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/nmgpick11/model/GfNmgPick11GaOmit.hbm.xml</value> -->
+					
+					<!-- <value>com/gf/pick11/lnpick11/model/GfLnPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/lnpick11/model/GfLnPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/lnpick11/model/GfLnPick11GaOmit.hbm.xml</value> -->
+				    
+					<!-- <value>com/gf/pick11/jlpick11/model/GfJlPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/jlpick11/model/GfJlPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/jlpick11/model/GfJlPick11GaOmit.hbm.xml</value> -->
+				    
+					<!-- <value>com/gf/pick11/hljpick11/model/GfHljPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/hljpick11/model/GfHljPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/hljpick11/model/GfHljPick11GaOmit.hbm.xml</value> -->
+				    
+					<!-- <value>com/gf/pick11/jspick11/model/GfJsPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/jspick11/model/GfJsPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/jspick11/model/GfJsPick11GaOmit.hbm.xml</value> -->
+				   
+					<!-- <value>com/gf/pick11/zjpick11/model/GfZjPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/zjpick11/model/GfZjPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/zjpick11/model/GfZjPick11GaOmit.hbm.xml</value> -->
+				    
+					<!-- <value>com/gf/pick11/fjpick11/model/GfFjPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/fjpick11/model/GfFjPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/fjpick11/model/GfFjPick11GaOmit.hbm.xml</value> -->
+
+					<!-- <value>com/gf/pick11/hnpick11/model/GfHnPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/hnpick11/model/GfHnPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/hnpick11/model/GfHnPick11GaOmit.hbm.xml</value> -->
+
+					<!-- <value>com/gf/pick11/hubpick11/model/GfHubPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/hubpick11/model/GfHubPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/hubpick11/model/GfHubPick11GaOmit.hbm.xml</value> -->
+
+					<!-- <value>com/gf/pick11/gzpick11/model/GfGzPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/gzpick11/model/GfGzPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/gzpick11/model/GfGzPick11GaOmit.hbm.xml</value> -->
+
+					<!-- <value>com/gf/pick11/shxpick11/model/GfShxPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/shxpick11/model/GfShxPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/shxpick11/model/GfShxPick11GaOmit.hbm.xml</value> -->
+
+					<!-- <value>com/gf/pick11/gspick11/model/GfGsPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/gspick11/model/GfGsPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/gspick11/model/GfGsPick11GaOmit.hbm.xml</value> -->
+
+					<!-- <value>com/gf/pick11/xjpick11/model/GfXjPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/xjpick11/model/GfXjPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/xjpick11/model/GfXjPick11GaOmit.hbm.xml</value> -->
+
+					<!-- <value>com/gf/pick11/ynpick11/model/GfYnPick11GaSession.hbm.xml</value>
+					<value>com/gf/pick11/ynpick11/model/GfYnPick11GaTrend.hbm.xml</value>		
+				    <value>com/gf/pick11/ynpick11/model/GfYnPick11GaOmit.hbm.xml</value> -->
+				    
+					<value>com/gf/k3/jsk3/model/GfJsK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/jsk3/model/GfJsK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/jsk3/model/GfJsK3GaTrend.hbm.xml</value>
+
+					<value>com/gf/k3/ahk3/model/GfAhK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/ahk3/model/GfAhK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/ahk3/model/GfAhK3GaTrend.hbm.xml</value>
+
+					<value>com/gf/k3/bjk3/model/GfBjK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/bjk3/model/GfBjK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/bjk3/model/GfBjK3GaTrend.hbm.xml</value>
+					
+					<value>com/gf/k3/gxk3/model/GfGxK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/gxk3/model/GfGxK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/gxk3/model/GfGxK3GaTrend.hbm.xml</value>
+					
+					<value>com/gf/k3/hubk3/model/GfHubK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/hubk3/model/GfHubK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/hubk3/model/GfHubK3GaTrend.hbm.xml</value>
+					
+					<value>com/gf/k3/jxk3/model/GfJxK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/jxk3/model/GfJxK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/jxk3/model/GfJxK3GaTrend.hbm.xml</value>
+					
+					<value>com/gf/k3/jlk3/model/GfJlK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/jlk3/model/GfJlK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/jlk3/model/GfJlK3GaTrend.hbm.xml</value>
+					
+					<value>com/gf/k3/shk3/model/GfShK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/shk3/model/GfShK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/shk3/model/GfShK3GaTrend.hbm.xml</value>
+
+					<!-- <value>com/gf/k3/fjk3/model/GfFjK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/fjk3/model/GfFjK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/fjk3/model/GfFjK3GaTrend.hbm.xml</value> -->
+
+					<!-- <value>com/gf/k3/gzk3/model/GfGzK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/gzk3/model/GfGzK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/gzk3/model/GfGzK3GaTrend.hbm.xml</value> -->
+					
+					<!-- <value>com/gf/k3/gsk3/model/GfGsK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/gsk3/model/GfGsK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/gsk3/model/GfGsK3GaTrend.hbm.xml</value> -->
+
+					<!-- <value>com/gf/k3/hebk3/model/GfHebK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/hebk3/model/GfHebK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/hebk3/model/GfHebK3GaTrend.hbm.xml</value> -->
+					
+					<!-- <value>com/gf/k3/hnk3/model/GfHnK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/hnk3/model/GfHnK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/hnk3/model/GfHnK3GaTrend.hbm.xml</value> -->
+
+					<!-- <value>com/gf/k3/nmgk3/model/GfNmgK3GaOmit.hbm.xml</value>
+					<value>com/gf/k3/nmgk3/model/GfNmgK3GaSession.hbm.xml</value>
+					<value>com/gf/k3/nmgk3/model/GfNmgK3GaTrend.hbm.xml</value> -->
+					
+					<!-- <value>com/gf/bjkl8/model/GfBjKl8GaBet.hbm.xml</value>
+					<value>com/gf/bjkl8/model/GfBjKl8GaSession.hbm.xml</value>
+					<value>com/gf/bjkl8/model/GfBjKl8GaTrend.hbm.xml</value> -->
+					
+					<value>com/gf/bjpk10/model/GfBjPk10GaOmit.hbm.xml</value>
+					<value>com/gf/bjpk10/model/GfBjPk10GaSession.hbm.xml</value>
+					<value>com/gf/bjpk10/model/GfBjPk10GaTrend.hbm.xml</value>
+
+					<value>com/gf/sfpk10/model/GfSfPk10GaOmit.hbm.xml</value>
+					<value>com/gf/sfpk10/model/GfSfPk10GaSession.hbm.xml</value>
+					<value>com/gf/sfpk10/model/GfSfPk10GaTrend.hbm.xml</value>
+				
+					<value>com/gf/sfpk102/model/GfSfPk102GaOmit.hbm.xml</value>
+					<value>com/gf/sfpk102/model/GfSfPk102GaSession.hbm.xml</value>
+					<value>com/gf/sfpk102/model/GfSfPk102GaTrend.hbm.xml</value>
+				
+					<value>com/gf/xyft/model/GfXyFtGaOmit.hbm.xml</value>
+					<value>com/gf/xyft/model/GfXyFtGaSession.hbm.xml</value>
+					<value>com/gf/xyft/model/GfXyFtGaTrend.hbm.xml</value>
+				
+					<value>com/gf/jsft/model/GfJsFtGaOmit.hbm.xml</value>
+					<value>com/gf/jsft/model/GfJsFtGaSession.hbm.xml</value>
+					<value>com/gf/jsft/model/GfJsFtGaTrend.hbm.xml</value>
+					
+					<!-- jc -->
+					<value>com/jc/model/JcField.hbm.xml</value>
+					<value>com/jc/model/JcGaOrder.hbm.xml</value>
+					<value>com/jc/model/JcMatch.hbm.xml</value>
+					<value>com/jc/model/JcOption.hbm.xml</value>
+					<value>com/jc/model/JcPlayType.hbm.xml</value>
+					<value>com/jc/model/JcTeam.hbm.xml</value>
+					<value>com/jc/model/Type.hbm.xml</value>
+					
+				</list>
+			</property>
+			<property name="hibernateProperties">
+				<props>
+					<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+					<!--
+					<prop key="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</prop>
+					-->
+					
+					<prop key="hibernate.show_sql">false</prop>
+					<prop key="hibernate.max_fetch_depth">1</prop>
+					<prop key="hibernate.cglib.use_reflection_optimizer">false</prop>
+					<prop key="hibernate.query.substitutions">true 1, false 0, yes 'Y', no 'N'</prop>
+					<prop key="hibernate.jdbc.fetch_size">50</prop>
+					<prop key="hibernate.jdbc.batch_size">25</prop>
+					<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+					<prop key="hibernate.cache.use_query_cache">true</prop>
+					<prop key="hibernate.use_sql_comments">true</prop>
+					<prop key="hibernate.generate_statistics">true</prop>
+				</props>
+			</property>
+			<property name="dataSource">
+				<ref bean="dataSource"/>
+			</property>
+		</bean>
+		<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+		<bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+			<property name="sessionFactory">
+				<ref local="sessionFactory"/>
+			</property>
+		</bean>
+		<bean id="hibernateTransactionProxy"
+	 	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+	  		<property name="transactionManager">
+	   			<ref bean="hibernateTransactionManager"/>
+	  		</property>
+	  		<property name="transactionAttributes">
+	   			<props>
+	    			<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>
+   	    			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+	    			<prop key="add*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="create*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="modify*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="update*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="save*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="delete*">PROPAGATION_REQUIRED</prop>
+	    			<prop key="del*">PROPAGATION_REQUIRED</prop>
+   	    			<prop key="remove*">PROPAGATION_REQUIRED</prop>
+					<prop key="recover*">PROPAGATION_REQUIRED</prop>
+	   			</props>
+	  		</property>
+		</bean>
+		<!--hibernate session start-->
+	</beans>

@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.RequestGraduate" 
+    table="REQUEST_GRADUATE"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="requestGraduateId"
+        type="java.lang.Integer"
+        column="REQUEST_GRADUATE_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_REQUEST_GRADUATE</param>
+        </generator>
+    </id>
+
+    <property
+        name="userId"
+        type="java.lang.Integer"
+        column="USER_ID"
+        length="8"
+    />
+    <property
+        name="semesterId"
+        type="java.lang.Integer"
+        column="SEMESTER_ID"
+        length="2"
+    />
+    <property
+        name="applicationSubmit"
+        type="java.lang.String"
+        column="APPLICATION_SUBMIT"
+        length="1"
+    />
+    <property
+        name="signature"
+        type="java.lang.String"
+        column="SIGNATURE"
+        length="1"
+    />
+    <property
+        name="submitTime"
+        type="java.sql.Date"
+        column="SUBMIT_TIME"
+        length="7"
+    />
+    <property
+        name="resume"
+        type="org.springframework.orm.hibernate3.support.ClobStringType"
+        column="RESUME"
+        length="4000"
+    />
+    <property
+        name="requestStatus"
+        type="java.lang.String"
+        column="REQUEST_STATUS"
+        length="1"
+    />
+    <property
+        name="checkUserId"
+        type="java.lang.Integer"
+        column="CHECK_USER_ID"
+        length="8"
+    />
+    <property
+        name="checkDate"
+        type="java.sql.Date"
+        column="CHECK_DATE"
+        length="7"
+    />
+    <property
+        name="isGiveUpThesis"
+        type="java.lang.String"
+        column="IS_GIVE_UP_THESIS"
+        length="1"
+    />
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="updateDateTime"
+        type="java.sql.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<title></title>
+<link href="../../css/test.css" rel="stylesheet" />
+</head>
+<body>
+	 #if($seller)
+		<div class ="title">
+			<div class ="mes">
+				<div class="gs"><img src="../..${seller.logo}"></div>
+			</div>
+		</div>
+		<div class ="title"> 
+			<p>商家信息</p>
+		</div>
+		<div class="contents">
+			<div class ="mes">
+				名称：${seller.title}
+				地址：${seller.address}
+				电话：${seller.telePhone}
+			</div>
+		</div>
+		<div class ="title"> 
+				<p>评价</p>
+				#if($evalStar)
+				评分：${evalStar}  
+				#end
+
+				#if($totalCount)
+				评价人数：${totalCount}
+				#end
+		</div>
+		#if($list)
+			#foreach($bl in $list)
+				<div class ="mes">
+					${bl.userName}
+				</div>
+				<div class ="mes">
+					${bl.comm.score}
+				</div>
+				<div class ="mes">
+					${bl.comm.content}
+				</div>
+			#end
+		#end
+	#end
+</body>
+</html>

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.RequestChangeTc" 
+    table="REQUEST_CHANGE_TC"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="requestChangeTcId"
+        type="java.lang.Integer"
+        column="REQUEST_CHANGE_TC_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_REQUEST_CHANGE_TC</param>
+        </generator>
+    </id>
+
+    <property
+        name="semesterId"
+        type="java.lang.Integer"
+        column="SEMESTER_ID"
+        length="2"
+    />
+    <property
+        name="requestTime"
+        type="java.util.Date"
+        column="REQUEST_TIME"
+        length="7"
+    />
+    <property
+        name="requestReason"
+        type="java.lang.String"
+        column="REQUEST_REASON"
+        length="1000"
+    />
+    <property
+        name="requestUserId"
+        type="java.lang.Integer"
+        column="REQUEST_USER_ID"
+        length="8"
+    />
+    <property
+        name="requestStatus"
+        type="java.lang.String"
+        column="REQUEST_STATUS"
+        length="2"
+    />
+    <property
+        name="firstCheckUserId"
+        type="java.lang.Integer"
+        column="FIRST_CHECK_USER_ID"
+        length="8"
+    />
+    <property
+        name="firstCheckTime"
+        type="java.util.Date"
+        column="FIRST_CHECK_TIME"
+        length="7"
+    />
+    <property
+        name="firstCheckRemark"
+        type="java.lang.String"
+        column="FIRST_CHECK_REMARK"
+        length="1000"
+    />
+    <property
+        name="finalCheckUserId"
+        type="java.lang.Integer"
+        column="FINAL_CHECK_USER_ID"
+        length="8"
+    />
+    <property
+        name="finalCheckTime"
+        type="java.util.Date"
+        column="FINAL_CHECK_TIME"
+        length="7"
+    />
+    <property
+        name="finalCheckRemark"
+        type="java.lang.String"
+        column="FINAL_CHECK_REMARK"
+        length="1000"
+    />
+    <property
+        name="fromTcId"
+        type="java.lang.Integer"
+        column="FROM_TC_ID"
+        length="4"
+    />
+    <property
+        name="toTcId"
+        type="java.lang.Integer"
+        column="TO_TC_ID"
+        length="4"
+    />
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="updateDateTime"
+        type="java.util.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

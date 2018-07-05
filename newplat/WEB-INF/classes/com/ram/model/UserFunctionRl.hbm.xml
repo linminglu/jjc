@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+<!--
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class
+    name="com.ram.model.UserFunctionRl"
+    table="USER_FUNCTION_RL"
+>
+
+    <id
+        name="userFunctionId"
+        type="java.lang.Integer"
+        column="USER_FUNCTION_ID"
+    >
+
+        <generator class="sequence">
+            <param name="sequence">SEQ_USER_FUNCTION_RL</param>
+        </generator>
+    </id>
+
+
+    <!-- Associations -->
+
+    <!-- bi-directional many-to-one association to Function -->
+    <many-to-one
+        name="function"
+        class="com.ram.model.Function"
+        not-null="true"
+    >
+        <column name="FUNCTION_ID" />
+    </many-to-one>
+    <!-- bi-directional one-to-many association to UserFunctionPermissionRl -->
+    <set
+        name="userFunctionPermissionRls"
+        lazy="true"
+        inverse="true"
+		cascade="save-update"
+    >
+        <key>
+            <column name="USER_FUNCTION_ID" />
+        </key>
+        <one-to-many
+            class="com.ram.model.UserFunctionPermissionRl"
+        />
+    </set>
+    <!-- bi-directional many-to-one association to User -->
+    <many-to-one
+        name="user"
+        class="com.ram.model.User"
+        not-null="true"
+    >
+        <column name="USER_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.card.model.BatchProduct" 
+    table="BATCH_PRODUCT"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="batchProductId"
+        type="java.lang.Integer"
+        column="BATCH_PRODUCT_ID"
+    >
+    
+        <generator class="identity"/>
+    </id>
+
+    <property
+        name="protocolCode"
+        type="java.lang.String"
+        column="PROTOCOL_CODE"
+    />
+    <property
+        name="batchCode"
+        type="java.lang.String"
+        column="BATCH_CODE"
+    />
+    <property
+        name="productId"
+        type="java.lang.Integer"
+        column="PRODUCT_ID"
+    />
+</class>
+</hibernate-mapping>

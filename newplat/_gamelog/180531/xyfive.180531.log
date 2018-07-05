@@ -1,0 +1,383 @@
+[G][05-31 09:05:10][xyfive] timer launch .....
+[G][05-31 09:10:10][xyfive] timer launch .....
+[G][05-31 09:15:10][xyfive] timer launch .....
+[G][05-31 09:20:10][xyfive] timer launch .....
+[G][05-31 09:25:10][xyfive] timer launch .....
+[G][05-31 09:31:35][xyfive] timer launch .....
+[G][05-31 09:35:10][xyfive] timer launch .....
+[G][05-31 09:40:10][xyfive] timer launch .....
+[G][05-31 09:45:10][xyfive] timer launch .....
+[G][05-31 09:50:10][xyfive] timer launch .....
+[G][05-31 09:55:10][xyfive] timer launch .....
+[G][05-31 10:00:21][xyfive] timer launch .....
+[G][05-31 10:05:10][xyfive] timer launch .....
+[G][05-31 10:10:10][xyfive] timer launch .....
+[G][05-31 10:15:10][xyfive] timer launch .....
+[G][05-31 10:20:10][xyfive] timer launch .....
+[G][05-31 10:25:10][xyfive] timer launch .....
+[G][05-31 14:00:10][xyfive] timer launch .....
+[G][05-31 15:45:10][xyfive] timer launch .....
+[G][05-31 15:45:25][xyfive] fetching ..... [180531189][ing=false],openTime=2018-05-31 15:45:00[1/80]
+[G][05-31 15:45:25][xyfive] RESULTS  _____ [180531189]=>3,0,3,3,8
+[G][05-31 15:45:25][xyfive] timer clear .....
+[G][05-31 15:45:25][xyfive] -------- OPENing --------
+[G][05-31 15:45:27][xyfive] Start ... [180531184],status=0,result=3,6,6,9,9
+[G][05-31 15:45:27][xyfive] BETS ... [0][180531184][420ms]
+[G][05-31 15:45:27][xyfive] End ... [180531184][497ms],status=2,result=3,6,6,9,9
+[G][05-31 15:45:28][xyfive] Start ... [180531185],status=0,result=0,7,7,0,9
+[G][05-31 15:45:28][xyfive] BETS ... [0][180531185][62ms]
+[G][05-31 15:45:28][xyfive] End ... [180531185][123ms],status=2,result=0,7,7,0,9
+[G][05-31 15:45:28][xyfive] Start ... [180531186],status=0,result=8,1,0,3,0
+[G][05-31 15:45:28][xyfive] BETS ... [0][180531186][61ms]
+[G][05-31 15:45:28][xyfive] End ... [180531186][124ms],status=2,result=8,1,0,3,0
+[G][05-31 15:45:29][xyfive] Start ... [180531187],status=0,result=1,9,2,2,8
+[G][05-31 15:45:29][xyfive] BETS ... [0][180531187][179ms]
+[G][05-31 15:45:29][xyfive] End ... [180531187][245ms],status=2,result=1,9,2,2,8
+[G][05-31 15:45:29][xyfive] Start ... [180531188],status=0,result=8,5,9,7,1
+[G][05-31 15:45:29][xyfive] BETS ... [0][180531188][66ms]
+[G][05-31 15:45:29][xyfive] End ... [180531188][125ms],status=2,result=8,5,9,7,1
+[G][05-31 15:45:29][xyfive] Start ... [180531189],status=0,result=3,0,3,3,8
+[G][05-31 15:45:29][xyfive] BETS ... [0][180531189][62ms]
+[G][05-31 15:45:30][xyfive] End ... [180531189][124ms],status=2,result=3,0,3,3,8
+[G][05-31 15:45:30][xyfive] gsi last ... [394ms]180531189,3,0,3,3,8
+[G][05-31 15:45:51][xyfive] trend ... [6][20638ms]
+[G][05-31 15:45:57][xyfive] removing opening flag ..... [180531189]
+[G][05-31 15:45:57][xyfive] SUCCESS  _^_^_ [180531189][31371ms]
+[G][05-31 16:05:10][xyfive] timer launch .....
+[G][05-31 16:05:13][xyfive] fetching ..... [180531193][ing=false],openTime=2018-05-31 16:05:00[1/80]
+[G][05-31 16:05:15][xyfive] fetching ..... [180531193][ing=false],openTime=2018-05-31 16:05:00[2/80]
+[G][05-31 16:05:20][xyfive] fetching ..... [180531193][ing=false],openTime=2018-05-31 16:05:00[3/80]
+[G][05-31 16:05:25][xyfive] fetching ..... [180531193][ing=false],openTime=2018-05-31 16:05:00[4/80]
+[G][05-31 16:11:15][xyfive] timer launch .....
+[G][05-31 16:11:32][xyfive] fetching ..... [180531194][ing=false],openTime=2018-05-31 16:10:00[1/80]
+[G][05-31 16:11:32][xyfive] RESULTS  _____ [180531194]=>1,9,7,1,0
+[G][05-31 16:11:32][xyfive] timer clear .....
+[G][05-31 16:11:32][xyfive] -------- OPENing --------
+[G][05-31 16:11:33][xyfive] Start ... [180531193],status=0,result=0,4,0,3,2
+[G][05-31 16:11:33][xyfive] BETS ... [0][180531193][59ms]
+[G][05-31 16:11:33][xyfive] End ... [180531193][123ms],status=2,result=0,4,0,3,2
+[G][05-31 16:11:33][xyfive] Start ... [180531192],status=0,result=1,4,7,7,0
+[G][05-31 16:11:33][xyfive] BETS ... [0][180531192][78ms]
+[G][05-31 16:11:33][xyfive] End ... [180531192][153ms],status=2,result=1,4,7,7,0
+[G][05-31 16:11:33][xyfive] Start ... [180531191],status=0,result=1,8,9,5,5
+[G][05-31 16:11:33][xyfive] BETS ... [0][180531191][123ms]
+[G][05-31 16:11:34][xyfive] End ... [180531191][559ms],status=2,result=1,8,9,5,5
+[G][05-31 16:11:34][xyfive] Start ... [180531194],status=0,result=1,9,7,1,0
+[G][05-31 16:11:34][xyfive] BETS ... [0][180531194][157ms]
+[G][05-31 16:11:34][xyfive] End ... [180531194][251ms],status=2,result=1,9,7,1,0
+[G][05-31 16:11:34][xyfive] Start ... [180531190],status=0,result=2,8,7,1,0
+[G][05-31 16:11:35][xyfive] BETS ... [0][180531190][202ms]
+[G][05-31 16:11:35][xyfive] End ... [180531190][288ms],status=2,result=2,8,7,1,0
+[G][05-31 16:11:37][xyfive] gsi last ... [654ms]180531194,1,9,7,1,0
+[G][05-31 16:11:44][xyfive] trend ... [5][7599ms]
+[G][05-31 16:11:48][xyfive] removing opening flag ..... [180531194]
+[G][05-31 16:11:48][xyfive] SUCCESS  _^_^_ [180531194][16388ms]
+[G][05-31 16:15:10][xyfive] timer launch .....
+[G][05-31 16:15:15][xyfive] fetching ..... [180531195][ing=false],openTime=2018-05-31 16:15:00[1/80]
+[G][05-31 16:15:16][xyfive] fetching ..... [180531195][ing=false],openTime=2018-05-31 16:15:00[2/80]
+[G][05-31 16:15:21][xyfive] fetching ..... [180531195][ing=false],openTime=2018-05-31 16:15:00[3/80]
+[G][05-31 16:15:21][xyfive] RESULTS  _____ [180531195]=>9,6,8,7,8
+[G][05-31 16:15:21][xyfive] timer clear .....
+[G][05-31 16:15:21][xyfive] -------- OPENing --------
+[G][05-31 16:15:21][xyfive] Start ... [180531195],status=0,result=9,6,8,7,8
+[G][05-31 16:15:22][xyfive] BETS ... [0][180531195][423ms]
+[G][05-31 16:15:22][xyfive] End ... [180531195][484ms],status=2,result=9,6,8,7,8
+[G][05-31 16:15:24][xyfive] gsi last ... [592ms]180531195,9,6,8,7,8
+[G][05-31 16:15:24][xyfive] trend ... [1][56ms]
+[G][05-31 16:15:25][xyfive] removing opening flag ..... [180531195]
+[G][05-31 16:15:25][xyfive] SUCCESS  _^_^_ [180531195][3913ms]
+[G][05-31 16:20:10][xyfive] timer launch .....
+[G][05-31 16:20:17][xyfive] fetching ..... [180531196][ing=false],openTime=2018-05-31 16:20:00[1/80]
+[G][05-31 16:20:18][xyfive] fetching ..... [180531196][ing=false],openTime=2018-05-31 16:20:00[2/80]
+[G][05-31 16:20:23][xyfive] fetching ..... [180531196][ing=false],openTime=2018-05-31 16:20:00[3/80]
+[G][05-31 16:20:23][xyfive] RESULTS  _____ [180531196]=>9,1,9,3,3
+[G][05-31 16:20:23][xyfive] timer clear .....
+[G][05-31 16:20:24][xyfive] -------- OPENing --------
+[G][05-31 16:20:24][xyfive] Start ... [180531196],status=0,result=9,1,9,3,3
+[G][05-31 16:20:24][xyfive] BETS ... [0][180531196][65ms]
+[G][05-31 16:20:24][xyfive] End ... [180531196][126ms],status=2,result=9,1,9,3,3
+[G][05-31 16:20:26][xyfive] gsi last ... [312ms]180531196,9,1,9,3,3
+[G][05-31 16:20:26][xyfive] trend ... [1][61ms]
+[G][05-31 16:20:29][xyfive] removing opening flag ..... [180531196]
+[G][05-31 16:20:29][xyfive] SUCCESS  _^_^_ [180531196][5587ms]
+[G][05-31 16:25:10][xyfive] timer launch .....
+[G][05-31 16:25:15][xyfive] fetching ..... [180531197][ing=false],openTime=2018-05-31 16:25:00[1/80]
+[G][05-31 16:25:18][xyfive] fetching ..... [180531197][ing=false],openTime=2018-05-31 16:25:00[2/80]
+[G][05-31 16:25:18][xyfive] RESULTS  _____ [180531197]=>0,4,7,6,0
+[G][05-31 16:25:18][xyfive] timer clear .....
+[G][05-31 16:25:18][xyfive] -------- OPENing --------
+[G][05-31 16:25:18][xyfive] Start ... [180531197],status=0,result=0,4,7,6,0
+[G][05-31 16:25:18][xyfive] BETS ... [0][180531197][62ms]
+[G][05-31 16:25:18][xyfive] End ... [180531197][130ms],status=2,result=0,4,7,6,0
+[G][05-31 16:25:20][xyfive] gsi last ... [282ms]180531197,0,4,7,6,0
+[G][05-31 16:25:21][xyfive] trend ... [1][65ms]
+[G][05-31 16:25:22][xyfive] removing opening flag ..... [180531197]
+[G][05-31 16:25:22][xyfive] SUCCESS  _^_^_ [180531197][4177ms]
+[G][05-31 16:30:30][xyfive] timer launch .....
+[G][05-31 16:30:55][xyfive] fetching ..... [180531198][ing=false],openTime=2018-05-31 16:30:00[1/80]
+[G][05-31 16:30:55][xyfive] RESULTS  _____ [180531198]=>3,7,4,9,8
+[G][05-31 16:30:55][xyfive] timer clear .....
+[G][05-31 16:30:55][xyfive] -------- OPENing --------
+[G][05-31 16:30:56][xyfive] Start ... [180531198],status=0,result=3,7,4,9,8
+[G][05-31 16:30:57][xyfive] BETS ... [0][180531198][900ms]
+[G][05-31 16:30:57][xyfive] End ... [180531198][1099ms],status=2,result=3,7,4,9,8
+[G][05-31 16:31:03][xyfive] gsi last ... [1041ms]180531198,3,7,4,9,8
+[G][05-31 16:31:03][xyfive] trend ... [1][204ms]
+[G][05-31 16:31:08][xyfive] removing opening flag ..... [180531198]
+[G][05-31 16:31:08][xyfive] SUCCESS  _^_^_ [180531198][13309ms]
+[G][05-31 16:35:10][xyfive] timer launch .....
+[G][05-31 16:35:29][xyfive] fetching ..... [180531199][ing=false],openTime=2018-05-31 16:35:00[1/80]
+[G][05-31 16:35:29][xyfive] RESULTS  _____ [180531199]=>9,3,5,8,8
+[G][05-31 16:35:29][xyfive] timer clear .....
+[G][05-31 16:35:30][xyfive] -------- OPENing --------
+[G][05-31 16:35:31][xyfive] Start ... [180531199],status=0,result=9,3,5,8,8
+[G][05-31 16:35:31][xyfive] BETS ... [0][180531199][212ms]
+[G][05-31 16:35:31][xyfive] End ... [180531199][421ms],status=2,result=9,3,5,8,8
+[G][05-31 16:35:35][xyfive] gsi last ... [600ms]180531199,9,3,5,8,8
+[G][05-31 16:35:36][xyfive] trend ... [1][201ms]
+[G][05-31 16:35:41][xyfive] removing opening flag ..... [180531199]
+[G][05-31 16:35:41][xyfive] SUCCESS  _^_^_ [180531199][11335ms]
+[G][05-31 16:40:10][xyfive] timer launch .....
+[G][05-31 16:40:10][xyfive] fetching ..... [180531200][ing=false],openTime=2018-05-31 16:40:00[1/80]
+[G][05-31 16:40:15][xyfive] fetching ..... [180531200][ing=false],openTime=2018-05-31 16:40:00[2/80]
+[G][05-31 16:40:23][xyfive] fetching ..... [180531200][ing=false],openTime=2018-05-31 16:40:00[3/80]
+[G][05-31 16:40:23][xyfive] RESULTS  _____ [180531200]=>4,0,9,3,2
+[G][05-31 16:40:23][xyfive] timer clear .....
+[G][05-31 16:40:23][xyfive] -------- OPENing --------
+[G][05-31 16:40:23][xyfive] Start ... [180531200],status=0,result=4,0,9,3,2
+[G][05-31 16:40:23][xyfive] BETS ... [0][180531200][68ms]
+[G][05-31 16:40:23][xyfive] End ... [180531200][125ms],status=2,result=4,0,9,3,2
+[G][05-31 16:40:26][xyfive] gsi last ... [557ms]180531200,4,0,9,3,2
+[G][05-31 16:40:26][xyfive] trend ... [1][73ms]
+[G][05-31 16:40:28][xyfive] removing opening flag ..... [180531200]
+[G][05-31 16:40:28][xyfive] SUCCESS  _^_^_ [180531200][5379ms]
+[G][05-31 16:45:10][xyfive] timer launch .....
+[G][05-31 16:45:16][xyfive] fetching ..... [180531201][ing=false],openTime=2018-05-31 16:45:00[1/80]
+[G][05-31 16:45:16][xyfive] fetching ..... [180531201][ing=false],openTime=2018-05-31 16:45:00[2/80]
+[G][05-31 16:45:21][xyfive] fetching ..... [180531201][ing=false],openTime=2018-05-31 16:45:00[3/80]
+[G][05-31 16:45:26][xyfive] fetching ..... [180531201][ing=false],openTime=2018-05-31 16:45:00[4/80]
+[G][05-31 16:45:27][xyfive] RESULTS  _____ [180531201]=>8,0,4,3,7
+[G][05-31 16:45:27][xyfive] timer clear .....
+[G][05-31 16:45:45][xyfive] -------- OPENing --------
+[G][05-31 16:45:46][xyfive] Start ... [180531201],status=0,result=8,0,4,3,7
+[G][05-31 16:45:46][xyfive] BETS ... [0][180531201][57ms]
+[G][05-31 16:45:46][xyfive] End ... [180531201][118ms],status=2,result=8,0,4,3,7
+[G][05-31 16:45:48][xyfive] gsi last ... [796ms]180531201,8,0,4,3,7
+[G][05-31 16:45:48][xyfive] trend ... [1][57ms]
+[G][05-31 16:45:50][xyfive] removing opening flag ..... [180531201]
+[G][05-31 16:45:50][xyfive] SUCCESS  _^_^_ [180531201][22752ms]
+[G][05-31 16:50:10][xyfive] timer launch .....
+[G][05-31 16:50:11][xyfive] fetching ..... [180531202][ing=false],openTime=2018-05-31 16:50:00[1/80]
+[G][05-31 16:50:15][xyfive] fetching ..... [180531202][ing=false],openTime=2018-05-31 16:50:00[2/80]
+[G][05-31 16:50:20][xyfive] fetching ..... [180531202][ing=false],openTime=2018-05-31 16:50:00[3/80]
+[G][05-31 16:50:20][xyfive] RESULTS  _____ [180531202]=>9,2,8,7,1
+[G][05-31 16:50:20][xyfive] timer clear .....
+[G][05-31 16:50:23][xyfive] -------- OPENing --------
+[G][05-31 16:50:23][xyfive] Start ... [180531202],status=0,result=9,2,8,7,1
+[G][05-31 16:50:23][xyfive] BETS ... [0][180531202][59ms]
+[G][05-31 16:50:23][xyfive] End ... [180531202][121ms],status=2,result=9,2,8,7,1
+[G][05-31 16:50:25][xyfive] gsi last ... [181ms]180531202,9,2,8,7,1
+[G][05-31 16:50:25][xyfive] trend ... [1][67ms]
+[G][05-31 16:50:26][xyfive] removing opening flag ..... [180531202]
+[G][05-31 16:50:26][xyfive] SUCCESS  _^_^_ [180531202][5606ms]
+[G][05-31 16:55:10][xyfive] timer launch .....
+[G][05-31 16:56:23][xyfive] fetching ..... [180531203][ing=false],openTime=2018-05-31 16:55:00[1/80]
+[G][05-31 16:56:23][xyfive] RESULTS  _____ [180531203]=>1,6,4,7,6
+[G][05-31 16:56:23][xyfive] timer clear .....
+[G][05-31 16:56:23][xyfive] -------- OPENing --------
+[G][05-31 16:56:23][xyfive] Start ... [180531203],status=0,result=1,6,4,7,6
+[G][05-31 16:56:23][xyfive] BETS ... [0][180531203][366ms]
+[G][05-31 16:56:23][xyfive] End ... [180531203][425ms],status=2,result=1,6,4,7,6
+[G][05-31 16:56:25][xyfive] gsi last ... [206ms]180531203,1,6,4,7,6
+[G][05-31 16:56:25][xyfive] trend ... [1][59ms]
+[G][05-31 16:56:26][xyfive] removing opening flag ..... [180531203]
+[G][05-31 16:56:26][xyfive] SUCCESS  _^_^_ [180531203][3786ms]
+[G][05-31 17:00:14][xyfive] timer launch .....
+[G][05-31 17:00:15][xyfive] fetching ..... [180531204][ing=false],openTime=2018-05-31 17:00:00[1/80]
+[G][05-31 17:00:43][xyfive] fetching ..... [180531204][ing=false],openTime=2018-05-31 17:00:00[2/80]
+[G][05-31 17:00:43][xyfive] RESULTS  _____ [180531204]=>3,2,6,5,8
+[G][05-31 17:00:43][xyfive] timer clear .....
+[G][05-31 17:00:43][xyfive] -------- OPENing --------
+[G][05-31 17:00:45][xyfive] Start ... [180531204],status=0,result=3,2,6,5,8
+[G][05-31 17:00:45][xyfive] BETS ... [0][180531204][168ms]
+[G][05-31 17:00:45][xyfive] End ... [180531204][226ms],status=2,result=3,2,6,5,8
+[G][05-31 17:00:46][xyfive] gsi last ... [400ms]180531204,3,2,6,5,8
+[G][05-31 17:00:46][xyfive] trend ... [1][74ms]
+[G][05-31 17:00:48][xyfive] removing opening flag ..... [180531204]
+[G][05-31 17:00:48][xyfive] SUCCESS  _^_^_ [180531204][5523ms]
+[G][05-31 18:25:10][xyfive] timer launch .....
+[G][05-31 18:25:11][xyfive] fetching ..... [180531221][ing=false],openTime=2018-05-31 18:25:00[1/80]
+[G][05-31 18:25:15][xyfive] fetching ..... [180531221][ing=false],openTime=2018-05-31 18:25:00[2/80]
+[G][05-31 18:25:21][xyfive] fetching ..... [180531221][ing=false],openTime=2018-05-31 18:25:00[3/80]
+[G][05-31 18:25:25][xyfive] fetching ..... [180531221][ing=false],openTime=2018-05-31 18:25:00[4/80]
+[G][05-31 18:25:25][xyfive] RESULTS  _____ [180531221]=>0,0,3,3,6
+[G][05-31 18:25:25][xyfive] timer clear .....
+[G][05-31 18:25:25][xyfive] -------- OPENing --------
+[G][05-31 18:25:25][xyfive] Start ... [180531220],status=0,result=2,0,9,3,1
+[G][05-31 18:25:25][xyfive] BETS ... [0][180531220][61ms]
+[G][05-31 18:25:26][xyfive] End ... [180531220][426ms],status=2,result=2,0,9,3,1
+[G][05-31 18:25:26][xyfive] Start ... [180531221],status=0,result=0,0,3,3,6
+[G][05-31 18:25:26][xyfive] BETS ... [0][180531221][166ms]
+[G][05-31 18:25:26][xyfive] End ... [180531221][224ms],status=2,result=0,0,3,3,6
+[G][05-31 18:25:26][xyfive] Start ... [180531210],status=0,result=0,7,2,5,4
+[G][05-31 18:25:26][xyfive] BETS ... [0][180531210][67ms]
+[G][05-31 18:25:26][xyfive] End ... [180531210][123ms],status=2,result=0,7,2,5,4
+[G][05-31 18:25:27][xyfive] Start ... [180531215],status=0,result=5,8,5,2,5
+[G][05-31 18:25:27][xyfive] BETS ... [0][180531215][63ms]
+[G][05-31 18:25:27][xyfive] End ... [180531215][121ms],status=2,result=5,8,5,2,5
+[G][05-31 18:25:27][xyfive] Start ... [180531216],status=0,result=5,6,3,1,4
+[G][05-31 18:25:27][xyfive] BETS ... [0][180531216][58ms]
+[G][05-31 18:25:27][xyfive] End ... [180531216][114ms],status=2,result=5,6,3,1,4
+[G][05-31 18:25:27][xyfive] Start ... [180531217],status=0,result=7,8,0,3,2
+[G][05-31 18:25:27][xyfive] BETS ... [0][180531217][62ms]
+[G][05-31 18:25:27][xyfive] End ... [180531217][118ms],status=2,result=7,8,0,3,2
+[G][05-31 18:25:27][xyfive] Start ... [180531218],status=0,result=2,3,2,4,4
+[G][05-31 18:25:27][xyfive] BETS ... [0][180531218][63ms]
+[G][05-31 18:25:28][xyfive] End ... [180531218][127ms],status=2,result=2,3,2,4,4
+[G][05-31 18:25:28][xyfive] Start ... [180531206],status=0,result=6,3,4,4,5
+[G][05-31 18:25:28][xyfive] BETS ... [0][180531206][61ms]
+[G][05-31 18:25:28][xyfive] End ... [180531206][119ms],status=2,result=6,3,4,4,5
+[G][05-31 18:25:28][xyfive] Start ... [180531211],status=0,result=0,6,5,8,7
+[G][05-31 18:25:28][xyfive] BETS ... [0][180531211][62ms]
+[G][05-31 18:25:28][xyfive] End ... [180531211][183ms],status=2,result=0,6,5,8,7
+[G][05-31 18:25:28][xyfive] Start ... [180531207],status=0,result=0,1,7,3,0
+[G][05-31 18:25:28][xyfive] BETS ... [0][180531207][61ms]
+[G][05-31 18:25:28][xyfive] End ... [180531207][149ms],status=2,result=0,1,7,3,0
+[G][05-31 18:25:28][xyfive] Start ... [180531212],status=0,result=6,2,6,4,7
+[G][05-31 18:25:29][xyfive] BETS ... [0][180531212][57ms]
+[G][05-31 18:25:29][xyfive] End ... [180531212][111ms],status=2,result=6,2,6,4,7
+[G][05-31 18:25:29][xyfive] Start ... [180531213],status=0,result=1,4,2,6,5
+[G][05-31 18:25:29][xyfive] BETS ... [0][180531213][221ms]
+[G][05-31 18:25:29][xyfive] End ... [180531213][276ms],status=2,result=1,4,2,6,5
+[G][05-31 18:25:29][xyfive] Start ... [180531205],status=0,result=4,7,2,3,1
+[G][05-31 18:25:30][xyfive] BETS ... [0][180531205][385ms]
+[G][05-31 18:25:30][xyfive] End ... [180531205][461ms],status=2,result=4,7,2,3,1
+[G][05-31 18:25:30][xyfive] Start ... [180531214],status=0,result=7,8,5,4,7
+[G][05-31 18:25:30][xyfive] BETS ... [0][180531214][90ms]
+[G][05-31 18:25:30][xyfive] End ... [180531214][147ms],status=2,result=7,8,5,4,7
+[G][05-31 18:25:31][xyfive] Start ... [180531209],status=0,result=0,6,0,9,2
+[G][05-31 18:25:31][xyfive] BETS ... [0][180531209][150ms]
+[G][05-31 18:25:31][xyfive] End ... [180531209][210ms],status=2,result=0,6,0,9,2
+[G][05-31 18:25:31][xyfive] Start ... [180531208],status=0,result=4,0,4,3,6
+[G][05-31 18:25:31][xyfive] BETS ... [0][180531208][60ms]
+[G][05-31 18:25:31][xyfive] End ... [180531208][115ms],status=2,result=4,0,4,3,6
+[G][05-31 18:25:31][xyfive] Start ... [180531219],status=0,result=2,8,1,1,5
+[G][05-31 18:25:31][xyfive] BETS ... [0][180531219][62ms]
+[G][05-31 18:25:32][xyfive] End ... [180531219][297ms],status=2,result=2,8,1,1,5
+[G][05-31 18:25:32][xyfive] gsi last ... [284ms]180531221,0,0,3,3,6
+[G][05-31 18:25:50][xyfive] trend ... [17][18547ms]
+[G][05-31 18:25:52][xyfive] removing opening flag ..... [180531221]
+[G][05-31 18:25:52][xyfive] SUCCESS  _^_^_ [180531221][26661ms]
+[G][05-31 18:30:10][xyfive] timer launch .....
+[G][05-31 18:30:24][xyfive] fetching ..... [180531222][ing=false],openTime=2018-05-31 18:30:00[1/80]
+[G][05-31 18:30:24][xyfive] RESULTS  _____ [180531222]=>9,9,1,4,3
+[G][05-31 18:30:24][xyfive] timer clear .....
+[G][05-31 18:30:24][xyfive] -------- OPENing --------
+[G][05-31 18:30:25][xyfive] Start ... [180531222],status=0,result=9,9,1,4,3
+[G][05-31 18:30:25][xyfive] BETS ... [0][180531222][59ms]
+[G][05-31 18:30:25][xyfive] End ... [180531222][115ms],status=2,result=9,9,1,4,3
+[G][05-31 18:30:26][xyfive] gsi last ... [144ms]180531222,9,9,1,4,3
+[G][05-31 18:30:26][xyfive] trend ... [1][69ms]
+[G][05-31 18:30:27][xyfive] removing opening flag ..... [180531222]
+[G][05-31 18:30:27][xyfive] SUCCESS  _^_^_ [180531222][3238ms]
+[G][05-31 18:35:10][xyfive] timer launch .....
+[G][05-31 18:35:10][xyfive] fetching ..... [180531223][ing=false],openTime=2018-05-31 18:35:00[1/80]
+[G][05-31 18:35:15][xyfive] fetching ..... [180531223][ing=false],openTime=2018-05-31 18:35:00[2/80]
+[G][05-31 18:35:20][xyfive] fetching ..... [180531223][ing=false],openTime=2018-05-31 18:35:00[3/80]
+[G][05-31 18:35:25][xyfive] fetching ..... [180531223][ing=false],openTime=2018-05-31 18:35:00[4/80]
+[G][05-31 18:35:30][xyfive] fetching ..... [180531223][ing=false],openTime=2018-05-31 18:35:00[5/80]
+[G][05-31 18:35:30][xyfive] RESULTS  _____ [180531223]=>4,8,1,0,4
+[G][05-31 18:35:30][xyfive] timer clear .....
+[G][05-31 18:35:30][xyfive] -------- OPENing --------
+[G][05-31 18:35:32][xyfive] Start ... [180531223],status=0,result=4,8,1,0,4
+[G][05-31 18:35:32][xyfive] BETS ... [0][180531223][53ms]
+[G][05-31 18:35:32][xyfive] End ... [180531223][107ms],status=2,result=4,8,1,0,4
+[G][05-31 18:35:32][xyfive] gsi last ... [164ms]180531223,4,8,1,0,4
+[G][05-31 18:35:32][xyfive] trend ... [1][63ms]
+[G][05-31 18:35:34][xyfive] removing opening flag ..... [180531223]
+[G][05-31 18:35:34][xyfive] SUCCESS  _^_^_ [180531223][3330ms]
+[G][05-31 18:40:10][xyfive] timer launch .....
+[G][05-31 18:40:15][xyfive] fetching ..... [180531224][ing=false],openTime=2018-05-31 18:40:00[1/80]
+[G][05-31 18:40:16][xyfive] fetching ..... [180531224][ing=false],openTime=2018-05-31 18:40:00[2/80]
+[G][05-31 18:40:21][xyfive] fetching ..... [180531224][ing=false],openTime=2018-05-31 18:40:00[3/80]
+[G][05-31 18:40:26][xyfive] fetching ..... [180531224][ing=false],openTime=2018-05-31 18:40:00[4/80]
+[G][05-31 18:40:32][xyfive] fetching ..... [180531224][ing=false],openTime=2018-05-31 18:40:00[5/80]
+[G][05-31 18:40:32][xyfive] RESULTS  _____ [180531224]=>6,3,2,6,4
+[G][05-31 18:40:32][xyfive] timer clear .....
+[G][05-31 18:40:32][xyfive] -------- OPENing --------
+[G][05-31 18:40:33][xyfive] Start ... [180531224],status=0,result=6,3,2,6,4
+[G][05-31 18:40:33][xyfive] BETS ... [0][180531224][56ms]
+[G][05-31 18:40:33][xyfive] End ... [180531224][120ms],status=2,result=6,3,2,6,4
+[G][05-31 18:40:34][xyfive] gsi last ... [307ms]180531224,6,3,2,6,4
+[G][05-31 18:40:34][xyfive] trend ... [1][55ms]
+[G][05-31 18:40:35][xyfive] removing opening flag ..... [180531224]
+[G][05-31 18:40:35][xyfive] SUCCESS  _^_^_ [180531224][3667ms]
+[G][05-31 18:45:10][xyfive] timer launch .....
+[G][05-31 18:45:12][xyfive] fetching ..... [180531225][ing=false],openTime=2018-05-31 18:45:00[1/80]
+[G][05-31 18:45:17][xyfive] fetching ..... [180531225][ing=false],openTime=2018-05-31 18:45:00[2/80]
+[G][05-31 18:45:26][xyfive] fetching ..... [180531225][ing=false],openTime=2018-05-31 18:45:00[3/80]
+[G][05-31 18:45:26][xyfive] RESULTS  _____ [180531225]=>2,9,6,7,8
+[G][05-31 18:45:26][xyfive] timer clear .....
+[G][05-31 18:45:26][xyfive] -------- OPENing --------
+[G][05-31 18:45:27][xyfive] Start ... [180531225],status=0,result=2,9,6,7,8
+[G][05-31 18:45:27][xyfive] BETS ... [0][180531225][66ms]
+[G][05-31 18:45:27][xyfive] End ... [180531225][132ms],status=2,result=2,9,6,7,8
+[G][05-31 18:45:28][xyfive] gsi last ... [434ms]180531225,2,9,6,7,8
+[G][05-31 18:45:29][xyfive] trend ... [1][59ms]
+[G][05-31 18:45:30][xyfive] removing opening flag ..... [180531225]
+[G][05-31 18:45:30][xyfive] SUCCESS  _^_^_ [180531225][4335ms]
+[G][05-31 18:50:10][xyfive] timer launch .....
+[G][05-31 18:50:12][xyfive] fetching ..... [180531226][ing=false],openTime=2018-05-31 18:50:00[1/80]
+[G][05-31 18:50:16][xyfive] fetching ..... [180531226][ing=false],openTime=2018-05-31 18:50:00[2/80]
+[G][05-31 18:50:21][xyfive] fetching ..... [180531226][ing=false],openTime=2018-05-31 18:50:00[3/80]
+[G][05-31 18:50:21][xyfive] RESULTS  _____ [180531226]=>4,1,7,7,5
+[G][05-31 18:50:21][xyfive] timer clear .....
+[G][05-31 18:50:21][xyfive] -------- OPENing --------
+[G][05-31 18:50:21][xyfive] Start ... [180531226],status=0,result=4,1,7,7,5
+[G][05-31 18:50:22][xyfive] BETS ... [0][180531226][142ms]
+[G][05-31 18:50:22][xyfive] End ... [180531226][196ms],status=2,result=4,1,7,7,5
+[G][05-31 18:50:23][xyfive] gsi last ... [170ms]180531226,4,1,7,7,5
+[G][05-31 18:50:23][xyfive] trend ... [1][49ms]
+[G][05-31 18:50:24][xyfive] removing opening flag ..... [180531226]
+[G][05-31 18:50:24][xyfive] SUCCESS  _^_^_ [180531226][3023ms]
+[G][05-31 18:55:10][xyfive] timer launch .....
+[G][05-31 18:55:10][xyfive] fetching ..... [180531227][ing=false],openTime=2018-05-31 18:55:00[1/80]
+[G][05-31 18:55:15][xyfive] fetching ..... [180531227][ing=false],openTime=2018-05-31 18:55:00[2/80]
+[G][05-31 18:55:20][xyfive] fetching ..... [180531227][ing=false],openTime=2018-05-31 18:55:00[3/80]
+[G][05-31 18:55:25][xyfive] fetching ..... [180531227][ing=false],openTime=2018-05-31 18:55:00[4/80]
+[G][05-31 18:55:35][xyfive] fetching ..... [180531227][ing=false],openTime=2018-05-31 18:55:00[5/80]
+[G][05-31 18:55:35][xyfive] RESULTS  _____ [180531227]=>5,1,0,3,2
+[G][05-31 18:55:35][xyfive] timer clear .....
+[G][05-31 18:55:35][xyfive] -------- OPENing --------
+[G][05-31 18:55:35][xyfive] Start ... [180531227],status=0,result=5,1,0,3,2
+[G][05-31 18:55:35][xyfive] BETS ... [0][180531227][58ms]
+[G][05-31 18:55:36][xyfive] End ... [180531227][290ms],status=2,result=5,1,0,3,2
+[G][05-31 18:55:37][xyfive] gsi last ... [129ms]180531227,5,1,0,3,2
+[G][05-31 18:55:37][xyfive] trend ... [1][60ms]
+[G][05-31 18:55:38][xyfive] removing opening flag ..... [180531227]
+[G][05-31 18:55:38][xyfive] SUCCESS  _^_^_ [180531227][3647ms]
+[G][05-31 19:00:10][xyfive] timer launch .....
+[G][05-31 19:00:16][xyfive] fetching ..... [180531228][ing=false],openTime=2018-05-31 19:00:00[1/80]
+[G][05-31 19:00:16][xyfive] RESULTS  _____ [180531228]=>3,7,0,9,3
+[G][05-31 19:00:16][xyfive] timer clear .....
+[G][05-31 19:00:17][xyfive] -------- OPENing --------
+[G][05-31 19:00:17][xyfive] Start ... [180531228],status=0,result=3,7,0,9,3
+[G][05-31 19:00:17][xyfive] BETS ... [0][180531228][121ms]
+[G][05-31 19:00:17][xyfive] End ... [180531228][181ms],status=2,result=3,7,0,9,3
+[G][05-31 19:00:18][xyfive] gsi last ... [155ms]180531228,3,7,0,9,3
+[G][05-31 19:00:19][xyfive] trend ... [1][56ms]
+[G][05-31 19:00:20][xyfive] removing opening flag ..... [180531228]
+[G][05-31 19:00:20][xyfive] SUCCESS  _^_^_ [180531228][3093ms]
+[G][05-31 19:05:10][xyfive] timer launch .....
+[G][05-31 19:05:13][xyfive] fetching ..... [180531229][ing=false],openTime=2018-05-31 19:05:00[1/80]
+[G][05-31 19:05:15][xyfive] fetching ..... [180531229][ing=false],openTime=2018-05-31 19:05:00[2/80]
+[G][05-31 19:05:15][xyfive] RESULTS  _____ [180531229]=>7,0,2,6,5
+[G][05-31 19:05:15][xyfive] timer clear .....
+[G][05-31 19:05:16][xyfive] -------- OPENing --------
+[G][05-31 19:05:17][xyfive] Start ... [180531229],status=0,result=7,0,2,6,5
+[G][05-31 19:05:17][xyfive] BETS ... [0][180531229][67ms]
+[G][05-31 19:05:17][xyfive] End ... [180531229][132ms],status=2,result=7,0,2,6,5
+[G][05-31 19:05:18][xyfive] gsi last ... [127ms]180531229,7,0,2,6,5
+[G][05-31 19:05:18][xyfive] trend ... [1][59ms]
+[G][05-31 19:05:19][xyfive] removing opening flag ..... [180531229]
+[G][05-31 19:05:19][xyfive] SUCCESS  _^_^_ [180531229][3842ms]

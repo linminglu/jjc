@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+   <filter>
+	   <filter-name>encodingFilter</filter-name>
+	   <filter-class>com.framework.web.filter.EncodingFilter</filter-class>
+	   <init-param>
+		   <param-name>coding</param-name>
+		   <param-value>UTF-8</param-value>
+	   </init-param>
+  </filter>
+  
+  <!-- debugAPI start -->
+	<filter>
+		<filter-name>debugFilter</filter-name>
+		<filter-class>tools.debug.DebugFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>debugFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- debugAPI end -->
+  
+  <filter>
+	<filter-name>UrlRewriteFilter</filter-name>
+	<filter-class>
+		org.tuckey.web.filters.urlrewrite.UrlRewriteFilter
+	</filter-class>
+</filter>
+
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+<filter-mapping>
+	<filter-name>UrlRewriteFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+
+<listener>
+		 <listener-class>com.apps.web.listener.StatusListener</listener-class>
+	</listener>
+
+  <listener>
+		<listener-class>com.framework.web.servlet.SessionListener</listener-class>
+  </listener>
+  
+  <servlet>
+		<servlet-name>upData</servlet-name>
+		<servlet-class>help.base.UpFileData</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>upData</servlet-name>
+		<url-pattern>/upData</url-pattern>
+	</servlet-mapping>
+  
+   <servlet>
+	   	   
+      <servlet-name>action</servlet-name>
+      <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+          <init-param>
+	         <param-name>debug</param-name>
+    	     <param-value>3</param-value>
+      	  </init-param>
+	      <init-param>
+	         <param-name>detail</param-name>
+	         <param-value>3</param-value>
+	      </init-param>
+	      <init-param>
+	         <param-name>config</param-name>
+	         <param-value>/WEB-INF/struts-config.xml</param-value>
+	      </init-param>
+	    <init-param>
+			<param-name>config/permission</param-name>
+			<param-value>/WEB-INF/struts-config-permission.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/user</param-name>
+			<param-value>/WEB-INF/struts-config-user.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/basedata</param-name>
+			<param-value>/WEB-INF/struts-config-basedata.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/api</param-name>
+			<param-value>/WEB-INF/struts-config-api.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/sms</param-name>
+			<param-value>/WEB-INF/struts-config-sms.xml</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>config/advert</param-name>
+			<param-value>/WEB-INF/struts-config-advert.xml</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/activity</param-name>
+			<param-value>/WEB-INF/struts-config-activity.xml</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>config/type</param-name>
+			<param-value>/WEB-INF/struts-config-type.xml</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>config/card</param-name>
+			<param-value>/WEB-INF/struts-config-card.xml</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>config/param</param-name>
+			<param-value>/WEB-INF/struts-config-param.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/cash</param-name>
+			<param-value>/WEB-INF/struts-config-cash.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/message</param-name>
+			<param-value>/WEB-INF/struts-config-message.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/pay</param-name>
+			<param-value>/WEB-INF/struts-config-pay.xml</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/news</param-name>
+			<param-value>/WEB-INF/struts-config-news.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/agent</param-name>
+			<param-value>/WEB-INF/struts-config-agent.xml</param-value>
+		</init-param>
+		
+		<!-- cp -->
+		<init-param>
+			<param-name>config/dcb</param-name>
+			<param-value>/WEB-INF/struts-config-gaDcb.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/three</param-name>
+			<param-value>/WEB-INF/struts-config-gaThree.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/five</param-name>
+			<param-value>/WEB-INF/struts-config-gaFive.xml</param-value>
+		</init-param>
+		
+		<!-- ssc -->
+		<init-param>
+			<param-name>config/cqSsc</param-name>
+			<param-value>/WEB-INF/struts-config-gaCqSsc.xml</param-value>
+		</init-param>
+		<!-- <init-param>
+			<param-name>config/jxSsc</param-name>
+			<param-value>/WEB-INF/struts-config-gaJxSsc.xml</param-value>
+		</init-param> -->
+		
+		<!-- pick11 -->
+		<init-param>
+			<param-name>config/gdPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaGdPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/gxPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaGxPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/jxPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaJxPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/sdPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaSdPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/sxPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaSxPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/bjPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaBjPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/tjPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaTjPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/hebPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaHebPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/nmgPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaNmgPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/lnPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaLnPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/jlPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaJlPick11.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/hljPick11</param-name>
+			<param-value>/WEB-INF/struts-config-gaHljPick11.xml</param-value>
+		</init-param>
+		<!--###-->
+
+		
+		<!-- k3 -->
+		<init-param>
+			<param-name>config/jsk3</param-name>
+			<param-value>/WEB-INF/struts-config-gaJsK3.xml</param-value>
+		</init-param>
+		
+	      <load-on-startup>0</load-on-startup>
+   </servlet>
+
+  
+   <servlet-mapping>
+      <servlet-name>action</servlet-name>
+      <url-pattern>*.do</url-pattern>
+   </servlet-mapping>
+   
+   <session-config>
+		<session-timeout>90</session-timeout>
+   </session-config>
+  
+
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-template.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-template.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-tiles.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-nested.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/pager-taglib.tld</taglib-uri>
+    <taglib-location>/WEB-INF/pager-taglib.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/pow2webgui.tld</taglib-uri>
+    <taglib-location>/WEB-INF/pow2webgui.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/c.tld</taglib-uri>
+    <taglib-location>/WEB-INF/c.tld</taglib-location>
+  </taglib>
+  <jsp-config>
+	  <taglib>
+		<taglib-uri>/content</taglib-uri>
+		<taglib-location>/WEB-INF/tld/content.tld</taglib-location>
+	  </taglib>
+  </jsp-config>
+	<mime-mapping>
+		<extension>mht</extension>
+		<mime-type>text/x-mht</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+	    <extension>xls</extension>
+	    <mime-type>application/vnd.ms-excel</mime-type>
+	</mime-mapping>
+	<!--
+	<error-page>
+       <error-code>404</error-code>
+       <location>/404.jsp</location>
+    </error-page>
+    <error-page>
+       <error-code>500</error-code>                             
+       <location>/500.jsp</location>
+    </error-page>
+		  -->
+</web-app>
+

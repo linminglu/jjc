@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+
+	<!-- ==================================== Data Sources      -->
+  	<data-sources>
+  	</data-sources>
+
+  	<!-- ==================================== Form Beans        -->
+  	<form-beans>
+		<form-bean name="jcTeamForm" type="com.jc.web.form.JcTeamForm"/>
+		<form-bean name="typeForm" type="com.jc.web.form.TypeForm"/>
+		<form-bean name="matchForm" type="com.jc.web.form.JcMatchForm"/>
+		<form-bean name="fieldForm" type="com.jc.web.form.JcFieldForm"/>
+  	</form-beans>
+
+  	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+	 	<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+
+  	<!-- ==================================== Action Mappings    -->
+  	<action-mappings>
+  		<action 
+			path="/jcTeamAction" 
+    		type="com.jc.web.action.JcTeamAction" 
+    		name="jcTeamForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+			
+		<forward name="init" path="/teamList.jsp"/>
+   		<forward name="create" path="/createTeam.jsp"/>
+   		<forward name="toInit" path="/jcTeamAction.do?method=init" redirect="true"/>
+    	</action>
+    	
+    	<action 
+			path="/typeAction" 
+    		type="com.jc.web.action.TypeAction" 
+    		name="typeForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+			
+		<forward name="init" path="/typeList.jsp"/>
+   		<forward name="create" path="/createType.jsp"/>
+   		<forward name="toInit" path="/typeAction.do?method=init" redirect="true"/>
+    	</action>
+    	
+    	<action 
+			path="/matchAction" 
+    		type="com.jc.web.action.JcMatchAction" 
+    		name="matchForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+			
+		<forward name="init" path="/matchList.jsp"/>
+   		<forward name="create" path="/createMatch.jsp"/>
+   		<forward name="toInit" path="/matchAction.do?method=init" redirect="true"/>
+   		<forward name="initMatch" path="/matchPlay.jsp"/>
+   		<forward name="openResult" path="/openMatchResult.jsp"/>
+   		<forward name="update" path="/updateMatch.jsp"/>
+    	</action>
+    	
+    	<action 
+			path="/fieldAction" 
+    		type="com.jc.web.action.JcFieldAction" 
+    		name="fieldForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+			
+		<forward name="init" path="/fieldList.jsp"/>
+   		<forward name="create" path="/fieldSetting.jsp"/>
+   		<forward name="toInit" path="/fieldAction.do?method=init" redirect="true"/>
+   		<forward name="fieldPlay" path="/fieldPlayList.jsp"/>
+   		<forward name="toOpen" path="/openPlay.jsp"/>
+    	</action>
+    </action-mappings>
+</struts-config>

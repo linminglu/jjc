@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="agentDAO" class="com.apps.dao.hibernate.AgentHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="agentService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.apps.service.impl.AgentServiceImpl">
+	            <property name="agentDAO"><ref local="agentDAO"/></property>	            
+	        </bean>
+	    </property>
+	</bean>
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="noticeDAO" class="com.apps.dao.hibernate.NoticeDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="noticeService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.apps.service.impl.NoticeServiceImpl">
+	            <property name="noticeDAO"><ref local="noticeDAO"/></property>	            
+	        </bean>
+	    </property>
+	</bean>
+</beans>

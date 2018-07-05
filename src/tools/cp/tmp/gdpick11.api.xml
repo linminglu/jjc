@@ -1,0 +1,7 @@
+<action 
+    	    path="/gdPick11Manager"
+    	    type="help.pick11.GdPick11Manager"
+    	    scope="request"
+    	    parameter="method"
+    	    validate="false"
+    	 />

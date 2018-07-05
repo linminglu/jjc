@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.apps.model.LotterySetting" table="lottery_setting">
+		<cache usage="read-write" />
+		<id name="lsId" type="java.lang.Integer" column="ls_id">
+			<generator class="identity" />
+		</id>
+       <property name="startTime" type="java.util.Date" column="start_time" />
+       <property name="endTime" type="java.util.Date" column="end_time" />
+       <property name="type" type="java.lang.String" column="type" length="8" />
+       <property name="status" type="java.lang.String" column="status" length="4" />
+       <property name="money" type="java.math.BigDecimal" column="money" length="12" />
+	</class>
+</hibernate-mapping>

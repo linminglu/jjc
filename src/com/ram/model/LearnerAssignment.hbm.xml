@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.LearnerAssignment" 
+    table="LEARNER_ASSIGNMENT"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="learnerAssignmentId"
+        type="java.lang.Integer"
+        column="LEARNER_ASSIGNMENT_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_LEARNER_ASSIGNMENT</param>
+        </generator>
+    </id>
+
+   <property 
+        name="scheduleAssignmentId" 
+        column="SCHEDULE_ASSIGNMENT_ID" 
+        type="java.lang.Integer"
+        length="8"
+    />
+
+    <property
+        name="submitUserId"
+        type="java.lang.Integer"
+        column="SUBMIT_USER_ID"
+        length="8"
+    />
+    <property
+        name="courseId"
+        type="java.lang.Integer"
+        column="COURSE_ID"
+        length="8"
+    />
+   <property
+        name="submitAssignmentLink"
+        type="java.lang.String"
+        column="SUBMIT_ASSIGNMENT_LINK"
+        length="2000"
+    />
+    <property
+        name="assignmentSerial"
+        type="java.lang.Integer"
+        column="ASSIGNMENT_SERIAL"
+        length="2"
+    />
+    <property
+        name="updateDateTime"
+        type="java.util.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+    <property
+        name="assignmentStatus"
+        type="java.lang.String"
+        column="ASSIGNMENT_STATUS"
+        not-null="true"
+        length="1"
+    />
+
+    <!-- Associations -->
+  
+    <!-- uni-directional one-to-many association to AssignmentFeedback -->
+    <set
+        name="assignmentFeedbacks"
+        lazy="true"
+        inverse="true"
+		cascade="delete"
+    >
+        <key>
+            <column name="LEARNER_ASSIGNMENT_ID" />
+        </key>
+        <one-to-many 
+            class="com.ram.model.AssignmentFeedback"
+        />
+    </set>
+    <!-- uni-directional one-to-many association to AssignmentScore -->
+    <set
+        name="assignmentScores"
+        lazy="true"
+		inverse="true"
+		cascade="delete"
+    >
+        <key>
+            <column name="LEARNER_ASSIGNMENT_ID" />
+        </key>
+        <one-to-many 
+            class="com.ram.model.AssignmentScore"
+        />
+    </set>
+    
+</class>
+</hibernate-mapping>

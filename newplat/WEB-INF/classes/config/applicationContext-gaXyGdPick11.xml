@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="gdPick11DAO" class="com.xy.pick11.gdpick11.dao.hibernate.GdPick11DAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="gdPick11Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.pick11.gdpick11.service.impl.GdPick11ServiceImpl">
+	            <property name="gdPick11DAO"><ref local="gdPick11DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	             <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化期号-->
+	<bean name="initGdPick11SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.pick11.gdpick11.service.impl.InitGdPick11Session</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gdPick11Service"><ref bean="gdPick11Service" /></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchGdPick11ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.pick11.gdpick11.service.impl.FetchGdPick11Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gdPick11Service"><ref bean="gdPick11Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+		
+	<!-- 配置触发器定时周期 对应上面的 bean  --> 
+	
+	<!-- 初始化时间 -->
+    <bean id="initGdPick11Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initGdPick11SessionJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 定时抓去数据 -->
+	<bean id="fetchGdPick11Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGdPick11ResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>30 0/10 9-23 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 开奖监控时间 -->
+	<!--<bean id="openGdPick11" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="openGdPick11Job" />
+		</property>
+		 每天的x点到x点 每x秒钟触发开奖计算，因为要等官方开奖时间，故这里只是更新状态为开奖中
+		<property name="cronExpression">
+			<value>0/5 * 8-22 * * ?</value>
+		</property>
+	</bean>-->
+
+	<!-- 自动投注触发器(不用管) -->
+	<!-- <bean id="autoBetPick11" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="autoBetPick11Job" />
+		</property>
+		每天的9点到23点 每5分钟触发，具体说明见附录
+		<property name="cronExpression">
+			<value>0 2/5 8-23 * * ?</value>
+		</property>
+	</bean> -->
+	
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initGdPick11Session" />
+				<ref local="fetchGdPick11Result"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+</beans>

@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+#zx0,#zx1,#zx2{display: none;}
+#liangmianpan{}
+/* #liangmianpan #zx0 .betting-cell {min-height: 433.11px;} */
+/* #liangmianpan #kj0 .betting-cell {min-height: 417.28px;} */
+
+/* #liangmianpan #zx0 .betting-cell:nth-child(9) {min-height: 303px;} */
+/* #liangmianpan #zx0 .betting-cell:nth-child(10) {min-height: 303px;} */
+/* #liangmianpan #kj0 .betting-cell:nth-child(9) {min-height: 280px;} */
+/* #liangmianpan #kj0 .betting-cell:nth-child(10) {min-height: 280px;} */
+
+#topPopover__{width:90px;height:150px;}
+
+#ming{display: none;}
+
+#guanyajun{display: none;}
+
+.zoushi-table-box li{padding: 0 1%;}
+#haoma .lattice,#daxiao .lattice,#danshuang .lattice{width: 9.09%;}
+#guanyajunzoushi .lattice{width: 25%;}
+#longhu .lattice{width: 16.66666%;}
+
+.paiming-table .lattice{width: 50%;text-align: left;padding-left: 10px;}
+
+.not-data{}
+
+.open-list-box .data-box .he{width: 50%;float: left;border-right: 1px solid #fff;}
+.open-list-box .data-box .data-details .he span{text-align: center;width: 33.33333%;display: block;float: left;}
+.open-list-box .data-box .longhu{width: 50%;float: left;text-align: center;}
+/*<320*/
+@media screen and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 640px) {
+}
+/*>640*/
+@media screen and (min-width: 641px) {
+	.main-content{max-width: 540px;margin: 0 auto;}
+}

@@ -1,0 +1,4 @@
+<!-- jsk3 -->
+					<value>com/k3/jsk3/model/JsK3GaOmit.hbm.xml</value>
+					<value>com/k3/jsk3/model/JsK3GaSession.hbm.xml</value>
+					<value>com/k3/jsk3/model/JsK3GaTrend.hbm.xml</value>

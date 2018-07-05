@@ -1,0 +1,202 @@
+.cate_menu a.selected{
+	color: #f72F17;
+}
+
+.cate_menu a:hover{
+	color: #f72F17;
+}
+
+
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea {
+    line-height: 0;
+    width: 90%;
+    height: 20px;
+    margin-bottom: 3px;
+    margin-top: 2px;
+    padding: 0;
+    -webkit-user-select: text;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0;
+    outline: 0;
+    background-color: #fff;
+    -webkit-appearance: none;
+}
+
+.Ball_List td{
+	text-align:center;
+	border: 1px solid #dcdcdc;
+}
+.Ball_List th{
+	background-color: #fdc9a7;
+}
+
+input.bet-money {
+	width:90px;
+	height:33px;
+	background:url(../images/text_input.gif) repeat-x left top;
+	border:#b9c2cb 1px solid;
+	text-align:center
+}
+
+.cont-col3-hd {
+	padding:8px 0;
+	color:#310a07;
+	text-align: center;
+}
+.cont-col3-box2 {
+	text-align:center
+}
+.Ball_List {
+    background-color: #ffffff;
+/*     border: 1px #b9c2cb solid; */
+    position: relative;
+}
+.Ball_tr_H {
+    line-height: 16px;
+    text-align: center;
+    background-color: #fff;
+    height: 27px;
+}
+
+.cate_menu a{
+	margin-right: 6px;
+}
+
+button.u-btn1 {
+    background: #5b8ac7;
+    background: -moz-linear-gradient(top,#5b8ac7 0,#2765b5 100%);
+    background: -webkit-linear-gradient(top,#5b8ac7 0,#2765b5 100%);
+    background: linear-gradient(to bottom,#fdc9a7 0,#d6702d 100%);
+    border: 1px solid #e46816;
+    color: #fff;
+    
+    width: 41px;
+    height: 21px;
+    padding: 0;
+}
+
+
+.el-dialog__wrapper {
+    overflow: auto!important;
+}
+.el-dialog__wrapper {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    overflow: auto;
+    margin: 0;
+    z-index: 1000;
+}
+
+.el-dialog {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+.el-dialog--small {
+    width: 50%;
+}
+.bet-modal.el-dialog--small {
+    width: 500px;
+}
+.el-dialog__header {
+    padding: 20px 20px 0;
+}
+.el-dialog__title {
+    line-height: 1;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2d3d;
+}
+.el-dialog__headerbtn {
+    float: right;
+    background: 0 0;
+    border: none;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.bet-bottom {
+    border: 1px solid #b9c2cb;
+}
+.u-table10 {
+    width: 100%;
+    text-align: center;
+    table-layout: fixed;
+}
+.u-table10 thead th {
+    border: 1px solid #eac0bf;
+    background-color: #eac0bf;
+    color: #35406d;
+}
+.u-table10 thead th {
+    height: 30px;
+    border: 1px solid #fdc9a7;
+    background-color: #fdc9a7;
+    font-size: 14px;
+    border-top: none;
+    color: #fff;
+}
+.u-table10 td {
+    border: 1px solid #b9c2cb;
+    background: #fff;
+    color: #35406d;
+}
+.c-txt3 {
+    color: red;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    padding: 0 4px;
+    font-weight: bold;
+}
+/* a.xy-a {	
+	background-color: #ff7903;    
+	color: #ffffff;    
+	position: relative;    
+	border-radius: 3px;    
+	top: -1px;    
+	height: 5px;
+} */
+a.xy-a {line-height: 26px;text-align: center;font-size: 16px;height: 26px;width: 100px;display: table-caption;background: url(../../../images/gf_xy_background.png);color: white;}
+a.saleing {line-height: 26px;text-align: center;font-size: 15px;height: 26px;width: 100px;display: table-caption;background-color: #e60000;color: white;border-radius: 5px;}
+
+.leftbox {
+    width: 738px;
+    border-right: 1px solid #ddd;
+    float: left;
+    margin-bottom: 10px;
+}
+.rightbox {
+    width: 250px;
+    float: right;
+}
+.inp1 input[disabled]{
+	background-color: #dcdada;
+}
+input[disabled] {
+    background-color: #f1f1f1;
+}
+
+.icon-selectors {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/check_img.png) no-repeat 50%;
+    background-size: 287px;
+}
+.amount .icon-selectors.square {
+    background-position: -29px -33px;
+}
+.amount .icon-selectors.seal{
+    background-position: -83px -33px;
+}
+.amount.bg-yellow .icon-selectors.square{
+    background-position: -56px -33px;
+}

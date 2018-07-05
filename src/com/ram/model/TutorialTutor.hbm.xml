@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.TutorialTutor" 
+    table="TUTORIAL_TUTOR"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="columnTutorialTutorId"
+        type="java.lang.Integer"
+        column="COLUMN_TUTORIAL_TUTOR_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_TUTORIAL_TUTOR</param>
+        </generator>
+    </id>
+
+    <property
+        name="tutorUserId"
+        type="java.lang.Integer"
+        column="TUTOR_USER_ID"
+        length="8"
+    />
+    <property
+        name="tutorName"
+        type="java.lang.String"
+        column="TUTOR_NAME"
+        length="20"
+    />
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="updateDateTime"
+        type="java.sql.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to TutorialSchedule -->
+    <many-to-one
+        name="tutorialSchedule"
+        class="com.ram.model.TutorialSchedule"
+        not-null="true"
+    >
+        <column name="TUTORIAL_SCHEDULE_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

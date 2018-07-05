@@ -1,0 +1,234 @@
+[G][05-31 09:10:30][gfahpick11] timer launch .....
+[G][05-31 09:20:30][gfahpick11] timer launch .....
+[G][05-31 09:31:12][gfahpick11] timer launch .....
+[G][05-31 09:40:30][gfahpick11] timer launch .....
+[G][05-31 09:50:30][gfahpick11] timer launch .....
+[G][05-31 10:00:30][gfahpick11] timer launch .....
+[G][05-31 10:10:30][gfahpick11] timer launch .....
+[G][05-31 10:20:30][gfahpick11] timer launch .....
+[G][05-31 14:00:30][gfahpick11] timer launch .....
+[G][05-31 16:00:02][gfahpick11] init session[2353ms]
+[G][05-31 16:00:30][gfahpick11] timer launch .....
+[G][05-31 16:00:47][gfahpick11] fetching ..... [18053145],openTime=2018-05-31 16:00:00[1/80]
+[G][05-31 16:00:48][gfahpick11] fetching ..... [18053145],openTime=2018-05-31 16:00:00[2/80]
+[G][05-31 16:01:22][gfahpick11] fetching ..... [18053145],openTime=2018-05-31 16:00:00[3/80]
+[G][05-31 16:01:23][gfahpick11] fetching ..... [18053145],openTime=2018-05-31 16:00:00[4/80]
+[G][05-31 16:01:40][gfahpick11] fetching ..... [18053145],openTime=2018-05-31 16:00:00[5/80]
+[G][05-31 16:01:40][gfahpick11] fetching ..... [18053145],openTime=2018-05-31 16:00:00[6/80]
+[G][05-31 16:01:50][gfahpick11] fetching ..... [18053145],openTime=2018-05-31 16:00:00[7/80]
+[G][05-31 16:01:51][gfahpick11] fetching ..... [18053145],openTime=2018-05-31 16:00:00[8/80]
+[G][05-31 16:11:15][gfahpick11] timer launch .....
+[G][05-31 16:11:28][gfahpick11] fetching ..... [18053146],openTime=2018-05-31 16:10:00[1/80]
+[G][05-31 16:11:28][gfahpick11] fetching ..... [18053146],openTime=2018-05-31 16:10:00[2/80]
+[G][05-31 16:11:34][gfahpick11] fetching ..... [18053146],openTime=2018-05-31 16:10:00[3/80]
+[G][05-31 16:11:39][gfahpick11] fetching ..... [18053146],openTime=2018-05-31 16:10:00[4/80]
+[G][05-31 16:11:44][gfahpick11] fetching ..... [18053146],openTime=2018-05-31 16:10:00[5/80]
+[G][05-31 16:11:48][gfahpick11] fetching ..... [18053146],openTime=2018-05-31 16:10:00[6/80]
+[G][05-31 16:11:54][gfahpick11] fetching ..... [18053146],openTime=2018-05-31 16:10:00[7/80]
+[G][05-31 16:11:59][gfahpick11] fetching ..... [18053146],openTime=2018-05-31 16:10:00[8/80]
+[G][05-31 16:12:04][gfahpick11] fetching ..... [18053146],openTime=2018-05-31 16:10:00[9/80]
+[G][05-31 16:12:33][gfahpick11] fetching ..... [18053146],openTime=2018-05-31 16:10:00[10/80]
+[G][05-31 16:12:33][gfahpick11] RESULTS  _____ [18053146]=>05,11,06,10,02
+[G][05-31 16:12:38][gfahpick11] update trade detail status...18053141
+[G][05-31 16:12:40][gfahpick11] update trade detail status...18053142
+[G][05-31 16:12:43][gfahpick11] update trade detail status...18053143
+[G][05-31 16:12:44][gfahpick11] update trade detail status...18053144
+[G][05-31 16:12:46][gfahpick11] update trade detail status...18053145
+[G][05-31 16:12:48][gfahpick11] update trade detail status...18053146
+[G][05-31 16:12:49][gfahpick11] SUCCESS  _^_^_ [18053146][15951ms]
+[G][05-31 16:20:30][gfahpick11] timer launch .....
+[G][05-31 16:20:36][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[1/80]
+[G][05-31 16:20:36][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[2/80]
+[G][05-31 16:20:49][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[3/80]
+[G][05-31 16:20:50][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[4/80]
+[G][05-31 16:21:19][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[5/80]
+[G][05-31 16:21:19][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[6/80]
+[G][05-31 16:21:30][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[7/80]
+[G][05-31 16:21:30][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[8/80]
+[G][05-31 16:21:38][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[9/80]
+[G][05-31 16:21:40][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[10/80]
+[G][05-31 16:21:46][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[11/80]
+[G][05-31 16:21:50][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[12/80]
+[G][05-31 16:21:56][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[13/80]
+[G][05-31 16:22:03][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[14/80]
+[G][05-31 16:22:06][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[15/80]
+[G][05-31 16:22:17][gfahpick11] fetching ..... [18053147],openTime=2018-05-31 16:20:00[16/80]
+[G][05-31 16:22:17][gfahpick11] RESULTS  _____ [18053147]=>04,08,11,01,02
+[G][05-31 16:22:22][gfahpick11] update trade detail status...18053147
+[G][05-31 16:22:25][gfahpick11] SUCCESS  _^_^_ [18053147][8265ms]
+[G][05-31 16:30:13][gfahpick11] init session[13534ms]
+[G][05-31 16:30:31][gfahpick11] timer launch .....
+[G][05-31 16:30:48][gfahpick11] fetching ..... [18053148],openTime=2018-05-31 16:30:00[1/80]
+[G][05-31 16:30:51][gfahpick11] fetching ..... [18053148],openTime=2018-05-31 16:30:00[2/80]
+[G][05-31 16:30:54][gfahpick11] fetching ..... [18053148],openTime=2018-05-31 16:30:00[3/80]
+[G][05-31 16:31:00][gfahpick11] fetching ..... [18053148],openTime=2018-05-31 16:30:00[4/80]
+[G][05-31 16:31:05][gfahpick11] fetching ..... [18053148],openTime=2018-05-31 16:30:00[5/80]
+[G][05-31 16:31:16][gfahpick11] fetching ..... [18053148],openTime=2018-05-31 16:30:00[6/80]
+[G][05-31 16:31:18][gfahpick11] fetching ..... [18053148],openTime=2018-05-31 16:30:00[7/80]
+[G][05-31 16:31:24][gfahpick11] fetching ..... [18053148],openTime=2018-05-31 16:30:00[8/80]
+[G][05-31 16:31:28][gfahpick11] fetching ..... [18053148],openTime=2018-05-31 16:30:00[9/80]
+[G][05-31 16:31:33][gfahpick11] fetching ..... [18053148],openTime=2018-05-31 16:30:00[10/80]
+[G][05-31 16:40:30][gfahpick11] timer launch .....
+[G][05-31 16:40:44][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[1/80]
+[G][05-31 16:40:44][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[2/80]
+[G][05-31 16:40:50][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[3/80]
+[G][05-31 16:40:54][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[4/80]
+[G][05-31 16:40:59][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[5/80]
+[G][05-31 16:41:30][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[6/80]
+[G][05-31 16:41:32][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[7/80]
+[G][05-31 16:41:36][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[8/80]
+[G][05-31 16:41:42][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[9/80]
+[G][05-31 16:41:49][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[10/80]
+[G][05-31 16:41:51][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[11/80]
+[G][05-31 16:41:56][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[12/80]
+[G][05-31 16:42:01][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[13/80]
+[G][05-31 16:42:33][gfahpick11] fetching ..... [18053149],openTime=2018-05-31 16:40:00[14/80]
+[G][05-31 16:42:33][gfahpick11] RESULTS  _____ [18053149]=>02,05,01,09,10
+[G][05-31 16:42:39][gfahpick11] update trade detail status...18053148
+[G][05-31 16:42:41][gfahpick11] update trade detail status...18053149
+[G][05-31 16:42:42][gfahpick11] SUCCESS  _^_^_ [18053149][9079ms]
+[G][05-31 16:50:30][gfahpick11] timer launch .....
+[G][05-31 16:50:45][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[1/80]
+[G][05-31 16:50:46][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[2/80]
+[G][05-31 16:50:52][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[3/80]
+[G][05-31 16:51:27][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[4/80]
+[G][05-31 16:51:29][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[5/80]
+[G][05-31 16:51:33][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[6/80]
+[G][05-31 16:51:37][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[7/80]
+[G][05-31 16:51:43][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[8/80]
+[G][05-31 16:51:48][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[9/80]
+[G][05-31 16:51:52][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[10/80]
+[G][05-31 16:52:03][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[11/80]
+[G][05-31 16:52:03][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[12/80]
+[G][05-31 16:52:08][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[13/80]
+[G][05-31 16:52:14][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[14/80]
+[G][05-31 16:52:19][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[15/80]
+[G][05-31 16:52:23][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[16/80]
+[G][05-31 16:52:29][gfahpick11] fetching ..... [18053150],openTime=2018-05-31 16:50:00[17/80]
+[G][05-31 16:52:29][gfahpick11] RESULTS  _____ [18053150]=>01,09,10,11,06
+[G][05-31 16:52:36][gfahpick11] update trade detail status...18053150
+[G][05-31 16:52:38][gfahpick11] SUCCESS  _^_^_ [18053150][8749ms]
+[G][05-31 17:00:10][gfahpick11] init session[10896ms]
+[G][05-31 17:00:30][gfahpick11] timer launch .....
+[G][05-31 17:00:38][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[1/80]
+[G][05-31 17:00:39][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[2/80]
+[G][05-31 17:00:44][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[3/80]
+[G][05-31 17:01:15][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[4/80]
+[G][05-31 17:01:16][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[5/80]
+[G][05-31 17:01:30][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[6/80]
+[G][05-31 17:01:32][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[7/80]
+[G][05-31 17:01:36][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[8/80]
+[G][05-31 17:01:41][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[9/80]
+[G][05-31 17:01:50][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[10/80]
+[G][05-31 17:01:51][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[11/80]
+[G][05-31 17:01:57][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[12/80]
+[G][05-31 17:02:02][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[13/80]
+[G][05-31 17:02:23][gfahpick11] fetching ..... [18053151],openTime=2018-05-31 17:00:00[14/80]
+[G][05-31 17:02:23][gfahpick11] RESULTS  _____ [18053151]=>03,06,02,10,01
+[G][05-31 17:02:30][gfahpick11] update trade detail status...18053151
+[G][05-31 17:02:32][gfahpick11] SUCCESS  _^_^_ [18053151][9412ms]
+[G][05-31 18:30:01][gfahpick11] init session[1833ms]
+[G][05-31 18:30:30][gfahpick11] timer launch .....
+[G][05-31 18:30:33][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[1/80]
+[G][05-31 18:30:35][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[2/80]
+[G][05-31 18:30:41][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[3/80]
+[G][05-31 18:30:55][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[4/80]
+[G][05-31 18:30:55][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[5/80]
+[G][05-31 18:31:00][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[6/80]
+[G][05-31 18:31:05][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[7/80]
+[G][05-31 18:31:50][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[8/80]
+[G][05-31 18:31:51][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[9/80]
+[G][05-31 18:31:58][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[10/80]
+[G][05-31 18:32:01][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[11/80]
+[G][05-31 18:32:13][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[12/80]
+[G][05-31 18:32:14][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[13/80]
+[G][05-31 18:32:19][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[14/80]
+[G][05-31 18:32:24][gfahpick11] fetching ..... [18053160],openTime=2018-05-31 18:30:00[15/80]
+[G][05-31 18:32:24][gfahpick11] RESULTS  _____ [18053160]=>04,07,11,05,01
+[G][05-31 18:32:29][gfahpick11] update trade detail status...18053152
+[G][05-31 18:32:30][gfahpick11] update trade detail status...18053153
+[G][05-31 18:32:31][gfahpick11] update trade detail status...18053154
+[G][05-31 18:32:33][gfahpick11] update trade detail status...18053155
+[G][05-31 18:32:34][gfahpick11] update trade detail status...18053156
+[G][05-31 18:32:36][gfahpick11] update trade detail status...18053157
+[G][05-31 18:32:37][gfahpick11] update trade detail status...18053158
+[G][05-31 18:32:38][gfahpick11] update trade detail status...18053159
+[G][05-31 18:32:40][gfahpick11] update trade detail status...18053160
+[G][05-31 18:32:41][gfahpick11] SUCCESS  _^_^_ [18053160][16814ms]
+[G][05-31 18:40:30][gfahpick11] timer launch .....
+[G][05-31 18:40:45][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[1/80]
+[G][05-31 18:40:46][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[2/80]
+[G][05-31 18:40:51][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[3/80]
+[G][05-31 18:41:00][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[4/80]
+[G][05-31 18:41:01][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[5/80]
+[G][05-31 18:41:10][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[6/80]
+[G][05-31 18:41:11][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[7/80]
+[G][05-31 18:41:16][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[8/80]
+[G][05-31 18:41:21][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[9/80]
+[G][05-31 18:41:26][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[10/80]
+[G][05-31 18:41:31][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[11/80]
+[G][05-31 18:41:36][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[12/80]
+[G][05-31 18:41:41][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[13/80]
+[G][05-31 18:41:46][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[14/80]
+[G][05-31 18:41:51][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[15/80]
+[G][05-31 18:41:56][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[16/80]
+[G][05-31 18:42:01][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[17/80]
+[G][05-31 18:42:06][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[18/80]
+[G][05-31 18:42:11][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[19/80]
+[G][05-31 18:42:16][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[20/80]
+[G][05-31 18:42:23][gfahpick11] fetching ..... [18053161],openTime=2018-05-31 18:40:00[21/80]
+[G][05-31 18:42:23][gfahpick11] RESULTS  _____ [18053161]=>02,06,04,09,05
+[G][05-31 18:42:27][gfahpick11] update trade detail status...18053161
+[G][05-31 18:42:29][gfahpick11] SUCCESS  _^_^_ [18053161][6159ms]
+[G][05-31 18:50:30][gfahpick11] timer launch .....
+[G][05-31 18:50:44][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[1/80]
+[G][05-31 18:50:44][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[2/80]
+[G][05-31 18:50:49][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[3/80]
+[G][05-31 18:50:54][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[4/80]
+[G][05-31 18:50:59][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[5/80]
+[G][05-31 18:51:05][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[6/80]
+[G][05-31 18:51:09][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[7/80]
+[G][05-31 18:51:19][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[8/80]
+[G][05-31 18:51:20][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[9/80]
+[G][05-31 18:51:24][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[10/80]
+[G][05-31 18:51:29][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[11/80]
+[G][05-31 18:51:34][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[12/80]
+[G][05-31 18:51:39][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[13/80]
+[G][05-31 18:51:44][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[14/80]
+[G][05-31 18:51:49][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[15/80]
+[G][05-31 18:51:54][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[16/80]
+[G][05-31 18:51:59][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[17/80]
+[G][05-31 18:52:04][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[18/80]
+[G][05-31 18:52:09][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[19/80]
+[G][05-31 18:52:14][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[20/80]
+[G][05-31 18:52:19][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[21/80]
+[G][05-31 18:52:25][gfahpick11] fetching ..... [18053162],openTime=2018-05-31 18:50:00[22/80]
+[G][05-31 18:52:25][gfahpick11] RESULTS  _____ [18053162]=>11,09,07,02,06
+[G][05-31 18:52:31][gfahpick11] update trade detail status...18053162
+[G][05-31 18:52:32][gfahpick11] SUCCESS  _^_^_ [18053162][7234ms]
+[G][05-31 19:00:01][gfahpick11] init session[1940ms]
+[G][05-31 19:00:30][gfahpick11] timer launch .....
+[G][05-31 19:00:31][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[1/80]
+[G][05-31 19:00:45][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[2/80]
+[G][05-31 19:00:46][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[3/80]
+[G][05-31 19:00:52][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[4/80]
+[G][05-31 19:00:56][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[5/80]
+[G][05-31 19:01:11][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[6/80]
+[G][05-31 19:01:11][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[7/80]
+[G][05-31 19:01:16][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[8/80]
+[G][05-31 19:01:21][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[9/80]
+[G][05-31 19:01:26][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[10/80]
+[G][05-31 19:01:32][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[11/80]
+[G][05-31 19:01:40][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[12/80]
+[G][05-31 19:01:42][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[13/80]
+[G][05-31 19:01:47][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[14/80]
+[G][05-31 19:01:52][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[15/80]
+[G][05-31 19:01:56][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[16/80]
+[G][05-31 19:02:09][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[17/80]
+[G][05-31 19:02:09][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[18/80]
+[G][05-31 19:02:14][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[19/80]
+[G][05-31 19:02:19][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[20/80]
+[G][05-31 19:02:24][gfahpick11] fetching ..... [18053163],openTime=2018-05-31 19:00:00[21/80]
+[G][05-31 19:02:24][gfahpick11] RESULTS  _____ [18053163]=>02,10,03,08,07
+[G][05-31 19:02:29][gfahpick11] update trade detail status...18053163
+[G][05-31 19:02:31][gfahpick11] SUCCESS  _^_^_ [18053163][6532ms]

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+<!--
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class
+    name="com.ram.model.UserFunctionPermissionRl"
+    table="USER_FUNCTION_PERMISSION_RL"
+>
+
+    <id
+        name="userFunctionPermissionId"
+        type="java.lang.Integer"
+        column="USER_FUNCTION_PERMISSION_ID"
+    >
+
+        <generator class="sequence">
+            <param name="sequence">SEQ_USER_FUNCTION_PERMISSION_RL</param>
+        </generator>
+    </id>
+
+    <property
+        name="permissionAppendType"
+        type="java.lang.String"
+        column="PERMISSION_APPEND_TYPE"
+        length="1"
+    />
+
+    <!-- Associations -->
+
+    <!-- bi-directional many-to-one association to UserFunctionRl -->
+    <many-to-one
+        name="userFunctionRl"
+        class="com.ram.model.UserFunctionRl"
+        not-null="true"
+    >
+        <column name="USER_FUNCTION_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to Permission -->
+    <many-to-one
+        name="permission"
+        class="com.ram.model.Permission"
+        not-null="true"
+    >
+        <column name="PERMISSION_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+	<beans>
+		
+	 <bean id="permissionDAO" class="com.ram.dao.permission.hibernate.PermissionDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+
+	
+	 <bean id="functionDAO" class="com.ram.dao.permission.hibernate.FunctionDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	<!-- gengzhiqiang  DAO -->
+	<bean id="roleDAO" class="com.ram.dao.permission.hibernate.RoleDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+
+	 <bean id="rolePermissionRlDAO" class="com.ram.dao.permission.hibernate.RolePermissionRlDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	 <bean id="roleFunctionRlDAO" class="com.ram.dao.permission.hibernate.RoleFunctionRlDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	 <bean id="roleFunctionPermissionRlDAO" class="com.ram.dao.permission.hibernate.RoleFunctionPermissionRlDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+		
+	<bean id="readProperties" class="com.framework.common.properties.impl.ReadPropertiesImpl">
+     </bean>		
+
+	 <bean id="groupFunctionRlDAO" class="com.ram.dao.permission.hibernate.GroupFunctionRlDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	 <bean id="roleFunctionPermissionDAO" class="com.ram.dao.permission.hibernate.RoleFunctionPermissionRlDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>		
+		
+
+	
+	<!--Service defination-->
+
+			
+    <bean id="groupFunctionRlService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.ram.service.permission.impl.GroupFunctionRlServiceImpl">
+	            <property name="groupFunctionRlDAO"><ref local="groupFunctionRlDAO"/></property>
+				<property name="functionDAO"><ref local="functionDAO"/></property>				
+	        </bean>
+	    </property>
+	</bean>		
+						
+	<!--Service defination-->
+    <bean id="permissionService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.ram.service.permission.impl.PermissionServiceImpl">
+	            <property name="permissionDAO"><ref local="permissionDAO"/></property>
+	        </bean>
+	    </property>
+	</bean>		
+		
+	<bean id="roleService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.ram.service.permission.impl.RoleServiceImpl">
+	            <property name="roleDAO"><ref local="roleDAO"/></property>
+	        </bean>
+	    </property>
+	</bean>			
+		
+    <bean id="functionService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.ram.service.permission.impl.FunctionServiceImpl">
+	            <property name="functionDAO"><ref local="functionDAO"/></property>
+	        </bean>
+	    </property>
+	</bean>
+				
+    <bean id="rolePermissionRlService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.ram.service.permission.impl.RolePermissionRlServiceImpl">
+				<property name="roleDAO"><ref local="roleDAO"/></property>
+	            <property name="permissionDAO"><ref local="permissionDAO"/></property>
+				<property name="rolePermissionRlDAO"><ref local="rolePermissionRlDAO"/></property>
+	        </bean>
+	    </property>
+	</bean>		
+		
+    <bean id="roleFunctionRlService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.ram.service.permission.impl.RoleFunctionRlServiceImpl">
+				<property name="roleDAO"><ref local="roleDAO"/></property>
+	            <property name="functionDAO"><ref local="functionDAO"/></property>
+				<property name="roleFunctionRlDAO"><ref local="roleFunctionRlDAO"/></property>
+	        </bean>
+	    </property>
+	</bean>				
+			
+    <bean id="roleFunctionPermissionRlService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.ram.service.permission.impl.RoleFunctionPermissionRlServiceImpl">
+				<property name="roleDAO"><ref local="roleDAO"/></property>
+				<property name="permissionDAO"><ref local="permissionDAO"/></property>
+	            <property name="functionDAO"><ref local="functionDAO"/></property>
+				<property name="roleFunctionRlDAO"><ref local="roleFunctionRlDAO"/></property>
+				<property name="roleFunctionPermissionRlDAO"><ref local="roleFunctionPermissionRlDAO"/></property>
+	        </bean>
+	    </property>
+	</bean>					
+				
+
+		
+	<bean id="permissionCheckService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.ram.service.permission.impl.PermissionCheckServiceImpl">
+	            <property name="userDAO"><ref bean="userDAO"/></property>				
+				<property name="roleDAO"><ref local="roleDAO"/></property>	
+	            <property name="functionDAO"><ref local="functionDAO"/></property>				
+				<property name="permissionDAO"><ref local="permissionDAO"/></property>					
+	            <property name="groupFunctionRlDAO"><ref local="groupFunctionRlDAO"/></property>				
+	            <property name="roleFunctionPermissionDAO"><ref local="roleFunctionPermissionDAO"/></property>				
+	        </bean>
+	    </property>
+	</bean>
+</beans>

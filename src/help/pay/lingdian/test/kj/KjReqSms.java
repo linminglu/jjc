@@ -1,0 +1,77 @@
+package help.pay.lingdian.test.kj;
+
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import help.pay.lingdian.Config.MerConfig;
+import help.pay.lingdian.Utils.SignUtil;
+/**
+ * 210102-机构快捷支付（申请请求）获取短信验证码
+ * 调用交易 210102-机构快捷支付
+ * @author Administrator
+ *
+ */
+public class KjReqSms {
+		private static final String TxCode="210102";//210102-机构快捷支付（申请请求）获取短信验证码
+	public static void main(String[] args) {
+		  try{
+			Map<String,String> map = new HashMap<String,String>();
+			map.put("Version", "2.0");	//版本号
+			map.put("SignMethod",MerConfig.SIGNMETHOD); //签名类型
+			map.put("TxCode",TxCode);  		//交易编码			
+			map.put("MerNo",MerConfig.MERNO);  //商户号-测试环境统一商户号
+			//map.put("PayChannel","");  //指定渠道
+			map.put("TxSN",new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()));//商户交易流水号(唯一)
+			map.put("Amount","10");//金额:单位:分
+			map.put("PdtName","面包");//商品名称
+			map.put("Remark","测试");//备注
+			map.put("NotifyUrl",MerConfig.NOTIFYURL);//异步通知URL
+			map.put("AccountType","11");//账户类型:11-个人账户
+			map.put("BankAcountCardType","2");//银卡卡类型: 2:信用卡
+			map.put("BankAccountName","张三");//银行账户名称  商户修改
+			map.put("BankAccountNumber","XXXXXXXXXXXXXXXXXX");//银行账户号码  商户修改
+			map.put("BankAccountCertType","P01");//银行账户证件类型:P01-身份证   商户修改
+			map.put("BankAccountCertNo","XXXXXXXXXXXXXXXXXX");//银行账户证件号码  商户修改
+			map.put("BankAccountMoblie","XXXXXXXXXXX");//银行账户开户手机号码  商户修改
+			map.put("BankAcountCardExpire","XXXX");//信用卡有效期:格式:月月年年 当为信用卡是必填  商户修改
+			map.put("BankAcountCardCVV2","XXX");//信用卡cvv2 当为信用卡是必填  商户修改
+			map.put("Terminal_type","mobile");//终端类型 默认值:mobile web、wap、 mobile
+			map.put("Terminal_info","1212121");//终端信息:格式为IMEI_MAC/序列号_SIM
+			map.put("Member_ip","127.0.0.1");//用户的真实IP地址
+			
+	       // 设置签名
+			MerConfig.setSignature(map);
+	        //报文明文
+	        String plain = SignUtil.getURLParam(map,MerConfig.URL_PARAM_CONNECT_FLAG, true, null);
+	        System.out.println("请求原始报文:"+plain);
+			//测试地址
+	        String msg = MerConfig.sendMsg(MerConfig.REQURL, map);
+	        if (null == msg) {
+				System.out.println("报文发送失败或应答消息为空");
+			} else {
+				Map<String,String> resMap = SignUtil.parseResponse(msg,MerConfig.base64Keys,MerConfig.URL_PARAM_CONNECT_FLAG,MerConfig.CHARSET);
+				System.out.println("URLDecoder处理后返回数据:"+SignUtil.getURLParam(resMap,MerConfig.URL_PARAM_CONNECT_FLAG, true, null));
+				if (MerConfig.verifySign(resMap)){
+					System.out.println("签名验证结果成功");
+					if ("00000".equalsIgnoreCase(resMap.get("RspCod"))
+						|| "1".equalsIgnoreCase(resMap.get("Status"))){
+						//创建快捷支付订单成功,短信已发送,稍后调用验证短信支付接口提交短信验证码
+						//业务处理
+					}
+					else {
+						//请求失败进行处理
+					}
+				}
+				else {
+					System.out.println("签名验证结果失败");
+				}
+			}
+		  }
+		  catch (Exception e){
+			  e.printStackTrace();
+		  }
+	}
+}

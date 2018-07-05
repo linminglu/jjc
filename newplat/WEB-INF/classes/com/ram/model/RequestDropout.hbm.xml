@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.RequestDropout" 
+    table="REQUEST_DROPOUT"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="requestDropoutId"
+        type="java.lang.Integer"
+        column="REQUEST_DROPOUT_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_REQUEST_DROPOUT</param>
+        </generator>
+    </id>
+
+    <property
+        name="semesterId"
+        type="java.lang.Integer"
+        column="SEMESTER_ID"
+        length="2"
+    />
+    <property
+        name="requestDate"
+        type="java.util.Date"
+        column="REQUEST_DATE"
+        length="7"
+    />
+    <property
+        name="requestReason"
+        type="java.lang.String"
+        column="REQUEST_REASON"
+        length="1000"
+    />
+    <property
+        name="requestUserId"
+        type="java.lang.Integer"
+        column="REQUEST_USER_ID"
+        length="8"
+    />
+    <property
+        name="requestStatus"
+        type="java.lang.String"
+        column="REQUEST_STATUS"
+        length="1"
+    />
+    <property
+        name="checkUserId"
+        type="java.lang.Integer"
+        column="CHECK_USER_ID"
+        length="8"
+    />
+    <property
+        name="approveDate"
+        type="java.util.Date"
+        column="APPROVE_DATE"
+        length="7"
+    />
+    <property
+        name="requestRemark"
+        type="java.lang.String"
+        column="REQUEST_REMARK"
+        length="1000"
+    />
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="updateDateTime"
+        type="java.util.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+    <property
+        name="finalRequestRemark"
+        type="java.lang.String"
+        column="FINAL_REQUEST_REMARK"
+        length="1000"
+    />
+    <property
+        name="finalCheckDate"
+        type="java.util.Date"
+        column="FINAL_CHECK_DATE"
+        length="7"
+    />
+    <property
+        name="finalUserId"
+        type="java.lang.Integer"
+        column="FINAL_USER_ID"
+        length="8"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

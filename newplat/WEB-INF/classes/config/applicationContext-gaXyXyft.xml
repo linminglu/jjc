@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="xyftDAO" class="com.xy.pk10.xyft.dao.hibernate.XyftDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="xyftService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.pk10.xyft.service.impl.XyftServiceImpl">
+	            <property name="xyftDAO"><ref local="xyftDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化 -->
+	<bean name="initXyftSessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.pk10.xyft.service.impl.InitXyftSession</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="xyftService"><ref bean="xyftService" /></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="initXyftSession" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initXyftSessionJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 10 * * ?</value>
+		</property>
+	</bean> 
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchXyftResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.pk10.xyft.service.impl.FetchXyftResult</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="xyftService"><ref bean="xyftService" /></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="fetchXyftResult" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchXyftResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 4/5 0-4,13-23 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initXyftSession" />
+				<ref local="fetchXyftResult"/>
+			</list>
+		</property>
+	</bean>
+</beans>

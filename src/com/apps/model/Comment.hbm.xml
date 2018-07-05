@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.apps.model.Comment" 
+    table="comment"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="commId"
+        type="java.lang.Integer"
+        column="comm_id"
+    >
+        <generator class="identity"/>
+    </id>
+
+    <property
+        name="userId"
+        type="java.lang.Integer"
+        column="user_id"
+        length="8"
+    />
+     <property
+        name="pid"
+        type="java.lang.Integer"
+        column="p_id"
+        length="8"
+    />
+    <property
+        name="sid"
+        type="java.lang.Integer"
+        column="s_id"
+        length="8"
+    />
+    
+     <property
+        name="oid"
+        type="java.lang.Integer"
+        column="o_id"
+        length="8"
+    />
+    <property
+        name="createTime"
+        type="java.util.Date"
+        column="create_time"
+    />
+    <property
+        name="content"
+        type="java.lang.String"
+        column="content"
+        length="200"
+    />
+     <property
+        name="score"
+        type="java.lang.Float"
+        column="score"
+        length="5"
+    />
+</class>
+</hibernate-mapping>

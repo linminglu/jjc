@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+
+
+
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+<tlibversion>1.2</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname>bw</shortname>
+<uri>http://www.beiwaionline.com/bwol/</uri>
+<info>
+   This taglib is used for BeiwaiOnline.com.
+   Copyrigh:2005,BPC.ltd.co
+   Author:Hulei
+   Writen in 11-22-2005
+</info>
+
+  <tag>
+    <name>pre</name>
+    <tagclass>com.beiwai.tag.BeiwaionlineHTMLTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>
+      HTML.Formart
+    </info>
+	  
+  </tag>
+  <tag>
+  	<name>nocache</name>
+    <tagclass>com.beiwai.tag.JspCacheClearTag</tagclass>  	
+  	<bodycontent>JSP</bodycontent>
+    <info>
+      HTML.JSP.CLEAR
+    </info>  	
+  </tag>
+</taglib>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- ==================================== Data Sources      -->
+  	<data-sources>
+  	</data-sources>
+  	<!-- ==================================== Form Beans        -->
+  	<form-beans>
+		<form-bean name="cashForm" type="com.cash.web.form.CashForm"/>
+  	</form-beans>
+  	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+	 	<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+  	<!-- ==================================== Action Mappings    -->
+  	<action-mappings>
+  		<action 
+			path="/cashAction" 
+    		type="com.cash.web.action.CashAction" 
+    		name="cashForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+	   		<forward name="init" path="/userApplyCashList.jsp"/>
+	   		<forward name="auditing" path="/auditingApplyCash.jsp"/>
+	   		<forward name="saveAuditing" path="/cashAction.do?method=init" redirect="true"/>
+	   		<forward name="bindBank" path="/bindBankList.jsp"/>
+	   		<forward name="saveDefBind" path="/cashAction.do?method=bindBank" redirect="true"/>
+	   		<forward name="preAdd" path="/preAddBindBank.jsp"/>
+	   		<forward name="saveBindBank" path="/cashAction.do?method=bindBank" redirect="true"/>
+	   		<forward name="del" path="/cashAction.do?method=bindBank" redirect="true"/>
+	   		<forward name="initBank" path="/sysBankList.jsp"/>
+	   		<forward name="preAddBank" path="/preAddSysBank.jsp"/>
+	   		<forward name="saveBank" path="/cashAction.do?method=initBank" redirect="true"/>
+	   		<forward name="delBank" path="/cashAction.do?method=initBank" redirect="true"/>
+    	</action>
+    </action-mappings>
+</struts-config>

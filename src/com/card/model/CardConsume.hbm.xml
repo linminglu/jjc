@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.card.model.CardConsume" 
+    table="CARD_CONSUME"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="cardConsumeId"
+        type="java.lang.Integer"
+        column="CARD_CONSUME_ID"
+    >
+    
+        <generator class="identity"/>
+    </id>
+
+    <property
+        name="cardId"
+        type="java.lang.Integer"
+        column="CARD_ID"
+    />
+    <property
+        name="cardType"
+        type="java.lang.String"
+        column="CARD_TYPE"
+    />
+    <property
+        name="orderId"
+        type="java.lang.Integer"
+        column="ORDER_ID"
+    />
+    <property
+        name="userId"
+        type="java.lang.Integer"
+        column="USER_ID"
+    />
+    <property
+        name="consumeAmount"
+        type="java.lang.Integer"
+        column="CONSUME_AMOUNT"
+    />
+    
+    <property
+        name="consumeDate"
+        type="java.util.Date"
+        column="CONSUME_DATE"
+    />
+    <property
+        name="consumeStatus"
+        type="java.lang.String"
+        column="CONSUME_STATUS"
+    />
+    <property
+        name="productId"
+        type="java.lang.Integer"
+        column="PRODUCT_ID"
+    />
+    <property
+        name="remark"
+        type="java.lang.String"
+        column="REMARK"
+    />
+</class>
+</hibernate-mapping>

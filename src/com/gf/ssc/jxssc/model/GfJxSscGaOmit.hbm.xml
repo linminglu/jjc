@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.gf.ssc.jxssc.model.GfJxSscGaOmit" table="gf_jx_ssc_ga_omit">
+		<cache usage="read-write" />
+		<id name="oid" type="java.lang.Integer" column="o_id">
+			<generator class="identity" />
+		</id>
+       <property name="sessionNo" type="java.lang.String" column="session_no" length="15" />
+       <property name="openResult" type="java.lang.String" column="open_result" length="50" />
+       <property name="wan0" type="java.lang.Integer" column="wan0" length="8" />
+       <property name="wan1" type="java.lang.Integer" column="wan1" length="8" />
+       <property name="wan2" type="java.lang.Integer" column="wan2" length="8" />
+       <property name="wan3" type="java.lang.Integer" column="wan3" length="8" />
+       <property name="wan4" type="java.lang.Integer" column="wan4" length="8" />
+       <property name="wan5" type="java.lang.Integer" column="wan5" length="8" />
+       <property name="wan6" type="java.lang.Integer" column="wan6" length="8" />
+       <property name="wan7" type="java.lang.Integer" column="wan7" length="8" />
+       <property name="wan8" type="java.lang.Integer" column="wan8" length="8" />
+       <property name="wan9" type="java.lang.Integer" column="wan9" length="8" />
+       <property name="qian0" type="java.lang.Integer" column="qian0" length="8" />
+       <property name="qian1" type="java.lang.Integer" column="qian1" length="8" />
+       <property name="qian2" type="java.lang.Integer" column="qian2" length="8" />
+       <property name="qian3" type="java.lang.Integer" column="qian3" length="8" />
+       <property name="qian4" type="java.lang.Integer" column="qian4" length="8" />
+       <property name="qian5" type="java.lang.Integer" column="qian5" length="8" />
+       <property name="qian6" type="java.lang.Integer" column="qian6" length="8" />
+       <property name="qian7" type="java.lang.Integer" column="qian7" length="8" />
+       <property name="qian8" type="java.lang.Integer" column="qian8" length="8" />
+       <property name="qian9" type="java.lang.Integer" column="qian9" length="8" />
+       <property name="bai0" type="java.lang.Integer" column="bai0" length="8" />
+       <property name="bai1" type="java.lang.Integer" column="bai1" length="8" />
+       <property name="bai2" type="java.lang.Integer" column="bai2" length="8" />
+       <property name="bai3" type="java.lang.Integer" column="bai3" length="8" />
+       <property name="bai4" type="java.lang.Integer" column="bai4" length="8" />
+       <property name="bai5" type="java.lang.Integer" column="bai5" length="8" />
+       <property name="bai6" type="java.lang.Integer" column="bai6" length="8" />
+       <property name="bai7" type="java.lang.Integer" column="bai7" length="8" />
+       <property name="bai8" type="java.lang.Integer" column="bai8" length="8" />
+       <property name="bai9" type="java.lang.Integer" column="bai9" length="8" />
+       <property name="shi0" type="java.lang.Integer" column="shi0" length="8" />
+       <property name="shi1" type="java.lang.Integer" column="shi1" length="8" />
+       <property name="shi2" type="java.lang.Integer" column="shi2" length="8" />
+       <property name="shi3" type="java.lang.Integer" column="shi3" length="8" />
+       <property name="shi4" type="java.lang.Integer" column="shi4" length="8" />
+       <property name="shi5" type="java.lang.Integer" column="shi5" length="8" />
+       <property name="shi6" type="java.lang.Integer" column="shi6" length="8" />
+       <property name="shi7" type="java.lang.Integer" column="shi7" length="8" />
+       <property name="shi8" type="java.lang.Integer" column="shi8" length="8" />
+       <property name="shi9" type="java.lang.Integer" column="shi9" length="8" />
+       <property name="ge0" type="java.lang.Integer" column="ge0" length="8" />
+       <property name="ge1" type="java.lang.Integer" column="ge1" length="8" />
+       <property name="ge2" type="java.lang.Integer" column="ge2" length="8" />
+       <property name="ge3" type="java.lang.Integer" column="ge3" length="8" />
+       <property name="ge4" type="java.lang.Integer" column="ge4" length="8" />
+       <property name="ge5" type="java.lang.Integer" column="ge5" length="8" />
+       <property name="ge6" type="java.lang.Integer" column="ge6" length="8" />
+       <property name="ge7" type="java.lang.Integer" column="ge7" length="8" />
+       <property name="ge8" type="java.lang.Integer" column="ge8" length="8" />
+       <property name="ge9" type="java.lang.Integer" column="ge9" length="8" />
+       <property name="zu0" type="java.lang.Integer" column="zu0" length="8" />
+       <property name="zu1" type="java.lang.Integer" column="zu1" length="8" />
+       <property name="zu2" type="java.lang.Integer" column="zu2" length="8" />
+       <property name="zu3" type="java.lang.Integer" column="zu3" length="8" />
+       <property name="zu4" type="java.lang.Integer" column="zu4" length="8" />
+       <property name="zu5" type="java.lang.Integer" column="zu5" length="8" />
+       <property name="zu6" type="java.lang.Integer" column="zu6" length="8" />
+       <property name="zu7" type="java.lang.Integer" column="zu7" length="8" />
+       <property name="zu8" type="java.lang.Integer" column="zu8" length="8" />
+       <property name="zu9" type="java.lang.Integer" column="zu9" length="8" />
+	</class>
+</hibernate-mapping>

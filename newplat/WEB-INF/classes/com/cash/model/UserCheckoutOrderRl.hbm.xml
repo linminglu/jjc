@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.cash.model.UserCheckoutOrderRl" table="user_checkout_order_rl">
+		<cache usage="read-write" />
+		<id name="rlId" type="java.lang.Integer" column="rl_id">
+			<generator class="identity" />
+		</id>
+       <property name="checkoutId" type="java.lang.Integer" column="checkout_id" length="10" />
+       <property name="oid" type="java.lang.Integer" column="o_id" length="10" />
+	</class>
+</hibernate-mapping>

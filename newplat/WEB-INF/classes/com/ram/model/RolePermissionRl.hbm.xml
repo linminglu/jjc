@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+<!--
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class
+    name="com.ram.model.RolePermissionRl"
+    table="ROLE_PERMISSION_RL"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="rolePermissionRlId"
+        type="java.lang.Integer"
+        column="ROLE_PERMISSION_RL_ID"
+    >
+
+        <generator class="sequence">
+            <param name="sequence">SEQ_ROLE_PERMISSION_RL</param>
+        </generator>
+    </id>
+
+
+    <!-- Associations -->
+
+    <!-- bi-directional many-to-one association to Permission -->
+    <many-to-one
+        name="permission"
+        class="com.ram.model.Permission"
+        not-null="true"
+    >
+        <column name="PERMISSION_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to Role -->
+    <many-to-one
+        name="role"
+        class="com.ram.model.Role"
+        not-null="true"
+    >
+        <column name="ROLE_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

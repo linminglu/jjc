@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/mui/mui.min.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="js/components/mode-ecb.js"></script>
+<link type="text/css" rel="stylesheet" href="css/mui/mui.min.css" />
+<link type="text/css" rel="stylesheet" href="css/loaders.css" />
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="css/zoushi.css" />
+<title>走势</title>
+<script type="text/javascript">
+$(function(){
+	indexObj.zoushi();
+});
+</script>
+<style type="text/css">
+.mui-plus header.mui-bar {display: none!important;}
+.mui-plus .mui-bar-nav~.mui-content {padding: 0!important;}
+.mui-popover {height: 300px;}
+</style>
+</head>
+<body>
+<div class="ga-view">
+	<header class="mui-bar mui-bar-nav ">
+		<a class="mui-icon mui-icon-left-nav mui-pull-left" href="index.html"></a>
+		<h1 class="mui-title">走势</h1>
+	</header>
+	<div class="main-content main-content-view" id="">
+		<div class="wanfabox">
+			<a href="#middlePopover" id="openPopover" class="mui-btn-block" style="text-align: center;margin-bottom:0;padding-bottom: 0;">三分彩<span class="mui-icon mui-icon-arrowdown"></span></a>
+		</div>
+		
+		<div class="zoushi-box zoushipage" id="zou0">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="0">号码</li>
+					<li class="zoushi-cell" data="1" t="0">大小</li>
+					<li class="zoushi-cell" data="2" t="0">单双</li>
+					<li class="zoushi-cell" data="3" t="0">总和/龙虎</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou1">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="1">号码</li>
+					<li class="zoushi-cell" data="1" t="1">大小</li>
+					<li class="zoushi-cell" data="2" t="1">单双</li>
+					<li class="zoushi-cell" data="3" t="1">冠亚军和</li>
+					<li class="zoushi-cell" data="4" t="1">1-5龙虎</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou2">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="2">号码</li>
+					<li class="zoushi-cell" data="1" t="2">混合</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou3">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="3">号码</li>
+					<li class="zoushi-cell" data="1" t="3">大小</li>
+					<li class="zoushi-cell" data="2" t="3">单双</li>
+					<li class="zoushi-cell" data="3" t="3">总和/龙虎</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou4">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="4">号码</li>
+					<li class="zoushi-cell" data="1" t="4">混合</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou5">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="5">号码</li>
+					<li class="zoushi-cell" data="1" t="5">大小</li>
+					<li class="zoushi-cell" data="2" t="5">单双</li>
+					<li class="zoushi-cell" data="3" t="5">总和/龙虎</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou6">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="6">号码</li>
+					<li class="zoushi-cell" data="1" t="6">大小</li>
+					<li class="zoushi-cell" data="2" t="6">单双</li>
+					<li class="zoushi-cell" data="3" t="6">总和/龙虎</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou7">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="7">号码</li>
+					<li class="zoushi-cell" data="1" t="7">大小</li>
+					<li class="zoushi-cell" data="2" t="7">单双</li>
+					<li class="zoushi-cell" data="3" t="7">总和/龙虎</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou8">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="8">号码</li>
+					<li class="zoushi-cell" data="1" t="8">混合</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou9">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="9">号码</li>
+					<li class="zoushi-cell" data="1" t="9">大小</li>
+					<li class="zoushi-cell" data="2" t="9">单双</li>
+					<li class="zoushi-cell" data="3" t="9">总和/龙虎</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou10">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="10">号码</li>
+					<li class="zoushi-cell" data="1" t="10">和值</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou11">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="11">号码</li>
+					<li class="zoushi-cell" data="1" t="11">大小</li>
+					<li class="zoushi-cell" data="2" t="11">单双</li>
+					<li class="zoushi-cell" data="3" t="11">总和/龙虎</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		<div class="zoushi-box zoushipage" id="zou12">
+			<div class="zoushitab-box">
+				<ul>
+					<li class="zoushi-cell mui-active" data="0" t="12">号码</li>
+					<li class="zoushi-cell" data="1" t="12">特码</li>
+					<li class="zoushi-cell" data="2" t="12">正码</li>
+				</ul>
+			</div>
+			<div class="zoushi-table-box"></div>
+		</div>
+		
+	</div>
+	<div id="middlePopover" class="mui-popover">
+		<div class="mui-popover-arrow"></div>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" data="0">三分彩</li>
+				    <li class="mui-table-view-cell" data="1">北京赛车</li>
+					    <li class="mui-table-view-cell" data="2">新加坡幸运28</li>
+				    <li class="mui-table-view-cell" data="3">重庆时时彩</li>
+				    <li class="mui-table-view-cell" data="4">PC蛋蛋</li>
+				    <li class="mui-table-view-cell" data="5">广东快乐十分</li>
+				    <li class="mui-table-view-cell" data="6">天津时时彩</li>
+				    <li class="mui-table-view-cell" data="7">新疆时时彩</li>
+				    <li class="mui-table-view-cell" data="9">广东11选5</li>
+				    <li class="mui-table-view-cell" data="10">江苏快三</li>
+					    <li class="mui-table-view-cell" data="11">广西快乐十分</li>
+				    <li class="mui-table-view-cell" data="12">六合彩</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(".zoushi-cell").click(function(){
+	var type=$(this).attr('t');
+	var tabid=$(this).attr('data');
+	$('#zou'+type+' .zoushi-cell').removeClass('mui-active');
+	$(this).addClass('mui-active');
+	indexObj.zoushi(type,tabid);
+});
+$(".mui-table-view-cell").click(function(){
+	var type=$(this).attr('data');
+	var text=$(this).text();
+	$('#openPopover').html(text+'<span class="mui-icon mui-icon-arrowdown"></span>');
+	$('#middlePopover').removeClass('mui-active');
+	$('#middlePopover').attr('style','');
+	$('.mui-backdrop').remove();
+	$('.zoushi-box').hide();
+	$('#zou'+type).show();
+	$('#zou'+type+' .zoushi-cell').removeClass('mui-active');
+	$("#zou"+type+" .zoushi-cell[data='0']").addClass('mui-active');
+	indexObj.zoushi(type,'0');
+});
+</script>
+<script type="text/javascript">
+	mui.init({
+		swipeBack: true //启用右滑关闭功能
+	});
+	mui('.mui-scroll-wrapper').scroll();
+	mui('body').on('shown', '.mui-popover', function(e) {
+		//console.log('shown', e.detail.id);//detail为当前popover元素
+	});
+	mui('body').on('hidden', '.mui-popover', function(e) {
+		//console.log('hidden', e.detail.id);//detail为当前popover元素
+	});
+</script>
+</body>
+</html>

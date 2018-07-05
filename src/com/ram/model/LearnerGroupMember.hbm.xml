@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.LearnerGroupMember" 
+    table="LEARNER_GROUP_MEMBERS"
+    lazy="false"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="learnerGroupMemebersId"
+        type="java.lang.Integer"
+        column="LEARNER_GROUP_MEMEBERS_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_LEARNER_GROUP_MEMBERS</param>
+        </generator>
+    </id>
+    
+        <property
+        name="userId"
+        type="java.lang.Integer"
+        column="USER_ID"
+        length="8"
+    />
+
+    <property
+        name="isGroupChairman"
+        type="java.lang.String"
+        column="IS_GROUP_CHAIRMAN"
+        length="1"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to LearnerGroup -->
+    <many-to-one
+        name="learnerGroup"
+        class="com.ram.model.LearnerGroup"
+        lazy="false"
+        cascade="none"
+       
+    >
+        <column name="LEARNER_GROUP_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

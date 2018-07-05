@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.OpenResultUrl" table="open_result_url">
+		<cache usage="read-write" />
+		<id name="urlId" type="java.lang.Integer" column="url_id">
+			<generator class="identity" />
+		</id>
+       <property name="url" type="java.lang.String" column="url" length="200" />
+       <property name="type" type="java.lang.String" column="type" length="6" />
+       <property name="gameType" type="java.lang.String" column="game_type" length="20" />
+       <property name="gameName" type="java.lang.String" column="game_name" length="60" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.card.model.CardGeneLog" 
+    table="CARD_GENE_LOG"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="cardGeneLogId"
+        type="java.lang.Integer"
+        column="CARD_GENE_LOG_ID"
+    >
+    
+        <generator class="identity"/>
+    </id>
+
+    <property
+        name="protocolCode"
+        type="java.lang.String"
+        column="PROTOCOL_CODE"
+    />
+    <property
+        name="batchCode"
+        type="java.lang.String"
+        column="BATCH_CODE"
+    />
+    
+    <property
+        name="batchAmount"
+        type="java.lang.Integer"
+        column="BATCH_AMOUNT"
+    />
+    <property
+        name="cardAmount"
+        type="java.lang.Integer"
+        column="CARD_AMOUNT"
+    />
+    <property
+        name="cardCnt"
+        type="java.lang.Integer"
+        column="CARD_CNT"
+    />
+    <property
+        name="cardType"
+        type="java.lang.String"
+        column="CARD_TYPE"
+    />
+    <property
+        name="productName"
+        type="java.lang.String"
+        column="PRODUCT_NAME"
+    />
+    <property
+        name="productDesc"
+        type="java.lang.String"
+        column="PRODUCT_DESC"
+    />
+    
+    <property
+        name="startDate"
+        type="java.util.Date"
+        column="START_DATE"
+    />
+    <property
+        name="endDate"
+        type="java.util.Date"
+        column="END_DATE"
+    />
+    <property
+        name="coopUnit"
+        type="java.lang.String"
+        column="COOP_UNIT"
+    />
+    <property
+        name="createUser"
+        type="java.lang.Integer"
+        column="CREATE_USER"
+    />
+    <property
+        name="createDate"
+        type="java.util.Date"
+        column="CREATE_DATE"
+    />
+    <property
+        name="remark"
+        type="java.lang.String"
+        column="REMARK"
+    />
+    <property
+        name="productStr"
+        type="java.lang.String"
+        column="product_str"
+    />
+        <property
+        name="itemId"
+        type="java.lang.Integer"
+        column="item_id"
+    />
+</class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/mui/mui.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css/mui/mui.min.css" />
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<title>充值</title>
+<script type="text/javascript">
+$(function(){
+	var local = location.href.split("rechargeFast.html?")[1];
+	var fullH = $(window).height()-$(".mui-bar-nav").height();
+	$(".iframe-box").html("<iframe id=\"iframeView\" frameborder=\"0\" src=\""+local+"\" style=\"height:"+fullH+"px\"></iframe>");
+});
+move.width=$(window).width();
+$(document).ready(function(){
+	move.hideHeader();
+});
+</script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav ">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">快速充值</h1>
+	</header>
+	<div class="main-content main-content-view">
+		<div class="iframe-box"></div>
+	</div>
+</body>
+</html>

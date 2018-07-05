@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="sfPk10DAO" class="com.xy.pk10.sfpk10.dao.hibernate.SfPk10DAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="sfPk10Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.pk10.sfpk10.service.impl.SfPk10ServiceImpl">
+	            <property name="sfPk10DAO"><ref local="sfPk10DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化 -->
+	<bean name="initSfPk10SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.xy.pk10.sfpk10.service.impl.InitSfPk10Session</value></property>
+		<property name="jobDataAsMap"><map><entry key="sfPk10Service"><ref bean="sfPk10Service" /></entry></map></property>
+	</bean>
+	<bean id="initSfPk10Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="initSfPk10SessionJob"/></property>
+		<property name="cronExpression"><value>0 0/30 * * * ?</value></property>
+	</bean> 
+	
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchSfPk10ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.xy.pk10.sfpk10.service.impl.FetchSfPk10Result</value></property>
+		<property name="jobDataAsMap"><map><entry key="sfPk10Service"><ref bean="sfPk10Service" /></entry></map></property>
+	</bean>
+	<bean id="fetchSfPk10Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="fetchSfPk10ResultJob"/></property>
+		<property name="cronExpression"><value>0/30 * * * * ?</value></property>
+	</bean>
+
+	<!-- 加载计划任务 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initSfPk10Session" />
+				<ref local="fetchSfPk10Result"/>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+
+
+
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+<tlibversion>1.2</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname>bpc</shortname>
+<uri>http://www.beiwaionline.com/bwol/</uri>
+<info>
+   This taglib is used for BeiwaiOnline.com.
+   Copyrigh:2005,BPC.ltd.co
+   Author:Hulei
+   Writen in 11-15-2005
+</info>
+
+  <tag>
+    <name>pc</name>
+    <tagclass>com.beiwai.tag.BeiwaionlinePermissionControlTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>
+      PermissionControl.Operation
+    </info>
+    <attribute>
+      <name>operate</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>parentActionPath</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>	  
+    <attribute>
+      <name>noPermissionText</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>		  
+  </tag>
+</taglib>

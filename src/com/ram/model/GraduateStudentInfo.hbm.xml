@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.GraduateStudentInfo" 
+    table="GRADUATE_STUDENT_INFO"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="graduateStudentInfoId"
+        type="java.lang.Integer"
+        column="GRADUATE_STUDENT_INFO_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_GRADUATE_STUDENT_INFO</param>
+        </generator>
+    </id>
+
+    <property
+        name="userId"
+        type="java.lang.Integer"
+        column="USER_ID"
+        length="8"
+    />
+    <property
+        name="password"
+        type="java.lang.String"
+        column="PASSWORD"
+        length="20"
+    />
+    <property
+        name="userEmail"
+        type="java.lang.String"
+        column="USER_EMAIL"
+        length="200"
+    />
+    <property
+        name="userNameZh"
+        type="java.lang.String"
+        column="USER_NAME_ZH"
+        length="50"
+    />
+    <property
+        name="userNameEn"
+        type="java.lang.String"
+        column="USER_NAME_EN"
+        length="50"
+    />
+    <property
+        name="birthday"
+        type="java.sql.Date"
+        column="BIRTHDAY"
+        length="7"
+    />
+    <property
+        name="specialityName"
+        type="java.lang.String"
+        column="SPECIALITY_NAME"
+        length="100"
+    />
+    <property
+        name="learnSex"
+        type="java.lang.String"
+        column="LEARN_SEX"
+        length="1"
+    />
+    <property
+        name="education"
+        type="java.lang.String"
+        column="EDUCATION"
+        length="20"
+    />
+    <property
+        name="workplace"
+        type="java.lang.String"
+        column="WORKPLACE"
+        length="100"
+    />
+    <property
+        name="tcCenterName"
+        type="java.lang.String"
+        column="TC_CENTER_NAME"
+        length="100"
+    />
+    <property
+        name="semesterId"
+        type="java.lang.Integer"
+        column="SEMESTER_ID"
+        length="8"
+    />
+    <property
+        name="programId"
+        type="java.lang.Integer"
+        column="PROGRAM_ID"
+        length="8"
+    />
+    <property
+        name="enrollStatus"
+        type="java.lang.String"
+        column="ENROLL_STATUS"
+        length="2"
+    />
+    <property
+        name="studyNumber"
+        type="java.lang.String"
+        column="STUDY_NUMBER"
+        length="20"
+    />
+    <property
+        name="address"
+        type="java.lang.String"
+        column="ADDRESS"
+        length="500"
+    />
+    <property
+        name="postCode"
+        type="java.lang.String"
+        column="POST_CODE"
+        length="20"
+    />
+    <property
+        name="mobile"
+        type="java.lang.String"
+        column="MOBILE"
+        length="20"
+    />
+    <property
+        name="homePhone"
+        type="java.lang.String"
+        column="HOME_PHONE"
+        length="20"
+    />
+    <property
+        name="msn"
+        type="java.lang.String"
+        column="MSN"
+        length="200"
+    />
+    <property
+        name="qq"
+        type="java.lang.String"
+        column="QQ"
+        length="20"
+    />
+    <property
+        name="loginName"
+        type="java.lang.String"
+        column="LOGIN_NAME"
+        length="20"
+    />
+    <property
+        name="graduatedate"
+        type="java.sql.Date"
+        column="GRADUATEDATE"
+        length="7"
+    />
+    <property
+        name="idcardNumber"
+        type="java.lang.String"
+        column="IDCARD_NUMBER"
+        length="30"
+    />
+    <property
+        name="tccenterProvince"
+        type="java.lang.String"
+        column="TCCENTER_PROVINCE"
+        length="50"
+    />
+    <property
+        name="graduateSchoolCode"
+        type="java.lang.String"
+        column="GRADUATE_SCHOOL_CODE"
+        length="100"
+    />
+    <property
+        name="graduateSchoolName"
+        type="java.lang.String"
+        column="GRADUATE_SCHOOL_NAME"
+        length="150"
+    />
+    <property
+        name="diplomaNumber"
+        type="java.lang.String"
+        column="DIPLOMA_NUMBER"
+        length="100"
+    />
+    <property
+        name="politystation"
+        type="java.lang.String"
+        column="POLITYSTATION"
+        length="100"
+    />
+    <property
+        name="nativeplace"
+        type="java.lang.String"
+        column="NATIVEPLACE"
+        length="100"
+    />
+    <property
+        name="nation"
+        type="java.lang.String"
+        column="NATION"
+        length="100"
+    />
+    <property
+        name="everusingname"
+        type="java.lang.String"
+        column="EVERUSINGNAME"
+        length="50"
+    />
+      
+    
+     <property
+        name="graduateImage"
+        type="org.springframework.orm.hibernate3.support.BlobByteArrayType"
+        column="GRADUATE_IMAGE"
+        lazy="true"
+       
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

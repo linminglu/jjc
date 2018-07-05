@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+#zx0,#zx1,#zx2,#zx3,#zx4,#zx5,#zx6,#zx7,#zx8{display: none;}
+#liangmianpan{}
+
+
+#ming{display: none;}
+#guanyajun{display: none;}
+#san,#si,#wu,#liu,#qi,#ba,#lianma{display: none;}
+
+.zoushi-table-box li{padding: 0 1%;}
+#haoma .lattice{width: 11.111111%;}
+#daxiao .lattice{width: 11.111111%;}
+#longhu .lattice{width: 16.66666%;}
+#danshuang .lattice{width: 11.111111%;}
+#guanyajunzoushi .lattice{width: 16.66666%;}
+
+#topPopover__{width:90px;height:150px;}
+
+.paiming-table .lattice{width: 50%;text-align: left;padding-left: 10px;}
+.zoushi-box .zoushitab-box .zoushi-cell{width:25%;}
+
+.not-data{}
+
+.open-list-box .data-box .he{width: 50%;float: left;border-right: 1px solid #fff;}
+.open-list-box .data-box .data-details .he span{text-align: center;width: 25%;display: block;float: left;}
+.open-list-box .data-box .longhu{width: 50%;float: left;text-align: center;}
+
+.mui-slider-group{margin-top:78px;}
+.mui-segmented-control{background:#fff;}
+.mui-segmented-control.mui-scroll-wrapper{height:46px;border-bottom:1px solid #c8c7cc;}
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll{height_:50px;}
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll a{color:#000;}
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll a:hover{color:#000;}
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll .mui-control-item{padding-top:7px;}
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll .padding-l-r{padding-left: 5px;padding-right: 5px;}
+
+.ga-play-tab .ga-plays .ga-play-item {display: inline-block;padding: 11px 20px;width: auto;color: #444;}
+
+#scroll-bar .tab-switch-cell{display: inline-block;padding: 0 20px;width: auto;padding-top: 7px;}
+/*<320*/
+@media screen and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 640px) {
+}
+/*>640*/
+@media screen and (min-width: 641px) {
+	.main-content{max-width: 540px;margin: 0 auto;}
+}

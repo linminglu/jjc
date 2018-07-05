@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+ "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+<form-validation>
+	<global>		
+		<constant>
+			<constant-name>phone</constant-name>
+			<constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>username</constant-name>
+			<constant-value>^[a-zA-Z0-9_.-@]{3,16}$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>email</constant-name>
+			<constant-value>\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*</constant-value>
+		</constant>
+		<constant>
+			<constant-name>telInt</constant-name>
+			<constant-value>^[0-9]{3}$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>telNat</constant-name>
+			<constant-value>^[0-9]{3,4}</constant-value>
+		</constant>
+		<constant>
+			<constant-name>tel</constant-name>
+			<constant-value>^[0-9]{6,8}$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>mobiletel</constant-name>
+			<constant-value>^[0-9]{11}$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>postcode</constant-name>
+			<constant-value>^[0-9]{0,6}$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>avoirduppois</constant-name>
+			<constant-value>^[0-9]{0,3}$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>stature</constant-name>
+			<constant-value>^[0-9]{0,3}$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>number</constant-name>
+			<constant-value>^[0-9]{0,10}$</constant-value>
+		</constant>		
+	</global>
+	<formset>
+		<form name="userCreateSaveForm">
+			<field property="user.loginName" depends="required">
+				<arg0 key="user.loginName"/>				
+			</field>			
+			<field property="user.password" depends="required">
+				<arg0 key="user.password"/>				
+			</field>
+			<field property="user.userNameZh" depends="required">
+				<arg0 key="user.userNameZh"/>				
+			</field>
+			<field property="user.userNameEn" depends="required">
+				<arg0 key="user.userNameEn"/>				
+			</field>
+			<field property="user.userEmail" depends="required, email">
+				<arg0 key="user.userEmail"/>
+			</field>
+		</form>
+		<form name="managerCreateSaveForm">
+		  <field property="manager.homePhone" depends="long">
+		    <arg key="manager.homePhone" position="0"/>
+		  </field>
+		  <field property="manager.mobile" depends="long">
+		    <arg key="manager.mobile" position="0"/>
+		  </field>
+		  <field property="manager.msn" depends="email">
+		    <arg key="manager.msn" position="0"/>
+		  </field>
+		  <field property="manager.postCode" depends="long">
+		    <arg key="manager.postCode" position="0"/>
+		  </field>
+		  <field property="manager.qq" depends="long">
+		    <arg key="manager.qq" position="0"/>
+		  </field>
+		  <field property="manager.tcId" depends="long">
+		    <arg key="manager.tcId" position="0"/>
+		  </field>
+		</form>
+		<form name="managerModifySaveForm">
+		  <field property="manager.homePhone" depends="long">
+		    <arg key="manager.homePhone" position="0"/>
+		  </field>
+		  <field property="manager.mobile" depends="long">
+		    <arg key="manager.mobile" position="0"/>
+		  </field>
+		  <field property="manager.msn" depends="email">
+		    <arg key="manager.msn" position="0"/>
+		  </field>
+		  <field property="manager.postCode" depends="long">
+		    <arg key="manager.postCode" position="0"/>
+		  </field>
+		  <field property="manager.qq" depends="long">
+		  	<arg key="manager.qq" position="0"/>
+		  </field>
+		  <field property="user.password" depends="required">
+		  	<arg key="user.password" position="0"/>
+		  </field>
+		  <field property="user.userEmail" depends="required">
+		  	<arg key="user.userEmail" position="0"/>
+		  </field>
+		  <field property="user.userNameEn" depends="required">
+		  	<arg key="user.userNameEn" position="0"/>
+		  </field>
+		  <field property="user.userNameZh" depends="required">
+		  	<arg key="user.userNameZh" position="0"/>
+		  </field>
+		</form>
+		
+		<form name="positionCreateSaveForm">
+		  <field property="position.positionTitle" depends="required">
+		    <arg key="position.positionTitle" position="0"/>
+		  </field>
+		</form>
+		<form name="positionModifySaveForm">
+		  <field property="position.positionTitle" depends="required">
+		    <arg key="position.positionTitle" position="0"/>
+		  </field>
+		</form>
+		<form name="userGroupCreateSaveForm">
+		  <field property="userGroup.userGroupDesc" depends="required">
+		    <arg key="userGroup.userGroupDesc" position="0"/>
+		  </field>
+		  <field property="userGroup.userGroupName" depends="required">
+		    <arg key="userGroup.userGroupName" position="0"/>
+		  </field>
+		</form>
+		<form name="userGroupModifySaveForm">
+		  <field property="userGroup.userGroupDesc" depends="required">
+		    <arg key="userGroup.userGroupDesc" position="0"/>
+		  </field>
+		  <field property="userGroup.userGroupName" depends="required">
+		    <arg key="userGroup.userGroupName" position="0"/>
+		  </field>
+		</form>
+		<form name="learnerCreateSaveForm">
+		  <field property="learner.address" depends="required">
+		    <arg key="learner.address" position="0"/>
+		  </field>
+		  <field property="learner.education" depends="required">
+		    <arg key="learner.education" position="0"/>
+		  </field>
+		  <field property="learner.homePhone" depends="long,required">
+		    <arg key="learner.homePhone" position="0"/>
+		  </field>
+		  <field property="learner.mobile" depends="long,required">
+		    <arg key="learner.mobile" position="0"/>
+		  </field>
+		  <field property="learner.msn" depends="email,required">
+		    <arg key="learner.msn" position="0"/>
+		  </field>
+		  <field property="learner.postCode" depends="long,required">
+		    <arg key="learner.postCode" position="0"/>
+		  </field>
+		  <field property="learner.qq" depends="long,required">
+		    <arg key="learner.qq" position="0"/>
+		  </field>
+		  <field property="learner.workplace" depends="required">
+		    <arg key="learner.workplace" position="0"/>
+		  </field>
+		  <field property="user.userEmail" depends="email,required">
+		    <arg key="user.userEmail" position="0"/>
+		  </field>
+		  <field property="user.userNameEn" depends="required">
+		    <arg key="user.userNameEn" position="0"/>
+		  </field>
+		  <field property="user.loginName" depends="required">
+		    <arg key="user.userNameEn" position="0"/>
+		  </field>
+		  <field property="user.userNameZh" depends="required">
+		    <arg key="user.userNameZh" position="0"/>
+		  </field>
+		</form>
+		<!--  
+		<form name="learnerModifySaveForm">
+		  <field property="learner.address" depends="required">
+		    <arg key="learner.address" position="0"/>
+		  </field>
+		  <field property="learner.education" depends="required">
+		    <arg key="learner.education" position="0"/>
+		  </field>
+		  <field property="learner.homePhone" depends="long,required">
+		    <arg key="learner.homePhone" position="0"/>
+		  </field>
+		  <field property="learner.mobile" depends="long,required">
+		    <arg key="learner.mobile" position="0"/>
+		  </field>
+		  <field property="learner.msn" depends="email,required">
+		    <arg key="learner.msn" position="0"/>
+		  </field>
+		  <field property="learner.postCode" depends="long,required">
+		    <arg key="learner.postCode" position="0"/>
+		  </field>
+		  <field property="learner.qq" depends="long,required">
+		    <arg key="learner.qq" position="0"/>
+		  </field>
+		  <field property="learner.workplace" depends="required">
+		    <arg key="learner.workplace" position="0"/>
+		  </field>
+		  <field property="user.userEmail" depends="email,required">
+		    <arg key="user.userEmail" position="0"/>
+		  </field>
+		  <field property="user.userNameEn" depends="required">
+		    <arg key="user.userNameEn" position="0"/>
+		  </field>
+		  <field property="user.userNameZh" depends="required">
+		    <arg key="user.userNameZh" position="0"/>
+		  </field>
+		</form>
+		
+		-->
+		<form name="learnerInfoModifyForm">
+		  <field property="learner.homePhone" depends="long,required">
+		    <arg key="learner.homePhone" position="0"/>
+		  </field>
+		  <field property="learner.mobile" depends="long,required">
+		    <arg key="learner.mobile" position="0"/>
+		  </field>
+		  <field property="learner.msn" depends="email,required">
+		    <arg key="learner.msn" position="0"/>
+		  </field>
+		  <field property="learner.postCode" depends="long,required">
+		    <arg key="learner.postCode" position="0"/>
+		  </field>
+		  <field property="learner.qq" depends="long,required">
+		    <arg key="learner.qq" position="0"/>
+		  </field>
+		  <field property="user.password" depends="required">
+		    <arg key="learner.user.password" position="0"/>
+		  </field>
+		  <field property="user.userEmail" depends="email,required">
+		    <arg key="learner.user.userEmail" position="0"/>
+		  </field>
+		  <field property="user.userNameEn" depends="required">
+		    <arg key="learner.user.userNameEn" position="0"/>
+		  </field>
+		  <field property="user.userNameZh" depends="required">
+		    <arg key="learner.user.userNameZh" position="0"/>
+		  </field>
+		</form>
+		<form name="tutorInfoModifyForm">
+		  <field property="tutor.homePhone" depends="long,required">
+		    <arg key="tutor.homePhone" position="0"/>
+		  </field>
+		  <field property="tutor.mobile" depends="long,required">
+		    <arg key="tutor.mobile" position="0"/>
+		  </field>
+		  <field property="tutor.msn" depends="email,required">
+		    <arg key="tutor.msn" position="0"/>
+		  </field>
+		  <field property="tutor.postCode" depends="long,required">
+		    <arg key="tutor.postCode" position="0"/>
+		  </field>
+		  <field property="tutor.qq" depends="long,required">
+		    <arg key="tutor.qq" position="0"/>
+		  </field>
+		  <field property="user.password" depends="required">
+		    <arg key="tutor.user.password" position="0"/>
+		  </field>
+		  <field property="user.userEmail" depends="email,required">
+		    <arg key="tutor.user.userEmail" position="0"/>
+		  </field>
+		  <field property="user.userNameEn" depends="required">
+		    <arg key="tutor.user.userNameEn" position="0"/>
+		  </field>
+		  <field property="user.userNameZh" depends="required">
+		    <arg key="tutor.user.userNameZh" position="0"/>
+		  </field>
+		</form>
+		<form name="managerInfoModifyForm">
+		  <field property="manager.homePhone" depends="long,required">
+		    <arg key="manager.homePhone" position="0"/>
+		  </field>
+		  <field property="manager.mobile" depends="long,required">
+		    <arg key="manager.mobile" position="0"/>
+		  </field>
+		  <field property="manager.msn" depends="email,required">
+		    <arg key="manager.msn" position="0"/>
+		  </field>
+		  <field property="manager.postCode" depends="long,required">
+		    <arg key="manager.postCode" position="0"/>
+		  </field>
+		  <field property="manager.qq" depends="long,required">
+		    <arg key="manager.qq" position="0"/>
+		  </field>
+		  <field property="user.password" depends="required">
+		    <arg key="manager.user.password" position="0"/>
+		  </field>
+		  <field property="user.userEmail" depends="email,required">
+		    <arg key="manager.user.userEmail" position="0"/>
+		  </field>
+		  <field property="user.userNameEn" depends="required">
+		    <arg key="manager.user.userNameEn" position="0"/>
+		  </field>
+		  <field property="user.userNameZh" depends="required">
+		    <arg key="manager.user.userNameZh" position="0"/>
+		  </field>
+		</form>
+		<form name="userRegistSaveForm">
+		  <field property="user.loginName" depends="required">
+		    <arg key="user.loginName" position="0"/>
+		  </field>
+		  <field property="user.password" depends="required">
+		    <arg key="user.password" position="0"/>
+		  </field>
+		  <field property="user.userEmail" depends="email,required">
+		    <arg key="user.userEmail" position="0"/>
+		  </field>
+		  <field property="user.userNameEn" depends="required">
+		    <arg key="user.userNameEn" position="0"/>
+		  </field>
+		  <field property="user.userNameZh" depends="required">
+		    <arg key="user.userNameZh" position="0"/>
+		  </field>
+		</form>
+	</formset>
+</form-validation>

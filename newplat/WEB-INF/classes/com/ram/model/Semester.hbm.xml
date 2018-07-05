@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.Semester" 
+    table="SEMESTER"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="semesterId"
+        type="java.lang.Integer"
+        column="SEMESTER_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_SEMESTER</param>
+        </generator>
+    </id>
+
+    <property
+        name="semesterTitle"
+        type="java.lang.String"
+        column="SEMESTER_TITLE"
+        length="200"
+    />
+    <property
+        name="enrollYear"
+        type="java.lang.Integer"
+        column="ENROLL_YEAR"
+        length="4"
+    />
+    <property
+        name="enrollSeason"
+        type="java.lang.Integer"
+        column="ENROLL_SEASON"
+        length="2"
+    />
+    <property
+        name="dateStart"
+        type="java.sql.Date"
+        column="DATE_START"
+        not-null="true"
+        length="7"
+    />
+    <property
+        name="dateEnd"
+        type="java.sql.Date"
+        column="DATE_END"
+        not-null="true"
+        length="7"
+    />
+    <property
+        name="semesterStatus"
+        type="java.lang.String"
+        column="SEMESTER_STATUS"
+        length="1"
+    />
+    <property
+        name="isEnrollSemester"
+        type="java.lang.String"
+        column="IS_ENROLL_SEMESTER"
+        length="1"
+    />
+    
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="updateDateTime"
+        type="java.sql.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to BusinessGroup -->
+    <set
+        name="businessGroups"
+        lazy="true"
+        inverse="true"
+		cascade="delete"
+    >
+        <key>
+            <column name="SEMESTER_ID" />
+        </key>
+        <one-to-many 
+            class="com.ram.model.BusinessGroup"
+        />
+    </set>
+	
+
+	
+</class>
+</hibernate-mapping>

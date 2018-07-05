@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.gf.dcb.model.GfDcbGaOmit" table="gf_dcb_ga_omit">
+		<cache usage="read-write" />
+		<id name="oid" type="java.lang.Integer" column="o_id">
+			<generator class="identity" />
+		</id>
+       <property name="sessionNo" type="java.lang.String" column="session_no" length="15" />
+       <property name="openResult" type="java.lang.String" column="open_result" length="50" />
+       <property name="red1" type="java.lang.Integer" column="red1" length="8" />
+       <property name="red2" type="java.lang.Integer" column="red2" length="8" />
+       <property name="red3" type="java.lang.Integer" column="red3" length="8" />
+       <property name="red4" type="java.lang.Integer" column="red4" length="8" />
+       <property name="red5" type="java.lang.Integer" column="red5" length="8" />
+       <property name="red6" type="java.lang.Integer" column="red6" length="8" />
+       <property name="red7" type="java.lang.Integer" column="red7" length="8" />
+       <property name="red8" type="java.lang.Integer" column="red8" length="8" />
+       <property name="red9" type="java.lang.Integer" column="red9" length="8" />
+       <property name="red10" type="java.lang.Integer" column="red10" length="8" />
+       <property name="red11" type="java.lang.Integer" column="red11" length="8" />
+       <property name="red12" type="java.lang.Integer" column="red12" length="8" />
+       <property name="red13" type="java.lang.Integer" column="red13" length="8" />
+       <property name="red14" type="java.lang.Integer" column="red14" length="8" />
+       <property name="red15" type="java.lang.Integer" column="red15" length="8" />
+       <property name="red16" type="java.lang.Integer" column="red16" length="8" />
+       <property name="red17" type="java.lang.Integer" column="red17" length="8" />
+       <property name="red18" type="java.lang.Integer" column="red18" length="8" />
+       <property name="red19" type="java.lang.Integer" column="red19" length="8" />
+       <property name="red20" type="java.lang.Integer" column="red20" length="8" />
+       <property name="red21" type="java.lang.Integer" column="red21" length="8" />
+       <property name="red22" type="java.lang.Integer" column="red22" length="8" />
+       <property name="red23" type="java.lang.Integer" column="red23" length="8" />
+       <property name="red24" type="java.lang.Integer" column="red24" length="8" />
+       <property name="red25" type="java.lang.Integer" column="red25" length="8" />
+       <property name="red26" type="java.lang.Integer" column="red26" length="8" />
+       <property name="red27" type="java.lang.Integer" column="red27" length="8" />
+       <property name="red28" type="java.lang.Integer" column="red28" length="8" />
+       <property name="red29" type="java.lang.Integer" column="red29" length="8" />
+       <property name="red30" type="java.lang.Integer" column="red30" length="8" />
+       <property name="red31" type="java.lang.Integer" column="red31" length="8" />
+       <property name="red32" type="java.lang.Integer" column="red32" length="8" />
+       <property name="red33" type="java.lang.Integer" column="red33" length="8" />
+       <property name="blue1" type="java.lang.Integer" column="blue1" length="8" />
+       <property name="blue2" type="java.lang.Integer" column="blue2" length="8" />
+       <property name="blue3" type="java.lang.Integer" column="blue3" length="8" />
+       <property name="blue4" type="java.lang.Integer" column="blue4" length="8" />
+       <property name="blue5" type="java.lang.Integer" column="blue5" length="8" />
+       <property name="blue6" type="java.lang.Integer" column="blue6" length="8" />
+       <property name="blue7" type="java.lang.Integer" column="blue7" length="8" />
+       <property name="blue8" type="java.lang.Integer" column="blue8" length="8" />
+       <property name="blue9" type="java.lang.Integer" column="blue9" length="8" />
+       <property name="blue10" type="java.lang.Integer" column="blue10" length="8" />
+       <property name="blue11" type="java.lang.Integer" column="blue11" length="8" />
+       <property name="blue12" type="java.lang.Integer" column="blue12" length="8" />
+       <property name="blue13" type="java.lang.Integer" column="blue13" length="8" />
+       <property name="blue14" type="java.lang.Integer" column="blue14" length="8" />
+       <property name="blue15" type="java.lang.Integer" column="blue15" length="8" />
+       <property name="blue16" type="java.lang.Integer" column="blue16" length="8" />
+	</class>
+</hibernate-mapping>

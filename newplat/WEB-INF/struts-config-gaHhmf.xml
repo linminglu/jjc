@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- ==================================== Data Sources      -->
+  	<data-sources>
+  	</data-sources>
+  	<!-- ==================================== Form Beans        -->
+  	<form-beans>
+		<form-bean name="gaHhmfForm" type="com.game.web.form.GaHhmfForm"/>
+  	</form-beans>
+  	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+	 	<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+  	<!-- ==================================== Action Mappings    -->
+  	<action-mappings>
+  		<action 
+			path="/gaHhmfAction" 
+    		type="com.game.web.action.GaHhmfAction" 
+    		name="gaHhmfForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+	   		<forward name="initLotteryResults" path="/gaHhmfSessionList.jsp"/>
+	   		<forward name="initBetList" path="/gaHhmfBetList.jsp"/>
+	   		<forward name="betUserList" path="/gaHhmfBetUserList.jsp"/>
+	   		<forward name="betDetail" path="/gaHhmfBetDetailList.jsp"/>
+	   		<forward name="initBetOption" path="/gaHhmfBetOptionList.jsp"/>
+	   		<forward name="preModify" path="/gaHhmfBetOptionModify.jsp"/>
+	   		<forward name="saveBetOption" path="/gaHhmfAction.do?method=initBetOption" redirect="true"/>
+    	</action>
+    </action-mappings>
+</struts-config>

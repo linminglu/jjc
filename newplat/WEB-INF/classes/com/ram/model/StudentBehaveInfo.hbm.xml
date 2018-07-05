@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.StudentBehaveInfo" 
+    table="STUDENT_BEHAVE_INFO"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="studentBehaveInfoId"
+        type="java.lang.Integer"
+        column="STUDENT_BEHAVE_INFO_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_STUDENT_BEHAVE_INFO</param>
+        </generator>
+    </id>
+
+    <property
+        name="learnerId"
+        type="java.lang.Integer"
+        column="LEARNER_ID"
+        length="8"
+    />
+    <property
+        name="behaveDate"
+        type="java.sql.Date"
+        column="BEHAVE_DATE"
+        length="7"
+    />
+    <property
+        name="behaveDesp"
+        type="java.lang.String"
+        column="BEHAVE_DESP"
+        length="2000"
+    />
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

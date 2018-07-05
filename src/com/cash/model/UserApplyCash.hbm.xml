@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.cash.model.UserApplyCash" table="user_apply_cash">
+		<cache usage="read-write" />
+		<id name="applyCashId" type="java.lang.Integer" column="apply_cash_id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="8" />
+       <property name="cashMoney" type="java.math.BigDecimal" column="cash_money" length="12" />
+       <property name="createTime" type="java.util.Date" column="create_time" />
+       <property name="auditStatus" type="java.lang.String" column="audit_status" length="1" />
+       <property name="auditTime" type="java.util.Date" column="audit_time" />
+       <property name="bankBindId" type="java.lang.Integer" column="bank_bind_id" length="5" />
+        <property name="bankName" type="java.lang.String" column="bank_name" length="50" />
+       <property name="userName" type="java.lang.String" column="user_name" length="50" />
+       <property name="accountNo" type="java.lang.String" column="account_no" length="50" />
+      <property name="cashPassword" type="java.lang.String" column="cash_password" length="50" />
+      <property name="cityName" type="java.lang.String" column="city_name" length="50" />  
+      <property name="cid" type="java.lang.Integer" column="c_id" length="8" />
+      <property name="type" type="java.lang.String" column="type" length="50" />  
+      <property name="userMoney" type="java.math.BigDecimal" column="user_money" length="50" />
+      <property name="remark" type="java.lang.String" column="remark" length="300" /> 
+                          
+	</class>
+</hibernate-mapping>

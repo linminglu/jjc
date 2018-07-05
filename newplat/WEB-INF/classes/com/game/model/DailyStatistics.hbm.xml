@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.DailyStatistics" table="daily_statistics">
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="userId" type="java.lang.Integer" column="user_id" length="8" />
+		<property name="agentId" type="java.lang.Integer" column="agent_id" length="8" />
+		<property name="userName" type="java.lang.String" column="user_name" length="20"/>		
+		<property name="loginName" type="java.lang.String" column="login_name" length="20"/>
+        <property name="totalRecharge" type="java.math.BigDecimal" column="total_recharge" length="30" />
+        <property name="totalDrawMoney" type="java.math.BigDecimal" column="total_draw_money" length="30" />
+        <property name="totalBet" type="java.math.BigDecimal" column="total_bet" length="30" />
+        <property name="totalWin" type="java.math.BigDecimal" column="total_win" length="30" />
+        <property name="createTime" type="java.util.Date" column="create_time" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	
+	<!-- ==================================== Data Sources      -->
+	<data-sources>
+	</data-sources>
+	
+	<!-- ==================================== Form Beans        -->
+	<form-beans>
+		<form-bean name="functionForm" type="com.ram.web.permission.form.FunctionForm"/>
+		<form-bean name="groupFunctionForm" type="com.ram.web.permission.form.GroupFunctionForm"/>
+		<form-bean name="loginForm" type="com.ram.web.permission.form.LoginForm"/>		
+		<form-bean name="registerForm" type="com.ram.web.permission.form.RegisterForm"/>	
+		<form-bean name="homeForm" type="com.ram.web.permission.form.HomeForm"/>																
+	</form-beans>
+	
+	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+		<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+	
+	<!-- ==================================== Action Mappings    -->
+	<action-mappings>
+		<!-- 功能类 -->
+		<action 
+			path="/functionAction"
+			type="com.ram.web.permission.action.FunctionAction"
+			name="functionForm" 
+			scope="request" 
+			input="/functionList.jsp"
+			validate="false" 
+			parameter="method" 
+		>
+			<forward name="init" path="/functionList.jsp" redirect="false"/>
+			<forward name="orderUp" path="/functionAction.do?method=init" redirect="false"/>
+			<forward name="orderDown" path="/functionAction.do?method=init" redirect="false"/>
+			<forward name="preAdd" path="/functionCreate.jsp" redirect="false"/>
+			<forward name="preModify" path="/functionModify.jsp" redirect="false"/>
+			<forward name="add" path="/functionAction.do?method=init" redirect="false"/>
+			<forward name="delete" path="/functionAction.do?method=init" redirect="false"/>
+		</action>
+
+		<!--  功能组分配   -->
+		<action 
+			path="/groupFunctionAction" 
+			type="com.ram.web.permission.action.GroupFunctionAction"
+			name="groupFunctionForm" 
+			parameter="method" 
+			input="/groupFunctionRlList.jsp" 
+			scope="request" 
+			validate="false"
+		>
+			<forward name="init" path="/groupFunctionRlList.jsp" redirect="false"/>
+			<forward name="add" path="/groupFunctionRlCreate.jsp" redirect="false"/>
+			<forward name="save" path="/groupFunctionAction.do?method=init" redirect="false"/>		
+			<forward name="saveFunction" path="/groupFunctionAction.do?method=save" redirect="false"/>
+			<forward name="delete" path="/groupFunctionAction.do?method=init" redirect="false"/>
+			<forward name="orderUp" path="/groupFunctionAction.do?method=init" redirect="false"/>
+			<forward name="orderDown" path="/groupFunctionAction.do?method=init" redirect="false"/>		
+		</action>
+	
+		<!-- 用户登录 -->		
+		<action 
+			path="/loginAction"
+			type="com.ram.web.permission.action.LoginAction" 
+			name="loginForm"
+			parameter="method" 
+			scope="request" 
+			validate="false"
+		>
+			<forward name="login" path="/login.jsp" redirect="false"/>
+			<forward name="loginAgent" path="/../agent/index.jsp" redirect="false"/>
+			<forward name="login_org" path="/login_org.jsp" redirect="false"/>
+			<forward name="loginStudSuccess" path="/homeAction.do?method=init" redirect="true"/>
+			<forward name="loginUserGroupInit" path="/loginUserGroup.jsp"/>
+			<forward name="loginUserGroupFail" path="/login.jsp" redirect="false"/>
+			<forward name="loginUserGroupSuccess" path="/loginSuccess.jsp"/>
+			<forward name="logout" path="/loginAction.do?method=init" redirect="false"/>
+			<forward name="logoutAgent" path="/../agent/index.jsp" redirect="false"/>
+			<forward name="loginOrdiSuccess" path="/../" />
+			<forward name="initSj" path="/loginSj.jsp" redirect="false"/>
+			<forward name="loginsz" path="/loginSj.jsp" redirect="false" />
+			<forward name="saveXfm" path="/mytUserXfm.jsp" redirect="false" />
+			<forward name="initXfm" path="/mytUserXfm.jsp" redirect="false"/>
+			
+		</action>
+		
+		<action 
+			path="/homeAction" 
+			name="homeForm"
+			type="com.ram.web.permission.action.HomeAction"
+			parameter="method"
+			validate="false">
+			<forward name="init" path="/studHome.jsp" />
+		</action>
+		
+		<action 
+			path="/userDynamicAction" 
+			name="homeForm"
+			type="com.ram.web.permission.action.UserDynamicAction"
+			parameter="method"
+			validate="false">
+			<forward name="init" path="/dynamicList.jsp" />
+		</action>
+		
+		<action 
+			path="/apply" 
+			name="homeForm"
+			type="com.ram.web.permission.action.ApplyAction"
+			parameter="method"
+			validate="false">
+			<forward name="applyAccount" path="/applyOk.jsp" />
+			<forward name="applyList" path="/applyList.jsp" />
+			<forward name="deleteApply" path="/apply.do?method=applyList" redirect="true"/>
+		</action>
+		
+	</action-mappings>
+</struts-config>

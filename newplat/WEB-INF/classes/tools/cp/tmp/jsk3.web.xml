@@ -1,0 +1,4 @@
+<init-param>
+			<param-name>config/jsk3</param-name>
+			<param-value>/WEB-INF/struts-config-gaJsK3.xml</param-value>
+		</init-param>

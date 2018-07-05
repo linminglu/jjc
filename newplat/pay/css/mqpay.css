@@ -1,0 +1,91 @@
+@CHARSET "UTF-8";
+html,body{pading:0;margin:0;
+font-family: Tahoma,"Microsoft YaHei";
+font-family1:sans-serif, "Microsoft YaHei", Trebuchet MS, Arial,
+		Verdana, Tahoma, "DejaVu Sans", "Liberation sans",
+		"Bitstream Vera Sans", sans-serif;font-size:14px;}
+body{background-color: #F7F7F7;}
+h1,h2,h3,h4,h5,ul,p,form{padding:0px;margin:0px;}
+li{list-style: none;}
+a{text-decoration: none;}
+img{border: 0;}
+.fl{float: left;}
+.fr{float: right;}
+.height50{height: 50px;background-color: #EFEFF4;}
+.height50-white{height: 50px;background-color: #fff;}
+.w25{width: 25%;}
+.w75{width: 75%;}
+.red{color: #f00;}
+.blue{color: #1479D7;}
+.colour-orange{color:#FB2F00; }
+.bg-red{background-color:#f72F17; }
+.bg-blue{background-color:#1479D7; }
+.bg-green{background-color:#91d33f; }
+.bg-orange{background-color: #FB2F00;}
+.bg-yellow{background-color: #ffab08;}
+.bg-white{background-color: #fff;}
+.padd-0-15{padding: 0 15px;}
+
+.btn{display: block; height: 36px;line-height: 36px;text-decoration: none;text-align: center;border-radius:5px;}
+.btn-orange{background-color: #FC2F00;color: #fff;}
+.btn-yellow{background-color: #ffab08;color: #fff;}
+.colour-yellow{color: #FBBD5B;}
+.colour-orange{color: #FC2F00;}
+.colour-blue{color: #3485FB;}
+.colour-green{color: #91d33f;}
+.colour-red{color: #e94833;}
+.border-bottom{border-bottom: 1px solid #f0f0f0;}
+.border-right{border-right: 1px solid #f0f0f0;}
+
+
+.header.mui-bar{z-index: 11;}
+.margin-top-header {height: 44px;}
+header.mui-bar{z-index: 11;}
+.mui-bar-item span.icon-navig-wode{font-size: 20px;}
+#mui-bar{background-color: #fff;z-index: 100;}
+#mui-bar .mui-active{color: #FC2F00;}
+
+.pay-box{width: 88%;margin: 32px auto 0;background-color: #fff;border: 1px solid #eee;box-shadow:0px 0px 10px #eee;border-radius:5px;position: relative;}
+#sawtoothbox{width: 100%;background-image: url("../img/mqpay/bg_sawtooth.png");height:12px;position: absolute;top: -10px;}
+#payprice{text-align: center;font-size: 30px;margin-top: 20px;}
+
+#QRcode{width: 200px;margin: 20px auto 0;box-shadow:0px 0px 10px #999;position: relative;}
+#QRcode img{width: 100%;margin: 0 auto;height: 200px;}
+#QRcode .mask{width: 100%;height: 100%;background-color: #ddd;height: 203px;position: absolute;top:0;text-align: center;font-size: 18px;color: #666; display:none;}
+
+#paytime .text{line-height: 20px;text-align: center;margin: 20px auto;font-size: 15px;font-weight: 500;}
+#timebox{width: 170px;margin: 0 auto;overflow: hidden;}
+#paytime{overflow: hidden;padding-bottom: 20px;}
+.secc{background-color: #0BA400;color: #fff;padding: 5px 10px;text-align: center;margin: 0 3px;display: block;float: left;border-radius:5px;}
+
+.round{width: 40px;height: 40px;background-color:#F7F7F7;position: absolute;border-radius:50%; bottom: 64px;}
+#leftround{left: -20px;}
+#rightround{right: -20px;}
+.scan-box{overflow: hidden;border-top: 1px dashed #ddd;padding: 20px 0;}
+.scan-box .scan-box-data{width: 180px;margin: 0 auto;}
+.scan-box .scan-ico{width: 40px;float: left;}
+.scan-box .scan-ico img{width: 100%;}
+.scan-box .scan-text{float: left;margin-left: 10px;}
+.copyright-box{margin: 10px 0;}
+.copyright-box .text{font-size: 13px;color: #999;text-align: center;line-height: 20px;}
+.pay-status-box{margin: 40px;}
+.pay-status-box .succ-img{width: 100px;margin: 0 auto;}
+.pay-status-box .succ-img img{width: 100%;}
+.pay-status-box .succ-text{margin: 20px;text-align: center;font-size: 24px;color: #444;}
+
+.tips-box{width: 88%;margin: 10px auto 0;border:1px dashed #f6f6f6; }
+.tips-box .title{color: #444;}
+.tips-box .tips-cell-box{padding:0 15px ;}
+.tips-cell-box .tips-cell{line-height: 23px;color: #777;}
+#tipswechat{display: none;}
+
+/*<320*/
+@media screen and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 640px) {
+}
+/*>640*/
+@media screen and (min-width: 641px) {
+	.main-content{width: 720px;margin: 0 auto;}
+	.pay-box{margin-top: 40px;}
+}

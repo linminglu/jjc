@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.UpdateSelfRecord" 
+    table="UPDATE_SELF_RECORD"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="id"
+        type="java.lang.Integer"
+        column="ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_UPDATE_SELF_RECORD</param>
+        </generator>
+    </id>
+
+     <property
+        name="studyNumber"
+        type="java.lang.String"
+        column="STUDY_NUMBER"
+        length="20"
+    />
+
+    <property
+        name="userNameZh"
+        type="java.lang.String"
+        column="USER_NAME_ZH"
+        length="50"
+    />
+
+    <property
+        name="startDate"
+        type="java.lang.String"
+        column="STARTDATE"
+        length="10"
+    />
+
+    <property
+        name="endDate"
+        type="java.lang.String"
+        column="ENDDATE"
+        length="10"
+    />
+
+    <property
+        name="workUnitName"
+        type="java.lang.String"
+        column="WORKUNITNAME"
+        length="200"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="gfThreeDAO" class="com.gf.three.dao.hibernate.ThreeDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+	<bean id="gfThreeService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.gf.three.service.impl.ThreeServiceImpl">
+	            <property name="gfThreeDAO"><ref local="gfThreeDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化 -->
+	<bean name="initGfThreeSessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.three.service.impl.InitThreeSession</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfThreeService"><ref bean="gfThreeService" /></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchGfThreeResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.three.service.impl.FetchThreeResult</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfThreeService"><ref bean="gfThreeService" /></entry>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 更新冷热排行-->
+	<bean name="fetchGfThreeTrendJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.three.service.impl.UpdateThreeGaTrend</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfThreeService"><ref bean="gfThreeService" /></entry>
+			</map>
+		</property>
+	</bean>
+		<!-- 更新合买-->
+	<bean name="fetchCountGfThreeJointBetJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.three.service.impl.CountThreeJoinBet</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfThreeService"><ref bean="gfThreeService" /></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 开奖仅更新场次状态为开奖中
+	<bean name="openK10Job" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.k10.gxk10.service.impl.OpenK10Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="cqSscService"><ref bean="cqSscService" /></entry>
+			</map>
+		</property>
+	</bean>-->
+	
+	<!-- 自动投注(不处理) -->
+	<!-- <bean name="autoBetK10Job" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.pce.service.impl.AutoBetK10</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="k10Service"><ref bean="k10Service" /></entry>
+			</map>
+		</property>
+	</bean> -->
+	
+	
+	<!-- 配置触发器定时周期 对应上面的 bean  --> 
+	
+<!-- 初始化时间 -->
+<bean id="initGfThreeSession" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initGfThreeSessionJob" />
+		</property>
+		<!--  每天的11点开始初始化-->
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean> 
+
+	<!-- 监控场次时间 -->
+<!--	<bean id="monitorGdK10" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="monitorGdK10Job" />
+		</property>
+		每天的x点到x点每小时监控一次是否已经初始化 
+		<property name="cronExpression">
+			<value>0 0 3-23 * * ?</value>
+		</property>
+	</bean>-->
+	
+	<!-- 定时抓去数据 -->
+<bean id="fetchGfThreeResult" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfThreeResultJob" />
+		</property>
+	<!--	每天的x点到x点间隔多少分钟抓取数据 -->
+		<property name="cronExpression">
+			<value>10 0/3 0-6,9-23 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 定时抓去数据 -->
+    <bean id="fetchGfThreeTrend" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfThreeTrendJob" />
+		</property>
+	<!--	每天的x点到x点间隔多少分钟抓取数据 -->
+		<property name="cronExpression">
+			<!-- <value>30 1/5 * * * ?</value> -->
+			<value>10 1/3 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 定时更新合买 -->
+    <bean id="fetchCountGfThreeJointBet" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchCountGfThreeJointBetJob" />
+		</property>
+	<!--	每天5分钟 -->
+		<property name="cronExpression">
+			<value>50 2/3 * * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initGfThreeSession" />
+				<ref local="fetchGfThreeResult"/>	
+				<ref local="fetchCountGfThreeJointBet"/>	
+				<ref local="fetchGfThreeTrend"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+</beans>

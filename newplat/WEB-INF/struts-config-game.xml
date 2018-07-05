@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+
+	<!-- ==================================== Data Sources      -->
+  	<data-sources>
+  	</data-sources>
+
+  	<!-- ==================================== Form Beans        -->
+  	<form-beans>
+		<form-bean name="gaForm" type="com.game.web.form.GaForm"/>
+		<form-bean name="gameForm" type="com.apps.web.form.GameForm"/>
+  	</form-beans>
+
+  	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+	 	<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+
+  	<!-- ==================================== Action Mappings    -->
+  	<action-mappings>
+  		<action 
+            path="/gaAction" 
+            type="com.game.web.action.GaAction" 
+            name="gaForm" 
+            scope="request" 
+            parameter="method"
+            validate="false"
+        >
+            <forward name="initGameUrl" path="/sessionInfoList.jsp"/>
+            <forward name="preAdd" path="/sessionInfoModify.jsp"/>
+            <forward name="save" path="/gaAction.do?method=initGameUrl"/>
+                        
+        </action>
+        <action 
+            path="/gameAction" 
+            type="com.apps.web.action.GameAction" 
+            name="gameForm" 
+            scope="request" 
+            parameter="method"
+            validate="false"
+        >
+            <forward name="gameList" path="/gameList.jsp"></forward>
+            <forward name="pauseGameStatus" path="/gameAction.do?method=gameList" redirect="true"></forward>
+            <forward name="gaSessionInfoModify" path="/gaSessionInfoModify.jsp"></forward>
+            <forward name="gameOptionList" path="/gameOptionList.jsp"></forward>
+        </action>
+    </action-mappings>
+</struts-config>

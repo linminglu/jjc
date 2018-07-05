@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.xy.pick11.sdpick11.model.SdPick11GaBet" table="xy_sd_pick11_ga_bet">
+		<cache usage="read-write" />
+		<id name="betId" type="java.lang.Integer" column="bet_id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="8" />
+       <property name="sessionId" type="java.lang.Integer" column="session_id" length="11" />
+       <property name="totalNum" type="java.lang.Integer" column="total_num" length="3" />
+       <property name="totalPoint" type="java.math.BigDecimal" column="total_point" length="15" />
+       <property name="winCash" type="java.math.BigDecimal" column="win_cash" length="15" />
+       <property name="betTime" type="java.util.Date" column="bet_time" />
+       <property name="sessionNo" type="java.lang.String" column="session_no" length="11" />
+
+	</class>
+</hibernate-mapping>

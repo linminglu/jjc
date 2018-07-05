@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+.main-content{background-color: #f8f8f8;}
+.zoushipage{margin: 5px 10px;}
+
+#zou1,#zou2,#zou3,#zou4,#zou5,#zou6,#zou7,#zou8,#zou9,#zou10,#zou11,#zou12{display: none;}
+
+.zoushi-table .lattice {display: block;float: left;text-align: center;}
+#zou0 .zoushi-cell{width: 25%;}
+#zou0 #tab0 .lattice,#zou0 #tab1 .lattice,#zou0 #tab2 .lattice{width: 16.666666%;}
+#zou0 #tab3 .lattice {width: 20%;}
+
+#zou1 .zoushi-cell{width: 20%;}
+#zou1 #tab0 .lattice,#zou1 #tab1 .lattice,#zou1 #tab2 .lattice{width: 9.090909%;}
+#zou1 #tab3 .lattice {width: 25%;}
+#zou1 #tab4 .lattice {width: 16.666666%;}
+
+#zou2 .zoushi-cell{width: 50%;}
+#zou2 #tab0 .lattice{width: 20%;}
+#zou2 #tab1 .lattice{width: 16.666666%;}
+
+#zou3 .zoushi-cell{width: 25%;}
+#zou3 #tab0 .lattice,#zou3 #tab1 .lattice,#zou3 #tab2 .lattice{width: 16.666666%;}
+#zou3 #tab3 .lattice{width: 20%;}
+
+#zou4 .zoushi-cell{width: 50%;}
+#zou4 #tab0 .lattice{width: 20%;}
+#zou4 #tab1 .lattice{width: 16.666666%;}
+
+#zou5 .zoushi-cell{width: 25%;}
+#zou5 #tab0 .lattice,#zou5 #tab1 .lattice,#zou5 #tab2 .lattice{width: 11.111111%;}
+#zou5 #tab3 .lattice{width: 16.666666%;}
+
+#zou6 .zoushi-cell{width: 25%;}
+#zou6 #tab0 .lattice,#zou6 #tab1 .lattice,#zou6 #tab2 .lattice{width: 16.666666%;}
+#zou6 #tab3 .lattice{width: 20%;}
+
+#zou7 .zoushi-cell{width: 25%;}
+#zou7 #tab0 .lattice,#zou7 #tab1 .lattice,#zou7 #tab2 .lattice{width: 16.666666%;}
+#zou7 #tab3 .lattice{width: 20%;}
+
+#zou8 .zoushi-cell{width: 50%;}
+#zou8 #tab0 .lattice,#zou8 #tab1 .lattice{width: 20%;}
+
+#zou9 .zoushi-cell{width: 25%;}
+#zou9 #tab0 .lattice,#zou9 #tab1 .lattice,#zou9 #tab2 .lattice,#zou9 #tab3 .lattice{width: 16.666666%;}
+
+#zou10 .zoushi-cell{width: 50%;}
+#zou10 #tab0 .lattice,#zou10 #tab1 .lattice{width: 25%;}
+
+#zou11 .zoushi-cell{width: 25%;}
+#zou11 #tab0 .lattice,#zou11 #tab1 .lattice,#zou11 #tab2 .lattice,#zou11 #tab3 .lattice{width: 16.666666%;}
+
+#zou12 .zoushi-cell{width: 33.333333%;}
+#zou12 #tab0 .lattice{width: 12.5%;}
+#zou12 #tab1 .lattice{width: 16.666666%;}
+#zou12 #tab2 .lattice{width: 20%;}
+
+
+/*<320*/
+@media screen and (max-width: 320px) {
+}
+@media screen and (min-width: 321px) and (max-width: 640px) {
+}
+/*>640*/
+@media screen and (min-width: 641px) {
+}

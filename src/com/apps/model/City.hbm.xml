@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.apps.model.City" table="city">
+		<cache usage="read-write" />
+		<id name="cid" type="java.lang.Integer" column="c_id">
+			<generator class="identity" />
+		</id>
+       <property name="title" type="java.lang.String" column="title" length="80" />
+       <property name="type" type="java.lang.String" column="type" length="4" />
+       <property name="parentId" type="java.lang.Integer" column="parent_id" length="8" />
+       <property name="sort" type="java.lang.String" column="sort" length="8" />
+       <property name="pinyin" type="java.lang.String" column="pinyin" length="8" />
+       <property name="code" type="java.lang.String" column="code" length="200" />
+       <property name="status" type="java.lang.String" column="status" length="4" />
+       <property name="isMunicipality" type="java.lang.String" column="is_municipality" length="4" />
+	</class>
+</hibernate-mapping>

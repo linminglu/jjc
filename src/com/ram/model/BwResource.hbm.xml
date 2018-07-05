@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.BwResource" 
+    table="BW_RESOURCE"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="resourceId"
+        type="java.lang.Integer"
+        column="RESOURCE_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_BW_RESOURCE</param>
+        </generator>
+    </id>
+
+    <property
+        name="resourceTitleZh"
+        type="java.lang.String"
+        column="RESOURCE_TITLE_ZH"
+        length="2000"
+    />
+    <property
+        name="resourceTitleEn"
+        type="java.lang.String"
+        column="RESOURCE_TITLE_EN"
+        length="2000"
+    />
+    <property
+        name="resourceDesc"
+        type="java.lang.String"
+        column="RESOURCE_DESC"
+        length="2000"
+    />
+    <property
+        name="courseId"
+        type="java.lang.Integer"
+        column="COURSE_ID"
+        length="4"
+    />
+    <property
+        name="unitId"
+        type="java.lang.Integer"
+        column="UNIT_ID"
+        length="4"
+    />
+    <property
+        name="resourceLinkAddress"
+        type="java.lang.String"
+        column="RESOURCE_LINK_ADDRESS"
+        length="4000"
+    />
+    <property
+        name="accessTimes"
+        type="java.lang.Integer"
+        column="ACCESS_TIMES"
+        length="8"
+    />
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="deleteStatus"
+        type="java.lang.String"
+        column="DELETE_STATUS"
+        length="1"
+    />
+    <property
+        name="updateDateTime"
+        type="java.util.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+    <property
+        name="allowed"
+        type="java.lang.Integer"
+        column="ALLOWED"
+        length="1"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to ResourceType -->
+    <many-to-one
+        name="resourceType"
+        class="com.ram.model.ResourceType"
+        lazy="false"
+        not-null="true"
+    >
+        <column name="RESOURCE_TYPE_ID" />
+    </many-to-one>
+    <!-- bi-directional one-to-many association to ScheduleResource -->
+    <set
+        name="scheduleResources"
+        lazy="true"
+        inverse="true"
+		cascade="all"
+    >
+        <key>
+            <column name="RESOURCE_ID" />
+        </key>
+        <one-to-many 
+            class="com.ram.model.ScheduleResource"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

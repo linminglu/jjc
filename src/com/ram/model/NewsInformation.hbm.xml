@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.ram.model.NewsInformation" table="news_information">
+		<cache usage="read-write" />
+		<id name="nid" type="java.lang.Integer" column="n_id">
+			<generator class="identity" />
+		</id>
+       <property name="title" type="java.lang.String" column="title" length="50" />
+       <property name="subTitle" type="java.lang.String" column="sub_title" length="50" />
+       <property name="content" type="java.lang.String" column="content" length="21845" />
+       <property name="submitTime" type="java.util.Date" column="submit_time" />
+       <property name="link" type="java.lang.String" column="link" length="200" />
+       <property name="type" type="java.lang.String" column="type" length="20" />
+       <property name="author" type="java.lang.String" column="author" length="20" />
+       <property name="company" type="java.lang.String" column="company" length="50" />
+       <property name="tid" type="java.lang.Integer" column="t_id" length="8" />
+       <property name="prevId" type="java.lang.Integer" column="prev_id" length="8" />
+       <property name="status" type="java.lang.String" column="status" length="0" />
+       <property name="img" type="java.lang.String" column="img" length="255" />
+	</class>
+</hibernate-mapping>

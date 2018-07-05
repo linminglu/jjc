@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="gfBjSscDAO" class="com.gf.ssc.bjssc.dao.hibernate.BjSscDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="gfBjSscService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.gf.ssc.bjssc.service.impl.BjSscServiceImpl">
+	            <property name="gfBjSscDAO"><ref local="gfBjSscDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 监控 
+	<bean name="monitorK10Job" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.k10.gdk10.service.impl.MonitorGdK10</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bjSscService"><ref bean="bjSscService" /></entry>
+			</map>
+		</property>
+	</bean>-->
+	<!-- 开奖仅更新场次状态为开奖中
+	<bean name="openK10Job" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.k10.gxk10.service.impl.OpenK10Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bjSscService"><ref bean="bjSscService" /></entry>
+			</map>
+		</property>
+	</bean>-->
+	
+	<!-- 自动投注(不处理) -->
+	<!-- <bean name="autoBetK10Job" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.pce.service.impl.AutoBetK10</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="k10Service"><ref bean="k10Service" /></entry>
+			</map>
+		</property>
+	</bean> -->
+	<!-- 监控场次时间 -->
+	<!--<bean id="monitorGdK10" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="monitorGdK10Job" />
+		</property>
+		每天的x点到x点每小时监控一次是否已经初始化 
+		<property name="cronExpression">
+			<value>0 0 3-23 * * ?</value>
+		</property>
+	</bean>-->
+	
+	
+	<!-- 初始化 -->
+	<bean name="initGfBjSscSessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.ssc.bjssc.service.impl.InitBjSscSession</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfBjSscService"><ref bean="gfBjSscService" /></entry>
+			</map>
+		</property>
+	</bean>
+	<!-- 初始化时间 -->
+	<bean id="initGfBjSscSession" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initGfBjSscSessionJob" />
+		</property>
+		<!--  每天的x点开始初始化-->
+		<property name="cronExpression">
+			<value>0 0 3 * * ?</value>
+		</property>
+	</bean> 
+
+
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchGfBjSscResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.ssc.bjssc.service.impl.FetchBjSscResult</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfBjSscService"><ref bean="gfBjSscService" /></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="fetchGfBjSscResult1" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfBjSscResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>2 0/5 0-1 * * ?</value>
+		</property>
+	</bean>
+	<bean id="fetchGfBjSscResult" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfBjSscResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/5 09-23 * * ?</value>
+		</property>
+	</bean>
+	
+	
+	<!-- 更新冷热排行-->
+	<bean name="fetchGfBjSscTrendJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.ssc.bjssc.service.impl.UpdateBjSscGaTrend</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfBjSscService"><ref bean="gfBjSscService" /></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="fetchGfBjSscTrend1" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfBjSscTrendJob" />
+		</property>
+		<property name="cronExpression">
+			<value>30 1/5 0-1 * * ?</value>
+		</property>
+	</bean>
+	<bean id="fetchGfBjSscTrend" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchGfBjSscTrendJob" />
+		</property>
+		<property name="cronExpression">
+			<value>30 1/5 09-23 * * ?</value>
+		</property>
+	</bean>
+	
+	
+	<!-- 更新合买-->
+	<bean name="fetchCountGfBjSscJointBetJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.gf.ssc.bjssc.service.impl.CountBjSscJoinBet</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="gfBjSscService"><ref bean="gfBjSscService" /></entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="fetchCountGfBjSscJointBet" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchCountGfBjSscJointBetJob" />
+		</property>
+		<property name="cronExpression">
+			<value>30 4/5 0-1 * * ?</value>
+		</property>
+	</bean>
+    <bean id="fetchCountGfBjSscJointBet1" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchCountGfBjSscJointBetJob" />
+		</property>
+		<property name="cronExpression">
+			<value>30 4/5 22-23 * * ?</value>
+		</property>
+	</bean>
+    <bean id="fetchCountGfBjSscJointBet2" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchCountGfBjSscJointBetJob" />
+		</property>
+		<property name="cronExpression">
+			<value>30 9/10 9-21 * * ?</value>
+		</property>
+	</bean>
+
+
+	<!-- 开奖监控时间 -->
+	<!--<bean id="openGdK10" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="openGdK10Job" />
+		</property>
+		 每天的x点到x点 每x秒钟触发开奖计算，因为要等官方开奖时间，故这里只是更新状态为开奖中
+		<property name="cronExpression">
+			<value>0/5 * 8-22 * * ?</value>
+		</property>
+	</bean>-->
+
+	<!-- 自动投注触发器(不用管) -->
+	<!-- <bean id="autoBetK10" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="autoBetK10Job" />
+		</property>
+		每天的9点到23点 每5分钟触发，具体说明见附录
+		<property name="cronExpression">
+			<value>0 2/5 8-23 * * ?</value>
+		</property>
+	</bean> -->
+
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initGfBjSscSession" />
+				<ref local="fetchGfBjSscResult"/>
+				<ref local="fetchGfBjSscResult1"/>
+				
+				<ref local="fetchCountGfBjSscJointBet"/>	
+				<ref local="fetchCountGfBjSscJointBet1"/>	
+				<ref local="fetchCountGfBjSscJointBet2"/>	
+				
+				<ref local="fetchGfBjSscTrend"/>
+				<ref local="fetchGfBjSscTrend1"/>
+				
+				<!--<ref local="monitorGdK10" />			
+				<ref local="openGdK10" />-->
+			</list>
+		</property>
+	</bean>
+</beans>

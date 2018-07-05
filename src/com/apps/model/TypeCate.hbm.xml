@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.apps.model.TypeCate" 
+    table="type_cate"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="typeCateId"
+        type="java.lang.Integer"
+        column="type_cate_id"
+    >
+        <generator class="identity"/>
+    </id>
+
+    <property
+        name="title"
+        type="java.lang.String"
+        column="title"
+        length="50"
+    />
+    <property
+        name="type"
+        type="java.lang.String"
+        column="type"
+        length="2"
+    />
+     <property
+        name="status"
+        type="java.lang.String"
+        column="status"
+        length="1"
+    />
+    <property
+        name="remarks"
+        type="java.lang.String" 
+        column="remarks"
+    />
+ 	
+</class>
+</hibernate-mapping>

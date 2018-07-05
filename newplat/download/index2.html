@@ -1,0 +1,27 @@
+﻿﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<title>App Download</title>
+<script type="text/javascript">
+// 	var ios="https://itunes.apple.com/cn/app/jingpos/id939954647?ls=1&mt=8";
+	var ios="http://fir.im/jgm3";
+	var android="http://boocaen.boguyuan.com/booca/download/BooCA.apk";
+	if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+	  //第三方
+	 window.location.href = ios;
+	} else if (/(Android)/i.test(navigator.userAgent)) {
+	    window.location.href =android;
+	} else {
+		document.write("<div style='padding:15px;text-align:center;'><a href='"+ios+"'>苹果版下载</a> | <a href='"+android+"'>安卓版下载</a></div>");
+	};
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.jc.model.JcMatch" table="jc_match">
+		<cache usage="read-write" />
+		<id name="mId" type="java.lang.Integer" column="m_id">
+			<generator class="identity" />
+		</id>
+       <property name="title" type="java.lang.String" column="title" length="100" />
+       <property name="team1Name" type="java.lang.String" column="team1_name" length="50"/>
+       <property name="team1Img" type="java.lang.String" column="team1_img" length="200"/>
+       <property name="team2Name" type="java.lang.String" column="team2_name" length="50"/>
+       <property name="team2Img" type="java.lang.String" column="team2_img" length="200"/>
+       <property name="subTitle" type="java.lang.String" column="sub_title" length="200" />
+       <property name="openTime" type="java.util.Date" column="open_time"/>
+       <property name="matchTime" type="java.util.Date" column="match_time"/>
+       <property name="boNum" type="java.lang.Integer" column="BO_num" length="11"/>
+       <property name="red" type="java.lang.String" column="red" length="50" />
+       <property name="blue" type="java.lang.String" column="blue" length="50" />
+       <property name="type" type="java.lang.String" column="type" length="1" />
+       <property name="rercentage" type="java.lang.String" column="rercentage" length="50" />
+       <property name="totalPrice" type="java.math.BigDecimal" column="total_price" length="12" />
+       <property name="tId1" type="java.lang.Integer" column="t_id1" length="11"/>
+       <property name="tId2" type="java.lang.Integer" column="t_id2" length="11"/>
+       <property name="isRecommend" type="java.lang.String" column="is_recommend" length="1"/>
+	</class>
+</hibernate-mapping>

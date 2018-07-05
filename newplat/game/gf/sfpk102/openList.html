@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content=""> 
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../js/mui/mui.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../css/loaders.css" />
+<script type="text/javascript" src="../../js/move.js?v=gf2018052805"></script>
+<script type="text/javascript" src="js/sfpk102.js?v=gf2018052805"></script>
+<script type="text/javascript" src="../../js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="../../js/components/mode-ecb.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/mui/mui.min.css">
+<link type="text/css" rel="stylesheet" href="../../css/base.css?v=gf2018052805" />
+<link type="text/css" rel="stylesheet" href="css/sfpk102.css?v=gf2018052805" />
+<title>历史开奖</title>
+<script type="text/javascript">
+move.width=$(window).width();
+$(document).ready(function(){
+	move.hideHeader();
+});
+</script>
+</head>
+<body>
+<div class="ga-view">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">历史开奖</h1>
+	</header>
+	<div class="main-content main-content-view">
+		<div class="margin-top-header"></div>
+		
+		<div id="content" class="list-box  mui-scroll-wrapper bxs-pages">
+			<div class="mui-scroll">
+				<ul class="open-list-box" id="dataList">
+				</ul>
+			</div>
+		</div>
+		<div class="not-data">
+			<img src="../../images/empty.png">
+			<p class="not-data-lable">没有找到数据</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+mui.init({
+	  pullRefresh : {
+	    container:'#content',
+	    up : {
+	      height:100,
+	      auto:true,
+	      callback:lotteryObj.openlist,
+	    }
+	  }
+});
+mui.ready(function() {
+	if (mui.os.plus) {
+		mui.plusReady(function() {
+			setTimeout(function() {
+				mui('#content').pullRefresh().pullupLoading();
+			}, 1000);
+		});
+	} else {
+		mui.ready(function() {
+			mui('#content').pullRefresh().pullupLoading();
+		});
+	}
+});
+</script>
+</body>
+</html>

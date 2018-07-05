@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class 
+    name="com.apps.model.Address" 
+    table="address"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="id"
+        type="java.lang.Integer"
+        column="id"
+    >
+        <generator class="identity"/>
+    </id>
+    <property
+        name="userId"
+        type="java.lang.Integer"
+        column="user_id"
+        length="8"
+    />
+    <property
+        name="userName"
+        type="java.lang.String"
+        column="user_name"
+        length="20"
+    />
+     <property
+        name="createTime"
+        type="java.util.Date"
+        column="create_time"
+    />
+    <property
+        name="address"
+        type="java.lang.String"
+        column="address"
+        length="100"
+    />
+    <property
+        name="cellPhone"
+        column="cell_phone"
+        type="java.lang.String"
+        length="20"/>
+     <property
+        name="isDef"
+        type="java.lang.String"
+        column="is_def"
+         length="1"
+    />
+    <!-- 
+     <property
+        name="gender"
+        type="java.lang.String"
+        column="gender"
+         length="1"
+    />
+     -->
+</class>
+</hibernate-mapping>

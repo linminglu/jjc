@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.CalenderAlert" 
+    table="CALENDER_ALERT"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="calenderAlertId"
+        type="java.lang.Integer"
+        column="CALENDER_ALERT_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_CALENDER_ALERT</param>
+        </generator>
+    </id>
+
+    <property
+        name="calenderTitle"
+        type="java.lang.String"
+        column="CALENDER_TITLE"
+        length="200"
+    />
+    <property
+        name="calenderContent"
+        type="java.lang.String"
+        column="CALENDER_CONTENT"
+        length="2000"
+    />
+    <property
+        name="actionDate"
+        type="java.sql.Date"
+        column="ACTION_DATE"
+        length="7"
+    />
+    <property
+        name="alertAheadDays"
+        type="java.lang.Integer"
+        column="ALERT_AHEAD_DAYS"
+        length="4"
+    />
+    <property
+        name="calendarType"
+        type="java.lang.String"
+        column="CALENDAR_TYPE"
+        length="1"
+    />
+    <property
+        name="isAlert"
+        type="java.lang.String"
+        column="IS_ALERT"
+        length="1"
+    />
+    <property
+        name="isEmailAlert"
+        type="java.lang.String"
+        column="IS_EMAIL_ALERT"
+        length="1"
+    />
+    <property
+        name="isOnlineMessageAlert"
+        type="java.lang.String"
+        column="IS_ONLINE_MESSAGE_ALERT"
+        length="1"
+    />
+    <property
+        name="isMobileMessageAlert"
+        type="java.lang.String"
+        column="IS_MOBILE_MESSAGE_ALERT"
+        length="1"
+    />
+    <property
+        name="createUserId"
+        type="java.lang.Integer"
+        column="CREATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="createUserName"
+        type="java.lang.String"
+        column="CREATE_USER_NAME"
+        length="50"
+    />
+    <property
+        name="sendDateTime"
+        type="java.util.Date"
+        column="SEND_DATE_TIME"
+        length="7"
+    />
+ <property
+        name="scheduleCourseId"
+        type="java.lang.Integer"
+        column="SCHEDULE_COURSE_ID"
+        length="10"
+    />
+    
+     <property
+        name="userId"
+        type="java.lang.Integer"
+        column="RECIEVE_USER_ID"
+        length="8"
+    />
+    
+  
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

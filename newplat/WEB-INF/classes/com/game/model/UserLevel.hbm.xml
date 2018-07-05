@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.UserLevel" table="user_level">
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="identity" />
+		</id>
+       <property name="levelName" type="java.lang.String" column="level_name" length="50" />
+       <property name="point" type="java.math.BigDecimal" column="point" length="7" />
+       <property name="award" type="java.math.BigDecimal" column="award" length="7" />
+       <property name="level" type="java.lang.String" column="level" length="2" />
+	</class>
+</hibernate-mapping>

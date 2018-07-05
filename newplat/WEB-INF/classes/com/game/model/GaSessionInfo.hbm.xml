@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaSessionInfo" table="ga_session_info">
+		<cache usage="read-write" />
+		<id name="infoId" type="java.lang.Integer" column="info_id">
+			<generator class="identity" />
+		</id>
+       <property name="gameTitle" type="java.lang.String" column="game_title" length="50" />
+       <property name="gameType" type="java.lang.String" column="game_type" length="2" />
+       <property name="gameCode" type="java.lang.String" column="game_code" length="16" />
+       <property name="gameSet" type="java.lang.String" column="game_set" length="80" />
+       <property name="latestSessionNo" type="java.lang.String" column="latest_session_no" length="50" />
+       <property name="openSessionNo" type="java.lang.String" column="open_session_no" length="50" />
+       <property name="openResult" type="java.lang.String" column="open_result" length="100" />
+       <property name="endTime" type="java.util.Date" column="end_time" />
+       <property name="img" type="java.lang.String" column="img" length="200" />
+       <property name="sort" type="java.lang.Integer" column="sort" length="2" />
+       <property name="status" type="java.lang.String" column="status" length="1" />
+       <property name="des" type="java.lang.String" column="des" length="200" />
+       <property name="exp" type="java.lang.String" column="exp" length="100" />
+	   <property name="betAvoid" type="java.lang.String" column="bet_avoid" length="1" />
+	   <property name="isShowHistoryOpen" type="java.lang.String" column="is_show_history_open" length="1" />
+	   <property name="isShow" type="java.lang.String" column="is_show" length="1" />
+		<property name="kaicaiUrl" type="java.lang.String" column="kaicai_url" length="200" />
+       <property name="caipiaoUrl" type="java.lang.String" column="caipiao_url" length="200" />
+       <property name="urlSwitch" type="java.lang.String" column="url_switch" length="1" />
+        <property name="playCate" type="java.lang.String" column="play_cate" length="1" />
+	</class>
+</hibernate-mapping>

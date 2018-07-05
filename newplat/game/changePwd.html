@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/mui/mui.min.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="js/me.js"></script>
+<script type="text/javascript" src="js/md5.js"></script>
+<script type="text/javascript" src="js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="js/components/mode-ecb.js"></script>
+<link type="text/css" rel="stylesheet" href="css/mui/mui.min.css" />
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="css/me.css" />
+<link type="text/css" rel="stylesheet" href="css/loaders.css" />
+<title>修改登录密码</title>
+<script type="text/javascript">
+if(move.width>640){
+	move.width=540;
+}
+$(document).ready(function(){
+	if(move.user.u==null){
+		baseObj.openLogin();
+	}
+	move.hideHeader();
+});
+</script>
+</head>
+<body>
+<div class="main-content main-content-view">
+	<header class="mui-bar mui-bar-nav ">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">修改登录密码</h1>
+	</header>
+	<div class="greyline"></div>
+	<div class="password-box" style="overflow: hidden;">
+		<div class="mui-input-row mui-password">
+			<input type="password" id="oldpwd" class="mui-input-password" maxlength="12" placeholder="请输入旧密码">
+		</div>
+		<div class="mui-input-row mui-password">
+			<input type="password" id="newpwd" class="mui-input-password" maxlength="12" placeholder="请输入新密码">
+		</div>
+		<div class="mui-input-row mui-password">
+			<input type="password" id="newpwd2" class="mui-input-password" maxlength="12" placeholder="请确认新密码">
+		</div>
+		<a href="retrievePwd.html" style="color: black;float: right;">忘记旧密码?</a>
+	</div>
+	<div class="btn-box">
+		<input type="button" onclick="meObj.changePwd();" id="savebtn" class="btn" value="保存"/>
+	</div>
+</div>
+</body>
+</html>

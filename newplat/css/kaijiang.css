@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+.results {}
+.results .caption { color: #333;background: #fcfcfc;font-size: 14px;text-indent: 5px;line-height: 35px;text-align: left;border-bottom: 1px solid #ba2636;}
+.results table {width: 100%;border-spacing: 0;}
+.results thead tr th:nth-last-child(1) {width: 90px;}
+.results thead tr th {border-bottom: 1px solid #ebedec;color: #717171;}
+.results thead tr th:nth-child(1) {width: 55px;}
+.results thead tr th:nth-child(2) {width: 100px;}
+.results thead tr th:nth-child(3) {width: 120px;}
+.results thead tr th:nth-child(4) {width: 160px;}
+.results thead tr th:nth-last-child(1) {width: 90px;}
+.results thead tr th:nth-last-child(2) {width: 50px;}
+.results thead tr th:nth-last-child(3) {width: 160px;}
+.results tbody tr td {border-bottom: 1px dotted #ddd;color: #717171;}
+.results .ball {background: #e60000;color: white;}
+.results .ball.blue {background: #3e8be7;}
+.results .ball.yellow {background: #ff8e33;}
+
+.results thead tr th {text-align: center;line-height: 40px;font-weight: normal;border-bottom: 1px solid #ebedec; color: #717171;}
+.results tbody tr td {border-bottom: 1px dotted #ddd;color: #717171;text-align: center;line-height: 50px;vertical-align: middle;}
+.results tbody tr td .open-number{text-align: center;}
+.results tbody tr td.kinds-logo img{width: 32px;display: block;margin-left: 10px;}
+.results table tbody:last-child tr:last-child td {border-bottom: none;}
+
+.kinds-menu {width: 190px;float: left;border: 1px solid#bc2218;}
+.kinds-menu .title{height: 32px;line-height: 32px;background-color:#E92433;color: #fff;padding-left: 10px;}
+.kinds-menu h3 {background: url(../images/static/lottery_category_bg.gif) 0 0 no-repeat;width: 180px;height: 24px;line-height: 24px;text-indent: 5px;margin: 10px auto;font-size: 13px;}
+.kinds-menu h3 * {vertical-align: middle;margin-right: 5px;}
+.kinds-menu ul {margin: 10px 0 10px 30px;padding: 0;}
+.kinds-menu ul li {background: url(../images/li_row01.gif) left center no-repeat;list-style: none;margin: 0;line-height: 2.0em;padding-left: 15px;}
+.kinds-menu ul li a:hover {color: #e60012;}
+
+.results .data-box {width: 790px;float: right;background: url(../images/kjxq_box02_bg.jpg) left top repeat-x;border: #cccccc 1px solid;padding: 0px 14px 8px 14px;margin-bottom: 10px;}
+.results .data-box{}
+.results .data-box .info {border-bottom: #CCCCCC 1px dashed;padding: 3px 0px 5px 0px;margin-bottom: 20px;}
+.results .data-box .info img {height: 45px;}
+.results .data-box .info span {top: -10px;position: relative;margin-left: 10px;}
+
+
+.history table {border-collapse: inherit;border-spacing: 1px;background: #cccccc;font-size: 12px;width: 550px;margin: 0 auto 10px;}
+.history table caption {line-height: 30px;text-align: left;border-width: 1px 1px 0 1px;border-style: solid;border-color: #ccc;text-indent: 10px;background: #f5f5f5;}
+.history table thead tr th {line-height: 30px;font-weight: normal;background: #f5f5f5;}
+.history table tbody tr td {border-bottom: none;color: #333333;background: white;padding: 5px;line-height: 19px;text-align: center;}
+.history thead tr th:nth-last-child(3) {width: 80px;}
+
+
+
+
+
+
+

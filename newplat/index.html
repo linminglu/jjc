@@ -1,0 +1,744 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content=""> 
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/unslider.min.js"></script>
+<script type="text/javascript" src="js/mui/mui.min.js"></script>
+<script type="text/javascript" src="js/move.js?v=2018031301"></script>
+<script type="text/javascript" src="/js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="/js/components/mode-ecb.js"></script>
+<script type="text/javascript" src="js/index.js?v=2018031301"></script>
+<script type="text/javascript" src="/js/trade.js?v=2018031301"></script>
+<link type="text/css" rel="stylesheet" href="css/mui/mui.min.css">
+<link type="text/css" rel="stylesheet" href="css/base.css?v=2018031301" />
+<link type="text/css" rel="stylesheet" href="css/index.css?v=2018031301" />
+<title>长城彩票</title>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	indexObj.init();
+	tradeObj.showSession();
+});
+</script>
+</head>
+<body>
+	<div class="topline">
+		<div class="maincontent">
+			<div class="loginline">
+				<div class="welcome">您好，欢迎来到长城彩票</div>
+				<div class="login-line">
+					<a id="login" href="#">登录</a>
+					<a id="reg" href="/register.html">免费注册</a>	
+				</div>
+			</div>
+			<div class="logined">
+				<span class="welcome">长城彩票【900300.com】</span>
+				<span class="fr"><a rel="nofollow" href="#">在线客服</a>|<a rel="nofollow" href="#">加入收藏</a></span>
+			</div>
+		</div>
+	</div>
+	<div class="flex-line maincontent">
+		<a href="/" class="logo"><img alt="" src="/file_upload/static/logo_pc.jpg"></a>	
+	</div>
+	<div class="nav-line">
+		<div class="" style="margin: 0 auto; width: 1000px;">
+			<div class="selebox">
+				<span class="selhand">选择彩种 <i class="mui-icon mui-icon-bars"></i></span>
+				<ul class="kinds" id="kinds">
+					<li class="kinds-cell">
+						<a href="/trade/xy/#cqssc">
+							<span class="czlogo"><img src="/images/column/cqssc.png"></span>
+							<span class="kind">重庆时时彩</span>
+							<span class="note">5-10分钟一期</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/xy/#bj3">
+							<span class="czlogo"><img src="/images/column/bj3.png"></span>
+							<span class="kind">北京三分彩</span>
+							<span class="note">5-10分钟一期</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/xy/#poker">
+							<span class="czlogo"><img src="/images/column/poker.png"></span>
+							<span class="kind">快乐扑克3</span>
+							<span class="note">5-10分钟一期</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<span class="session-type">
+							高频彩
+						</span>
+						<div class="session-box">
+							<a href="/trade/xy/#tjssc">
+								<p class="session-title">天津时时彩</p>
+							</a>
+							<a href="/trade/xy/#xjssc">
+								<p class="session-title">新疆时时彩</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/xy/#bjpk10">
+								<p class="session-title">北京赛车</p>
+							</a>
+							<a href="/trade/xy/#sfpk10">
+								<p class="session-title">急速赛车</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/xy/#bjlu28">
+								<p class="session-title">pc蛋蛋</p>
+							</a>
+							<a href="/trade/xy/#xjplu28">
+								<p class="session-title">幸运28</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/sfc/">
+								<p class="session-title">三分彩</p>
+							</a>
+							<a href="/trade/wfc/">
+								<p class="session-title">五分彩</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/xy/#gdk10">
+								<p class="session-title">广东快乐十分</p>
+							</a>
+							<a href="/trade/xy/#gxk10">
+								<p class="session-title">广西快乐十分</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/xy/#marksix">
+								<p class="session-title">香港六合彩</p>
+							</a>
+						</div>
+					</li>
+					<li class="kinds-cell">
+						<span class="session-type yi-xuan-wu">
+							11选5
+						</span>
+						<div class="session-box">
+							<a href="/trade/xy/#gd115">
+								<p class="session-title">广东11选5</p>
+							</a>
+							<a href="/trade/jxpick11/">
+								<p class="session-title">江西11选5</p>
+							</a>
+							<a href="/trade/ahpick11/">
+								<p class="session-title">安徽11选5</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/shpick11/">
+								<p class="session-title">上海11选5</p>
+							</a>
+							<a href="/trade/sdpick11/">
+								<p class="session-title">山东11选5</p>
+							</a>
+						</div>
+					</li>
+					<li class="kinds-cell">
+						<span class="session-type k-three">
+							快3
+						</span>
+						<div class="session-box">
+							<a href="/trade/xy/#jsk3">
+								<p class="session-title">江苏快3</p>
+							</a>
+							<a href="/trade/jxk3/">
+								<p class="session-title">江西快3</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/ahk3/">
+								<p class="session-title">安徽快3</p>
+							</a>
+							<a href="/trade/bjk3/">
+								<p class="session-title">北京快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/gxk3/">
+								<p class="session-title">广西快3</p>
+							</a>
+							<a href="/trade/shk3/">
+								<p class="session-title">上海快3</p>
+							</a>
+						</div>
+						<div class="session-box other-box">
+							<a href="/trade/jlk3/">
+								<p class="session-title">吉林快3</p>
+							</a>
+							<a href="/trade/hubk3/">
+								<p class="session-title">湖北快3</p>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<ul class="menu-box">
+				<li class="menu-cell mui-active"><a class="" href="/index.html">网站首页</a></li>
+				<li class="menu-cell"><a class="" href="/trade">购彩大厅</a></li>
+				<!-- <li class="menu-cell"><a href="/trade/hemai.html">合买大厅</a></li> -->
+				<li class="menu-cell"><a href="/kaijiang/">彩票开奖</a></li>
+				<li class="menu-cell"><a href="/zoushitu/">走势图表</a></li>
+				<li class="menu-cell"><a href="/news/">彩票资讯</a></li>
+				<li class="menu-cell"><a href="/youhui.html">优惠活动</a></li>
+				<li class="menu-cell"><a href="/game" target="view_window">手机购彩</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="float-all-kinds-line">
+		<div class="left-box">
+			<a href="/trade/" class="lottery-type"></a>
+			<a href="#" class="qq-customer"></a>
+			<a href="/user/deposit/" class="fast-recharge"></a>
+			<a class="close"></a>
+		</div>
+		<div class="right-box">
+			<a href="/trade/" class="lottery-type"></a>
+			<a href="#" class="on-line-customer"></a>
+			<a class="close"></a>
+		</div>
+		<!-- <div class="left-box">
+			<div class="kindsbox">
+				<ul class="kinds">
+					<li class="title border-bottom">
+						<a href="javascript:void(0)">
+							<span class="title">信用玩法</span>
+							<span class="ico-hl">信</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/">
+							<span class="czlogo"><img src="/images/column/cqssc.png"></span>
+							<span class="kind">重庆时时彩</span>
+							<span class="note">最火爆~</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/">
+							<span class="czlogo"><img src="/images/column/bj3.png"></span>
+							<span class="kind">北京三分彩</span>
+							<span class="note">最经典~</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/">
+							<span class="czlogo"><img src="/images/column/poker.png"></span>
+							<span class="kind">快乐扑克3</span>
+							<span class="note">最火爆~</span>
+						</a>
+					</li>
+					<li class="kinds-cell kinds-cell-not-img">
+						<div class="session-box">
+							<a href="/trade/xy/#tjssc">
+								<p class="session-title">天津时时彩</p>
+							</a>
+							<a href="/trade/xy/#xjssc">
+								<p class="session-title">新疆时时彩</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/xy/#bjpk10">
+								<p class="session-title">北京赛车</p>
+							</a>
+							<a href="/trade/xy/#sfpk10">
+								<p class="session-title">急速赛车</p>
+							</a>
+						</div>
+					</li>
+					<li class="kinds-cell kinds-cell-not-img">
+						<div class="session-box">
+							<a href="/trade/xy/#bjlu28">
+								<p class="session-title">pc蛋蛋</p>
+							</a>
+							<a href="/trade/xy/#xjplu28">
+								<p class="session-title">幸运28</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/xy/#gdk10">
+								<p class="session-title">广东快乐十分</p>
+							</a>
+							<a href="/trade/xy/#gxk10">
+								<p class="session-title">广西快乐十分</p>
+							</a>
+						</div>
+					</li>
+					<li class="kinds-cell kinds-cell-not-img">
+						<div class="session-box">
+							<a href="/trade/xy/#marksix">
+								<p class="session-title">香港六合彩</p>
+							</a>
+							<a href="/trade/xy/#gd115">
+								<p class="session-title">广东11选5</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/xy/#jsk3">
+								<p class="session-title">江苏快3</p>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="customer">
+							<a>在 线 客 服</a>
+						</div>
+					</li>
+					<li>
+						<div class="qr_code">
+							<img src="/images/static/qr_android.png" />
+						</div>
+						<div class="qr_code_type">
+							下载IOS版
+						</div>
+					</li>
+				</ul>
+				<div class="qr_code_close_bg">
+				</div>
+				<div class="qr_code_close">
+					<a>关闭</a>
+				</div>
+			</div>
+		</div>
+		<div class="right-box">
+			<div class="kindsbox">
+				<ul class="kinds">
+					<li class="title border-bottom">
+						<a href="javascript:void(0)">
+							<span class="title">官方玩法</span>
+							<span class="ico-hl">官</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/">
+							<span class="czlogo"><img src="/images/column/cqssc.png"></span>
+							<span class="kind">重庆时时彩</span>
+							<span class="note">最经典~</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/">
+							<span class="czlogo"><img src="/images/column/three.png"></span>
+							<span class="kind">三分彩</span>
+							<span class="note">最火爆~</span>
+						</a>
+					</li>
+					<li class="kinds-cell">
+						<a href="/trade/">
+							<span class="czlogo"><img src="/images/column/wfc.png"></span>
+							<span class="kind">五分彩</span>
+							<span class="note">最经典~</span>
+						</a>
+					</li>
+					<li class="kinds-cell kinds-cell-not-img">
+						<div class="session-box">
+							<a href="/trade/gd115">
+								<p class="session-title">广东11选5</p>
+							</a>
+							<a href="/trade/jxpick11/">
+								<p class="session-title">江西11选5</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/ahpick11/">
+								<p class="session-title">安徽11选5</p>
+							</a>
+							<a href="/trade/shpick11/">
+								<p class="session-title">上海11选5</p>
+							</a>
+						</div>
+					</li>
+					<li class="kinds-cell kinds-cell-not-img">
+						<div class="session-box">
+							<a href="/trade/sdpick11/">
+								<p class="session-title">山东11选5</p>
+							</a>
+							<a href="/trade/gxk3/">
+								<p class="session-title">广西快3</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/shk3/">
+								<p class="session-title">上海快3</p>
+							</a>
+							<a href="/trade/jlk3/">
+								<p class="session-title">吉林快3</p>
+							</a>
+						</div>
+					</li>
+					<li class="kinds-cell kinds-cell-not-img">
+						<div class="session-box">
+							<a href="/trade/hubk3/">
+								<p class="session-title">湖北快3</p>
+							</a>
+							<a href="/trade/jsk3">
+								<p class="session-title">江苏快3</p>
+							</a>
+						</div>
+						<div class="session-box">
+							<a href="/trade/jxk3/">
+								<p class="session-title">江西快3</p>
+							</a>
+							<a href="/trade/ahk3/">
+								<p class="session-title">安徽快3</p>
+							</a>
+						</div>
+					</li>
+					<li class="kinds-cell kinds-cell-not-img">
+						<div class="session-box">
+							<a href="/trade/bjk3/">
+								<p class="session-title">北京快3</p>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="customer">
+							<a>在 线 客 服</a>
+						</div>
+					</li>
+					<li>
+						<div class="qr_code">
+							<img src="/images/static/qr_android.png" />
+						</div>
+						<div class="qr_code_type">
+							下载安卓版
+						</div>
+					</li>
+				</ul>
+				<div class="qr_code_close_bg">
+				</div>
+				<div class="qr_code_close">
+					<a>关闭</a>
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<div class="banner-box">
+		<div class="banner-wrap">
+			<div class="ga-ver-qr">
+				<div class="hbox">
+					<div class="hbox-line">
+						<span class="title-version mui-active" data="1">Android版</span>
+						<span class="title-version" data="2">iOS版</span>
+					</div>
+					<div class="code" id="a-code">
+						<img src="/file_upload/static/qr_android.png"/>
+						<div class="notes">
+							扫一扫二维码下载Android版
+						</div>
+					</div>
+					<div class="code i-code" id="i-code">
+						<img src="/file_upload/static/qr_android.png"/>
+						<div class="notes">
+							扫一扫二维码下载IOS版
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="banner" id="slider" style="width:765px;">
+			    <ul>
+			        <li><a href="#"><img src="/images/static/adguoqing.jpg" style="width:765px;height:230px;"></a></li>
+			    </ul>
+			</div>
+		</div>
+<!-- 		<div class="news-box"> -->
+<!-- 			<div class="tab"> -->
+<!-- 				<span class="tabname active" data="gg">网站公告</span> -->
+<!-- 				<span class="tabname" data="help">帮助中心</span> -->
+<!-- 			</div> -->
+<!-- 			<ul class="news-help" id="gg"> -->
+<!-- 				<li><a href="#" target="_blank">手机APP上线公告！</a></li> -->
+<!-- 				<li><a href="#" target="_blank">微信、支付宝自助充值通道恢复公告</a></li> -->
+<!-- 				<li><a href="#" target="_blank">关于充值问题</a></li> -->
+<!-- 			</ul> -->
+<!-- 			<ul class="news-help" id="help"> -->
+<!-- 				<li><a href="#" target="_blank">银行提款需要注意什么？</a></li> -->
+<!-- 			</ul> -->
+<!-- 		</div> -->
+	</div>
+	<div class="maincontent indexcontent">
+		<div class="leftcontent">
+			<div class="hbox kjgg">
+				<div class="title">
+					<span class="main">开奖公告</span>
+					<a class="more" href="/kaijiang/">更多&gt;&gt;</a>
+				</div>
+				<div class="data-box">
+					<ul class="caizhongkj">
+					</ul>
+				</div>
+			</div>
+			<div class="hbox paihangbang">
+				<div class="title">
+					<span class="main">排行榜</span>
+					<span class="subtitle paihangtab selected" data="allph">总排行榜</span>
+					<span class="subtitle paihangtab" data="zhouph">周排行榜</span>
+					<span class="subtitle paihangtab" data="riph">日排行榜</span>
+				</div>
+				<div class="data-box" id="paihangbox">
+					<ul class="paihangbangdata" id="allph">
+					</ul>
+					<ul class="paihangbangdata" id="zhouph">
+					</ul>
+					<ul class="paihangbangdata" id="riph">
+					</ul>
+				</div>
+			</div>
+			<div class="hbox paihangbang">
+				<div class="title">
+					<span class="main">彩票走势图</span>
+				</div>
+				<div class="data-box" >
+					<img class="zoushiimg" src="/images/static/zoushitu.png">
+					<div class="linkwb">
+						<a href="/trade/ssq/">双色球</a>
+						<a href="/trade/cqssc/">重庆时时彩</a>
+						<a href="/trade/sanfencai/">三分彩</a>
+						<a href="/trade/wufencai/">五分彩</a>
+						<a href="/trade/gd115/">广东11选5</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rightcontent">
+			<div class="goucaibox">
+				<div class="title">
+					<span>购买彩票</span>
+					<span class="icobox"><i class="ico ico-8"></i>快速购彩</span>
+					<span class="icobox"><i class="ico ico-m"></i>抽取红包</span>
+					<!-- <span class="icobox"><i class="ico ico-8h"></i>合买</span> -->
+				</div>
+				<div class="lottery-hot-box">
+					<ul class="">
+						<li class="lottery-hot">
+							<div class="tabs">
+								<span class="lable">热门:</span>
+								<span class="tab active" data="hotbj3">北京3三分彩</span>
+								<span class="tab" data="hotcqssc">重庆时时彩</span>
+								<span class="tab" data="hotxjplu28">幸运28</span>
+							</div>
+							<div class="contents" id="hotbj3">
+								<p class="">
+									<span class="kind">北京3三分彩</span>
+									<span class="note">5-10分钟一期</span>
+								</p>
+								<p>参与人数最多的彩种2元赢取1000万！</p>			
+								<a class="btn btn-buy" href="/trade/xy/#bj3">立即投注</a>				
+							</div>
+							<div class="contents" id="hotcqssc">
+								<p class="">
+									<span class="kind">重庆时时彩</span>
+									<span class="note">每天120期哦</span>
+								</p>
+								<p>10分钟一期，全天120期！</p>			
+								<a class="btn btn-buy" href="/trade/xy/#cqssc">立即投注</a>				
+							</div>
+							<div class="contents" id="hotxjplu28">
+								<p class="">
+									<span class="kind">幸运28</span>
+									<span class="note">新加坡幸运28</span>
+								</p>
+								<p>猜对一个号就中奖</p>			
+								<a class="btn btn-buy" href="/trade/xy/#xjplu28">立即投注</a>				
+							</div>
+						</li>
+						<li class="lottery-hot">
+							<div class="tabs">
+								<span class="lable">高频彩:</span>
+								<span class="tab active" data="hottjssc">天津时时彩</span>
+								<span class="tab" data="hotxjssc">新疆时时彩</span>
+								<span class="tab" data="hotsfpk10">急速赛车</span>
+							</div>
+							<div class="contents" id="hottjssc">
+								<p class="">
+									<span class="kind">天津时时彩</span>
+									<span class="note">3分钟一期</span>
+								</p>
+								<p>3分钟一期，全天420期！</p>			
+								<a class="btn btn-buy" href="/trade/xy/#tjssc">立即投注</a>				
+							</div>
+							<div class="contents" id="hotxjssc">
+								<p class="">
+									<span class="kind">新疆时时彩</span>
+									<span class="note">3分钟一期</span>
+								</p>
+								<p>3分钟一期，全天420期！</p>			
+								<a class="btn btn-buy" href="/trade/xy/#xjssc">立即投注</a>				
+							</div>
+							<div class="contents" id="hotsfpk10">
+								<p class="">
+									<span class="kind">急速赛车</span>
+									<span class="note">每天120期哦</span>
+								</p>
+								<p>10分钟一期，全天120期！</p>			
+								<a class="btn btn-buy" href="/trade/xy/#sfpk10">立即投注</a>				
+							</div>
+						</li>
+						<li class="lottery-hot">
+							<div class="tabs">
+								<span class="lable">数字彩:</span>
+								<span class="tab active" data="hotgdk10">广东快乐十分</span>
+								<span class="tab" data="hotgxk10">广东快乐十分</span>
+								<span class="tab" data="hotgd115">广东11选5</span>
+							</div>
+							<div class="contents" id="hotgdk10">
+								<p class="">
+									<span class="kind">广东快乐十分</span>
+									<span class="note">3分钟一期</span>
+								</p>
+								<p>3分钟一期，全天420期！</p>	
+								<a class="btn btn-buy" href="/trade/xy/#gdk10">立即投注</a>				
+							</div>
+							<div class="contents" id="hotgxk10">
+								<p class="">
+									<span class="kind">广东快乐十分</span>
+									<span class="note">5分钟一期</span>
+								</p>
+								<p>5分钟一期，全天240期！</p>			
+								<a class="btn btn-buy" href="/trade/xy/#gxk10">立即投注</a>				
+							</div>
+							<div class="contents" id="hotgd115">
+								<p class="">
+									<span class="kind">广东11选5</span>
+									<span class="note">每天120期哦</span>
+								</p>
+								<p>10分钟一期，全天120期！</p>			
+								<a class="btn btn-buy" href="/trade/xy/#gd115">立即投注</a>				
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="winning-box">
+					<div class="hbox">
+						<div class="title">
+							<span class="main">最新中奖</span>
+						</div>
+						<div class="data-box winningslider winning-line">
+							<!-- 最新中奖 -->
+							<ul class="slider" id="newwinbox">
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="ad ad1">
+				<img alt="" src="/images/static/adindexcenter.jpg">
+			</div>
+			<!-- 推荐合买 -->
+			<!-- <div class="groupbuy">
+				<div class="tabs flexbox">
+					<a data="" class="current">合买推荐</a> 
+					<a data="13">双色球</a> 
+					<a data="3">重庆时时彩</a> 
+					<a data="15">三分彩</a> 
+					<a data="14">五分彩</a> 
+					<a data="9">广东11选5</a> 
+					<a href="/trade/hemai.html" class="more">合买大厅&gt;&gt;</a>
+				</div>
+				<div class="contents">
+					<table>
+						<thead>
+							<tr>
+								<th>排序</th>
+								<th>彩种</th> 
+								<th>发起人</th> 
+								<th>战绩</th> 
+								<th>方案金额</th> 
+								<th>|</th> 
+								<th>剩余份数</th> 
+								<th>进度</th> 
+								<th>认购份数</th> 
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="hemaidatabox">
+						</tbody>
+					</table>
+				</div>
+			</div> -->
+			<!-- 新闻 -->
+			<div class="news">
+				<h2>彩票资讯</h2>
+				<div class="columns-2" id="newsbox">
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<!-- 脚 -->
+	<footer>
+		<div class="maincontent">
+			<div class="logos">
+				<img src="/images/static/wljc.gif">
+				<img src="/images/static/wangan.gif">
+				<img src="/images/static/wsjy.gif">
+				<img src="/images/static/xylh.gif">
+				<img src="/images/static/kxwz.gif">
+			</div>
+			<div class="copyright"></div>
+		</div>
+	</footer>
+	<div id="kefubox"></div>
+<script type="text/javascript">
+(function(jQuery){
+    jQuery.fn.myScroll = function(options){
+    //默认配置
+    var defaults = {
+        speed:40,  //滚动速度,值越大速度越慢
+        rowHeight:24 //每行的高度
+    };
+    var opts = jQuery.extend({}, defaults, options),intId = [];
+    function marquee(obj, step){
+        obj.find("ul").animate({
+            marginTop: '-=1'
+        },0,function(){
+                var s = Math.abs(parseInt(jQuery(this).css("margin-top")));
+                if(s >= step){
+                    jQuery(this).find("li").slice(0, 1).appendTo(jQuery(this));
+                    jQuery(this).css("margin-top", 0);
+                }
+            });
+        }
+        this.each(function(i){
+            var sh = opts["rowHeight"],speed = opts["speed"],_this = jQuery(this);
+            intId[i] = setInterval(function(){
+                if(_this.find("ul").height()<=_this.height()){
+                    clearInterval(intId[i]);
+                }else{
+                    marquee(_this, sh);
+                }
+            }, speed);
+            _this.hover(function(){
+                clearInterval(intId[i]);
+            },function(){
+                intId[i] = setInterval(function(){
+                    if(_this.find("ul").height()<=_this.height()){
+                        clearInterval(intId[i]);
+                    }else{
+                        marquee(_this, sh);
+                    }
+                }, speed);
+            });
+        });
+    }
+})(jQuery);
+//滚动插件
+jQuery(document).ready(function(){
+	jQuery(".winningslider").myScroll({speed:40,rowHeight:22});
+});
+</script>
+</body>
+</html>

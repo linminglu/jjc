@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class
+    name="com.ram.model.UserLimit" 
+    table="user_limit"
+>
+    <id
+        name="id"
+        type="integer"
+        column="id"
+        length="1"
+    >
+        <generator class="identity"/>
+    </id>
+    
+    <property
+        name="uid"
+        type="integer"
+        column="uid"
+        length="11"
+    />
+    <property
+        name="betMoney"
+        type="java.math.BigDecimal"
+        column="bet_money"
+    />
+    <property
+        name="betMoneyStatus"
+        type="string"
+        column="bet_money_status"
+        length="2"
+    />
+    <property
+        name="cashTip"
+        type="string"
+        column="cash_tip"
+        length="50"
+    />
+    <property
+        name="cashMessage"
+        type="string"
+        column="cash_message"
+        length="2"
+    />
+    <property
+        name="loginName"
+        type="string"
+        column="login_name"
+        length="50"
+    />
+    <property
+        name="createTime"
+        type="java.util.Date"
+        column="create_time"
+    />  
+</class>
+</hibernate-mapping>

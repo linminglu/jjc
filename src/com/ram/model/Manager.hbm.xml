@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.Manager" 
+    table="MANAGER"
+	lazy="true"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="managerId"
+        type="java.lang.Integer"
+        column="MANAGER_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_MANAGER</param>
+        </generator>
+    </id>
+
+    <property
+        name="tcId"
+        type="java.lang.Integer"
+        column="TC_ID"
+        length="8"
+    />
+    <property
+        name="address"
+        type="java.lang.String"
+        column="ADDRESS"
+        length="200"
+    />
+    <property
+        name="postCode"
+        type="java.lang.String"
+        column="POST_CODE"
+        length="6"
+    />
+    <property
+        name="mobile"
+        type="java.lang.String"
+        column="MOBILE"
+        length="20"
+    />
+    <property
+        name="homePhone"
+        type="java.lang.String"
+        column="HOME_PHONE"
+        length="20"
+    />
+    <property
+        name="msn"
+        type="java.lang.String"
+        column="MSN"
+        length="50"
+    />
+    <property
+        name="qq"
+        type="java.lang.String"
+        column="QQ"
+        length="20"
+    />
+    <property
+        name="birthday"
+        type="java.util.Date"
+        column="BIRTHDAY"
+        length="7"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to User -->
+    <many-to-one
+        name="user"
+        class="com.ram.model.User"
+		unique="true"
+		lazy="false"
+		outer-join="true"
+		cascade="all"
+    >
+        <column name="USER_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

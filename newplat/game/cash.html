@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/b.min.js?v=hp2018052805"></script>
+<script type="text/javascript" src="js/h.min.js?v=hp2018052805"></script>
+<link type="text/css" rel="stylesheet" href="css/h.min.css?v=hp2018052805"/>
+<title>提现</title>
+<script type="text/javascript">
+$(document).ready(function(){
+	meObj.cityList();
+	meObj.bankList();
+	indexObj.money();
+	move.hideHeader();
+});
+</script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav ">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">提现</h1>
+	</header>
+<div class="main-content main-content-view">
+	<div id="regnewbox">
+	</div>
+	<div class="login-form">
+	    <div class="mui-input-row">
+	    	<label class="prompt">提现方式</label>
+			<input type="text" disabled value="" id="cashType" class="login-input mui-input-clear cash-input"/> 
+		</div>
+		<p class="line-grey"></p>
+		
+		<div class="mui-input-row mui-navigate-right" id="bank">
+	    	<label class="prompt">所属银行</label>
+			<span type="text" id="bank-data-text" class="login-input mui-input-clear cash-input fr">请选择</span>
+			<input type="hidden" value="" id="bank-data-val">
+		</div>
+		
+		<p class="line-grey"></p>
+		<div class="mui-input-row mui-navigate-right" id="city">
+	    	<label class="prompt">开户行城市</label>
+			<span type="text" id="city-data-text" class="login-input mui-input-clear cash-input fr">请选择</span>
+			<input type="hidden" value="" id="city-data-val">
+		</div>
+		<p class="line-grey"></p>
+		<div class="mui-input-row">
+	    	<label class="prompt">银行卡卡号</label>
+			<input maxlength="20" oninput="value=value.replace(/[^\d]/g,'')" oncopy="value=value.replace(/[^\d]/g,'')" type="text" id="accountNo" placeholder="请输入账号" class="login-input mui-input-clear cash-input" style="padding-right: 35px;" /> 
+		</div>
+		<p class="line-grey"></p>
+		<div class="mui-input-row">
+	    	<label class="prompt">账户姓名</label>
+			<input maxlength="20"  type="text" id="userName" placeholder="请输入账户姓名" class="login-input mui-input-clear cash-input" style="padding-right: 35px;"/> 
+		</div>
+		<p class="line-grey"></p>
+		<div class="mui-input-row">
+	    	<label class="prompt">提款密码</label>
+			<input maxlength="20" type="password" id="cashPassword" placeholder="请输入提款密码" class="login-input mui-input-clear cash-input" style="padding-right: 35px;"/> 
+		</div>
+		<p class="line-grey"></p>
+		<div class="cashMoney">
+	    	<p class="prompt2">提款金额(元)</p>
+			<span class="rmb">￥</span><input oninput="value=value.replace(/[^\d]/g,'')" oncopy="value=value.replace(/[^\d]/g,'')" maxlength="8" type="tel" style="padding-left: 35px;" placeholder="单笔最少100" id="cashMoney" class="login-input"/>
+		</div>
+		<p class="line-grey"></p>
+		<input type="text" class="login-input" style="color: #FC2F00;" disabled id="userMoney" value="可提款金额：￥"/>
+		<div class="btn-box">
+			<input type="button" value="确定" id="confirm" class="btn btn-orange">
+		</div>
+	</div>
+</div>
+<script type="text/javascript"  src="js/mui/mui.picker.js"></script>
+<script type="text/javascript"  src="js/mui/mui.poppicker.js"></script>
+<script type="text/javascript"  src="js/mui/mui.view.js"></script>
+<link type="text/css" rel="stylesheet" href="css/mui/mui.picker.css"/>
+<link type="text/css" rel="stylesheet" href="css/mui/mui.poppicker.css"/>
+</body>
+</html>

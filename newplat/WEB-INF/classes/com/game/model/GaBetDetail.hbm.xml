@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaBetDetail" table="ga_bet_detail">
+		<cache usage="read-write" />
+		<id name="betDetailId" type="java.lang.Integer" column="bet_detail_id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="8" />
+       <property name="betId" type="java.lang.Integer" column="bet_id" length="11" />
+       <property name="betOptionId" type="java.lang.Integer" column="bet_option_id" length="11" />
+       <property name="sessionId" type="java.lang.Integer" column="session_id" length="11" />
+       <property name="betTime" type="java.util.Date" column="bet_time" />
+       <property name="betMoney" type="java.lang.Integer" column="bet_money" length="8" />
+       <property name="winResult" type="java.lang.String" column="win_result" length="1" />
+       <property name="winCash" type="java.math.BigDecimal" column="win_cash" length="10" />
+       <property name="betFlag" type="java.lang.String" column="bet_flag" length="1" />
+       
+          <property name="batchNum" type="java.lang.String" column="batch_num" length="10" />
+          <property name="gameName" type="java.lang.String" column="game_name" length="20" />
+          <property name="playName" type="java.lang.String" column="play_name" length="20" />
+          <property name="sessionNo" type="java.lang.String" column="session_no" length="20" />
+          <property name="betName" type="java.lang.String" column="bet_name" length="20" />
+          <property name="room" type="java.lang.String" column="room" length="10" />
+          <property name="betRate" type="java.math.BigDecimal" column="bet_rate" length="10" />
+          <property name="gameType" type="java.lang.String" column="game_type" length="10" />
+          <property name="optionTitle" type="java.lang.String" column="option_title" length="10" />
+           <property name="paperMoney" type="java.math.BigDecimal" column="paper_money" length="10" />
+          <property name="payoff" type="java.math.BigDecimal" column="payoff" length="10" />
+           <property name="countStatus" type="java.lang.String" column="count_status" length="1" />
+           <property name="optionIds" type="java.lang.String" column="option_ids" length="50" />
+           <property name="openResult" type="java.lang.String" column="open_result" length="60" />
+           <property name="betType" type="java.lang.String" column="bet_type" length="2" />
+           <property name="orderNum" type="java.lang.String" column="order_num" length="60" />
+           <property name="isAddNo" type="java.lang.String" column="is_add_no" length="2" />
+           <property name="isPrivacy" type="java.lang.String" column="is_privacy" length="2" />
+           <property name="loginName" type="java.lang.String" column="login_name" length="50" />
+	
+			<property name="oneMoney" type="java.math.BigDecimal" column="one_money" length="10" />
+			<property name="twoMoney" type="java.math.BigDecimal" column="two_money" length="10" />
+			<property name="threeMoney" type="java.math.BigDecimal" column="three_money" length="10" />
+			<property name="fourMoney" type="java.math.BigDecimal" column="four_money" length="10" />
+			<property name="fiveMoney" type="java.math.BigDecimal" column="five_money" length="10" />  
+       
+       		<property name="type" type="java.lang.String" column="type" length="2" />
+	</class>
+</hibernate-mapping>

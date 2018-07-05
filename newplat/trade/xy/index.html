@@ -1,0 +1,244 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content=""> 
+<!-- <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"> -->
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/js/mui/mui.min.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="/js/trade.js"></script>
+<!-- 使用信用玩法js -->
+<script type="text/javascript" src="js/trade.js"></script>
+<script type="text/javascript" src="/js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="/js/components/mode-ecb.js"></script>
+<!-- <script type="text/javascript" src="../js/cqssc.js?t=1"></script> -->
+<link type="text/css" rel="stylesheet" href="/css/mui/mui.min.css">
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="css/trade.css" />
+<link type="text/css" rel="stylesheet" href="css/ball_2.css" />
+<link type="text/css" rel="stylesheet" href="css/ball_3.css" />
+<link type="text/css" rel="stylesheet" href="css/main_n1.css" />
+<link type="text/css" rel="stylesheet" href="css/xy.css" />
+<link type="text/css" rel="stylesheet" href="/css/base.css?v=2018031301" />
+<title>购彩大厅-苹果彩票</title>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	lotteryObj.init();
+	tradeObj.showSession();
+});
+</script>
+</head>
+<body>
+	<div class="topline">
+		<div class="maincontent">
+			<div class="loginline">
+				<div class="welcome">您好，欢迎来到苹果彩票</div>
+				<div class="login-line">
+					<a id="login" href="#">登录</a>
+					<a id="reg" href="/register.html">免费注册</a>	
+				</div>
+			</div>
+			<div class="logined">
+				<span class="welcome">苹果彩票【pg55.cc】</span>
+				<span class="fr"><a rel="nofollow" href="#">在线客服</a>|<a rel="nofollow" href="#">加入收藏</a></span>
+			</div>
+		</div>
+	</div>
+	<div class="flex-line maincontent">
+		<a href="/" class="logo"><img alt="" src="/images/static/logo.jpg"></a>		
+		
+		<!--<a class="kf"><img alt="" src="/images/static/cs.gif"></a>-->
+	</div>
+	<div class="nav-line">
+		<div class="" style="margin: 0 auto; width: 1100px;">
+			<div class="selebox">
+				<span class="selhand">选择彩种 <i class="mui-icon mui-icon-bars"></i></span>
+				<ul class="kinds" id="kinds">
+				</ul>
+			</div>
+			<ul class="menu-box">
+				<li class="menu-cell"><a class="" href="/">网站首页</a></li>
+				<li class="menu-cell mui-active"><a class="" href="/trade">购彩大厅</a></li>
+				<!-- <li class="menu-cell"><a href="/trade/hemai.html">合买大厅</a></li> -->
+				<li class="menu-cell"><a href="/kaijiang/">彩票开奖</a></li>
+				<li class="menu-cell"><a href="/zoushitu/">走势图表</a></li>
+				<li class="menu-cell"><a href="/news/">彩票资讯</a></li>
+				<li class="menu-cell"><a href="/youhui.html">优惠活动</a></li>
+				<li class="menu-cell"><a href="/game">手机购彩</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="maincontent margintop10">
+		<div class="head-box">
+			<div class="logo"><img src="/images/column/cqssc.png"></div>
+			<div class="info">
+				<span class="project-lottery">5-10分钟一期，全天120期！</span> 
+				<span class="project-lottery">
+					<a class="saleing">正在销售 </a> 
+				</span> 
+				<span class="project-lottery">
+					<a class="xy-a" style="display:none" href="#">官方玩法</a> 
+				</span> 
+				 <input id="openStatus" type="hidden" value="1"/>
+			</div>
+			<div class="time">
+				<div class="project-countdown-hfl">
+					<div class="b-top-tips-cur">
+						<strong class="red">
+						<span id="sessionNo">000000000</span>期
+						</strong><br> <strong>离投注截止还有</strong>
+					</div>
+					<div id="countDownDiv" class="b-top-tips-time">
+					<strong id="hour" style="display:none" >00</strong>   
+					<strong id="minute">00</strong> <b>分</b><strong id="sec">00</strong> <b>秒</b></div>
+				</div> 
+				<div class="zoushi">
+					<a href="/zoushitu/cqssc/">号码走势</a>&nbsp;|&nbsp;<a href="/help/0.html">玩法介绍</a>
+				</div>
+			</div>
+		</div>	
+		<div>
+			<div class="leftbox ">
+				<div class="select-area" id="play1">
+					<p class="middle tabs level2 cate_menu">
+						<!--  -->
+					</p> 
+					<div >
+						<div class="cont-col3-hd clearfix">
+		                    <div class="cont-col3-box2">
+		                        <span>预设金额</span>
+		                        <input type="number" class="bet-money">
+		<!--                         <button href="javascript:void(0)" class="u-btn1 submitbtn" >下注</button> -->
+		<!--                         <button href="javascript:void(0)" class="u-btn1 clean">重填</button> -->
+		                    </div>
+		                </div>
+		                <!-- 弹出框，下注提示 -->
+		                <div class="el-dialog__wrapper bet-box" style="display: none;">
+		                    <div class="el-dialog el-dialog--small bet-modal" style="top: 15%;">
+		                        <div class="el-dialog__header">
+		                            <span class="el-dialog__title">下注明细 (请确认注单)</span>
+		                            <div id="confirm-box"></div>
+		                            <button type="button" aria-label="Close" class="el-dialog__headerbtn">
+		                                <i class="el-dialog__close el-icon el-icon-close"></i>
+		                            </button>
+		                        </div>
+		                    </div>
+		                </div>
+						<div class="select-mode modebox bet-panel" id="g11">
+							
+						</div> 
+						<div class="buttons">
+							<a class="confirm submitbtn" type="1">确认选号<img src="/images/static/down.png"></a> 
+							<a class="clean" type="1">清空选号<img src="/images/static/clean.png"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<!-- 右侧 -->
+			<div class="rightbox">
+				<div class="latest">
+					<div class="title">最新开奖</div>
+					<div class="tips">
+						<span class="gametype">重庆时时彩</span>第 <span class="sessionNo"></span> 期 开奖
+					</div>
+					<div class="open-number">
+						<span class="num bg-red">?</span><span class="num bg-red">?</span><span class="num bg-red">?</span><span class="num bg-red">?</span><span class="num bg-red">?</span>
+					</div>
+				</div>
+				<div class="results">
+					<table><thead>
+						<tr><th>期号</th> 
+							<th colspan="5">开奖号码</th>
+		<!-- 					<th>十位</th> -->
+		<!-- 					<th>个位</th> -->
+		<!-- 					<th>后三</th> -->
+						</tr></thead> 
+						<tbody id="poenlistbox">
+						</tbody>
+					</table>
+				</div>
+				
+				<div class="winning">
+					<h3 class="title">重庆时时彩中奖排行</h3> 
+					<table><thead>
+						<tr>
+							<th>排名</th> 
+							<th>用户名</th> 
+							<th>中奖奖金</th>
+						</tr></thead> 
+						<tbody id="winninglist">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 脚 -->
+	<footer>
+		<div class="maincontent">
+			<section class="help">
+				<div class="security">
+					<div><img src="/images/static/security.png"><span>安全购彩</span></div>
+					<ul>
+						<li>交易安全</li>
+						<li>购买便捷</li>
+						<li>派奖快速</li>
+					</ul>
+				</div>
+				<div class="deposit">
+					<div><img src="/images/static/deposit.png"><span>充值指南</span></div>
+					<ul>
+						<li><a href="/help/63.html">充值方式</a></li>
+						<li><a href="/help/74.html">在线充值</a></li>
+						<li><a href="/help/66.html">修改真实姓名</a></li>
+						<li><a href="/help/65.html">修改银行卡</a></li>
+					</ul>
+				</div>
+				<div class="withdraw">
+					<div><img src="/images/static/withdraw.png"><span>提款帮助</span></div>
+					<ul>
+						<li><a href="/help/71.html">如何提款</a></li>
+						<li><a href="/help/69.html">到账时间</a></li>
+						<li><a href="/help/68.html">银行提款费率</a></li>
+						<li><a href="/help/70.html">提款注意</a></li>
+					</ul>
+				</div>
+				<div class="question">
+					<div><img src="/images/static/question.png"><span>常见问题</span></div>
+					<ul>
+						<li><a href="/help/48.html">如何注册网站会员</a></li>
+						<li><a href="/help/49.html">注册时需注意什么</a></li>
+						<li><a href="/help/57.html">如何注销会员帐户</a></li>
+						<li><a href="/help/54.html">密码忘记了怎么办</a></li>
+					</ul>
+				</div>
+				<div class="contact">
+					<div><img src="/images/static/contact.png"><span>联系我们</span></div>
+					<ul>
+						<li>电话：</li>
+						<li>QQ：</li>
+						<li>版权所有:</li>
+						<li>苹果彩票</li>
+					</ul>
+				</div>
+			</section>
+			<div class="logos">
+				<img src="/images/static/wljc.gif">
+				<img src="/images/static/wangan.gif">
+				<img src="/images/static/wsjy.gif">
+				<img src="/images/static/xylh.gif">
+				<img src="/images/static/kxwz.gif">
+			</div>
+			<div class="copyright"></div>
+		</div>
+	</footer>
+	<div id="kefubox"></div>
+</body>
+</html>

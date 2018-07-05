@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaK3Session" table="ga_k3_session">
+		<cache usage="read-write" />
+		<id name="sessionId" type="java.lang.Integer" column="session_id">
+			<generator class="identity" />
+		</id>
+       <property name="sessionNo" type="java.lang.String" column="session_no" length="10" />
+       <property name="startTime" type="java.util.Date" column="start_time" />
+       <property name="endTime" type="java.util.Date" column="end_time" />
+       <property name="openStatus" type="java.lang.String" column="open_status" length="1" />
+       <property name="openResult" type="java.lang.String" column="open_result" length="15" />
+       <property name="openTime" type="java.util.Date" column="open_time" />
+       <property name="userCount" type="java.lang.Integer" column="user_count" length="8" />
+       <property name="pointCount" type="java.lang.Integer" column="point_count" length="8" />
+       <property name="sessionCash" type="java.lang.Integer" column="session_cash" length="8" />
+	</class>
+</hibernate-mapping>

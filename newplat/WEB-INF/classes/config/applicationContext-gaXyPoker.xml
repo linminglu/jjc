@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pokerDAO" class="com.xy.poker.dao.hibernate.PokerDAOHiberate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="pokerService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.poker.service.impl.PokerServiceImpl">
+	            <property name="pokerDAO"><ref local="pokerDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化 -->
+	<bean name="initPokerSessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.poker.service.impl.InitPokerSession</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="pokerService"><ref bean="pokerService" /></entry>
+			</map>
+		</property>
+	</bean>
+	
+	
+	<!-- 配置触发器定时周期 对应上面的 bean  --> 
+	
+	<!-- 初始化时间 -->
+	<bean id="initPokerSession" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initPokerSessionJob" />
+		</property>
+		<!-- 每天的x点开始初始化 -->
+		<property name="cronExpression">		 
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 开奖监控时间 -->
+	<!-- <bean id="initPokerSession" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initPokerSessionJob" />
+		</property>
+		 每天的x点到x点 每x秒钟触发开奖计算，因为要等官方开奖时间，故这里只是更新状态为开奖中
+		<property name="cronExpression">
+			<value>0/5 * 8-22 * * ?</value>
+		</property>
+	</bean> -->
+
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchPokerResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.poker.service.impl.FetchPokerResult</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="pokerService"><ref bean="pokerService" /></entry>
+			</map>
+		</property>
+	</bean> 
+	
+	<!-- 定时抓去数据 -->
+	<bean id="fetchPokerResult" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchPokerResultJob" />
+		</property>
+		<!-- 每天的x点到x点间隔多少分钟抓取数据  -->
+		<property name="cronExpression">
+			<value>0 2/10 8-23 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initPokerSession" />
+				<ref local="fetchPokerResult"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+</beans>

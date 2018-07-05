@@ -1,0 +1,202 @@
+[G][05-31 09:05:00][gfbjssc] timer launch .....
+[G][05-31 09:10:00][gfbjssc] timer launch .....
+[G][05-31 09:15:00][gfbjssc] timer launch .....
+[G][05-31 09:20:00][gfbjssc] timer launch .....
+[G][05-31 09:25:00][gfbjssc] timer launch .....
+[G][05-31 09:30:00][gfbjssc] timer launch .....
+[G][05-31 09:35:00][gfbjssc] timer launch .....
+[G][05-31 09:40:00][gfbjssc] timer launch .....
+[G][05-31 09:45:00][gfbjssc] timer launch .....
+[G][05-31 09:50:00][gfbjssc] timer launch .....
+[G][05-31 09:55:00][gfbjssc] timer launch .....
+[G][05-31 10:00:00][gfbjssc] timer launch .....
+[G][05-31 10:05:00][gfbjssc] timer launch .....
+[G][05-31 10:10:00][gfbjssc] timer launch .....
+[G][05-31 10:15:00][gfbjssc] timer launch .....
+[G][05-31 10:20:00][gfbjssc] timer launch .....
+[G][05-31 10:25:00][gfbjssc] timer launch .....
+[G][05-31 14:00:00][gfbjssc] timer launch .....
+[G][05-31 15:45:00][gfbjssc] timer launch .....
+[G][05-31 15:45:10][gfbjssc] fetching ..... [180531105],openTime=2018-05-31 15:45:00[1/80]
+[G][05-31 15:45:10][gfbjssc] fetching ..... [180531105],openTime=2018-05-31 15:45:00[2/80]
+[G][05-31 15:45:15][gfbjssc] fetching ..... [180531105],openTime=2018-05-31 15:45:00[3/80]
+[G][05-31 15:45:21][gfbjssc] fetching ..... [180531105],openTime=2018-05-31 15:45:00[4/80]
+[G][05-31 15:45:21][gfbjssc] RESULTS  _____ [180531105]=>3,4,7,7,1
+[G][05-31 15:45:29][gfbjssc] update trade detail status...180531100
+[G][05-31 15:45:34][gfbjssc] update trade detail status...180531101
+[G][05-31 15:45:39][gfbjssc] update trade detail status...180531102
+[G][05-31 15:45:45][gfbjssc] update trade detail status...180531103
+[G][05-31 15:45:51][gfbjssc] update trade detail status...180531104
+[G][05-31 15:45:56][gfbjssc] update trade detail status...180531105
+[G][05-31 15:45:57][gfbjssc] SUCCESS  _^_^_ [180531105][36123ms]
+[G][05-31 15:50:00][gfbjssc] timer launch .....
+[G][05-31 16:00:00][gfbjssc] timer launch .....
+[G][05-31 16:05:00][gfbjssc] timer launch .....
+[G][05-31 16:05:05][gfbjssc] fetching ..... [180531109],openTime=2018-05-31 16:05:00[1/80]
+[G][05-31 16:05:06][gfbjssc] fetching ..... [180531109],openTime=2018-05-31 16:05:00[2/80]
+[G][05-31 16:05:10][gfbjssc] fetching ..... [180531109],openTime=2018-05-31 16:05:00[3/80]
+[G][05-31 16:05:21][gfbjssc] fetching ..... [180531109],openTime=2018-05-31 16:05:00[4/80]
+[G][05-31 16:05:21][gfbjssc] RESULTS  _____ [180531109]=>2,6,8,0,9
+[G][05-31 16:05:28][gfbjssc] update trade detail status...180531106
+[G][05-31 16:11:15][gfbjssc] timer launch .....
+[G][05-31 16:11:21][gfbjssc] fetching ..... [180531110],openTime=2018-05-31 16:10:00[1/80]
+[G][05-31 16:11:21][gfbjssc] RESULTS  _____ [180531110]=>7,5,3,7,6
+[G][05-31 16:11:29][gfbjssc] update trade detail status...180531110
+[G][05-31 16:11:37][gfbjssc] SUCCESS  _^_^_ [180531110][15620ms]
+[G][05-31 16:20:00][gfbjssc] timer launch .....
+[G][05-31 16:20:06][gfbjssc] fetching ..... [180531112],openTime=2018-05-31 16:20:00[1/80]
+[G][05-31 16:20:07][gfbjssc] fetching ..... [180531112],openTime=2018-05-31 16:20:00[2/80]
+[G][05-31 16:20:12][gfbjssc] fetching ..... [180531112],openTime=2018-05-31 16:20:00[3/80]
+[G][05-31 16:20:18][gfbjssc] fetching ..... [180531112],openTime=2018-05-31 16:20:00[4/80]
+[G][05-31 16:20:22][gfbjssc] fetching ..... [180531112],openTime=2018-05-31 16:20:00[5/80]
+[G][05-31 16:20:27][gfbjssc] fetching ..... [180531112],openTime=2018-05-31 16:20:00[6/80]
+[G][05-31 16:20:32][gfbjssc] fetching ..... [180531112],openTime=2018-05-31 16:20:00[7/80]
+[G][05-31 16:20:32][gfbjssc] RESULTS  _____ [180531112]=>9,7,3,7,2
+[G][05-31 16:20:38][gfbjssc] update trade detail status...180531111
+[G][05-31 16:20:42][gfbjssc] update trade detail status...180531112
+[G][05-31 16:20:43][gfbjssc] SUCCESS  _^_^_ [180531112][11112ms]
+[G][05-31 16:25:00][gfbjssc] timer launch .....
+[G][05-31 16:25:06][gfbjssc] fetching ..... [180531113],openTime=2018-05-31 16:25:00[1/80]
+[G][05-31 16:25:07][gfbjssc] fetching ..... [180531113],openTime=2018-05-31 16:25:00[2/80]
+[G][05-31 16:25:11][gfbjssc] fetching ..... [180531113],openTime=2018-05-31 16:25:00[3/80]
+[G][05-31 16:25:18][gfbjssc] fetching ..... [180531113],openTime=2018-05-31 16:25:00[4/80]
+[G][05-31 16:25:18][gfbjssc] RESULTS  _____ [180531113]=>6,4,6,5,9
+[G][05-31 16:25:23][gfbjssc] update trade detail status...180531113
+[G][05-31 16:25:25][gfbjssc] SUCCESS  _^_^_ [180531113][7134ms]
+[G][05-31 16:30:00][gfbjssc] timer launch .....
+[G][05-31 16:30:26][gfbjssc] fetching ..... [180531114],openTime=2018-05-31 16:30:00[1/80]
+[G][05-31 16:30:32][gfbjssc] fetching ..... [180531114],openTime=2018-05-31 16:30:00[2/80]
+[G][05-31 16:30:32][gfbjssc] RESULTS  _____ [180531114]=>5,9,4,9,5
+[G][05-31 16:30:51][gfbjssc] update trade detail status...180531114
+[G][05-31 16:31:01][gfbjssc] SUCCESS  _^_^_ [180531114][28917ms]
+[G][05-31 16:35:00][gfbjssc] timer launch .....
+[G][05-31 16:35:44][gfbjssc] fetching ..... [180531115],openTime=2018-05-31 16:35:00[1/80]
+[G][05-31 16:35:44][gfbjssc] RESULTS  _____ [180531115]=>4,0,2,1,4
+[G][05-31 16:35:59][gfbjssc] update trade detail status...180531115
+[G][05-31 16:36:04][gfbjssc] SUCCESS  _^_^_ [180531115][20445ms]
+[G][05-31 16:40:00][gfbjssc] timer launch .....
+[G][05-31 16:40:02][gfbjssc] fetching ..... [180531116],openTime=2018-05-31 16:40:00[1/80]
+[G][05-31 16:40:11][gfbjssc] fetching ..... [180531116],openTime=2018-05-31 16:40:00[2/80]
+[G][05-31 16:40:12][gfbjssc] fetching ..... [180531116],openTime=2018-05-31 16:40:00[3/80]
+[G][05-31 16:40:17][gfbjssc] fetching ..... [180531116],openTime=2018-05-31 16:40:00[4/80]
+[G][05-31 16:40:23][gfbjssc] fetching ..... [180531116],openTime=2018-05-31 16:40:00[5/80]
+[G][05-31 16:40:58][gfbjssc] fetching ..... [180531116],openTime=2018-05-31 16:40:00[6/80]
+[G][05-31 16:40:58][gfbjssc] RESULTS  _____ [180531116]=>6,2,1,0,4
+[G][05-31 16:41:04][gfbjssc] update trade detail status...180531116
+[G][05-31 16:41:06][gfbjssc] SUCCESS  _^_^_ [180531116][8115ms]
+[G][05-31 16:45:00][gfbjssc] timer launch .....
+[G][05-31 16:45:03][gfbjssc] fetching ..... [180531117],openTime=2018-05-31 16:45:00[1/80]
+[G][05-31 16:45:09][gfbjssc] fetching ..... [180531117],openTime=2018-05-31 16:45:00[2/80]
+[G][05-31 16:45:17][gfbjssc] fetching ..... [180531117],openTime=2018-05-31 16:45:00[3/80]
+[G][05-31 16:45:17][gfbjssc] RESULTS  _____ [180531117]=>4,8,1,0,4
+[G][05-31 16:45:24][gfbjssc] update trade detail status...180531117
+[G][05-31 16:45:25][gfbjssc] SUCCESS  _^_^_ [180531117][7785ms]
+[G][05-31 16:50:00][gfbjssc] timer launch .....
+[G][05-31 16:50:13][gfbjssc] fetching ..... [180531118],openTime=2018-05-31 16:50:00[1/80]
+[G][05-31 16:50:14][gfbjssc] fetching ..... [180531118],openTime=2018-05-31 16:50:00[2/80]
+[G][05-31 16:50:24][gfbjssc] fetching ..... [180531118],openTime=2018-05-31 16:50:00[3/80]
+[G][05-31 16:50:24][gfbjssc] RESULTS  _____ [180531118]=>7,9,2,1,5
+[G][05-31 16:51:08][gfbjssc] update trade detail status...180531118
+[G][05-31 16:51:10][gfbjssc] SUCCESS  _^_^_ [180531118][45145ms]
+[G][05-31 16:55:00][gfbjssc] timer launch .....
+[G][05-31 16:55:59][gfbjssc] fetching ..... [180531119],openTime=2018-05-31 16:55:00[1/80]
+[G][05-31 16:55:59][gfbjssc] RESULTS  _____ [180531119]=>9,0,2,3,1
+[G][05-31 16:56:10][gfbjssc] update trade detail status...180531119
+[G][05-31 16:56:12][gfbjssc] SUCCESS  _^_^_ [180531119][13073ms]
+[G][05-31 17:00:00][gfbjssc] timer launch .....
+[G][05-31 17:00:27][gfbjssc] fetching ..... [180531120],openTime=2018-05-31 17:00:00[1/80]
+[G][05-31 17:00:27][gfbjssc] RESULTS  _____ [180531120]=>3,7,0,9,3
+[G][05-31 17:00:36][gfbjssc] update trade detail status...180531120
+[G][05-31 17:00:38][gfbjssc] SUCCESS  _^_^_ [180531120][10367ms]
+[G][05-31 18:25:00][gfbjssc] timer launch .....
+[G][05-31 18:25:02][gfbjssc] fetching ..... [180531137],openTime=2018-05-31 18:25:00[1/80]
+[G][05-31 18:25:05][gfbjssc] fetching ..... [180531137],openTime=2018-05-31 18:25:00[2/80]
+[G][05-31 18:25:13][gfbjssc] fetching ..... [180531137],openTime=2018-05-31 18:25:00[3/80]
+[G][05-31 18:25:13][gfbjssc] RESULTS  _____ [180531137]=>7,5,1,3,4
+[G][05-31 18:25:18][gfbjssc] update trade detail status...180531121
+[G][05-31 18:25:22][gfbjssc] update trade detail status...180531122
+[G][05-31 18:25:25][gfbjssc] update trade detail status...180531123
+[G][05-31 18:25:29][gfbjssc] update trade detail status...180531124
+[G][05-31 18:25:33][gfbjssc] update trade detail status...180531125
+[G][05-31 18:25:37][gfbjssc] update trade detail status...180531126
+[G][05-31 18:25:41][gfbjssc] update trade detail status...180531127
+[G][05-31 18:25:45][gfbjssc] update trade detail status...180531128
+[G][05-31 18:25:49][gfbjssc] update trade detail status...180531129
+[G][05-31 18:25:52][gfbjssc] update trade detail status...180531130
+[G][05-31 18:25:55][gfbjssc] update trade detail status...180531131
+[G][05-31 18:25:59][gfbjssc] update trade detail status...180531132
+[G][05-31 18:26:03][gfbjssc] update trade detail status...180531133
+[G][05-31 18:26:06][gfbjssc] update trade detail status...180531134
+[G][05-31 18:26:09][gfbjssc] update trade detail status...180531135
+[G][05-31 18:26:12][gfbjssc] update trade detail status...180531136
+[G][05-31 18:26:16][gfbjssc] update trade detail status...180531137
+[G][05-31 18:26:17][gfbjssc] SUCCESS  _^_^_ [180531137][64015ms]
+[G][05-31 18:30:00][gfbjssc] timer launch .....
+[G][05-31 18:30:06][gfbjssc] fetching ..... [180531138],openTime=2018-05-31 18:30:00[1/80]
+[G][05-31 18:30:06][gfbjssc] fetching ..... [180531138],openTime=2018-05-31 18:30:00[2/80]
+[G][05-31 18:30:11][gfbjssc] fetching ..... [180531138],openTime=2018-05-31 18:30:00[3/80]
+[G][05-31 18:30:16][gfbjssc] fetching ..... [180531138],openTime=2018-05-31 18:30:00[4/80]
+[G][05-31 18:30:21][gfbjssc] fetching ..... [180531138],openTime=2018-05-31 18:30:00[5/80]
+[G][05-31 18:30:39][gfbjssc] fetching ..... [180531138],openTime=2018-05-31 18:30:00[6/80]
+[G][05-31 18:30:39][gfbjssc] RESULTS  _____ [180531138]=>8,6,5,8,7
+[G][05-31 18:30:44][gfbjssc] update trade detail status...180531138
+[G][05-31 18:30:45][gfbjssc] SUCCESS  _^_^_ [180531138][6148ms]
+[G][05-31 18:35:00][gfbjssc] timer launch .....
+[G][05-31 18:35:03][gfbjssc] fetching ..... [180531139],openTime=2018-05-31 18:35:00[1/80]
+[G][05-31 18:35:05][gfbjssc] fetching ..... [180531139],openTime=2018-05-31 18:35:00[2/80]
+[G][05-31 18:35:12][gfbjssc] fetching ..... [180531139],openTime=2018-05-31 18:35:00[3/80]
+[G][05-31 18:35:16][gfbjssc] fetching ..... [180531139],openTime=2018-05-31 18:35:00[4/80]
+[G][05-31 18:35:21][gfbjssc] fetching ..... [180531139],openTime=2018-05-31 18:35:00[5/80]
+[G][05-31 18:35:21][gfbjssc] RESULTS  _____ [180531139]=>9,9,8,2,1
+[G][05-31 18:35:25][gfbjssc] update trade detail status...180531139
+[G][05-31 18:35:27][gfbjssc] SUCCESS  _^_^_ [180531139][5836ms]
+[G][05-31 18:40:00][gfbjssc] timer launch .....
+[G][05-31 18:40:04][gfbjssc] fetching ..... [180531140],openTime=2018-05-31 18:40:00[1/80]
+[G][05-31 18:40:12][gfbjssc] fetching ..... [180531140],openTime=2018-05-31 18:40:00[2/80]
+[G][05-31 18:40:13][gfbjssc] fetching ..... [180531140],openTime=2018-05-31 18:40:00[3/80]
+[G][05-31 18:40:18][gfbjssc] fetching ..... [180531140],openTime=2018-05-31 18:40:00[4/80]
+[G][05-31 18:40:18][gfbjssc] RESULTS  _____ [180531140]=>3,8,0,9,0
+[G][05-31 18:40:22][gfbjssc] update trade detail status...180531140
+[G][05-31 18:40:23][gfbjssc] SUCCESS  _^_^_ [180531140][5304ms]
+[G][05-31 18:45:00][gfbjssc] timer launch .....
+[G][05-31 18:45:03][gfbjssc] fetching ..... [180531141],openTime=2018-05-31 18:45:00[1/80]
+[G][05-31 18:45:07][gfbjssc] fetching ..... [180531141],openTime=2018-05-31 18:45:00[2/80]
+[G][05-31 18:45:14][gfbjssc] fetching ..... [180531141],openTime=2018-05-31 18:45:00[3/80]
+[G][05-31 18:45:20][gfbjssc] fetching ..... [180531141],openTime=2018-05-31 18:45:00[4/80]
+[G][05-31 18:45:20][gfbjssc] RESULTS  _____ [180531141]=>1,7,4,7,6
+[G][05-31 18:45:24][gfbjssc] update trade detail status...180531141
+[G][05-31 18:45:26][gfbjssc] SUCCESS  _^_^_ [180531141][6262ms]
+[G][05-31 18:50:00][gfbjssc] timer launch .....
+[G][05-31 18:50:07][gfbjssc] fetching ..... [180531142],openTime=2018-05-31 18:50:00[1/80]
+[G][05-31 18:50:08][gfbjssc] fetching ..... [180531142],openTime=2018-05-31 18:50:00[2/80]
+[G][05-31 18:50:13][gfbjssc] fetching ..... [180531142],openTime=2018-05-31 18:50:00[3/80]
+[G][05-31 18:50:18][gfbjssc] fetching ..... [180531142],openTime=2018-05-31 18:50:00[4/80]
+[G][05-31 18:50:23][gfbjssc] fetching ..... [180531142],openTime=2018-05-31 18:50:00[5/80]
+[G][05-31 18:50:29][gfbjssc] fetching ..... [180531142],openTime=2018-05-31 18:50:00[6/80]
+[G][05-31 18:50:33][gfbjssc] fetching ..... [180531142],openTime=2018-05-31 18:50:00[7/80]
+[G][05-31 18:50:33][gfbjssc] RESULTS  _____ [180531142]=>2,7,1,2,3
+[G][05-31 18:50:39][gfbjssc] update trade detail status...180531142
+[G][05-31 18:50:41][gfbjssc] SUCCESS  _^_^_ [180531142][7643ms]
+[G][05-31 18:55:00][gfbjssc] timer launch .....
+[G][05-31 18:55:04][gfbjssc] fetching ..... [180531143],openTime=2018-05-31 18:55:00[1/80]
+[G][05-31 18:55:05][gfbjssc] fetching ..... [180531143],openTime=2018-05-31 18:55:00[2/80]
+[G][05-31 18:55:11][gfbjssc] fetching ..... [180531143],openTime=2018-05-31 18:55:00[3/80]
+[G][05-31 18:55:16][gfbjssc] fetching ..... [180531143],openTime=2018-05-31 18:55:00[4/80]
+[G][05-31 18:55:16][gfbjssc] RESULTS  _____ [180531143]=>1,5,7,0,7
+[G][05-31 18:55:20][gfbjssc] update trade detail status...180531143
+[G][05-31 18:55:21][gfbjssc] SUCCESS  _^_^_ [180531143][5584ms]
+[G][05-31 19:00:00][gfbjssc] timer launch .....
+[G][05-31 19:00:00][gfbjssc] fetching ..... [180531144],openTime=2018-05-31 19:00:00[1/80]
+[G][05-31 19:00:18][gfbjssc] fetching ..... [180531144],openTime=2018-05-31 19:00:00[2/80]
+[G][05-31 19:00:18][gfbjssc] RESULTS  _____ [180531144]=>7,4,3,6,3
+[G][05-31 19:00:22][gfbjssc] update trade detail status...180531144
+[G][05-31 19:00:23][gfbjssc] SUCCESS  _^_^_ [180531144][4905ms]
+[G][05-31 19:05:00][gfbjssc] timer launch .....
+[G][05-31 19:05:02][gfbjssc] fetching ..... [180531145],openTime=2018-05-31 19:05:00[1/80]
+[G][05-31 19:05:06][gfbjssc] fetching ..... [180531145],openTime=2018-05-31 19:05:00[2/80]
+[G][05-31 19:05:11][gfbjssc] fetching ..... [180531145],openTime=2018-05-31 19:05:00[3/80]
+[G][05-31 19:05:11][gfbjssc] RESULTS  _____ [180531145]=>6,9,9,2,3
+[G][05-31 19:05:15][gfbjssc] update trade detail status...180531145
+[G][05-31 19:05:17][gfbjssc] SUCCESS  _^_^_ [180531145][5443ms]
+[G][05-31 19:10:00][gfbjssc] timer launch .....
+[G][05-31 19:10:04][gfbjssc] fetching ..... [180531146],openTime=2018-05-31 19:10:00[1/80]

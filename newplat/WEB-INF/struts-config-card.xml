@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+   <data-sources />
+   
+   <form-beans >
+   
+     <form-bean name="cardForm" type="com.card.web.form.CardForm"/>
+     <form-bean name="userCardForm" type="com.card.web.form.UserCardForm"/>
+     <form-bean name="rechargeWayForm" type="com.card.web.form.RechargeWayForm"/>
+     
+   </form-beans>
+
+   <!-- ==================================== Global Exceptions -->
+  <global-exceptions>
+	<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  </global-exceptions>
+
+  <!-- ==================================== Global Forwards    -->
+  <global-forwards>
+	 <forward name="exception" path="/_exception.jsp" />
+  </global-forwards>
+	
+   <action-mappings >
+     
+     <action
+         path="/cardAction"
+         parameter="method"
+         validate="false"
+         input="/init.jsp"
+         name="cardForm"
+         attribute="cardForm"
+         scope="request"
+         type="com.card.web.action.CardAction">
+        <forward name="init" path="/CardGiftList.jsp"/>
+        <forward name="initCardItem" path="/cardItemList.jsp"/>
+        <forward name="cardGenerate" path="/cardGenerate.jsp"/>
+        <forward name="cardDetail" path="/cardDetail.jsp"/>
+
+		<forward name="delCardItem" path="/cardAction.do?method=initCardItem" redirect="true"/>
+		<forward name="preAddCardItem" path="/cardAddCardItem.jsp"/>
+		<forward name="saveCardItem" path="/cardAction.do?method=initCardItem" redirect="true"/>
+		<forward name="initCardGift" path="/cardGiftList.jsp"/>
+
+        <forward name="initCardRechargeItem" path="/cardRechargeItemList.jsp"/>
+        <forward name="preAddCardRechargeItem" path="/preAddCardRechargeItem.jsp"/>
+        <forward name="saveCardRechargeItem" path="/cardAction.do?method=initCardRechargeItem"/>
+		<forward name="delCardRechargeItem" path="/cardAction.do?method=initCardRechargeItem"/>
+		<forward name="initROrder" path="/cardRechargeOrderList.jsp"/>
+		<forward name="initofflineOrder" path="/offlineRechargeOrderList.jsp"/>
+		<forward name="viewofflineOrder" path="/offlineOrderView.jsp"/>
+		<forward name="viewCardRechargeOrder" path="/cardRechargeOrderView.jsp"/>
+		<forward name="modifyBalance" path="/cardAction.do?method=initofflineOrder" redirect="true"/>
+		<forward name="refuse" path="/cardAction.do?method=initofflineOrder" redirect="true"/>
+		
+		<forward name="initCardItemOrder" path="/cardItemOrderList.jsp"/>
+		<forward name="deliver" path="/cardAction.do?method=initCardItemOrder" redirect="true"/>
+		<forward name="viewCardItemOrder" path="/cardItemOrderView.jsp"/>
+		<forward name="modifyPayStatus" path="/cardAction.do?method=initROrder" redirect="true"/>
+		
+      </action>
+     
+     <action
+         path="/userCardAction"
+         parameter="method"
+         validate="false"
+         input="/userCard.jsp"
+         name="userCardForm"
+         attribute="userCardForm"
+         scope="request"
+         type="com.card.web.action.UserCardAction">
+        <forward name="userCard" path="/userCard.jsp"/>
+        <forward name="userCardActivate" path="/userCardActivate.jsp"/>
+      </action>
+      
+      
+      <action
+         path="/rechargeWayAction"
+         parameter="method"
+         validate="false"
+         input="/rechargeWay.jsp"
+         name="rechargeWayForm"
+         attribute="rechargeWayForm"
+         scope="request"
+         type="com.card.web.action.RechargeWayAction">
+        <forward name="initRechargeWay" path="/rechargeWay.jsp"/>
+        <forward name="preModify" path="/rechargeWayModify.jsp"/>
+        <forward name="save" path="/rechargeWayAction.do?method=initRechargeWay"/>
+      </action>
+   </action-mappings>
+
+   <message-resources parameter="com.ram.web.ApplicationResources"/>
+
+</struts-config>

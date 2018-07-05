@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.LearnerGroup" 
+    table="LEARNER_GROUP"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="learnerGroupId"
+        type="java.lang.Integer"
+        column="LEARNER_GROUP_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_LEARNER_GROUP</param>
+        </generator>
+    </id>
+
+    <property
+        name="learnerGroupTitle"
+        type="java.lang.String"
+        column="LEARNER_GROUP_TITLE"
+        not-null="true"
+        length="200"
+    />
+        <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+
+    
+    
+    <property
+        name="updateUserLoginName"
+        type="java.lang.String"
+        column="UPDATE_USER_LOGIN_NAME"
+        length="50"
+    />
+    <property
+        name="updateDateTime"
+        type="java.sql.Date"
+        column="UPDATE_DATE_TIME"
+        not-null="true"
+        length="7"
+    />
+
+    <!-- Associations -->
+  
+       
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+.guide { margin: 10px 0;}
+.zoushitu { border: 1px solid #E2E2E2;margin-bottom: 10px;}
+.zoushitu table {width: 100%;border-spacing: 0;}
+.zoushitu .caption {border-bottom: 1px solid #ba2636;background: #fcfcfc;color: #333;font-size: 14px;text-indent: 5px;line-height: 35px;text-align: left;}
+.zoushitu tbody tr td {border-bottom: 1px dotted #ddd;color: #717171;padding: 5px;}
+.zoushitu table tbody tr td:first-child img {width: 56px;}
+
+.promotions img {width: 70%;float: left;}
+.promotions .item {border: 1px solid #ddd;padding: 10px;margin-bottom: 10px;}
+.cover {width: 1000px;display: table-caption;position: relative;}
+.cover p {position: absolute;left: 73%;top: 20px;}
+.cover .new_title {color: #5c8ae5;font-size: 20px;}
+.cover .new_date {padding-top: 25px;}
+.detail{width: 1000px;border-top: 1px solid #ddd;margin-top: 10px;}
+
+.kj_sort {margin: 8px auto 0 auto;width: 1000px;border: 1px solid #DDE7F2;}
+.kj_sort .menu {height: 30px;padding: 5px 10px 0;width: 1000px;background: #e2e2e2;}
+.kj_sort .menu .nav1 {background: #f5f5f5;font-weight: bold; color: #000;}
+.kj_sort .menu li {float: left;height: 30px;line-height: 30px;text-align: center;padding: 0 10px;cursor: pointer;color: #fff;}
+
+.kj_sort .list {background: #f5f5f5;overflow: hidden;margin-top: 10px;}
+.kj_sort .list .left {float: left;padding-left: 13px;margin: 8px;}
+
+.datachart{}
+.datachart .selectbox {background: url(../images/static/bg_tb_02.gif);height: 38px;line-height: 38px;padding: 0px 15px;border: 1px solid #ddd;height: 100%;margin-bottom: 10px;overflow: hidden;}
+.datachart .selectbox .lable{width: 150px;float: left;}
+.datachart .selectbox .select{width: 800px;float: left;}
+.datachart .datalistbox{margin-bottom: 10px;}
+.datachart .datalistbox .title{background-color: #ddd;}
+.datachart .datalistbox table{width: 100%;    border: 1px solid #ccc;background: #fff;font-family: Arial;color: #464646;}
+.datachart .datalistbox tr {background: #F3F2F2;}
+.datachart .datalistbox tr td{text-align: center;font-size: 10px;}
+.wdh{width: 19px;}
+
+
+.redball .ball{color: #d2b0b0;font-weight: 200;display: block;margin: 0 1px;text-align: center;border-radius:50%;font-size: 12px;height: 18px;line-height: 18px;}
+.blueball .ball{color: #8ed9fc;font-weight: 200;display: block;margin: 0 1px;text-align: center;border-radius:50%;font-size: 12px;height: 18px;line-height: 18px;}
+.orangeball .ball{color: #E2B46F;font-weight: 200;display: block;margin: 0 1px;text-align: center;border-radius:50%;font-size: 12px;height: 18px;line-height: 18px;}
+.redHighlight .ball{background-color: #BD5151;color: #fff;}
+.blueHighlight .ball{background-color: #1C74AA;color: #fff;}
+.orangeHighlight .ball{background-color: #E2B46F;color: #fff;}
+.cqssc .ball{width: 11px;margin: 0;}
+.gd115 .blueHighlight .ball{width: 20px;height: 20px;margin: 5px auto;}
+.gd115 tr th{ border-color: #ddd; border-style: solid;border-width: 0 1px 1px 0;}
+.gd115 tr td{ border-color: #ddd; border-style: solid;border-width: 0 1px 1px 0;}
+
+
+.chartIntro {border: 1px solid #ccc;background: #f5f5f5;padding: 10px;margin-top: 10px;line-height: 22px;margin-bottom: 10px;}
+.dataTable thead th {background-color: #f0e5c6;font-weight: 200;}
+.dataTable tr th.bd {width: 1px;background-color: #dbdbdb;font-size: 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

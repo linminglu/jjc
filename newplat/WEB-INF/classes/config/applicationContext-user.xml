@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+	<beans>
+		<bean id="managerPositionDAO" class="com.ram.dao.user.hibernate.ManagerPositionDAOHibernate">
+			<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		</bean>
+		<bean id="userDAO" class="com.ram.dao.user.hibernate.UserDAOHibernate">
+			<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		</bean>
+		<bean id="tutorDAO" class="com.ram.dao.user.hibernate.TutorDAOHibernate">
+			<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		</bean>
+		<bean id="userGroupDAO" class="com.ram.dao.user.hibernate.UserGroupDAOHibernate">
+			<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		</bean>
+		<!--
+		<bean id="userExtendInfoDAO" class="com.ram.dao.user.hibernate.UserExtendInfoDAOHibernate">
+			<property name="sessionFactory">
+				<ref bean="sessionFactory"/>
+			</property>
+		</bean>
+			-->
+	
+		<bean id="learnerDAO" class="com.ram.dao.user.hibernate.LearnerDAOHibernate">
+			<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		</bean>
+		<bean id="businessGroupDAO" class="com.ram.dao.user.hibernate.BusinessGroupDAOHibernate">
+			<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		</bean>		
+	
+		<bean id="learnerGroupDAO" class="com.ram.dao.user.hibernate.LearnerGroupDAOHibernate">
+			<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		</bean>
+		<bean id="paramDAO" class="com.apps.dao.hibernate.ParamDAOHibernate">
+			<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		</bean>
+		<bean id="cashDAO" class="com.cash.dao.hibernate.CashDAOHibernate">
+			<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		</bean>
+		
+		<bean id="managerPositionService" parent="hibernateTransactionProxy">
+			<property name="target">
+				<bean class="com.ram.service.user.impl.ManagerPositionServiceImpl">
+					<property name="managerPositionDAO"><ref local="managerPositionDAO"/></property>
+				</bean>
+			</property>
+		</bean>
+		
+		<bean id="learnerGroupService" parent="hibernateTransactionProxy">
+			<property name="target">
+				<bean class="com.ram.service.user.impl.LearnerGroupServiceImpl">
+					<property name="learnerGroupDAO"><ref local="learnerGroupDAO"/></property>
+				</bean>
+			</property>
+		</bean>	
+		<bean id="userService" parent="hibernateTransactionProxy">
+			<property name="target">
+				<bean class="com.ram.service.user.impl.UserServiceImpl">
+					<property name="tutorDAO"><ref local="tutorDAO"/></property>
+					<property name="userDAO"><ref local="userDAO"/></property>
+					<property name="userGroupDAO"><ref local="userGroupDAO"/></property>
+					<property name="learnerDAO"><ref local="learnerDAO"/></property>
+					<property name="paramDAO"><ref local="paramDAO"/></property>
+					<property name="cashDAO"><ref local="cashDAO"/></property>
+					<property name="baseDataDAO"><ref bean="baseDataDAO"/></property>
+<!-- 					<property name="sellerDAO"><ref bean="sellerDAO"/></property> -->
+				<!--	<property name="betSessionDao"><ref bean="betSessionDao"/></property>
+					<property name="systemProgramDAO"><ref bean="systemProgramDAO"/></property>
+					<property name="semesterDAO"><ref bean="semesterDAO"/></property>
+						-->
+				</bean>
+			</property>
+		</bean>	
+		
+			
+		<!--
+		<bean id="businessGroupService" parent="hibernateTransactionProxy">
+			<property name="target">
+				<bean class="com.ram.service.user.impl.BusinessGroupServiceImpl">
+					<property name="semesterDAO"><ref bean="semesterDAO"/></property>
+					<property name="userGroupDAO"><ref local="userGroupDAO"/></property>
+					<property name="systemProgramDAO"><ref bean="systemProgramDAO"/></property>
+					<property name="businessGroupDAO"><ref local="businessGroupDAO"/></property>					
+				</bean>
+			</property>
+		</bean>	
+		
+		<bean id="userExtendInfoService" parent="hibernateTransactionProxy">
+			<property name="target">
+				<bean class="com.ram.service.user.impl.UserExtendInfoServiceImpl">
+					<property name="userExtendInfoDAO">
+						<ref bean="userExtendInfoDAO"/>
+					</property>
+				</bean>
+			</property>
+		</bean>
+	-->
+	</beans>

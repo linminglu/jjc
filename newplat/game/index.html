@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>苹果彩票</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no" >
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/b.min.js?v=hp2018052805"></script>
+<script type="text/javascript" src="js/h.min.js?v=hp2018052805"></script>
+<link type="text/css" rel="stylesheet" href="css/h.min.css?v=hp2018052805"/>
+<script type="text/javascript">
+$(function(){
+	indexObj.init();
+	if($(".notice-box span")[2].innerText.length>8){
+		$($(".notice-box span")[2]).css("fontSize","15px");
+	}
+	
+	//$("img.lazy").lazyload({effect:"fadeIn"});
+	$(".g-slide-home").css("height",$(".g-slide-home").width()*0.31);
+
+	$(".g-reg-abtn").bind("tap",function(){indexObj.regcc();});
+	//$(".g-reg-abtn").attr("href","javascript:void(0)");
+	$(".g-login-abtn").bind("tap",function(){indexObj.login();});
+	$(".g-sign-abtn").bind("tap",function(){indexObj.signame();});
+	$(".g-recharge-abtn").bind("tap",function(){indexObj.recharge();});
+	move.updateHelper();
+	//tab and group init
+	$("#gfxyTaber ul li").bind("click",function(){
+		var curObj = $(this);
+		curObj.addClass("mui-active");
+		$("#gfxyTaber ul li").each(function(){
+			if($(this).attr("data")!=curObj.attr("data")) $(this).removeClass("mui-active");
+		});
+		if(curObj.attr("data")=="xy"){
+			$($(".tab-group-item")[1]).fadeOut(0);
+			$($(".tab-group-item")[0]).fadeIn(200);
+		}else{
+			$($(".tab-group-item")[0]).fadeOut(0);
+			$($(".tab-group-item")[1]).fadeIn(200);
+		}
+	});
+
+});
+</script>
+</head>       
+<body>
+<div class="ga-view ga-view-home">
+	<div class="noticer">
+		<div class="notice-box">
+			<span class="money-symbol">&yen;</span>
+			<span class="money" id="userMoney">0.00</span>
+			<p>苹果彩票</p>
+			<span>pg55.cc</span>
+		</div>
+	</div>
+	<div class="main-content main-home">
+
+		<div id="slider" class="mui-slider g-slide-home"></div>
+		
+		<div class="login-quick-box">
+			<span class="linkcolumn">
+				<a class="g-login-abtn">登录</a>
+			</span>
+			<span class="linkcolumn">
+				<a class="g-reg-abtn" href="register.html">注册</a>
+			</span>
+			<span class="linkcolumn">
+				<a class="g-sign-abtn">签到</a>
+			</span>
+			<span class="linkcolumn">
+				<a class="g-kefu-abtn">客服</a>
+			</span>
+		</div>
+
+		<div class="mui-content menu-box" id="column">
+		  	<ul class="mui-table-view mui-grid-view mui-grid-9">
+		  		<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+		  			<a class="g-recharge-abtn">
+			        	<span class="mui-icon">
+			        		<img src="images/icon-column-1.png">
+			        	</span>
+			            <div class="mui-media-body">存取款</div>
+			       	</a>
+			    </li>
+		  		<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+		  			<a href="promotionList.html">
+			        	<span class="mui-icon">
+			        		<img src="images/icon-column-2.png">
+			        	</span>
+			            <div class="mui-media-body">优惠活动</div>
+			       	</a>
+			    </li>
+		  		<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+		  			<a href="zoushi.html">
+			        	<span class="mui-icon">
+			        		<img src="images/icon-column-3.png">
+			        	</span>
+			            <div class="mui-media-body">走势</div>
+			       	</a>
+			    </li>
+		  		<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+		  			<a class="g-appdown-abtn">
+			        	<span class="mui-icon">
+			        		<img src="images/icon-column-5.png">
+			        	</span>
+			            <div class="mui-media-body">APP下载</div>
+			       	</a>
+			    </li>
+		  	</ul> 
+		</div>
+		
+		<div class="topline-box " id="topline">
+			<div class="smarticker1 smarticktemp">
+				<ul></ul>
+			</div>
+		</div>
+			
+		<div class="mui-slider caizhong-box">
+			<div class="title-index"><span class="ico"></span>彩种
+				<div class="btnlablebox">
+				<span class="btnlable" id="redpack" style="display: inline;">红包</span>
+				<span class="btnlable" id="turntable" style="display: inline;">转盘</span>
+				</div>
+			</div>
+			<div class="tab-switch-box tab-home" id="gfxyTaber">
+				<ul>
+					<li class="tab-switch-cell mui-col-2 mui-active" data="xy">信用彩票</li>
+					<li class="tab-switch-cell mui-col-2" data="gf">官方彩票</li>
+				</ul>
+			</div>
+			<div class="tab-group" id="gfxyTabGroup">
+				<div class="tab-group-item" data="xy">
+					<ul class="mui-table-view" id="xy-bet-list"><li class="caizhong-cell"><a href="/game/xy/bjpk10"><div class="ico"><img class="lazy" data-original="/images/column/bjpk10.png" src="/images/column/bjpk10.png"></div><div class="name-box"><div class="subtitle">每5分钟一期</div><div class="title">北京赛车</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/sfpk10"><div class="ico"><img class="lazy" data-original="/images/column/sfpk10.png" src="/images/column/sfpk10.png"></div><div class="name-box"><div class="subtitle">每90秒一期</div><div class="title">急速赛车</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/sfpk102"><div class="ico"><img class="lazy" data-original="/images/column/sfpk102.png" src="/images/column/sfpk102.png"></div><div class="name-box"><div class="subtitle">每3分钟一期</div><div class="title">三分PK拾</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/xyft"><div class="ico"><img class="lazy" data-original="/images/column/xyft.png" src="/images/column/xyft.png"></div><div class="name-box"><div class="subtitle">每5分钟一期</div><div class="title">幸运飞艇</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/jsft"><div class="ico"><img class="lazy" data-original="/images/column/jsft.png" src="/images/column/jsft.png"></div><div class="name-box"><div class="subtitle">每90秒一期</div><div class="title">极速飞艇</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/cqssc"><div class="ico"><img class="lazy" data-original="/images/column/cqssc.png" src="/images/column/cqssc.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">重庆时时彩</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/xjssc"><div class="ico"><img class="lazy" data-original="/images/column/xjssc.png" src="/images/column/xjssc.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">新疆时时彩</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/tjssc"><div class="ico"><img class="lazy" data-original="/images/column/tjssc.png" src="/images/column/tjssc.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">天津时时彩</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/bjssc"><div class="ico"><img class="lazy" data-original="/images/column/bjssc.png" src="/images/column/bjssc.png"></div><div class="name-box"><div class="subtitle">每5分钟一期</div><div class="title">北京时时彩</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/bj3"><div class="ico"><img class="lazy" data-original="/images/column/bj3.png" src="/images/column/bj3.png"></div><div class="name-box"><div class="subtitle">每7分钟一期</div><div class="title">三分彩</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/five"><div class="ico"><img class="lazy" data-original="/images/column/wfc.png" src="/images/column/wfc.png"></div><div class="name-box"><div class="subtitle">每5分钟一期</div><div class="title">五分彩</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/xjplu28"><div class="ico"><img class="lazy" data-original="/images/column/xjplu28.png" src="/images/column/xjplu28.png"></div><div class="name-box"><div class="subtitle">每8分钟一期</div><div class="title">幸运28</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/bjlu28"><div class="ico"><img class="lazy" data-original="/images/column/bjlu28.png" src="/images/column/bjlu28.png"></div><div class="name-box"><div class="subtitle">每5分钟一期</div><div class="title">PC蛋蛋</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/gdk10"><div class="ico"><img class="lazy" data-original="/images/column/gdk10.png" src="/images/column/gdk10.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">广东快乐10分</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/gxk10"><div class="ico"><img class="lazy" data-original="/images/column/gxk10.png" src="/images/column/gxk10.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">广西快乐10分</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/cqk10"><div class="ico"><img class="lazy" data-original="/images/column/cqk10.png" src="/images/column/cqk10.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">重庆幸运农场</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/poker"><div class="ico"><img class="lazy" data-original="/images/column/poker.png" src="/images/column/poker.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">快乐扑克3</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/marksix"><div class="ico"><img class="lazy" data-original="/images/column/marksix.png" src="/images/column/marksix.png"></div><div class="name-box"><div class="subtitle">每周三期</div><div class="title">香港六合彩</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/sflhc"><div class="ico"><img class="lazy" data-original="/images/column/sflhc.png" src="/images/column/sflhc.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">极速六合彩</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/gdpick11"><div class="ico"><img class="lazy" data-original="/images/column/gdpick11.png" src="/images/column/gdpick11.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">广东11选5</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/jxpick11"><div class="ico"><img class="lazy" data-original="/images/column/jxpick11.png" src="/images/column/jxpick11.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">江西11选5</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/sdpick11"><div class="ico"><img class="lazy" data-original="/images/column/sdpick11.png" src="/images/column/sdpick11.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">山东11选5</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/jsk3"><div class="ico"><img class="lazy" data-original="/images/column/jsk3.png" src="/images/column/jsk3.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">江苏快3</div></div></a></li><li class="caizhong-cell"><a href="/game/xy/bjk3"><div class="ico"><img class="lazy" data-original="/images/column/bjk3.png" src="/images/column/bjk3.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">北京快3</div></div></a></li></ul>
+				</div>
+				<div class="tab-group-item" data="gf" style="display:none;">
+					<ul class="mui-table-view" id="gf-bet-list"><li class="caizhong-cell"><a href="/game/gf/bjpk10"><div class="ico"><img class="lazy" data-original="/images/column/bjpk10_gf.png" src="/images/column/bjpk10_gf.png"></div><div class="name-box"><div class="subtitle">每5分钟一期</div><div class="title">北京赛车</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/sfpk10"><div class="ico"><img class="lazy" data-original="/file_upload/column/201805/20180512/20180512165804139.png" src="/file_upload/column/201805/20180512/20180512165804139.png"></div><div class="name-box"><div class="subtitle">每90秒一期</div><div class="title">急速赛车</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/sfpk102"><div class="ico"><img class="lazy" data-original="/images/column/sfpk102_gf.png" src="/images/column/sfpk102_gf.png"></div><div class="name-box"><div class="subtitle">每3分钟一期</div><div class="title">三分PK拾</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/xyft"><div class="ico"><img class="lazy" data-original="/images/column/xyft_gf.png" src="/images/column/xyft_gf.png"></div><div class="name-box"><div class="subtitle">每5分钟一期</div><div class="title">幸运飞艇</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/jsft"><div class="ico"><img class="lazy" data-original="/images/column/jsft_gf.png" src="/images/column/jsft_gf.png"></div><div class="name-box"><div class="subtitle">每90秒一期</div><div class="title">极速飞艇</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/cqssc"><div class="ico"><img class="lazy" data-original="/images/column/cqssc_gf.png" src="/images/column/cqssc_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">重庆时时彩</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/xjssc"><div class="ico"><img class="lazy" data-original="/images/column/xjssc_gf.png" src="/images/column/xjssc_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">新疆时时彩</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/tjssc"><div class="ico"><img class="lazy" data-original="/images/column/tjssc_gf.png" src="/images/column/tjssc_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">天津时时彩</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/bjssc"><div class="ico"><img class="lazy" data-original="/images/column/bjssc_gf.png" src="/images/column/bjssc_gf.png"></div><div class="name-box"><div class="subtitle">每5分钟一期</div><div class="title">北京时时彩</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/sfc"><div class="ico"><img class="lazy" data-original="/images/column/three_gf.png" src="/images/column/three_gf.png"></div><div class="name-box"><div class="subtitle">每3分钟一期</div><div class="title">三分彩</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/wfc"><div class="ico"><img class="lazy" data-original="/images/column/wfc_gf.png" src="/images/column/wfc_gf.png"></div><div class="name-box"><div class="subtitle">每5分钟一期</div><div class="title">五分彩</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/gdpick11"><div class="ico"><img class="lazy" data-original="/images/column/gdpick11_gf.png" src="/images/column/gdpick11_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">广东11选5</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/jxpick11"><div class="ico"><img class="lazy" data-original="/images/column/jxpick11_gf.png" src="/images/column/jxpick11_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">江西11选5</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/sdpick11"><div class="ico"><img class="lazy" data-original="/images/column/sdpick11_gf.png" src="/images/column/sdpick11_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">山东11选5</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/shpick11"><div class="ico"><img class="lazy" data-original="/images/column/shpick11_gf.png" src="/images/column/shpick11_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">上海11选5</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/ahpick11"><div class="ico"><img class="lazy" data-original="/images/column/ahpick11_gf.png" src="/images/column/ahpick11_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">安徽11选5</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/jsk3"><div class="ico"><img class="lazy" data-original="/images/column/jsk3_gf.png" src="/images/column/jsk3_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">江苏快3</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/ahk3"><div class="ico"><img class="lazy" data-original="/images/column/ahk3_gf.png" src="/images/column/ahk3_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">安徽快3</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/bjk3"><div class="ico"><img class="lazy" data-original="/images/column/bjk3_gf.png" src="/images/column/bjk3_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">北京快3</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/gxk3"><div class="ico"><img class="lazy" data-original="/images/column/gxk3_gf.png" src="/images/column/gxk3_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">广西快3</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/hubk3"><div class="ico"><img class="lazy" data-original="/images/column/hubk3_gf.png" src="/images/column/hubk3_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">湖北快3</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/jxk3"><div class="ico"><img class="lazy" data-original="/images/column/jxk3_gf.png" src="/images/column/jxk3_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">江西快3</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/jlk3"><div class="ico"><img class="lazy" data-original="/images/column/jlk3_gf.png" src="/images/column/jlk3_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">吉林快3</div></div></a></li><li class="caizhong-cell"><a href="/game/gf/shk3"><div class="ico"><img class="lazy" data-original="/images/column/shk3_gf.png" src="/images/column/shk3_gf.png"></div><div class="name-box"><div class="subtitle">每10分钟一期</div><div class="title">上海快3</div></div></a></li></ul>
+				</div>
+			</div>
+		</div>
+				
+		<div class="winlist-box">
+			<div class="title-index"><span class="ico"></span>最新中奖</div>
+			<ul class="winlist-data-box smarticker1" id="winlistdatabox">
+			</ul>
+		</div>
+		<div class="greyline"></div>
+		<div class="short-bottom">
+			<span><a>如何充值</a></span>
+			<span><a>如何提款</a></span>
+			<span><a>安全保障</a></span>
+			<span><a>代理赚钱</a></span>
+		</div>
+		
+		<div class="logo-bottom">
+			<a href="#"><img src="../images/pg/pg_gray.png"></a>
+		</div>
+	</div>
+	<div class="nav-box">
+		<nav class="mui-bar mui-bar-tab" id="mui-bar">
+			<a class="mui-bar-item mui-active" href="javascript:baseObj.openIndex();">
+				<span class="mui-icon mui-img-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-bar-item" href="javascript:baseObj.xiazhu();" >
+				<span class="mui-icon mui-img-xiazhu"></span>
+				<span class="mui-tab-label">下注</span>
+			</a>
+			<a class="mui-bar-item" href="javascript:baseObj.open();">
+				<span class="mui-icon mui-img-open">
+				</span>
+				<span class="mui-tab-label">开奖</span>
+			</a>
+			<a class="mui-bar-item" href="javascript:baseObj.openMe();">
+				<span class="mui-icon mui-img-me"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</div>
+</div>
+</body>
+</html>

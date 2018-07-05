@@ -1,0 +1,328 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.Learner" 
+    table="LEARNER"
+	lazy="true"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="learnerId"
+        type="java.lang.Integer"
+        column="LEARNER_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_LEARNER</param>
+        </generator>
+    </id>
+
+
+    <property
+        name="tcId"
+        type="java.lang.Integer"
+        column="TC_ID"
+        length="8"
+    />
+    <property
+        name="semesterId"
+        type="java.lang.Integer"
+        column="SEMESTER_ID"
+        length="8"
+    />
+    <property
+        name="programId"
+        type="java.lang.Integer"
+        column="PROGRAM_ID"
+        length="8"
+    />
+    <property
+        name="enrollStatus"
+        type="java.lang.String"
+        column="ENROLL_STATUS"
+        length="2"
+    />
+    <property
+        name="studyNumber"
+        type="java.lang.String"
+        column="STUDY_NUMBER"
+        length="20"
+    />
+    <property
+        name="address"
+        type="java.lang.String"
+        column="ADDRESS"
+        length="1000"
+    />
+    <property
+        name="postCode"
+        type="java.lang.String"
+        column="POST_CODE"
+        length="6"
+    />
+    <property
+        name="mobile"
+        type="java.lang.String"
+        column="MOBILE"
+        length="40"
+    />
+    <property
+        name="homePhone"
+        type="java.lang.String"
+        column="HOME_PHONE"
+        length="40"
+    />
+    <property
+        name="msn"
+        type="java.lang.String"
+        column="MSN"
+        length="200"
+    />
+    <property
+        name="qq"
+        type="java.lang.String"
+        column="QQ"
+        length="20"
+    />
+    <property
+        name="birthday"
+        type="java.sql.Date"
+        column="BIRTHDAY"
+        length="7"
+    />
+    <property
+        name="learnSex"
+        type="java.lang.String"
+        column="LEARN_SEX"
+        length="1"
+    />
+    <property
+        name="education"
+        type="java.lang.String"
+        column="EDUCATION"
+        length="40"
+    />
+    <property
+        name="workplace"
+        type="java.lang.String"
+        column="WORKPLACE"
+        length="1000"
+    />
+    
+    <property
+        name="workplaceOffset"
+        type="java.lang.String"
+        column="WORKPLACE_OFFSET"
+        length="1000"
+    /> 
+    
+    <property
+        name="workplacePhone"
+        type="java.lang.String"
+        column="WORKPLACE_PHONE"
+        length="40"
+    />
+	<property
+        name="idCode"
+        type="java.lang.String"
+        column="IDCODE"
+        length="100"
+    />
+    <property
+        name="invoiceTitle"
+        type="java.lang.String"
+        column="INVOICETITLE"
+        length="200"
+    />
+    <property
+        name="enrollNumber"
+        type="java.lang.String"
+        column="ENROLL_NUMBER"
+        length="20"
+    />
+    <property
+        name="cardType"
+        type="java.lang.String"
+        column="CARD_TYPE"
+        length="1"
+    />    
+    
+   
+    <property
+        name="graduatedSchool"
+        type="java.lang.String"
+        column="GRADUATED_SCHOOL"
+        length="100"
+    />        
+  
+    <property
+        name="registeDate"
+        type="java.util.Date"
+        column="REGISTE_DATE"
+        length="7"
+    />          
+     
+    <property
+        name="provice"
+        type="java.lang.String"
+        column="PROVICE"
+        length="30"
+    />   
+    
+    <property
+        name="city"
+        type="java.lang.String"
+        column="CITY"
+        length="30"
+    />   
+    
+    <property
+        name="certificate"
+        type="java.lang.String"
+        column="CERTIFICATE"
+        length="200"
+    />       
+    
+    <property
+        name="educationId"
+        type="java.lang.String"
+        column="EDUCATION_ID"
+        length="8"
+    />
+    
+    <property
+        name="organizationId"
+        type="java.lang.Integer"
+        column="ORGANIZATION_ID"
+        length="8"
+    />
+    
+    <property
+        name="program"
+        type="java.lang.String"
+        column="PROGRAM"
+        length="20"
+    />
+    
+    <property
+        name="registerName"
+        type="java.lang.String"
+        column="REGISTER_NAME"
+        length="40"
+    />
+    
+    <property
+        name="isRegister"
+        type="java.lang.String"
+        column="IS_REGISTER"
+        length="1"
+    />
+     
+    <property
+        name="auditingExplain"
+        type="java.lang.String"
+        column="AUDITING_EXPLAIN"
+        length="1000"
+    />
+    
+    <property
+        name="auditingDate"
+        type="java.util.Date"
+        column="AUDITING_DATE"
+        length="7"
+    />
+    
+    <property
+        name="waveId"
+        type="java.lang.Integer"
+        column="WAVE_ID "
+        length="8"
+    />
+    
+    <property
+        name="scheduleId"
+        type="java.lang.Integer"
+        column="SCHEDULE_ID "
+        length="8"
+    />
+     
+    <property
+        name="startStudy"
+        type="java.util.Date"
+        column="START_STUDY"
+        length="7"
+    />   
+    
+    <property
+        name="endStudy"
+        type="java.util.Date"
+        column="END_STUDY"
+        length="7"
+    />   
+    
+    <property
+        name="nationality"
+        type="java.lang.String"
+        column="NATIONALITY"
+        length="20"
+    />
+    
+    <property
+        name="business"
+        type="java.lang.String"
+        column="BUSINESS"
+        length="20"
+    />
+    
+    <property
+        name="studyAffirInfo"
+        type="java.lang.String"
+        column="STUDY_AFFAIR_INFO"
+        length="4000"
+    />
+    
+    <property
+        name="systemInfo"
+        type="java.lang.String"
+        column="SYSTEM_INFO"
+        length="4000"
+    />
+    
+    <property
+        name="financeInfo"
+        type="java.lang.String"
+        column="FINANCE_INFO"
+        length="4000"
+    />
+    
+    <property
+        name="graduateNumber"
+        type="java.lang.String"
+        column="GRADUATE_NUMBER"
+        length="1000"
+    />
+    
+    <!-- Associations -->
+	<many-to-one
+        name="user"
+        class="com.ram.model.User"
+		unique="true"
+		outer-join="true"
+		cascade="all"
+    >
+        <column name="USER_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

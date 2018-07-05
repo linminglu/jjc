@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="gaDAO" class="com.game.dao.hibernate.GaDAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="gaService" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.game.service.impl.GaServiceImpl">
+	            <property name="gaDAO"><ref local="gaDAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化用户今日收益 -->
+	<bean name="initUserGainsJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.game.service.impl.InitUserGains</value></property>
+		<property name="jobDataAsMap"><map><entry key="gaService"><ref bean="gaService" /></entry></map></property>
+	</bean>
+	<bean id="initUserGains" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="initUserGainsJob" /></property>
+		<property name="cronExpression"><value>1 0 0 * * ?</value></property>
+	</bean>
+	
+	<!-- 清除数据(未启用) -->
+	<bean name="clearDataJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.game.service.impl.ClearData</value></property>
+		<property name="jobDataAsMap"><map><entry key="gaService"><ref bean="gaService" /></entry></map></property>
+	</bean>
+	<bean id="clearData" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="clearDataJob" /></property>
+		<property name="cronExpression"><value>0 0 3 1/3 * ?</value></property>
+	</bean>	
+	
+	<!-- 统计每日投注中奖盈亏统计 -->
+	<bean name="updateDayBetCountJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.game.service.impl.UpdateDayBetCount</value></property>
+		<property name="jobDataAsMap"><map><entry key="gaService"><ref bean="gaService" /></entry></map></property>
+	</bean>
+    <bean id="updateDayBetCount" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="updateDayBetCountJob" /></property>
+		<property name="cronExpression"><value>10 0 0 * * ?</value></property>
+	</bean>
+	
+	<!-- 统计每个用户每日数据 -->
+	<bean name="updateDailyStatisticsJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.game.service.impl.UpdateDailyStatistics</value></property>
+		<property name="jobDataAsMap"><map><entry key="gaService"><ref bean="gaService" /></entry></map></property>
+	</bean>
+	<bean id="updateDailyStatistics" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="updateDailyStatisticsJob" /></property>
+		<property name="cronExpression"><value>0 0 2 * * ?</value></property>
+	</bean>
+	
+	<!-- 会员打码返水给自己 -->
+	<bean name="updateMemberBackJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.game.service.impl.UpdateMemberBack</value></property>
+		<property name="jobDataAsMap"><map><entry key="gaService"><ref bean="gaService" /></entry></map></property>
+	</bean>
+	<bean id="updateMemberBack" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="updateMemberBackJob" /></property>
+		<property name="cronExpression"><value>0 0/1 * * * ?</value></property>
+	</bean>
+	
+	<!-- 会员打码返水给代理 - -->
+	<bean name="updateAgentBackJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.game.service.impl.UpdateAgentBack</value></property>
+		<property name="jobDataAsMap"><map><entry key="gaService"><ref bean="gaService" /></entry></map></property>
+	</bean>
+	<bean id="updateAgentBack" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="updateAgentBackJob" /></property>
+		<property name="cronExpression"><value>10 0/1 * * * ?</value></property>
+	</bean>
+	
+	<!-- 更新每周中奖 -->
+	<bean name="updateUserWeekWinJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.game.service.impl.UpdateUserWeekWin</value></property>
+		<property name="jobDataAsMap"><map><entry key="gaService"><ref bean="gaService" /></entry></map></property>
+	</bean>
+    <bean id="updateUserWeekWin" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="updateUserWeekWinJob" /></property>
+		<property name="cronExpression"><value>0 59 23 ? * SUN</value></property>
+	</bean>
+
+	<!-- 统计在线人数 -->
+	<bean name="onlineNumberJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.game.service.impl.Online</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+	<bean id="onlineNumber" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="onlineNumberJob" />
+		</property>
+		<!-- 每分钟执行一次-->
+		<property name="cronExpression">
+			<value>0 0/1 * * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initUserGains" />
+				<!-- <ref local="clearData" /> -->
+				<ref local="updateDayBetCount" />
+				<ref local="updateDailyStatistics" />
+				<ref local="updateMemberBack" />
+				<ref local="updateAgentBack" />
+				<!-- <ref local="updateUserWeekWin" /> -->
+				<ref local="onlineNumber" />
+			</list>
+		</property>
+	</bean>
+	
+</beans>

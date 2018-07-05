@@ -1,0 +1,248 @@
+.BJPK1{
+	background-image: url(../images/ball/ball_3.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+    width: 39px;
+    height:26px;
+}
+.BJPK2{
+	background-image: url(../images/ball/ball_3.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+    width: 27px;
+    height:26px;
+}
+.PCDD1{
+	background-image: url(../images/ball/ball_6.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+/*     width: 39px; */
+    height:26px;
+}
+.PCDD2{
+	background-image: url(../images/ball/ball_6.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+    width: 27px;
+    height:26px;
+}
+.CQSSC1{
+	background-image: url(../images/ball/ball_2.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+/*     width: 39px; */
+    height:26px;
+}
+.CQSSC2{
+	background-image: url(../images/ball/ball_2.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+    width: 27px;
+    height:26px;
+}
+.GXK101{
+	background-image: url(../images/ball/ball_1.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+/*     width: 39px; */
+    height:26px;
+}
+.GXK102{
+	background-image: url(../images/ball/ball_1.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+    width: 27px;
+    height:26px;
+}
+.LIUHECAI1{
+	background-image: url(../images/ball/ball_0.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+/*     width: 39px; */
+    height:26px;
+}
+.LIUHECAI2{
+	background-image: url(../images/ball/ball_0.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+    width: 27px;
+    height:26px;
+}
+.JSK31{
+	background-image: url(../images/ball/ball_5.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+    width: 39px;
+    height:26px;
+}
+.JSK32{
+	background-image: url(../images/ball/ball_5.gif);
+	background-repeat: no-repeat;
+    background-position: center center;
+    width: 27px;
+    height:26px;
+}
+
+.No_1 {
+    background-position: 0 0px;
+}
+.No_2 {
+    background-position: 0 -27px;
+}
+.No_3 {
+    background-position: 0 -54px;
+}
+.No_4 {
+    background-position: 0 -81px;
+}
+.No_5 {
+    background-position: 0 -108px;
+}
+.No_6 {
+    background-position: 0 -135px;
+}
+.No_7 {
+    background-position: 0 -162px;
+}
+.No_8 {
+    background-position: 0 -189px;
+}
+.No_9 {
+    background-position: 0 -216px;
+}
+.No_10 {
+    background-position: 0 -243px;
+}
+.No_11 {
+    background-position:0 -270px
+}
+.No_12 {
+    background-position:0 -297px
+}
+.No_13 {
+    background-position:0 -324px
+}
+.No_14 {
+    background-position:0 -351px
+}
+.No_15 {
+    background-position:0 -378px
+}
+.No_16 {
+    background-position:0 -405px
+}
+.No_17 {
+    background-position:0 -432px
+}
+.No_18 {
+    background-position:0 -459px
+}
+.No_19 {
+    background-position:0 -486px
+}
+.No_20 {
+    background-position:0 -513px
+}
+.No_21 {
+    background-position:0 -540px
+}
+.No_22 {
+    background-position:0 -567px
+}
+.No_23 {
+    background-position:0 -594px
+}
+.No_24 {
+    background-position:0 -621px
+}
+.No_25 {
+    background-position:0 -648px
+}
+.No_26 {
+    background-position:0 -675px
+}
+.No_27 {
+    background-position:0 -702px
+}
+.No_28 {
+    background-position:0 -729px
+}
+.No_29 {
+    background-position:0 -756px
+}
+.No_30 {
+    background-position:0 -783px
+}
+.No_31 {
+    background-position:0 -810px
+}
+.No_32 {
+    background-position:0 -837px
+}
+.No_33 {
+    background-position:0 -864px
+}
+.No_34 {
+    background-position:0 -891px
+}
+.No_35 {
+    background-position:0 -918px
+}
+.No_36 {
+    background-position:0 -945px
+}
+.No_37 {
+    background-position:0 -972px
+}
+.No_38 {
+    background-position:0 -999px
+}
+.No_39 {
+    background-position:0 -1026px
+}
+.No_40 {
+    background-position:0 -1053px
+}
+.No_41 {
+    background-position:0 -1080px
+}
+.No_42 {
+    background-position:0 -1107px
+}
+.No_43 {
+    background-position:0 -1134px
+}
+.No_44 {
+    background-position:0 -1161px
+}
+.No_45 {
+    background-position:0 -1188px
+}
+.No_46 {
+    background-position:0 -1215px
+}
+.No_47 {
+    background-position:0 -1242px
+}
+.No_48 {
+    background-position:0 -1269px
+}
+.No_49 {
+    background-position:0 -1296px
+}
+.ball_red {
+    background: url(../images/ball/red_yuan.png) no-repeat;
+}
+.ball_green {
+    background: url(../images/ball/green_yuan.png) no-repeat;
+}
+
+.ball_span {
+    display: block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+    margin-left: 2px;
+}

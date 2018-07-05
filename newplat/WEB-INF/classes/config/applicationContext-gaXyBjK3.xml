@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="bjK3DAO" class="com.xy.k3.bjk3.dao.hibernate.BjK3DAOHiberate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="bjK3Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.k3.bjk3.service.impl.BjK3ServiceImpl">
+	            <property name="bjK3DAO"><ref local="bjK3DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	             <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化期号-->
+	<bean name="initBjK3SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.k3.bjk3.service.impl.InitBjK3Session</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bjK3Service"><ref bean="bjK3Service" /></entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="initBjK3Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="initBjK3SessionJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchBjK3ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.xy.k3.bjk3.service.impl.FetchBjK3Result</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="bjK3Service"><ref bean="bjK3Service" /></entry>
+			</map>
+		</property>
+	</bean> 
+	<bean id="fetchBjK3Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="fetchBjK3ResultJob" />
+		</property>
+		<property name="cronExpression">
+			<value>30 0/10 9-23 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 加载 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initBjK3Session" />
+				<ref local="fetchBjK3Result"/>
+			</list>
+		</property>
+	</bean>
+</beans>

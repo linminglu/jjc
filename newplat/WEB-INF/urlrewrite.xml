@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 2.6//EN"
+        "http://tuckey.org/res/dtds/urlrewrite2.6.dtd">
+<urlrewrite>
+    <rule>  
+        <note>登录</note>
+        <from>/plat/login.html</from>  
+        <to type="forward">/permission/loginAction.do?method=init</to>  
+    </rule>
+    <rule>  
+        <note>登录</note>
+        <from>/game/login.html</from>  
+        <to type="forward">/game/login.html</to>  
+    </rule>
+     <rule>  
+         <note>退出</note>
+        <from>/logout.html</from>  
+        <to type="forward">/permission/loginAction.do?method=logout</to>  
+    </rule>
+     <rule>  
+     	<note>提交登录</note>
+        <from>/loginConfirm</from>  
+        <to type="forward">/permission/loginAction.do?method=login</to>  
+    </rule>
+    
+    <rule>  
+        <note>注册</note>
+        <from>/regSignup.html</from>  
+        <to type="forward">/user/registerAction.do?method=signup</to>  
+    </rule>
+    <rule>  
+        <note>修改信息</note>
+        <from>/myhome/myInfoModif.html</from>  
+        <to type="forward">/user/userAction.do?method=saveProfile</to>  
+    </rule>
+    <rule>  
+        <note>修改密码</note>
+        <from>/myhome/resetPassword.html</from>  
+        <to type="forward">/user/userAction.do?method=password</to>  
+    </rule>
+    <rule>  
+        <note>修改密码</note>
+        <from>/myhome/password.html</from>  
+        <to type="forward">/user/userAction.do?method=savePassword</to>  
+    </rule>
+    <rule>  
+        <note>修改头像</note>
+        <from>/myhome/resetLogo.html</from>  
+        <to type="forward">/user/userAction.do?method=proResetLogo</to>  
+    </rule>
+    <rule>
+    	 <note>新闻详情</note>
+        <from>/news/(\w+)/([1-9]\d*)$</from>
+        <to type="forward">/news/$1/view.html</to>
+    </rule>
+    <rule>
+    	 <note>我的消息详情</note>
+        <from>/user/(\w+)/([1-9]\d*)$</from>
+        <to type="forward">/user/$1/view.html</to>
+    </rule>
+    <rule>
+    	 <note>投注详情</note>
+        <from>/trade/my/([1-9]\d*)$</from>
+        <to type="forward">/trade/my/view.html</to>
+    </rule>
+    <rule>
+    	 <note>合买详情</note>
+        <from>/trade/hemai/([1-9]\d*)$</from>
+        <to type="forward">/trade/hemai/view.html</to>
+    </rule>
+    <rule>
+    	 <note>分享的url</note>
+        <from>/seller/show&#63;([\s\S]*)$</from>
+        <to type="forward">/seller/sellerAction.do?method=show</to>
+    </rule>
+    <rule>
+        <from>/api/(\w+)_(\w+)&#63;([\s\S]*)$</from>
+        <to type="forward">/api/$1Manager.do?method=$2</to>
+    </rule>
+    <rule>
+        <from>/api/(\w+)_(\w+)&amp;([\s\S]*)$</from>
+        <to type="forward">/api/$1Manager.do?method=$2</to>
+    </rule>
+    <rule>
+        <from>/api/(\w+)_(\w+)$</from>
+        <to type="forward">/api/$1Manager.do?method=$2</to>
+    </rule>
+    <rule>
+        <from>/pay/pay/(\w+)$</from>
+        <to type="forward">/pay/payAction.do?method=init&amp;a=$1</to>
+    </rule>
+    <rule>
+        <from>/pay/(\w+)$</from>
+        <to type="forward">/pay/payAction.do?method=$1</to>
+    </rule>
+     <rule>
+        <from>/m/(\w+)&#63;([\s\S]*)$</from>
+        <to type="forward">/user/mobileAction.do?method=$1</to>
+    </rule>
+    <outbound-rule>
+      <note>登录</note>
+      <from>/permission/loginAction.do\?method=login</from>
+      <to>/loginConfirm</to>
+ 	</outbound-rule>
+   
+</urlrewrite>
+

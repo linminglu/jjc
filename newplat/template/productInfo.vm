@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<title> #if($product)${product.title}#else商品详情 #end</title>
+<link href="../../css/productInfo.css" rel="stylesheet" />
+</head>
+<body>
+	 #if($product)
+	    <div class ="title"> 
+			<p>商品信息</p>
+		</div>
+		<div class="contents">
+			<div class ="mes">
+				${product.title}
+			</div>
+		</div>
+	 #end
+		
+	 #if($seller)
+		<div class ="title"> 
+			<p>商家信息</p>
+		</div>
+		<div class="contents">
+			<div class ="mes">
+				电话：${seller.telePhone}<br/>
+				地址：${seller.address}
+			</div>
+		</div>
+	#end
+	#if($product)
+		<div class ="title"> 
+			<p>套餐内容</p>
+		</div>
+		<div class="contents">
+			<div class ="mes">
+				 ${product.tcContent}
+			</div>
+		</div>
+		<div class ="title"> 
+			 <p>消费提醒</p>
+		</div>
+		<div class="contents">
+			<div class ="mes">
+				  ${product.xiContent}
+			</div>
+		</div>
+ #end
+ <div class="content">
+  <div class ="imgs">
+	  #if($attList)
+		#foreach($bl in $attList)
+			<img src="../..${bl.attachUrl}"><br/>
+		#end
+	  #end
+  </div>
+</div>
+</body>
+</html>

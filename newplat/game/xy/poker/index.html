@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content=""> 
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../js/mui/mui.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/loaders.css" />
+<script type="text/javascript" src="../../js/move.js?v=xy2018052805"></script>
+<script type="text/javascript" src="js/poker.js?v=xy2018052805"></script>
+<script type="text/javascript" src="../../js/gacommon.js?v=xy2018052805"></script>
+<script type="text/javascript" src="../../js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="../../js/components/mode-ecb.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/mui/mui.min.css">
+<link type="text/css" rel="stylesheet" href="../../css/base.css?v=xy2018052805" />
+<link type="text/css" rel="stylesheet" href="css/poker.css?v=xy2018052805" />
+<title>快乐扑克3</title>
+<script type="text/javascript">
+$(function(){
+	lotteryObj.playSelector.set({
+		code:"poker",
+		plays:{p0:"两面盘",p1:"特码"},
+		gfxy:false,
+		wanfatab:"#wanfatab .mui-col-2",
+		wanfa:"#wanfa"
+	});
+	lotteryObj.init();
+});
+</script>
+</head>
+<body>
+<div class="ga-view">
+	<header class="mui-bar mui-bar-nav">
+		<a class="gaxy-link-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title g-plays">快乐扑克3</h1>
+		<!-- <a class="mui-icon  mui-pull-right wanfahref" href="rule.html">玩法</a> -->
+		<a class="ga-item-menu mui-action-menu mui-icon mui-icon-bars mui-pull-right" href="#topPopover"></a>
+	</header>
+	<div class="main-content">
+		<div class="margin-top-header"></div>
+		<div class="tab-switch-box" id="wanfatab">
+			<input type="hidden" id="wanfa" value="0">
+			<input id="openStatus" type="hidden" value="1"/>
+			<!--1.正常可投注0.封盘 -->
+			<ul>
+				<li class="tab-switch-cell mui-col-2 mui-active" data="liangmianpan" t="0">
+					两面盘
+				</li>
+				<li class="tab-switch-cell mui-col-2" data="ming" t="1">
+					特码
+				</li>
+			</ul>
+		</div>
+		<div class="lottery-box">
+			<div class="lottery-info">
+				<div class="title-line">
+					<span class="title">快乐扑克3</span>
+					<span class="room"></span>
+					<span class="number" id="sessionNo"></span>
+				</div>
+			</div>
+			<div class="lottery-info">
+				<div class="title-line">
+					<span class="subtitle">今日输赢:</span>
+					<span class="red" id="gains">0.0</span>
+					<span class="subtitle">开奖时间:</span>
+					<span class="subtitle" id="opentime"></span>
+				</div>
+			</div>
+			<div class="timer-box">
+				<div class="sec-txt">距截止下注</div>
+				<div class="sec-secc">
+					<span id="hour" class="secc">00</span>:<span id="minute" class="secc">00</span>:<span id="sec" class="secc">00</span>
+				</div>
+			</div>
+		</div>
+		<div class="openlottery-box">
+			<div class="open-qihao"><span id="openqihao"></span><span id="openlable"></span></div>
+			<div class="open-number" id="open-number">
+				<span class="num bg-red" id="num1">-</span>
+				<span class="num bg-red" id="num2">-</span>
+				<span class="num bg-red" id="num3">-</span>
+				<span class="num bg-red" id="num4">-</span>
+				<span class="num bg-red" id="num5">-</span>
+			</div>
+		</div>
+		<div class="betting-all-box">
+			<div class="playmethod" id="liangmianpan">
+				<div class="tab-switch-box">
+					<input type="hidden" id="liangmianpantab" value="1">
+					<ul>
+						<li class="tab-switch-cell mui-col-2 mui-active" data="kj0" t="1">
+							快捷下注
+						</li>
+						<li class="tab-switch-cell mui-col-2" data="zx0" t="0">
+							自选下注
+						</li>
+					</ul>
+				</div>
+				<div class="betting-box betting-box2" id="zx0">
+				</div>
+				<div class="betting-box betting-box2" id="kj0">
+				</div>
+			</div>
+			<div class="playmethod" id="ming">
+				<div class="tab-switch-box">
+					<input type="hidden" id="mingtab" value="1">
+					<ul>
+						<li class="tab-switch-cell mui-col-2 mui-active" data="kj1" t="1">
+							快捷下注
+						</li>
+						<li class="tab-switch-cell mui-col-2" data="zx1" t="0">
+							自选下注
+						</li>
+					</ul>
+				</div>
+				<div class="betting-box betting-box2" id="zx1">
+				</div>
+				<div class="betting-box betting-box2" id="kj1">
+				</div>
+			</div>
+		</div>
+		<div class="height50-white"></div>
+	</div>
+	<div class="form-box">
+		<div id="zuxuanxiazhu">
+			<div class="betting-confirm">
+			</div>
+			<div id="moneybox">
+				<input type="number" id="money" maxlength="4" onkeyup="this.value=this.value.replace(/\D/,'')"/>
+				<span class="company">元</span>
+			</div>
+			<div class="betting-detailed" id="bettingdetailed">
+				<span class="touzhushu" id="touzhushu">0</span>注共<span class="total-price red" id="totalprice">0元</span>，若中奖，奖金<span class="jiangjin" id="jiangjin">0元</span>
+				盈利<span class="yingli red" id="yingli">0元</span>
+			</div>
+			<div class="yuebar">
+				使用余额支付（余额<span id="balance">12.7</span>元）
+			</div>
+			<div class="btn-box">
+				<div class="cancel">取消</div>
+				<div class="submit">下注</div>
+			</div>
+		</div>
+	</div>
+	<div class="nav-box">
+		<ul>
+			<li class="mui-col-4 btn" id="clearinbtn">
+				清空选项
+			</li>
+			<li class="mui-col-4 btn" id="trendbtn">
+				走势
+			</li>
+			<li class="mui-col-4 btn" id="rankingbtn">
+				冷热排行
+			</li>
+			<li class="mui-col-4 btn" id="submitbtn">
+				下注
+			</li>
+		</ul>
+	</div>
+	<div class="zoushi-box help-box" id="zoushibox">
+		<div class="htitle">走势<span class="close-icon fr mui-icon mui-icon-closeempty"></span></div>
+		<div class="subtitle">最近十二期开奖走势</div>
+		<div class="zoushitab-box">
+			<ul>
+				<li class="zoushi-cell mui-active" data="0">号码</li>
+				<li class="zoushi-cell" data="1">混合</li>
+				<!-- <li class="zoushi-cell" data="2">单双</li>
+				<li class="zoushi-cell" data="3">总和/龙虎</li> -->
+			</ul>
+		</div>
+		<div class="zoushi-table-box" >
+		</div>
+	</div>
+	<div class="paiming-box help-box" id="paimingbox">
+		<div class="htitle">冷热排行<span class="close-icon fr mui-icon mui-icon-closeempty"></span></div>
+		<div class="paiming-table-box" >
+			<ul class="paiming-table">
+			</ul>
+		</div>
+	</div>
+	<div class="masktrans2">
+	</div>
+	<div id="topPopover" class="mui-popover">
+		<div class="mui-popover-arrow"></div>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell"><a href="../../touzhuList.html">投注记录</a></li>
+					<!-- <li class="mui-table-view-cell"><a href="#trendView" id="trendbtn">走势统计</a></li>
+					<li class="mui-table-view-cell"><a href="#rankView" id="rankbtn">冷热排行</a></li> -->
+					<li class="mui-table-view-cell"><a href="openList.html">最近开奖</a></li>
+					<li class="mui-table-view-cell"><a href="rule.html">玩法说明</a></li>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	//顶部玩法切换
+	$("#wanfatab .mui-col-2").bind("tap", function(){
+		lotteryObj.playSelector.playTypeClick(this);
+	});
+	//下注切换
+	$("#liangmianpan .tab-switch-cell").bind("tap", function(){
+		$("#liangmianpan .tab-switch-cell").removeClass('mui-active');
+		$(this).addClass('mui-active');
+		$('#liangmianpan .betting-box').hide();
+		var idName=$(this).attr('data');
+		$('#'+idName).show();
+		var type=$(this).attr('t');
+		$('#liangmianpantab').val(type);
+	});
+	$("#ming .tab-switch-cell").bind("tap", function(){
+		$("#ming .tab-switch-cell").removeClass('mui-active');
+		$(this).addClass('mui-active');
+		$('#ming .betting-box').hide();
+		var idName=$(this).attr('data');
+		$('#'+idName).show();
+		var type=$(this).attr('t');
+		$('#mingtab').val(type);
+	});
+	$(".btn-box .cancel").bind("tap", function(){
+		$('#money').val('');
+		$('.form-box').hide();		
+		$('.masktrans').hide();		
+	});
+	$("#clearinbtn").bind("tap", function(){
+		var openStatus=$('#openStatus').val();
+		if(openStatus='1'){
+			$('.innum').val('');
+			$('.touzhu-box').removeClass('touzhu-active');
+		}
+	});
+	$(".masktrans2").bind("tap", function(){
+		$(this).hide();
+		$('#zoushibox').hide();
+		$('#paimingbox').hide();
+	});
+	$("#trendbtn").bind("tap", function(){
+		$(".masktrans2").show();
+		$('#zoushibox').show();
+		$('.zoushitab-box .zoushi-cell').removeClass('mui-active');
+		$('.zoushitab-box .zoushi-cell:first').addClass('mui-active');
+		lotteryObj.trend('0');
+	});
+	$("#rankingbtn").bind("tap", function(){
+		$(".masktrans2").show();
+		$('#paimingbox').show();
+		lotteryObj.ranking();
+	});
+	$(".zoushitab-box .zoushi-cell").bind("tap", function(){
+		var type=$(this).attr('data');
+		$('.zoushitab-box .zoushi-cell').removeClass('mui-active');
+		$(this).addClass('mui-active');
+		lotteryObj.trend(type);
+	});
+});
+</script>
+</body>
+</html>

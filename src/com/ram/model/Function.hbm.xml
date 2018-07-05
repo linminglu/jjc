@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.Function" 
+    table="FUNCTION"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="functionId"
+        type="java.lang.Integer"
+        column="FUNCTION_ID"
+    >
+        <generator class="sequence">
+            <param name="sequence">SEQ_FUNCTION</param>
+        </generator>
+    </id>
+
+    <property
+        name="functionTitle"
+        type="java.lang.String"
+        column="FUNCTION_TITLE"
+        length="200"
+    />
+    <property
+        name="functionLinkAddress"
+        type="java.lang.String"
+        column="FUNCTION_LINK_ADDRESS"
+        length="500"
+    />
+    <property
+        name="parentId"
+        type="java.lang.Integer"
+        column="PARENT_ID"
+        length="8"
+    />
+
+    <property
+        name="isSystemFunction"
+        type="java.lang.String"
+        column="IS_SYSTEM_FUNCTION"
+        length="1"
+    />
+    <property
+        name="functionActionPath"
+        type="java.lang.String"
+        column="FUNCTION_ACTION_PATH"
+        length="500"
+    />
+    <property
+        name="rootId"
+        type="java.lang.Integer"
+        column="ROOT_ID"
+        length="8"
+    />	
+    <property
+        name="orderSn"
+        type="java.lang.Integer"
+        column="ORDER_SN"
+        length="8"
+    />		
+    
+    <property
+        name="subFunctionNumber"
+        type="java.lang.Integer"
+        column="SUB_FUNCTION_NUMBER"
+        length="4"
+    />    
+    <!-- Associations -->
+  
+	    <!-- bi-directional one-to-many association to BusinessGroup -->
+    <set
+        name="roleFunctionRl"
+        lazy="true"
+        inverse="true"
+		cascade="delete"
+    >
+        <key>
+            <column name="FUNCTION_ID" />
+        </key>
+        <one-to-many 
+            class="com.ram.model.RoleFunctionRl"
+        />
+    </set>
+	    <!-- bi-directional one-to-many association to BusinessGroup -->
+    <set
+        name="groupFunctionRl"
+        lazy="true"
+        inverse="true"
+		cascade="delete"
+    >
+        <key>
+            <column name="FUNCTION_ID" />
+        </key>
+        <one-to-many 
+            class="com.ram.model.GroupFunctionRl"
+        />
+    </set>
+</class>
+</hibernate-mapping>

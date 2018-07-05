@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+	<beans>
+		<!-- 学习卡 -->
+		<bean id="cardDAO" class="com.card.dao.hibernate.CardDAOHibernate">
+	        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+	    </bean>	
+		<bean id="cardService" parent="hibernateTransactionProxy">
+		    <property name="target">
+		        <bean class="com.card.service.impl.CardServiceImp" autowire="byName">
+		        <property name="userService"><ref bean="userService"/></property>
+		        </bean>
+		    </property>
+			<!-- Override default transaction attributes b/c of LoginCookie methods -->
+		</bean>
+		<bean id="userCardService" parent="hibernateTransactionProxy">
+		    <property name="target">
+		        <bean class="com.card.service.impl.UserCardServiceImp" autowire="byName">
+		        </bean>
+		    </property>
+			<!-- Override default transaction attributes b/c of LoginCookie methods -->
+		</bean>
+		
+		<!-- 充值方式 -->
+		<bean id="rechargeWayDAO" class="com.card.dao.hibernate.RechargeWayDAOHibernate">
+	        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+	    </bean>	
+	    <bean id="rechargeWayService" parent="hibernateTransactionProxy">
+		    <property name="target">
+		        <bean class="com.card.service.impl.RechargeWayServiceImp">
+		            <property name="rechargeWayDAO"><ref local="rechargeWayDAO"/></property>	            
+		        </bean>
+		    </property>
+		</bean>
+	</beans>

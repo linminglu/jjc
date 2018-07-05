@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.cash.model.UserBankBind" table="user_bank_bind">
+		<cache usage="read-write" />
+		<id name="bankBindId" type="java.lang.Integer" column="bank_bind_id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="8" />
+       <property name="bindType" type="java.lang.String" column="bind_type" length="1" />
+       <property name="bindAccount" type="java.lang.String" column="bind_account" length="50" />
+       <property name="bankName" type="java.lang.String" column="bank_name" length="50" />
+       <property name="bindName" type="java.lang.String" column="bind_name" length="20" />
+       <property name="isDef" type="java.lang.String" column="is_def" length="1" />
+        <property name="bankId" type="java.lang.Integer" column="bank_id" length="8" />
+        <property name="branch" type="java.lang.String" column="branch" length="20" />
+        <property name="cellPhone" type="java.lang.String" column="cell_phone" length="20" />
+	</class>
+</hibernate-mapping>

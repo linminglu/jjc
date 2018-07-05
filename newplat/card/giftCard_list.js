@@ -1,0 +1,35 @@
+{
+	code:200,
+	data:{
+		items:[
+			{
+				gid:1,
+				title:"宝真礼品卡(50元面额)",
+				parValue:"50",
+				price:"48",
+				img:"http://bz100dev.boguyuan.com/card/img/50.png"
+			},
+			{
+				gid:2,
+				title:"宝真礼品卡(10元面额)，巨划算快来抢啊！",
+				parValue:"100",
+				price:"78",
+				img:"http://bz100dev.boguyuan.com/card/img/100.png"
+			},
+			{
+				gid:3,
+				title:"宝真礼品卡(150元面额)",
+				parValue:"150",
+				price:"145",
+				img:"http://bz100dev.boguyuan.com/card/img/150.png"
+			},
+			{
+				gid:4,
+				title:"宝真礼品卡(20元面额)",
+				parValue:"200",
+				price:"188",
+				img:"http://bz100dev.boguyuan.com/card/img/200.png"
+			}
+		]
+	}
+}

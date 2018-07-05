@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/mui/mui.min.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript" src="js/me.js"></script>
+<script type="text/javascript" src="js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="js/components/mode-ecb.js"></script>
+<link type="text/css" rel="stylesheet" href="css/mui/mui.min.css" />
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="css/me.css" />
+<link type="text/css" rel="stylesheet" href="css/loaders.css" />
+<title>充值</title>
+<script type="text/javascript">
+move.width=$(window).width();
+$(document).ready(function(){
+	move.hideHeader();
+	var id=move.getParameter('id');
+	var items=store.get('imglist');
+	for (var i=0;i<items.length;i++) {
+		var obj=items[i];
+		var no=obj.id;
+		var img=obj.img;
+		if(no==id){
+			$('#codeRechargeUrlimg').attr('src',img);
+		}
+	}
+	if(move.user.u!=null){
+		$('#uid').val(move.user.uid);
+	}
+	
+});
+</script>
+<style type="text/css">
+.codetext{font-size: 14px;background-color: #eee;width: 90%;float: left;padding-left: 5px;}
+.recode{width: 50%;margin: 20px auto;}
+.recode img{width: 100%;}
+</style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav ">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">充值</h1>
+</header>
+<div class="main-content main-content-view">
+	<div class="recode">
+		<img alt="" src="" id="codeRechargeUrlimg">
+	</div>
+	<div class="" style="text-align: center;line-height: 24px;">充值完毕,在下面提交充值信息，才会上分</div>
+	<div class="mui-input-row">
+        <label style="width: 30%;">充值金额<br/><span style="font-size: 12px;color: #999;">（人民币）</span></label>
+        <input maxlength="8" oninput="value=value.replace(/[^\d]/g,'')" oncopy="value=value.replace(/[^\d]/g,'')" type="text" id="payval" class="codetext" placeholder="请输入充值金额" style="background-color: #f6f6f6;float: left;">
+    </div>
+	<div class="mui-input-row">
+        <label style="width: 30%;">ID</label>
+        <input type="text" id="uid" class="codetext" readonly="readonly" style="background-color: #f6f6f6;float: left;">
+    </div>
+	<div class="btn-box">
+		<div class="btn-cz" id="btncz">我已完成支付</div>
+	</div>
+</div>
+<script type="text/javascript">
+$("#btncz").bind("click", function(){
+	meObj.codeRechargeSubmit();
+});
+</script>
+</body>
+</html>

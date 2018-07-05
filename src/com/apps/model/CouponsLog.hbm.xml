@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.apps.model.CouponsLog" 
+    table="coupons_log"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="id"
+        type="java.lang.Integer"
+        column="id"
+    >
+        <generator class="identity"/>
+    </id>
+     <property
+        name="couponsId"
+        type="java.lang.Integer"
+        column="coupons_id"
+        length="8"
+    />
+     <property
+        name="uid"
+        type="java.lang.Integer"
+        column="u_id"
+        length="8"
+    />
+     <property
+        name="points"
+        type="java.lang.Integer"
+        column="points"
+        length="8"
+    />
+    <property
+        name="createDate"
+        type="java.util.Date"
+        column="create_date"
+    />
+     <property
+        name="status"
+        type="java.lang.String"
+        column="status"
+        length="1"
+    />
+     <property
+        name="code"
+        type="java.lang.String"
+        column="code"
+        length="20"
+    />
+     <property
+        name="ip"
+        type="java.lang.String"
+        column="ip"
+        length="100"
+    />
+</class>
+</hibernate-mapping>

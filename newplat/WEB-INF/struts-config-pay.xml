@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+   <data-sources />
+   <form-beans >
+   		<form-bean name="payForm" type="com.apps.web.form.PayForm"/>
+   </form-beans>
+   <!-- ==================================== Global Exceptions -->
+  <global-exceptions>
+	<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  </global-exceptions>
+
+  <!-- ==================================== Global Forwards    -->
+  <global-forwards>
+	 <forward name="exception" path="/_exception.jsp" />
+  </global-forwards>
+   <action-mappings >
+     <action
+         path="/payAction"
+         parameter="method"
+         validate="false"
+         name="payForm"
+         scope="request"
+         type="com.apps.web.action.PayAction">
+        <forward name="init" path="/init.jsp"/>
+        <forward name="fail" path="/fail.jsp"/>
+        <forward name="success" path="/success.jsp"/>
+        <forward name="shanfuInit" path="/shanfuInit.jsp"/>
+      </action>
+   </action-mappings>
+</struts-config>

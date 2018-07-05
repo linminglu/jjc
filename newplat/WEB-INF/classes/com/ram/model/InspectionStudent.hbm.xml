@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.InspectionStudent" 
+    table="INSPECTION_STUDENT"
+    lazy="false"
+    
+>
+
+    <id
+        name="inspectionStudentId"
+        type="java.lang.Integer"
+        column="INSPECTION_STUDENT_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_INSPECTION_STUDENT</param>
+        </generator>
+    </id>
+    
+    <property
+        name="ScoreGrades"
+        type="java.lang.String"
+        column="SCORE_GRADES"
+        length="1"
+    />
+      <property
+        name="FeedfackGrades"
+        type="java.lang.String"
+        column="FEEDFACK_GRADES"
+        length="1"
+    />
+    
+      <property
+        name="userId"
+        type="java.lang.Integer"
+        column="USER_ID"
+        length="8"
+    />
+    
+    <property
+        name="submitMonitorLink"
+        type="java.lang.String"
+        column="SUBMIT_MONITOR_LINK"
+        length="200"
+    />
+    
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to Class -->
+    <many-to-one
+        name="monitors"
+        class="com.ram.model.Monitors"
+       >
+        <column name="MONITOR_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

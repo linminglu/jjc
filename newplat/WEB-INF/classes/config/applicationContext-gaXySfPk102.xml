@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="sfPk102DAO" class="com.xy.pk10.sfpk102.dao.hibernate.SfPk102DAOHibernate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>	
+	<bean id="sfPk102Service" parent="hibernateTransactionProxy">
+	    <property name="target">
+	        <bean class="com.xy.pk10.sfpk102.service.impl.SfPk102ServiceImpl">
+	            <property name="sfPk102DAO"><ref local="sfPk102DAO"/></property>
+	            <property name="userService"><ref bean="userService"/></property>
+	            <property name="gaService"><ref bean="gaService"/></property>
+	        </bean>
+	    </property>
+	</bean>
+
+	<!-- 初始化 -->
+	<bean name="initSfPk102SessionJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.xy.pk10.sfpk102.service.impl.InitSfPk102Session</value></property>
+		<property name="jobDataAsMap"><map><entry key="sfPk102Service"><ref bean="sfPk102Service" /></entry></map></property>
+	</bean>
+	<bean id="initSfPk102Session" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="initSfPk102SessionJob"/></property>
+		<property name="cronExpression"><value>0 0/30 * * * ?</value></property>
+	</bean> 
+	
+	
+	<!-- 抓取开奖结果 -->
+	<bean name="fetchSfPk102ResultJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"><value>com.xy.pk10.sfpk102.service.impl.FetchSfPk102Result</value></property>
+		<property name="jobDataAsMap"><map><entry key="sfPk102Service"><ref bean="sfPk102Service" /></entry></map></property>
+	</bean>
+	<bean id="fetchSfPk102Result" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail"><ref bean="fetchSfPk102ResultJob"/></property>
+		<property name="cronExpression"><value>0 0/3 * * * ?</value></property>
+	</bean>
+	
+	<!-- 加载计划任务 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="initSfPk102Session" />
+				<ref local="fetchSfPk102Result"/>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

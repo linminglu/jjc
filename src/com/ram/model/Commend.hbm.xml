@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.Commend" 
+    table="COMMEND"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="commendId"
+        type="java.lang.Integer"
+        column="COMMEND_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_COMMEND</param>
+        </generator>
+    </id>
+    
+    <property
+        name="evaluateId"
+        type="java.lang.Integer"
+        column="EVALUATE_ID"
+        length="8"
+    />
+    <property
+        name="teacherId"
+        type="java.lang.Integer"
+        column="TECHER_ID"
+        length="8"
+    />
+    <property
+        name="score"
+        type="java.math.BigDecimal"
+        column="SCORE"
+        length="3"
+    />
+    <property
+        name="reason"
+        type="org.springframework.orm.hibernate3.support.ClobStringType"
+        column="REASON"
+        lazy="true"
+    />
+    <property
+        name="userId"
+        type="java.lang.Integer"
+        column="USER_ID"
+        length="8"
+    />
+	
+    <!-- Associations -->
+	
+	
+
+</class>
+</hibernate-mapping>

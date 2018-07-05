@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.2
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.ram.model.Program" 
+    table="PROGRAM"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="programId"
+        type="java.lang.Integer"
+        column="PROGRAM_ID"
+    >
+    
+        <generator class="sequence">
+            <param name="sequence">SEQ_PROGRAM</param>
+        </generator>
+    </id>
+
+    <property
+        name="programName"
+        type="java.lang.String"
+        column="PROGRAM_NAME"
+        length="50"
+    />
+    <property
+        name="updateUserId"
+        type="java.lang.Integer"
+        column="UPDATE_USER_ID"
+        length="8"
+    />
+    <property
+        name="updateDateTime"
+        type="java.sql.Date"
+        column="UPDATE_DATE_TIME"
+        length="7"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to BusinessGroup -->
+    <set
+        name="businessGroups"
+        lazy="true"
+        inverse="true"
+		cascade="delete"
+    >
+        <key>
+            <column name="PROGRAM_ID" />
+        </key>
+        <one-to-many 
+            class="com.ram.model.BusinessGroup"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

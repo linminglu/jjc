@@ -1,0 +1,405 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8">
+<meta name="description" content=""> 
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta http-equiv="X-UA-Compatible" content="edge">
+<script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../js/mui/mui.min.js"></script>
+<script type="text/javascript" src="../../js/move.js?v=gf2018052805"></script>
+<script type="text/javascript" src="js/sfc.js?v=gf2018052805"></script>
+<script type="text/javascript" src="../../js/gacommon.js?v=gf2018052805"></script>
+<script type="text/javascript" src="../../js/rollups/tripledes.js"></script>
+<script type="text/javascript" src="../../js/components/mode-ecb.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/mui/mui.min.css">
+<link type="text/css" rel="stylesheet" href="../../css/base.css?v=gf2018052805" />
+<link type="text/css" rel="stylesheet" href="css/sfc.css?v=gf2018052805" />
+<link type="text/css" rel="stylesheet" href="../../css/loaders.css" />
+<title>三分彩</title>
+</head>
+<body>
+<div class="ga-view ga-view-gf">
+	<header class="mui-bar mui-bar-nav">
+		<a class="ga-link-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="ga-item-title mui-title g-plays">三分彩</h1>
+		<a class="ga-item-menu mui-action-menu mui-icon mui-icon-bars mui-pull-right" href="#topPopover"></a>
+	</header>
+	<div class="main-content">
+		<div class="margin-top-header"></div>
+
+		<div class="ga-main mui-slider">
+			<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted ga-play-tab">
+				<div class="ga-plays mui-scroll">
+					<a class="ga-play-item" data="8"><span>五星通选</span><span class="subtitle"></span></a>
+					<a class="ga-play-item" data="7"><span>五星直选</span><span class="subtitle"></span></a>
+					<a class="ga-play-item mui-active" data="6"><span>三星直选</span><span class="subtitle"></span></a>
+					<a class="ga-play-item" data="5"><span>三星组三</span><span class="subtitle"></span></a>
+					<a class="ga-play-item" data="4"><span>三星组六</span><span class="subtitle"></span></a>
+					<a class="ga-play-item" data="3"><span>二星直选</span><span class="subtitle"></span></a>
+					<a class="ga-play-item" data="2"><span>二星组选</span><span class="subtitle"></span></a>
+					<a class="ga-play-item" data="1"><span>一星</span><span class="subtitle"></span></a>
+					<a class="ga-play-item" data="0"><span>大小单双</span><span class="subtitle"></span></a>
+				</div>
+			</div>
+			<div class="ga-lotter-box">
+				<div class="left">
+					<p class="open-ps">---</p>
+					<p class="open-pn"><span class="open-num"><a>--</a><a>--</a><a>--</a><a>--</a><a>--</a></span></p>
+				</div>
+				<div class="right">
+					<p class="open-pcur">---</p>
+					<p class="open-pt"><span class="open-hh">--</span>:<span class="open-mm">--</span>:<span class="open-ss">--</span></p>
+				</div>
+			</div>
+			<div class="ga-play-group">
+				<div id="playItem8" class="ga-play-selnum">
+					<div class="ga-play-wrapper">
+						<div class="ga-play-scroll">
+							<div class="ga-info"><p>提示：每行至少选1号码，三个奖级通吃，五次中奖机会，大奖20440元(积分倍数0倍)</p></div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>万位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>千位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>百位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>十位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>个位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="playItem7" class="ga-play-selnum">
+					<div class="ga-play-wrapper">
+						<div class="ga-play-scroll">
+							<div class="ga-info"><p>提示：每行至少选1号码，大奖100000元(积分倍数0倍)</p></div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>万位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>千位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>百位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>十位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>个位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="playItem6" class="ga-play-selnum mui-active">
+					<div class="ga-play-wrapper">
+						<div class="ga-play-scroll">
+							<div class="ga-info"><p>提示：每行至少选1号码，大奖1000元(积分倍数65倍)</p></div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>百位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>十位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>个位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="playItem5" class="ga-play-selnum">
+					<div class="ga-play-wrapper">
+						<div class="ga-play-scroll">
+							<div class="ga-info"><p>提示：从0~9这10个号码里任选2个或以上的号码，奖金320元(积分倍数80倍)</p></div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="playItem4" class="ga-play-selnum">
+					<div class="ga-play-wrapper">
+						<div class="ga-play-scroll">
+							<div class="ga-info"><p>提示：每行至少选1号码，大奖160元(积分倍数80倍)</p></div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="playItem3" class="ga-play-selnum">
+					<div class="ga-play-wrapper">
+						<div class="ga-play-scroll">
+							<div class="ga-info"><p>提示：每行至少选1号码，大奖100元(积分倍数60倍)</p></div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>十位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>个位号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="playItem2" class="ga-play-selnum">
+					<div class="ga-play-wrapper">
+						<div class="ga-play-scroll">
+							<div class="ga-info"><p>提示：从0~9任意任选M（2≤M≤7）个号码，奖金50元(积分倍数60倍)</p></div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="playItem1" class="ga-play-selnum">
+					<div class="ga-play-wrapper">
+						<div class="ga-play-scroll">
+							<div class="ga-info"><p>提示：从0~9任意选择1个号码为一个投注号码，奖金10元(积分倍数70倍)</p></div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>号码</p></div>
+								<div class="ga-short"><a>全</a><a>大</a><a>小</a><a>单</a><a>双</a><a>清</a></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>0</a></li><li><a>1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li><li><a>7</a></li><li><a>8</a></li><li><a>9</a></li></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="playItem0" class="ga-play-selnum">
+					<div class="ga-play-wrapper">
+						<div class="ga-play-scroll">
+							<div class="ga-info"><p>提示：分别从个、十位中前一种性质组成一注投注号码，奖金4元(积分倍数0倍)</p></div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>十位号码</p></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>大</a></li><li><a>小</a></li><li><a>单</a></li><li><a>双</a></li></ul>
+								</div>
+							</div>
+							<div class="ga-spacer-line"></div>
+							<div class="ga-play-box">
+								<div class="ga-slider"><p>个位号码</p></div>
+								<div class="ga-content">
+									<ul class="ga-ball"><li><a>大</a></li><li><a>小</a></li><li><a>单</a></li><li><a>双</a></li></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+	</div>
+	<div class="ga-list">
+		<div class="ga-list-box">
+			<div class="actbar">
+				<button class="backmainbtn">+近回选号</button>
+				<button class="randbtn" data="1">+机选1注</button>
+				<button class="randbtn" data="5">+机选5注</button>
+				<button class="randbtn" data="10">+机选10注</button>
+			</div>
+			<div class="mcontent">
+				<ul></ul>
+				<div class="bottombar">
+					<button>清空</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ga-bottom-rate">
+		<div class="lrate">
+			<div class="numbox">
+				<span class="minus">-</span><input class="input" id="betRate" type="number" value="1" maxlength="5"><span class="plus">+</span>
+			</div>
+			<div class="ratetxt"><p>倍</p></div>
+		</div>
+	</div>
+	<div class="ga-bottom-bar">
+		<div class="lbar">
+			<div class="add">+</div>
+			<div class="txt">
+				<p class="totalnum">共0注，0元</p>
+				<p class="betnum"></p>
+			</div>
+		</div>
+		<div class="rbar">
+			<div class="arrow"></div>
+			<div class="listnum">
+				<span class="list-act"><i>0</i>
+					投注
+					<p class="bet-des">(先点击左边确定按钮)</p>
+				</span>
+				<span class="list-bet">确认投注</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="zoushi-box help-box" id="trendView">
+		<div class="htitle">走势</div>
+		<div class="subtitle">最近十二期开奖走势</div>
+		<div class="zoushitab-box">
+			<ul>
+				<li class="zoushi-cell mui-active" data="0">号码</li>
+				<li class="zoushi-cell" data="1">大小</li>
+				<li class="zoushi-cell" data="2">单双</li>
+				<li class="zoushi-cell" data="3">总和/龙虎</li>
+			</ul>
+		</div>
+		<div class="zoushi-table-box" >
+		</div>
+	</div>
+	<div class="paiming-box help-box" id="rankView">
+		<div class="htitle">冷热排行</div>
+		<div class="paiming-table-box" >
+			<ul class="paiming-table">
+			</ul>
+		</div>
+	</div>
+	<div class="masktrans2"></div>
+
+	<div id="topPopover" class="mui-popover">
+		<div class="mui-popover-arrow"></div>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell"><a href="../../touzhuList.html">投注记录</a></li>
+					<!-- <li class="mui-table-view-cell"><a href="#trendView" id="trendbtn">走势统计</a></li>
+					<li class="mui-table-view-cell"><a href="#rankView" id="rankbtn">冷热排行</a></li> -->
+					<li class="mui-table-view-cell"><a href="openList.html">最近开奖</a></li>
+					<li class="mui-table-view-cell"><a href="rule.html">玩法说明</a></li>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	lotteryObj.playSelector.set({
+		code:"sfc",
+		plays:{p8:"五星通选",p7:"五星直选",p6:"三星直选",p5:"三星组三",p4:"三星组六",p3:"二星直选",p2:"二星组选",p1:"一星",p0:"大小单双"},
+		gfxy:true,
+		wanfatab:"",
+		wanfa:""
+	});
+	lotteryObj.init();
+});
+
+mui('.scroll-play').scroll({
+	scrollY: true, //是否竖向滚动
+	scrollX: false, //是否横向滚动
+	startX: 0, //初始化时滚动至x
+	startY: 0, //初始化时滚动至y
+	indicators: true, //是否显示滚动条
+	deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+	bounce: false //是否启用回弹
+});
+
+//alert($(window).width()+","+$(window).height());
+</script>
+
+</body>
+</html>

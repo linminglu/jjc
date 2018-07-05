@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.game.model.GaHhmfBetDetail" table="ga_hhmf_bet_detail">
+		<cache usage="read-write" />
+		<id name="betDetailId" type="java.lang.Integer" column="bet_detail_id">
+			<generator class="identity" />
+		</id>
+       <property name="userId" type="java.lang.Integer" column="user_id" length="8" />
+       <property name="betId" type="java.lang.Integer" column="bet_id" length="11" />
+       <property name="betOptionId" type="java.lang.Integer" column="bet_option_id" length="11" />
+       <property name="sessionId" type="java.lang.Integer" column="session_id" length="11" />
+       <property name="betTime" type="java.util.Date" column="bet_time" />
+       <property name="betPoint" type="java.lang.Integer" column="bet_point" length="8" />
+       <property name="betType" type="java.lang.String" column="bet_type" length="1" />
+       <property name="winResult" type="java.lang.String" column="win_result" length="1" />
+       <property name="winCash" type="java.math.BigDecimal" column="win_cash" length="10" />
+       <property name="betFlag" type="java.lang.String" column="bet_flag" length="1" />
+       <property name="betRate" type="java.math.BigDecimal" column="bet_rate" length="7" />
+	</class>
+</hibernate-mapping>

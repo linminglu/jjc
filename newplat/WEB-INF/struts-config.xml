@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+   <data-sources />
+   <form-beans>
+		<form-bean name="loginForm" type="com.ram.web.permission.form.LoginForm"/>	   
+	</form-beans>	
+
+   	<!-- Global Exceptions -->
+	<global-exceptions/>
+
+   <global-forwards/>
+   <controller processorClass="com.framework.web.action.PMRequestProcessor" />
+   
+     
+  <message-resources parameter="com.ram.web.ApplicationResources" />
+  
+  <!--plug-in className="com.framework.web.action.HibernatePlugIn">
+    <set-property property="configFile" value="1000" /> 
+  </plug-in-->
+</struts-config>
+
+

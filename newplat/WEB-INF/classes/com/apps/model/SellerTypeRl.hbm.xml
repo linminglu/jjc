@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.apps.model.SellerTypeRl" 
+    table="seller_type_rl"
+>
+	<cache usage="read-write" /> 
+    <id
+        name="rid"
+        type="java.lang.Integer"
+        column="r_id"
+    >
+        <generator class="identity"/>
+    </id>
+    
+    <property
+        name="sid"
+        type="java.lang.Integer"
+        column="s_id"
+        length="8"
+    />
+    <property
+        name="tid"
+        type="java.lang.Integer"
+        column="t_id"
+        length="8"
+    />
+    
+</class>
+</hibernate-mapping>

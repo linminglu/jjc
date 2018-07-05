@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+
+	<!-- ==================================== Data Sources      -->
+  	<data-sources>
+  	</data-sources>
+
+  	<!-- ==================================== Form Beans        -->
+  	<form-beans>
+		<form-bean name="userGroupForm" type="com.ram.web.user.form.UserGroupForm"/>
+	    <form-bean name="managerForm" type="com.ram.web.user.form.ManagerForm"/>
+		<form-bean name="loginForm" type="com.ram.web.user.form.LoginForm"/>
+		<form-bean name="drForm" type="com.ram.web.user.form.DeskRegisterForm"/>
+		<form-bean name="dmrForm" type="com.ram.web.user.form.DeskRegisterForm"/>
+		<form-bean name="gtForm" type="com.ram.web.user.form.DeskGenTestForm"/>
+		<form-bean name="dtForm" type="com.ram.web.user.form.DeskDictForm"/>
+		<form-bean name="registerForm" type="com.ram.web.user.form.RegisterForm"/>
+		<form-bean name="userForm" type="com.ram.web.user.form.UserForm"/>
+  	</form-beans>
+
+  	<!-- ==================================== Global Exceptions -->
+  	<global-exceptions>
+		<exception key="error" type="java.lang.Exception" handler="com.ram.exception.ActionExceptionHandler" />
+  	</global-exceptions>
+
+  	<!-- ==================================== Global Forwards    -->
+  	<global-forwards>
+	 	<forward name="exception" path="/_exception.jsp" />
+  	</global-forwards>
+
+  	<!-- ==================================== Action Mappings    -->
+  	<action-mappings>
+  		<action 
+			path="/managerAction" 
+    		type="com.ram.web.user.action.ManagerAction" 
+    		name="managerForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+	   		<forward name="init" path="/managerList.jsp"/>
+	   		<forward name="userList" path="/userList.jsp"/>
+	   		<forward name="userListByBalance" path="/userListByBalance.jsp"/>
+	   		<forward name="log" path="/managerLog.jsp"/>
+	      	<forward name="delete" path="/managerAction.do?method=userList"/>
+	      	<forward name="releaseUser" path="/managerAction.do?method=userList"/>
+	      	<forward name="delUser" path="/managerAction.do?method=userList"/>
+	      	<forward name="pauseUser" path="/managerAction.do?method=userList"/>
+	      	<forward name="show" path="/managerSpecifyInfo.jsp"/>
+      		<forward name="managerGroupInit" path="/managerGroupList.jsp"/>
+	  		<forward name="deleteManagerGroup" path="/managerAction.do?method=managerGroupInit" redirect="false"/>
+      		<forward name="preAddGroup" path="/manageGroupCreate.jsp" redirect="false"/>
+			<forward name="addGroup" path="/managerAction.do?method=managerGroupInit" redirect="false"/>
+			<forward name="add" path="/managerAction.do?method=userList" redirect="false"/>
+      		<forward name="preModify" path="/managerModify.jsp"/>
+      		<forward name="preAdd" path="/managerCreate.jsp"/>
+      		<forward name="managerInit" path="/managerInfoModify.jsp"/>
+			<forward name="save" path="/managerAction.do?method=userList" redirect="false"/>
+			<forward name="modify" path="/managerAction.do?method=userList" redirect="false"/>
+			<forward name="error" path="/errorUserInfo.jsp" redirect="false"/>
+			<forward name="errorDeleteUser" path="/errorDeleteUser.jsp"/>
+			<forward name="userView" path="/userView.jsp"/>
+			<forward name="loginUserModify" path="/loginUserModify.jsp" />
+			<forward name="success" path="/success.jsp"/>
+			<forward name="preModifyBalance" path="/managerModifyBalance.jsp"/>
+			<forward name="modifyBalance" path="/managerAction.do?method=userList" redirect="true"/>
+			<forward name="preModifyMoney" path="/managerDeductMoney.jsp"/>
+			<forward name="modifyMoney" path="/managerAction.do?method=userList" redirect="true"/>
+			<forward name="dailyStatisticsList" path="/dailyStatisticsList.jsp"/>	
+			<forward name="agentStatisticsList" path="/agentStatisticsList.jsp"/>	
+			
+			<forward name="balanceDetail" path="/userTradeDetail.jsp"/>
+			<forward name="betList" path="/betList.jsp"/>
+			<forward name="todayRegist" path="/todayRegist.jsp"/>
+			<forward name="masterPrentice" path="/masterPrenticeList.jsp"/>
+			<forward name="error" path="/errorUserInfo.jsp" redirect="false"/>
+			<forward name="modifyPassword" path="/passwordModify.jsp"/>
+			<forward name="savePassword" path="/passwordModify.jsp"/>
+			<forward name="agentList" path="/agentList.jsp"/>
+			<forward name="statusAgentList" path="/managerAction.do?method=agentList"/>
+    		<forward name="preModifyUser" path="/managerModify.jsp"/>
+    		<forward name="subUserList" path="/subUserList.jsp"/>
+			<forward name="levelInit" path="/managerAction.do?method=userLevelList"/>
+			<forward name="levelList" path="/levelList.jsp"/>
+      		<forward name="levelpreAdd" path="/levelCreate.jsp"/>
+      		<forward name="userMoneyReportList" path="/userMoneyReportList.jsp"/>	
+			
+	   		<forward name="userLimitInit" path="/managerAction.do?method=userLimitList"/>
+	   		<forward name="userLimitList" path="/userLimitList.jsp"/>
+      		<forward name="userLimitPreAdd" path="/userLimitCreate.jsp"/>
+      		<forward name="balance" path="/userBalance.jsp"/>
+    	</action>
+    	
+	  	<action 
+	  		path="/userGroupAction" 
+	    	type="com.ram.web.user.action.UserGroupAction"
+	    	name="userGroupForm"
+	    	parameter="method"
+	    	scope="request"
+	    	validate="false"
+	    >
+	    	<forward name="init" path="/userGroupList.jsp"/>
+	    	<forward name="preAdd" path="/userGroupCreate.jsp"/>
+	    	<forward name="preModify" path="/userGroupModify.jsp"/>
+	  		<forward name="save" path="/userGroupAction.do?method=init" redirect="true"/>
+		  	<forward name="delete" path="/userGroupAction.do?method=init" redirect="true"/>
+	      	<forward name="genTree" path="/userGroupAction.do?method=init" redirect="true"/>
+	    </action>
+		
+		<action 
+			path="/sessionChecker" 
+			type="com.ram.web.user.action.SessionCheckerAction" 
+			name="userPageForm" 
+			parameter="method" 
+			scope="request" 
+			validate="false"
+		>
+			<forward name="init" path="/"/>
+		</action>
+		
+		<action 
+			path="/loginAction" 
+			type="com.ram.web.user.action.LoginAction" 
+			name="loginForm"  
+			parameter="method" 
+			scope="request" 
+			validate="false"
+		>
+			<forward name="init" path="/login.jsp" redirect="false"/>
+			<forward name="login" path="/login.jsp" redirect="false"/>
+			<forward name="loginSuccess" path="/loginSuccess.jsp" redirect="false"/>
+			<forward name="loginSuccessm" path="/loginSuccessm.jsp" redirect="false"/>
+			<forward name="logout" path="/login.jsp" redirect="false"/>
+		</action>
+		
+		<action 
+			path="/drAction" 
+			type="com.ram.web.user.action.DeskRegisterAction" 
+			name="drForm"  
+			parameter="method" 
+			scope="request" 
+			validate="false"
+		>
+			<forward name="init" path="/drInit"/>
+			<forward name="register" path="/drRegister.jsp"/>
+			<forward name="check" path="/drCheck.jsp"/>
+			<forward name="scoreQuery" path="/drScoreQuery.jsp"/>
+		</action>
+		
+		<action 
+			path="/dmAction" 
+			type="com.ram.web.user.action.DeskMobileRegisterAction" 
+			name="dtForm"  
+			parameter="method" 
+			scope="request" 
+			validate="false"
+		>
+			<forward name="init" path="/dmrInit.jsp"/>
+		</action>
+		
+		<action 
+			path="/dtAction" 
+			type="com.ram.web.user.action.DeskDictAction" 
+			name="dtForm"  
+			parameter="method" 
+			scope="request" 
+			validate="false"
+		>
+			<forward name="init" path="/dtInit"/>
+			<forward name="wordPercent" path="/dtWordPercent.jsp"/>
+		</action>
+		
+		<action 
+			path="/gtAction" 
+			type="com.ram.web.user.action.DeskGenTestAction" 
+			name="gtForm"  
+			parameter="method" 
+			scope="request" 
+			validate="false"
+		>
+			<forward name="init" path="/gtInit"/>
+		</action>
+		
+		<action 
+			path="/drmAction" 
+			type="com.ram.web.user.action.DeskRegisterMAction" 
+			name="drForm"  
+			parameter="method" 
+			scope="request" 
+			validate="false"
+		>
+			<forward name="init" path="/drInit"/>
+			<forward name="genSNInit" path="/genSnInit.jsp"/>
+			<forward name="genSN" path="/drmAction.do?method=snList" redirect="true"/>
+			
+			<forward name="genSNUInit" path="/genSnUInit.jsp"/>
+			<forward name="genSNU" path="/drmAction.do?method=uList" redirect="true"/>
+			
+			<forward name="snList" path="/drSnList.jsp"/>
+			<forward name="uList" path="/drUList.jsp"/>
+			
+			<forward name="trialList" path="/drTrialList.jsp"/>
+			<forward name="trialMobileList" path="/drTrialMobileList.jsp"/>
+			<forward name="register" path="/drRegister.jsp"/>
+			<forward name="check" path="/drCheck.jsp"/>
+			
+			<forward name="dr" path="/dr.jsp"/>
+			<forward name="drSave" path="/drmAction.do?method=dr" redirect="true"/>
+			
+			<forward name="svList" path="/svList.jsp"/>
+			<forward name="svEdit" path="/svEdit.jsp"/>
+			<forward name="svSave" path="/drmAction.do?method=svList" redirect="true"/>
+			
+			<forward name="snLog" path="/drSnLog.jsp"/>
+		</action>
+		
+		<action 
+			path="/registerAction" 
+    		type="com.ram.web.user.action.RegisterAction" 
+    		name="registerForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+<!--       		<forward name="signup" path="/regSignupOk.jsp" /> -->
+      		<forward name="signup" path="/regSignup.jsp" />
+<!--       		<forward name="signup" path="/reg.jsp" /> -->
+			
+      		<forward name="saveSignup" path="/registerAction.do?method=signup" redirect="false"/>
+      		<forward name="signupOK" path="/regSignupOk.html" redirect="true"/>
+<!--       		<forward name="signupOK" path="/regSignupOk.jsp" redirect="true"/> -->
+      		<forward name="activeAccount" path="/regActiceinfo.jsp" redirect="false"/>
+      		<forward name="pwdResetInit" path="/regPwdReset.jsp" redirect="false"/>
+      		<forward name="pwdResetSucc" path="/regPwdResetInfo.jsp" redirect="false"/>
+      		<forward name="modifyPwdInit" path="/regModifyPwd.jsp" redirect="false"/>
+      		
+      		<forward name="error" path="/errorUserInfo.jsp" redirect="false"/>
+    	</action>
+    	
+		
+		<action 
+			path="/userAction" 
+    		type="com.ram.web.user.action.UserAction" 
+    		name="userForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+    		<forward name="init" path="/"/>
+			<forward name="myhome" path="/userMyhome.jsp" />
+			<forward name="profile" path="/userInfo.jsp"/>
+			<forward name="uploadLogo" path="/userAction.do?method=myhome" redirect="true"/>
+      		<forward name="error" path="/errorUserInfo.jsp" redirect="false"/>
+      		<forward name="password" path="/userResetPassword.jsp" redirect="false"/>
+      		<forward name="savePassword" path="/userAction.do?method=password" redirect="false"/>
+      		<forward name="proResetLogo" path="/userResetLogo.jsp" redirect="false"/>
+      		<forward name="otherUserInfo" path="/otherUserInfo.jsp" redirect="false"/>
+    	</action>
+		
+		
+		
+		<action 
+			path="/userExistAction" 
+    		type="com.ram.web.user.action.UserExistAction" 
+    		name="registerForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+      		<forward name="error" path="/errorUserInfo.jsp" redirect="false"/>
+    	</action>
+    	<action 
+			path="/emailExistAction" 
+    		type="com.ram.web.user.action.EmailExistAction" 
+    		name="registerForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+      		<forward name="error" path="/errorUserInfo.jsp" redirect="false"/>
+    	</action>
+    	
+    <action 
+			path="/mobileAction" 
+    		type="com.apps.web.action.MobileAction" 
+    		name="mobileForm" 
+    		scope="request" 
+    		parameter="method"
+    		validate="false"
+    	>
+      		<forward name="QRCode" path="/QR_userImg.jsp" redirect="false"/>
+      		<forward name="regInit" path="/QR_userReg.jsp" redirect="false"/>
+      		<forward name="reg" path="/QR_userReg.jsp" redirect="false"/>
+      		<forward name="regSucc" path="/QR_regSucc.jsp" redirect="false"/>
+      		<forward name="applyShop" path="/applyShop.jsp" redirect="false"/>
+    	</action>
+	</action-mappings>
+</struts-config>

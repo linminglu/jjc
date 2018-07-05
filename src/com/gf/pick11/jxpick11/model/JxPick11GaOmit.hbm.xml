@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.gf.pick11.jxpick11.model.JxPick11GaOmit" table="gf_jx_pick11_ga_omit">
+		<cache usage="read-write" />
+		<id name="oid" type="java.lang.Integer" column="o_id">
+			<generator class="identity" />
+		</id>
+       <property name="sessionNo" type="java.lang.String" column="session_no" length="15" />
+       <property name="openResult" type="java.lang.String" column="open_result" length="50" />
+       <property name="fenbu1" type="java.lang.Integer" column="fenbu1" length="8" />
+       <property name="fenbu2" type="java.lang.Integer" column="fenbu2" length="8" />
+       <property name="fenbu3" type="java.lang.Integer" column="fenbu3" length="8" />
+       <property name="fenbu4" type="java.lang.Integer" column="fenbu4" length="8" />
+       <property name="fenbu5" type="java.lang.Integer" column="fenbu5" length="8" />
+       <property name="fenbu6" type="java.lang.Integer" column="fenbu6" length="8" />
+       <property name="fenbu7" type="java.lang.Integer" column="fenbu7" length="8" />
+       <property name="fenbu8" type="java.lang.Integer" column="fenbu8" length="8" />
+       <property name="fenbu9" type="java.lang.Integer" column="fenbu9" length="8" />
+       <property name="fenbu10" type="java.lang.Integer" column="fenbu10" length="8" />
+       <property name="fenbu11" type="java.lang.Integer" column="fenbu11" length="8" />
+       <property name="he" type="java.lang.Integer" column="he" length="8" />
+       <property name="kuadu" type="java.lang.Integer" column="kuadu" length="8" />
+       <property name="daxiao" type="java.lang.String" column="daxiao" length="10" />
+       <property name="jiou" type="java.lang.String" column="jiou" length="10" />
+       <property name="zhihe" type="java.lang.String" column="zhihe" length="10" />
+	</class>
+</hibernate-mapping>
